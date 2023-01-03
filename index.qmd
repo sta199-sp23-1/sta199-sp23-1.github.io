@@ -1,6 +1,6 @@
 ---
 title: "STA 199: Introduction to Data Science"
-subtitle: "Section 1 - Dr. Mine Çetinkaya-Rundel"
+subtitle: "Section 1 - Dr. Alexander Fisher"
 execute:
   freeze: false
 ---

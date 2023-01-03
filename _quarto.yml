@@ -8,25 +8,22 @@ project:
 website:
   page-navigation: true
   title: "STA 199"
-  description: "Homepage for STA 199 - Introduction to Data Science at Duke University, Fall 2022, Section 1."
+  description: "Homepage for STA 199 - Introduction to Data Science at Duke University, Spring 2023, Section 1."
   site-url: "https://sta199-f22-1.github.io/"
 
   repo-url: https://github.com/sta199-f22-1/sta199-f22-1.github.io/
   repo-actions: [edit, issue]
 
   open-graph: true
-  twitter-card:
-    creator: "@minebocek"
-    image: "images/twitter-card.png"
 
   sidebar:
-    background: "#325b74" # Pantone Midnight - Fall 2022
+    background: "#2774AE" # Nice blue for Spring 2023
     logo: "images/logo.png"
     pinned: true
     align: center
     tools:
       - icon: github
-        href: https://github.com/sta199-f22-1/sta199-f22-1.github.io
+        href: https://github.com/sta199-sp23
         text: "GitHub organization"
       - icon: code-square
         href: https://cmgr.oit.duke.edu/containers
@@ -76,7 +73,7 @@ website:
 
   page-footer:
     right: "This page is built with ❤️ and [Quarto](https://quarto.org/)."
-    left: "&copy; Copyright 2022, Mine Çetinkaya-Rundel"
+    left: "&copy; Copyright 2023, Alexander Fisher"
     background: "#325b74" # Pantone Midnight - Fall 2022
 
 format:
