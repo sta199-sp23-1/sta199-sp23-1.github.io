@@ -1,4 +1,4 @@
-# sta199-f22-1.github.io
+# sta199-sp23-1.github.io
 
 Source code for the course website for STA 199 - Section 1 taught by Dr. Alexander Fisher in Spring 2023 at Duke University.
 
