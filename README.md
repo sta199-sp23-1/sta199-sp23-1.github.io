@@ -8,7 +8,7 @@ Source code for the course website for STA 199 - Section 1 taught by Dr. Alexand
     -   Add component to relevant directory (`slides`, `hw`, `labs`, etc.), render site and push.
     -   Add link to component to <https://docs.google.com/spreadsheets/d/1GCwNNWDK0yJPBraWtfZ-tmtXJsgvkLhYTCVtk6c_6js/edit?usp=sharing>.
     -   Render site again and push.
--   Primary color: `#325b74` (Pantone Midnight - Fall 2022)
+-   Primary color: `#2774AE` (nice blue -- Spring 2023)
 
 ## Attribution
 
