@@ -6,7 +6,7 @@ Source code for the course website for STA 199 - Section 1 taught by Dr. Alexand
 
 -   Process for updating schedule:
     -   Add component to relevant directory (`slides`, `hw`, `labs`, etc.), render site and push.
-    -   Add link to component to <https://docs.google.com/spreadsheets/d/1GCwNNWDK0yJPBraWtfZ-tmtXJsgvkLhYTCVtk6c_6js/edit?usp=sharing>.
+    -   Add link to component to <https://docs.google.com/spreadsheets/d/19EDpGHJ6BqZ0TIJrviIrqlpQ3G9gF29aqek3lxblCT0/edit?usp=sharing>.
     -   Render site again and push.
 -   Primary color: `#2774AE` (nice blue -- Spring 2023)
 
