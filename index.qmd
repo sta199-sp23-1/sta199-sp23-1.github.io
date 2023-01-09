@@ -13,7 +13,7 @@ library(googlesheets4)
 library(gt)
 library(tidyverse)
 gs4_deauth()
-d <- read_sheet("https://docs.google.com/spreadsheets/d/1GCwNNWDK0yJPBraWtfZ-tmtXJsgvkLhYTCVtk6c_6js/edit?usp=sharing", sheet = "sec1-mine")
+d <- read_sheet("https://docs.google.com/spreadsheets/d/19EDpGHJ6BqZ0TIJrviIrqlpQ3G9gF29aqek3lxblCT0/edit?usp=sharing", sheet = "sec1-alex")
 ```
 
 ::: column-screen-right
@@ -45,13 +45,6 @@ d |>
       )
     }
   ) |>
-  text_transform(cells_body(columns = c(ae_sa)),
-    fn = function(x) {
-      ifelse(is.na(x), fontawesome::fa("key", fill_opacity = 0.1),
-        glue::glue("<a href = {x}>{fontawesome::fa('key')}</a>")
-      )
-    }
-  ) |>
   text_transform(cells_body(columns = c(hw)),
     fn = function(x) {
       ifelse(is.na(x), fontawesome::fa("keyboard", fill_opacity = 0.1),
@@ -59,24 +52,10 @@ d |>
       )
     }
   ) |>
-  text_transform(cells_body(columns = c(hw_sa)),
-    fn = function(x) {
-      ifelse(is.na(x), fontawesome::fa("key", fill_opacity = 0.1),
-        glue::glue("<a href = {x}>{fontawesome::fa('key')}</a>")
-      )
-    }
-  ) |>
   text_transform(cells_body(columns = c(lab)),
     fn = function(x) {
       ifelse(is.na(x), fontawesome::fa("users-rectangle", fill_opacity = 0.1),
         glue::glue("<a href = {x}>{fontawesome::fa('users-rectangle')}</a>")
-      )
-    }
-  ) |>
-  text_transform(cells_body(columns = c(lab_sa)),
-    fn = function(x) {
-      ifelse(is.na(x), fontawesome::fa("key", fill_opacity = 0.1),
-        glue::glue("<a href = {x}>{fontawesome::fa('key')}</a>")
       )
     }
   ) |>
@@ -98,7 +77,7 @@ d |>
   sub_missing(columns = c(date, what, topic, notes), missing_text = "") |>
   cols_align(
     align = "center", 
-    columns = c(week, dow, prepare, slides, ae, ae_sa, hw, hw_sa, lab, lab_sa, exam, project)
+    columns = c(week, dow, prepare, slides, ae,, hw, lab, exam, project)
     ) |>
   cols_align(
     align = "left", 
@@ -111,7 +90,7 @@ d |>
       style = "solid"
     ),
     locations = cells_body(
-      columns = c(date, topic, prepare, ae_sa, hw_sa, lab_sa, exam, project)
+      columns = c(date, topic, prepare, exam, project)
     )
   )
 ```
