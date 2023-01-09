@@ -8,15 +8,15 @@ title: "Syllabus"
 
 ## Office hours
 
-[Click here](https://docs.google.com/spreadsheets/d/1Jgujcf6xor-63a_qfltwfMkHQtaBJHtUetd-rEpXljw/edit?usp=sharing) for the instructor and TA office hours locations and Zoom links.
-You are welcomed to attend the office hours for **any** STA 199 TA, regardless of section.
+[Click here](https://docs.google.com/spreadsheets/d/16gf9dQ_41V628vKvFdS95JBOUKYSjuxJBo7OzPye-SI/edit?usp=sharing) for the instructor and TA office hours locations and Zoom links.
+You are welcome to attend the office hours for **any** member of the teaching team, regardless of section.
 
 ## Textbooks
 
 All books are **freely available online**.
 
 |                                                                         |                          |                                   |                                                                                                                                  |
-|---------------|---------------|---------------|--------------------------|
+|----------------|----------------|----------------|------------------------|
 | [R for Data Science, 2e](https://r4ds.hadley.nz/)                       | Grolemund, Wickham       | O'Reilly, 2nd edition, 2022       | Hard copy only available of 1st edition                                                                                          |
 | [Introduction to Modern Statistics](https://openintro-ims.netlify.app/) | Çetinkaya-Rundel, Hardin | OpenIntro Inc., 1st Edition, 2021 | Hard copy available [on Amazon](https://www.amazon.com/Introduction-Modern-Statistics-Mine-%C3%87etinkaya-Rundel/dp/1943450145/) |
 
@@ -24,10 +24,99 @@ All books are **freely available online**.
 
 By the end of the semester, you will...
 
--   learn to explore, visualize, and analyze data in a reproducible and shareable manner
+-   learn to explore, visualize, and analyze data in a reproducible manner
 -   gain experience in data wrangling and munging, exploratory data analysis, predictive modeling, and data visualization
 -   work on problems and case studies inspired by and based on real-world questions and data
 -   learn to effectively communicate results through written assignments and project presentation
+- develop your own question about a data set of your choosing and use techniques from this class to answer the question
+
+## Assessment
+
+The activities and assessments in this course are designed to help you successfully achieve the course learning objectives.
+They are designed to follow the **Prepare, Practice, Perform** format.
+
+-   **Prepare**: Includes short videos, reading assignments, and lectures to introduce new concepts and ensure a basic comprehension of the material. The goal is to help you prepare for the in-class activities during lecture.
+
+-   **Practice**: In-class application exercises where you will begin to master the concepts and methods introduced in the prepare assignment. The activities will graded for completion, as they are designed for you to gain experience with the statistical and computing techniques before working on graded assignments.
+
+-   **Perform**: Includes labs, homework, exams, and the project. These assignments build upon the prepare and practice assignments and are the opportunity for you to demonstrate your understanding of the course material and how it is applied to analyze real-world data.
+
+### Application exercises (Practice)
+
+Each lecture, we will work through application exercise (AEs). These serve as notes you will fill in during class mixed with practice exercises.
+Exercises which give you an opportunity to practice statistical concepts and code introduced in the prepare assignment.
+
+Because these AEs are for practice, they will be graded based on completion, i.e., a good-faith effort has been made in attempting all parts. Successful on-time completion of at least 80% of AEs will result in full credit for AEs in the final course grade. To submit an AE, you simply need to push your completed AE to the designated repo in GitHub.
+
+### Labs (Perform)
+
+In labs, you will apply the concepts discussed in lecture to various data analysis scenarios, with a focus on the computation.
+Some lab assignments will be completed in teams, and all team members are expected to contribute equally to the completion of each assignment.
+You are expected to use the team's git repository on the course's GitHub page as the central platform for collaboration.
+Commits to this repository will be used as a metric of each team member's relative contribution for each lab.
+Lab assignments will be completed using Quarto, correspond to an appropriate GitHub repository, and be submitted for grading in Gradescope.
+
+*The lowest lab grade will be dropped at the end of the semester.*
+
+### Homework (Perform)
+
+In homework, you will apply what you've learned during lecture and lab to complete data analysis tasks.
+You may discuss homework assignments with other students; however, homework should be completed and submitted individually.
+Similar to lab assignments, homework must be typed up using Quarto and GitHub and submitted as a PDF in Gradescope.
+
+Homework assignments are due at 5:00 PM ET on the indicated due date.
+
+One homework assignment will be dedicated to a *statistics experience*.
+The statistics experience is an opportunity to engage with statistics and data science outside of the classroom through podcasts, books, seminars, data analysis competitions, and other activities.
+As you complete these experiences, the goal is to consider how the material you're learning in the course connects with society more broadly.
+
+*The lowest homework grade will be dropped at the end of the semester.*
+
+### Exams (Perform)
+
+There will be two, take-home, open-note exams.
+Through these exams you have the opportunity to demonstrate what you've learned in the course thus far.
+Each exam will include small analysis and computational tasks related to the content in the prepare, practice, and perform assignments.
+More details about the content and structure of the exams will be discussed during the semester.
+
+### Project (Perform)
+
+The purpose of the [project](project-description.html) is to apply what you've learned throughout the semester to analyze an interesting data-driven research question.
+The project will be completed with your lab teams, and each team will present their work in video and in writing during the final exam period.
+More information about the project will be provided during the semester.
+
+## Grading
+
+The final course grade will be calculated as follows:
+
+| Category              | Percentage   |
+|-----------------------|--------------|
+| Homework              | 30% (5% x 6) |
+| Labs                  | 14% (2% x 7) |
+| Project               | 15%          |
+| Exam 01               | 18%          |
+| Exam 02               | 18%          |
+| Application Exercises | 2.5%         |
+| Teamwork              | 2.5%         |
+
+The final letter grade will be determined based on the following thresholds:
+
+| Letter Grade | Final Course Grade |
+|--------------|--------------------|
+| A            | \>= 93             |
+| A-           | 90 - 92.99         |
+| B+           | 87 - 89.99         |
+| B            | 83 - 86.99         |
+| B-           | 80 - 82.99         |
+| C+           | 77 - 79.99         |
+| C            | 73 - 76.99         |
+| C-           | 70 - 72.99         |
+| D+           | 67 - 69.99         |
+| D            | 63 - 66.99         |
+| D-           | 60 - 62.99         |
+| F            | \< 60              |
+
+
 
 ## Course community
 
@@ -79,116 +168,6 @@ Please check your email regularly to ensure you have the latest announcements fo
 -   Outside of class and office hours, any general questions about course content or assignments should be posted on the course Slack. There is a chance another student has already asked a similar question, so please check the other posts on Slack before adding a new question. If you know the answer to a question posted on Slack, I encourage you to respond!
 
 Check out the [Help](/help/) tab for more resources.
-
-### Email
-
-If there is a question that's not appropriate for the public forum, you are welcome to email me directly.
-**If you email me, please include "STA 199" in the subject line.** Barring extenuating circumstances, I will respond to STA 199 emails within 48 hours Monday - Friday.
-Response time may be slower for emails sent Friday evening - Sunday.
-
-## Activities & Assessment
-
-The activities and assessments in this course are designed to help you successfully achieve the course learning objectives.
-They are designed to follow the **Prepare, Practice, Perform** format.
-
--   **Prepare**: Includes short videos, reading assignments, and lectures to introduce new concepts and ensure a basic comprehension of the material.
-    The goal is to help you prepare for the in-class activities during lecture.
-
--   **Practice**: Includes in-class application exercises where you will begin to the concepts and methods introduced in the prepare assignment.
-    the activities will graded for completion, as they are designed for you to gain experience with the statistical and computing techniques before working on graded assignments.
-
--   **Perform**: Includes labs, homework, exams, and the project.
-    These assignments build upon the prepare and practice assignments and are the opportunity for you to demonstrate your understanding of the course material and how it is applied to analyze real-world data.
-
-### Lectures (Prepare)
-
-Part of the class time will be lectures that introduce new concepts or review topics from the preparation videos.
-Lectures will **not** repeat everything in the videos, they will instead highlight important and known to be complex concepts and will be supplemented with live coding activities.
-You are expected to attend every lecture.
-Lectures will be recorded and made available to students with an excused absence upon request.
-
-### Application exercises (Practice)
-
-A majority of the in-class lectures will be dedicated to working on Application Exercises (AEs).
-These exercises which give you an opportunity to practice apply the statistical concepts and code introduced in the prepare assignment.
-These AEs are due within three days of the corresponding lecture period.
-Specifically, AEs from Tuesday lectures are due Friday by 11:59p ET, and AEs from Thursday lectures are due Sunday by 11:59p ET.
-
-Because these AEs are for practice, they will be graded based on completion, i.e., a good-faith effort has been made in attempting all parts.
-Successful on-time completion of at least 80% of AEs will result in full credit for AEs in the final course grade.
-
-In addition to AEs will be periodic activities help build a learning community.
-These will be short, fun activities that will help everyone in the class connect throughout the semester.
-
-### Labs (Perform)
-
-In labs, you will apply the concepts discussed in lecture to various data analysis scenarios, with a focus on the computation.
-Most lab assignments will be completed in teams, and all team members are expected to contribute equally to the completion of each assignment.
-You are expected to use the team's Git repository on the course's GitHub page as the central platform for collaboration.
-Commits to this repository will be used as a metric of each team member's relative contribution for each lab, and there will be periodic peer evaluation on the team collaboration.
-Lab assignments will be completed using Quarto, correspond to an appropriate GitHub repository, and submitted for grading in Gradescope.
-
-Labs are due 11:59p ET on the indicated due date.
-
-*The lowest lab grade will be dropped at the end of the semester.*
-
-### Homework (Perform)
-
-In homework, you will apply what you've learned during lecture and lab to complete data analysis tasks.
-You may discuss homework assignments with other students; however, homework should be completed and submitted individually.
-Similar to lab assignments, homework must be typed up using Quarto and GitHub and submitted as a PDF in Gradescope.
-
-Homework assignments are due 11:59p ET on the indicated due date.
-
-One homework assignment will be dedicated to a *statistics experience*.
-The statistics experience is an opportunity to engage with statistics and data science outside of the classroom through podcasts, books, seminars, data analysis competitions, and other activities.
-As you complete these experiences, the goal is to consider how the material you're learning in the course connects with society more broadly.
-
-*The lowest homework grade will be dropped at the end of the semester.*
-
-### Exams (Perform)
-
-There will be two, take-home, open-note exams.
-Through these exams you have the opportunity to demonstrate what you've learned in the course thus far.
-Each exam will include small analysis and computational tasks related to the content in the prepare, practice, and perform assignments.
-More details about the content and structure of the exams will be discussed during the semester.
-
-### Project (Perform)
-
-The purpose of the [project](project-description.html) is to apply what you've learned throughout the semester to analyze an interesting data-driven research question.
-The project will be completed with your lab teams, and each team will present their work in video and in writing during the final exam period.
-More information about the project will be provided during the semester.
-
-## Grading
-
-The final course grade will be calculated as follows:
-
-| Category              | Percentage   |
-|-----------------------|--------------|
-| Homework              | 30% (5% x 6) |
-| Labs                  | 14% (2% x 7) |
-| Project               | 15%          |
-| Exam 01               | 18%          |
-| Exam 02               | 18%          |
-| Application Exercises | 2.5%         |
-| Teamwork              | 2.5%         |
-
-The final letter grade will be determined based on the following thresholds:
-
-| Letter Grade | Final Course Grade |
-|--------------|--------------------|
-| A            | \>= 93             |
-| A-           | 90 - 92.99         |
-| B+           | 87 - 89.99         |
-| B            | 83 - 86.99         |
-| B-           | 80 - 82.99         |
-| C+           | 77 - 79.99         |
-| C            | 73 - 76.99         |
-| C-           | 70 - 72.99         |
-| D+           | 67 - 69.99         |
-| D            | 63 - 66.99         |
-| D-           | 60 - 62.99         |
-| F            | \< 60              |
 
 ## Course policies
 

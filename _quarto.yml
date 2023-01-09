@@ -17,13 +17,13 @@ website:
   open-graph: true
 
   sidebar:
-    background: "#2774AE" # Nice blue for Spring 2023
+    background: "#2774AE" # nice blue -- Spring 2023
     logo: "images/logo.png"
     pinned: true
     align: center
     tools:
       - icon: github
-        href: https://github.com/sta199-sp23
+        href: https://github.com/sta199-sp23-1
         text: "GitHub organization"
       - icon: code-square
         href: https://cmgr.oit.duke.edu/containers
@@ -42,14 +42,8 @@ website:
     contents:
       - section: "Course information"
         contents:
-          - href: course-overview.qmd
-            text: Overview
           - href: course-syllabus.qmd
             text: Syllabus
-          - href: course-support.qmd
-            text: Support
-          - href: course-team.qmd
-            text: Teaching team
           - href: index.qmd
             text: Schedule
           - href: course-links.qmd
@@ -68,20 +62,20 @@ website:
         contents:
           - href: project-description.qmd
             text: Description
-          - href: project-tips-resources.qmd
-            text: Tips + resources
+          # - href: project-tips-resources.qmd
+          #   text: Tips + resources
 
   page-footer:
     right: "This page is built with ❤️ and [Quarto](https://quarto.org/)."
     left: "&copy; Copyright 2023, Alexander Fisher"
-    background: "#325b74" # Pantone Midnight - Fall 2022
+    background: "#2774AE" # nice blue -- Spring 2023
 
 format:
   html:
     theme:
       light: [cosmo, style/sta199.scss]
-      dark: [cosmo, style/sta199.scss, style/dark.scss]
-    linkcolor: "#325b74" # Pantone Midnight - Fall 2022
+      #dark: [cosmo, style/sta199.scss, style/dark.scss]
+    linkcolor: "#2774AE" # nice blue -- Spring 2023
     toc: true
     code-copy: true
     code-overflow: wrap
