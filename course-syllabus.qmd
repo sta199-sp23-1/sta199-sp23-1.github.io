@@ -13,8 +13,10 @@ title: "Syllabus"
 +--------------------+--------------------------------------------------------------------------------+
 | Head TA            | Raphaël Morsomme ([raphael.morsomme\@duke.edu](raphael.morsomme@duke.edu))     |
 +--------------------+--------------------------------------------------------------------------------+
-| Course Coordinator | Edric Tam ([edric.tam\@duke.edu](edric.tam@duke.edu))                          |
+| Course Coordinator | Edric Tam ([sta199@duke.edu](sta199@duke.edu))                          |
 +--------------------+--------------------------------------------------------------------------------+
+
+Our course coordinator, Edric Tam, will handle all inquiries about late work, extensions and absences in accordance with the late policy described in the syllabus below. Please send emails to [sta199@duke.edu](sta199@duke.edu).
 
 ## Class time and location
 
@@ -135,12 +137,11 @@ The final course grade will be calculated as follows:
 | Category              | Percentage |
 |-----------------------|------------|
 | Homework              | 30%        |
-| Labs                  | 14%        |
+| Labs                  | 15%        |
 | Project               | 15%        |
 | Exam 01               | 18%        |
 | Exam 02               | 18%        |
-| Application Exercises | 2.5%       |
-| Teamwork              | 2.5%       |
+| Application Exercises | 4%       |
 
 The final letter grade will be determined based on the following thresholds:
 
