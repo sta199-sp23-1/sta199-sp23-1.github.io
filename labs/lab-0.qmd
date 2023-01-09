@@ -5,8 +5,12 @@ execute:
   eval: false
 ---
 
+::: callout-important
+This lab is **not a part of your grade in this course**. You should still submit your completed lab to Gradescope to practice submitting to Gradescope and receive feedback. Since this lab precedes class lecture, you may be unable to complete the lab until next week.
+:::
+
 This lab will introduce you to the course computing workflow.
-The main goal is to reinforce our demo of R and RStudio, which we will be using throughout the course both to learn the statistical concepts discussed in the course and to analyze real data and come to informed conclusions.
+The main goal is to demo R and RStudio, which we will be using throughout the course both to learn the statistical concepts discussed in the course and to analyze real data and come to informed conclusions.
 
 ::: callout-note
 R is the name of the programming language itself and RStudio is a convenient interface.
@@ -89,8 +93,8 @@ For example, mine would be
 devtools::install_github("r-lib/gert")
 
 usethis::use_git_config(
-  user.name = "Mine Çetinkaya-Rundel", 
-  user.email = "cetinkaya.mine@gmail.com"
+  user.name = "Alexander Fisher", 
+  user.email = "alexander.fisher@duke.edu"
   )
 ```
 
@@ -98,7 +102,7 @@ You are now ready interact with GitHub via RStudio!
 
 ## Clone the repo & start new RStudio project
 
--   Go to the course organization at [github.com/sta199-f22-1](https://github.com/sta199-f22-1) organization on GitHub.
+-   Go to the course organization at [github.com/sta199-sp23-1](https://github.com/sta199-sp23-1) organization on GitHub.
     Click on the repo with the prefix **lab-0**.
     It contains the starter documents you need to complete the lab.
 
@@ -398,6 +402,4 @@ Then push.
 
 # Submission
 
-In future labs we'll provide instructions for submission to Gradescope here.
-This lab is not graded, so you do not need to submit it on Gradescope.
-However you should make sure to commit and push all of your changes (nothing should be left in the Git pane) to your repo.
+**This lab is not graded** but you should still submit it to Gradescope to practice marking pages and receive feedback on workflow/formatting. Remember, you must also be sure to commit and push all of your changes (nothing should be left in the Git pane) to your repo.
