@@ -3,7 +3,7 @@ title: "Syllabus"
 ---
 
 ::: {.content-visible when-format="html"}
-[**Click here**](sta199-f22-1-syllabus.pdf) **to download a PDF copy of the syllabus.**
+[**Click here**](syllabus-spring23.pdf) **to download a PDF copy of the syllabus.**
 :::
 
 +--------------------+--------------------------------------------------------------------------------+
