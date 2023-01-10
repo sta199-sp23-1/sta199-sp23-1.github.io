@@ -4905,5 +4905,362 @@
     "title": "Syllabus",
     "section": "Additional resources",
     "text": "Additional resources\nStudent mental health and wellness are of primary importance at Duke, and the university offers resources to support students in managing daily stress and self-care. Duke offers several resources for students to seek assistance on coursework and to nurture daily habits that support overall well-being, some of which are listed below\n\nThe Academic Resource Center: (919) 684-5917, theARC@duke.edu, or arc.duke.edu. The Academic Resource Center (the ARC) offers services to support students academically during their undergraduate careers at Duke. The ARC can provide support with time management, academic skills and strategies, course-specific tutoring, and more. ARC services are available free to any Duke undergraduate student, studying any discipline.\nDuWell: (919) 681-8421, provides Moments of Mindfulness (stress management and resilience building) and meditation programming (Koru workshop) to assist students in developing a daily emotional well-being practice. To see schedules for programs please see https://studentaffairs.duke.edu/duwell. All are welcome and no experience necessary.\n\nIf your mental health concerns and/or stressful events negatively affect your daily emotional state, academic performance, or ability to participate in your daily activities, many resources are available to help you through difficult times. Duke encourages all students to access these resources.\n\nDukeReach. Provides comprehensive outreach services to identify and support students in managing all aspects of well-being. If you have concerns about a student’s behavior or health visit the website for resources and assistance: https://students.duke.edu/wellness/dukereach/\nCounseling and Psychological Services (CAPS). CAPS services include individual and group counseling services, psychiatric services, and workshops. To initiate services, walk-in/call-in 9-4 M,W,Th,F and 9-6 Tuesdays. CAPS also provides referral to off- campus resources for specialized care.\n\n660-1000 or https://students.duke.edu/wellness/caps/\n\nTimelyCare (formerly known as Blue Devils Care). An online platform that is a convenient, confidential, and free way for Duke students to receive 24/7 mental health support through TalkNow and scheduled counseling. bluedevilscare.duke.edu"
+  },
+  {
+    "objectID": "slides/lab01-welcome.html#meet-the-prof",
+    "href": "slides/lab01-welcome.html#meet-the-prof",
+    "title": "Welcome to STA199 Labs",
+    "section": "Meet the prof",
+    "text": "Meet the prof\n\n\nDr. Mine Çetinkaya-Rundel\nProfessor of the Practice\nOld Chem 213"
+  },
+  {
+    "objectID": "slides/lab01-welcome.html#meet-the-course-team",
+    "href": "slides/lab01-welcome.html#meet-the-course-team",
+    "title": "Welcome to STA199 Labs",
+    "section": "Meet the course team",
+    "text": "Meet the course team\n\nFoxx Hart - Lecture helper\nBora Jin - Course organizer, lab leader\nJordan Bryan - Head TA, lab leader\nRichard Fremgen - Lab leader\nLeah Johnson - Lab leader\nAlison Reynolds - Lab leader\nBrooke Harmon - Lab helper\nJasmine Wen - Lab helper\nAmber Potter - Lab helper\nShawon (One) Chowdhury - Lab helper\nGaurav Sirdeshmukh - Lab helper"
+  },
+  {
+    "objectID": "slides/lab01-welcome.html#meet-each-other",
+    "href": "slides/lab01-welcome.html#meet-each-other",
+    "title": "Welcome to STA199 Labs",
+    "section": "Meet each other!",
+    "text": "Meet each other!\n\n\n\n03:00"
+  },
+  {
+    "objectID": "slides/lab01-welcome.html#meet-data-science",
+    "href": "slides/lab01-welcome.html#meet-data-science",
+    "title": "Welcome to STA199 Labs",
+    "section": "Meet data science",
+    "text": "Meet data science\n\nData science is an exciting discipline that allows you to turn raw data into understanding, insight, and knowledge.\nWe’re going to learn to do this in a tidy way – more on that later!\nThis is a course on introduction to data science, with an emphasis on statistical thinking."
+  },
+  {
+    "objectID": "slides/lab01-welcome.html#excel---not",
+    "href": "slides/lab01-welcome.html#excel---not",
+    "title": "Welcome to STA199 Labs",
+    "section": "Excel - not…",
+    "text": "Excel - not…"
+  },
+  {
+    "objectID": "slides/lab01-welcome.html#r",
+    "href": "slides/lab01-welcome.html#r",
+    "title": "Welcome to STA199 Labs",
+    "section": "R",
+    "text": "R"
+  },
+  {
+    "objectID": "slides/lab01-welcome.html#rstudio",
+    "href": "slides/lab01-welcome.html#rstudio",
+    "title": "Welcome to STA199 Labs",
+    "section": "RStudio",
+    "text": "RStudio"
+  },
+  {
+    "objectID": "slides/lab01-welcome.html#data-science-life-cycle-1",
+    "href": "slides/lab01-welcome.html#data-science-life-cycle-1",
+    "title": "Welcome to STA199 Labs",
+    "section": "Data science life cycle",
+    "text": "Data science life cycle"
+  },
+  {
+    "objectID": "slides/lab01-welcome.html#import",
+    "href": "slides/lab01-welcome.html#import",
+    "title": "Welcome to STA199 Labs",
+    "section": "Import",
+    "text": "Import"
+  },
+  {
+    "objectID": "slides/lab01-welcome.html#tidy-transform",
+    "href": "slides/lab01-welcome.html#tidy-transform",
+    "title": "Welcome to STA199 Labs",
+    "section": "Tidy + transform",
+    "text": "Tidy + transform"
+  },
+  {
+    "objectID": "slides/lab01-welcome.html#visualize",
+    "href": "slides/lab01-welcome.html#visualize",
+    "title": "Welcome to STA199 Labs",
+    "section": "Visualize",
+    "text": "Visualize"
+  },
+  {
+    "objectID": "slides/lab01-welcome.html#model",
+    "href": "slides/lab01-welcome.html#model",
+    "title": "Welcome to STA199 Labs",
+    "section": "Model",
+    "text": "Model"
+  },
+  {
+    "objectID": "slides/lab01-welcome.html#understand",
+    "href": "slides/lab01-welcome.html#understand",
+    "title": "Welcome to STA199 Labs",
+    "section": "Understand",
+    "text": "Understand"
+  },
+  {
+    "objectID": "slides/lab01-welcome.html#section",
+    "href": "slides/lab01-welcome.html#section",
+    "title": "Welcome to STA199 Labs",
+    "section": "",
+    "text": "# A tibble: 5 × 2\n  date             season\n  <chr>            <chr> \n1 23 January 2017  winter\n2 4 March 2017     spring\n3 14 June 2017     summer\n4 1 September 2017 fall  \n5 ...              ..."
+  },
+  {
+    "objectID": "slides/lab01-welcome.html#communicate",
+    "href": "slides/lab01-welcome.html#communicate",
+    "title": "Welcome to STA199 Labs",
+    "section": "Communicate",
+    "text": "Communicate"
+  },
+  {
+    "objectID": "slides/lab01-welcome.html#understand-communicate",
+    "href": "slides/lab01-welcome.html#understand-communicate",
+    "title": "Welcome to STA199 Labs",
+    "section": "Understand + communicate",
+    "text": "Understand + communicate"
+  },
+  {
+    "objectID": "slides/lab01-welcome.html#program",
+    "href": "slides/lab01-welcome.html#program",
+    "title": "Welcome to STA199 Labs",
+    "section": "Program",
+    "text": "Program"
+  },
+  {
+    "objectID": "slides/lab01-welcome.html#application-exercise",
+    "href": "slides/lab01-welcome.html#application-exercise",
+    "title": "Welcome to STA199 Labs",
+    "section": "Application exercise",
+    "text": "Application exercise\n\nOr more like demo for today…\n📋 github.com/sta199-f22-1/ae-0-unvotes"
+  },
+  {
+    "objectID": "slides/lab01-welcome.html#homepage",
+    "href": "slides/lab01-welcome.html#homepage",
+    "title": "Welcome to STA199 Labs",
+    "section": "Homepage",
+    "text": "Homepage\nhttps://sta199-f22-1.github.io/\n\nAll course materials\nLinks to Sakai, GitHub, RStudio containers, etc.\nLet’s take a tour!"
+  },
+  {
+    "objectID": "slides/lab01-welcome.html#course-toolkit",
+    "href": "slides/lab01-welcome.html#course-toolkit",
+    "title": "Welcome to STA199 Labs",
+    "section": "Course toolkit",
+    "text": "Course toolkit\nAll linked from the course website:\n\nGitHub organization: github.com/sta199-f22-1\nRStudio containers: cmgr.oit.duke.edu/containers\nCommunication: Slack\nAssignment submission and feedback: Gradescope\n\n\n\n\n\n\n\nImportant\n\n\nReserve an RStudio Container (titled STA 198-199) before lab on Monday!"
+  },
+  {
+    "objectID": "slides/lab01-welcome.html#activities-prepare-participate-practice-perform",
+    "href": "slides/lab01-welcome.html#activities-prepare-participate-practice-perform",
+    "title": "Welcome to STA199 Labs",
+    "section": "Activities: Prepare, Participate, Practice, Perform",
+    "text": "Activities: Prepare, Participate, Practice, Perform\n\nPrepare: Introduce new content and prepare for lectures by watching the videos and completing the readings\nParticipate: Attend and actively participate in lectures and labs, office hours, team meetings\nPractice: Practice applying statistical concepts and computing with application exercises during lecture, graded for completion\nPerform: Put together what you’ve learned to analyze real-world data\n\nLab assignments x 7 (first individual, later team-based)\nHomework assignments x 5 (individual)\nThree take-home exams x 2\nTerm project presented in the last lab session"
+  },
+  {
+    "objectID": "slides/lab01-welcome.html#cadence",
+    "href": "slides/lab01-welcome.html#cadence",
+    "title": "Welcome to STA199 Labs",
+    "section": "Cadence",
+    "text": "Cadence\n\n\nLabs: Start and make large progress on Monday in lab section, finish up by Friday 5pm of that week\nHWs: Posted Thursday morning, due following Thursday\nExams: Exam released Thursday morning, no lab on Monday of following week, due Monday 2pm\nProject: Deadlines throughout the semester, with some lab and lecture time dedicated to working on them, and most work done in teams outside of class"
+  },
+  {
+    "objectID": "slides/lab01-welcome.html#teams",
+    "href": "slides/lab01-welcome.html#teams",
+    "title": "Welcome to STA199 Labs",
+    "section": "Teams",
+    "text": "Teams\n\nTeam assignments\n\nAssigned by me\nApplication exercises, labs, and project\nPeer evaluation during teamwork and after completion\n\nExpectations and roles\n\nEveryone is expected to contribute equal effort\nEveryone is expected to understand all code turned in\nIndividual contribution evaluated by peer evaluation, commits, etc."
+  },
+  {
+    "objectID": "slides/lab01-welcome.html#grading",
+    "href": "slides/lab01-welcome.html#grading",
+    "title": "Welcome to STA199 Labs",
+    "section": "Grading",
+    "text": "Grading\n\n\n\nCategory\nPercentage\n\n\n\n\nHomework\n30% (5% x 6)\n\n\nLabs\n14% (2% x 7)\n\n\nProject\n15%\n\n\nExam 01\n18%\n\n\nExam 02\n18%\n\n\nApplication Exercises\n2.5%\n\n\nTeamwork\n2.5%\n\n\n\nSee course syllabus for how the final letter grade will be determined."
+  },
+  {
+    "objectID": "slides/lab01-welcome.html#support",
+    "href": "slides/lab01-welcome.html#support",
+    "title": "Welcome to STA199 Labs",
+    "section": "Support",
+    "text": "Support\n\nAttend office hours\nAsk and answer questions on the discussion forum\nReserve email for questions on personal matters and/or grades\nRead the course support page"
+  },
+  {
+    "objectID": "slides/lab01-welcome.html#announcements",
+    "href": "slides/lab01-welcome.html#announcements",
+    "title": "Welcome to STA199 Labs",
+    "section": "Announcements",
+    "text": "Announcements\n\nPosted on Sakai (Announcements tool) and sent via email, be sure to check both regularly\nI’ll assume that you’ve read an announcement by the next “business” day\nI’ll (try my best to) send a weekly update announcement each Friday, outlining the plan for the following week and reminding you what you need to do to prepare, practice, and perform"
+  },
+  {
+    "objectID": "slides/lab01-welcome.html#diversity-inclusion",
+    "href": "slides/lab01-welcome.html#diversity-inclusion",
+    "title": "Welcome to STA199 Labs",
+    "section": "Diversity + inclusion",
+    "text": "Diversity + inclusion\nIt is my intent that students from all diverse backgrounds and perspectives be well-served by this course, that students’ learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength and benefit.\n\n\nPlease let me know your preferred name and pronouns on the Getting to know you survey.\nIf you feel like your performance in the class is being impacted by your experiences outside of class, please don’t hesitate to come and talk with me. I want to be a resource for you. If you prefer to speak with someone outside of the course, your advisors and deans are excellent resources.\nI (like many people) am still in the process of learning about diverse perspectives and identities. If something was said in class (by anyone) that made you feel uncomfortable, please talk to me about it."
+  },
+  {
+    "objectID": "slides/lab01-welcome.html#accessibility",
+    "href": "slides/lab01-welcome.html#accessibility",
+    "title": "Welcome to STA199 Labs",
+    "section": "Accessibility",
+    "text": "Accessibility\n\nThe Student Disability Access Office (SDAO) is available to ensure that students are able to engage with their courses and related assignments.\nI am committed to making all course materials accessible and I’m always learning how to do this better. If any course component is not accessible to you in any way, please don’t hesitate to let me know."
+  },
+  {
+    "objectID": "slides/lab01-welcome.html#covid-policies",
+    "href": "slides/lab01-welcome.html#covid-policies",
+    "title": "Welcome to STA199 Labs",
+    "section": "COVID policies",
+    "text": "COVID policies\n\nWear a mask at all times!\nRead and follow university guidance"
+  },
+  {
+    "objectID": "slides/lab01-welcome.html#late-work-waivers-regrades-policy",
+    "href": "slides/lab01-welcome.html#late-work-waivers-regrades-policy",
+    "title": "Welcome to STA199 Labs",
+    "section": "Late work, waivers, regrades policy",
+    "text": "Late work, waivers, regrades policy\n\nWe have policies!\nRead about them on the course syllabus and refer back to them when you need it"
+  },
+  {
+    "objectID": "slides/lab01-welcome.html#collaboration-policy",
+    "href": "slides/lab01-welcome.html#collaboration-policy",
+    "title": "Welcome to STA199 Labs",
+    "section": "Collaboration policy",
+    "text": "Collaboration policy\n\nOnly work that is clearly assigned as team work should be completed collaboratively.\nHomeworks must be completed individually. You may not directly share answers / code with others, however you are welcome to discuss the problems in general and ask for advice.\nExams must be completed individually. You may not discuss any aspect of the exam with peers. If you have questions, post as private questions on the course forum, only the teaching team will see and answer."
+  },
+  {
+    "objectID": "slides/lab01-welcome.html#sharing-reusing-code-policy",
+    "href": "slides/lab01-welcome.html#sharing-reusing-code-policy",
+    "title": "Welcome to STA199 Labs",
+    "section": "Sharing / reusing code policy",
+    "text": "Sharing / reusing code policy\n\nWe are aware that a huge volume of code is available on the web, and many tasks may have solutions posted\nUnless explicitly stated otherwise, this course’s policy is that you may make use of any online resources (e.g. RStudio Community, StackOverflow, etc.) but you must explicitly cite where you obtained any code you directly use or use as inspiration in your solution(s).\nAny recycled code that is discovered and is not explicitly cited will be treated as plagiarism, regardless of source"
+  },
+  {
+    "objectID": "slides/lab01-welcome.html#academic-integrity",
+    "href": "slides/lab01-welcome.html#academic-integrity",
+    "title": "Welcome to STA199 Labs",
+    "section": "Academic integrity",
+    "text": "Academic integrity\n\nTo uphold the Duke Community Standard:\n\nI will not lie, cheat, or steal in my academic endeavors;\nI will conduct myself honorably in all my endeavors; and\nI will act if the Standard is compromised."
+  },
+  {
+    "objectID": "slides/lab01-welcome.html#most-importantly",
+    "href": "slides/lab01-welcome.html#most-importantly",
+    "title": "Welcome to STA199 Labs",
+    "section": "Most importantly!",
+    "text": "Most importantly!\nAsk if you’re not sure if something violates a policy!"
+  },
+  {
+    "objectID": "slides/lab01-welcome.html#this-weeks-tasks",
+    "href": "slides/lab01-welcome.html#this-weeks-tasks",
+    "title": "Welcome to STA199 Labs",
+    "section": "This week’s tasks",
+    "text": "This week’s tasks\n\nGet a GitHub account if you don’t have one (some advice for choosing a username here)\nComplete the Getting to know you survey if you haven’t yet done so!\nRead the syllabus"
+  },
+  {
+    "objectID": "slides/lab01-welcome.html#midori-says",
+    "href": "slides/lab01-welcome.html#midori-says",
+    "title": "Welcome to STA199 Labs",
+    "section": "Midori says…",
+    "text": "Midori says…"
+  },
+  {
+    "objectID": "slides/lab01-welcome.html#its-the-r-community",
+    "href": "slides/lab01-welcome.html#its-the-r-community",
+    "title": "Welcome to STA199 Labs",
+    "section": "It’s the R community! 💛",
+    "text": "It’s the R community! 💛\n\n\n\n🔗 sta199-sp23-1.github.io"
+  },
+  {
+    "objectID": "slides/lab01-welcome.html#introductions",
+    "href": "slides/lab01-welcome.html#introductions",
+    "title": "Welcome to Lab",
+    "section": "Introductions",
+    "text": "Introductions\n\n\n\n\nMeet the TA!\nIntroduce yourself (icebreaker)\nFollow along these slides on the course website (under slides): sta199-sp23-1.github.io\nBookmark this! It’s the course website."
+  },
+  {
+    "objectID": "slides/lab01-welcome.html#what-to-expect-in-labs",
+    "href": "slides/lab01-welcome.html#what-to-expect-in-labs",
+    "title": "Welcome to Lab",
+    "section": "What to expect in labs",
+    "text": "What to expect in labs\n\nIntroduce lab assignment (5-10 minutes, longer today)\nWork on the lab assignment (you can find it on the course website). You will work with others but your submission must be your own for the first several labs.\nTypically you won’t finish labs in-class and they will be due 1 week after they are released."
+  },
+  {
+    "objectID": "slides/lab01-welcome.html#tips",
+    "href": "slides/lab01-welcome.html#tips",
+    "title": "Welcome to Lab",
+    "section": "Tips",
+    "text": "Tips\n\nRead all instructions on the lab.\nOne work strategy is to get through portions that you think will be most challenging (which initially might be the coding component) during lab when we can help you on the spot and leave the narrative writing until later.\nMake use of office hours. Before you need help!"
+  },
+  {
+    "objectID": "slides/lab01-welcome.html#beginnings",
+    "href": "slides/lab01-welcome.html#beginnings",
+    "title": "Welcome to Lab",
+    "section": "Beginnings",
+    "text": "Beginnings\n\nCreate a GitHub account (unless you already have one) on https://github.com/\n\none day you might want to show off your work, so choose a username you will be proud to show to a future employer.\n\ntell us your username by taking this survey. This is essential to receive credit on future assignments.\n\n\n\n\n05:00"
+  },
+  {
+    "objectID": "slides/lab01-welcome.html#demo-setting-up",
+    "href": "slides/lab01-welcome.html#demo-setting-up",
+    "title": "Welcome to Lab",
+    "section": "Demo: setting up",
+    "text": "Demo: setting up\nNow that your lab repo is created, let’s setup git to work within RStudio.\nTo begin, open\n\nthe lab instructions here and\nthe RStudio containers here\nyour repo (that contains your starting files for the lab) here\n\nFollow the instructions in the lab as I demo."
+  },
+  {
+    "objectID": "slides/lab01-welcome.html#remember",
+    "href": "slides/lab01-welcome.html#remember",
+    "title": "Welcome to Lab",
+    "section": "Remember",
+    "text": "Remember\nNo programming experience is required or expected to take this class. Come to lecture, lab and office hours. It’s okay to be confused. Stick with it, you will get the hang of it!\n\n\n🔗 sta199-sp23-1.github.io"
+  },
+  {
+    "objectID": "slides/lab01-welcome.html#create-your-github-repo",
+    "href": "slides/lab01-welcome.html#create-your-github-repo",
+    "title": "Welcome to Lab",
+    "section": "Create your GitHub repo",
+    "text": "Create your GitHub repo\nCreate your own copy of today’s lab by clicking here. You may be prompted to login to GitHub. Your copy of of the lab is called your “repository”, or “repo” for short."
+  },
+  {
+    "objectID": "slides/lab0-welcome.html#introductions",
+    "href": "slides/lab0-welcome.html#introductions",
+    "title": "Welcome to Lab",
+    "section": "Introductions",
+    "text": "Introductions\n\n\n\n\nMeet the TA!\nIntroduce yourself (icebreaker)\nFollow along these slides on the course website (under slides): sta199-sp23-1.github.io\nBookmark this! It’s the course website."
+  },
+  {
+    "objectID": "slides/lab0-welcome.html#what-to-expect-in-labs",
+    "href": "slides/lab0-welcome.html#what-to-expect-in-labs",
+    "title": "Welcome to Lab",
+    "section": "What to expect in labs",
+    "text": "What to expect in labs\n\nIntroduce lab assignment (5-10 minutes, longer today)\nWork on the lab assignment (you can find it on the course website). You will work with others but your submission must be your own for the first several labs.\nTypically you won’t finish labs in-class and they will be due 1 week after they are released."
+  },
+  {
+    "objectID": "slides/lab0-welcome.html#tips",
+    "href": "slides/lab0-welcome.html#tips",
+    "title": "Welcome to Lab",
+    "section": "Tips",
+    "text": "Tips\n\nRead all instructions on the lab.\nOne work strategy is to get through portions that you think will be most challenging (which initially might be the coding component) during lab when we can help you on the spot and leave the narrative writing until later.\nMake use of office hours. Before you need help!"
+  },
+  {
+    "objectID": "slides/lab0-welcome.html#beginnings",
+    "href": "slides/lab0-welcome.html#beginnings",
+    "title": "Welcome to Lab",
+    "section": "Beginnings",
+    "text": "Beginnings\n\nCreate a GitHub account (unless you already have one) on https://github.com/\n\none day you might want to show off your work, so choose a username you will be proud to show to a future employer.\n\ntell us your username by taking this survey. This is essential to receive credit on future assignments.\n\n\n\n\n05:00"
+  },
+  {
+    "objectID": "slides/lab0-welcome.html#create-your-github-repo",
+    "href": "slides/lab0-welcome.html#create-your-github-repo",
+    "title": "Welcome to Lab",
+    "section": "Create your GitHub repo",
+    "text": "Create your GitHub repo\nCreate your own copy of today’s lab by clicking here. You may be prompted to login to GitHub. Your copy of of the lab is called your “repository”, or “repo” for short."
+  },
+  {
+    "objectID": "slides/lab0-welcome.html#demo-setting-up",
+    "href": "slides/lab0-welcome.html#demo-setting-up",
+    "title": "Welcome to Lab",
+    "section": "Demo: setting up",
+    "text": "Demo: setting up\nNow that your lab repo is created, let’s setup git to work within RStudio.\nTo begin, open\n\nthe lab instructions here and\nthe RStudio containers here\nyour repo (that contains your starting files for the lab) here\n\nFollow the instructions in the lab as I demo."
+  },
+  {
+    "objectID": "slides/lab0-welcome.html#remember",
+    "href": "slides/lab0-welcome.html#remember",
+    "title": "Welcome to Lab",
+    "section": "Remember",
+    "text": "Remember\nNo programming experience is required or expected to take this class. Come to lecture, lab and office hours. It’s okay to be confused. Stick with it, you will get the hang of it!\n\n\n🔗 sta199-sp23-1.github.io"
   }
 ]

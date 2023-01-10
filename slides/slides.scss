@@ -4,10 +4,10 @@
 @import 'https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap';
 
 $font-family-sans-serif: "Atkinson Hyperlegible", sans-serif;
-$presentation-heading-color: #325b74; /* Pantone Midnight - Fall 2022 */
+$presentation-heading-color: #2774AE; /* nice blue - Spring 2023 */
 $presentation-title-slide-text-align: "left";
-$link-color: #325b74;
-$code-block-font-size: 0.7em;
+$link-color: #2774AE;
+$code-block-font-size: 0.5em;
 
 /*-- scss:rules --*/
 
@@ -16,7 +16,7 @@ details>summary {
 }
 
 #title-slide .subtitle {
-  color: #325b74;
+  color: #2774AE;
   font-weight: bold
 }
 
@@ -33,7 +33,7 @@ details>summary {
 }
 
 .reveal .slide .question {
-  border-left: 3px solid #325b74;
+  border-left: 3px solid #2774AE;
   padding-left: 0.5em;
   padding-top: 0.25em;
   padding-bottom: 0.25em;
