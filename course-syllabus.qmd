@@ -7,10 +7,10 @@ title: "Syllabus"
 :::
 
 |                    |                                                                                |
-|-----------------|-------------------------------------------------------|
+|------------------|------------------------------------------------------|
 | Course             | STA199-001                                                                     |
 | Instructor         | Dr. Alexander Fisher ([alexander.fisher\@duke.edu](alexander.fisher@duke.edu)) |
-| Head TA            | Raphaël Morsomme ([raphael.morsomme\@duke.edu](raphael.morsomme@duke.edu))     |
+| Head TA            | David Buch ([david.buch@duke.edu](david.buch@duke.edu))           |
 | Course Coordinator | Edric Tam ([sta199\@duke.edu](sta199@duke.edu))                                |
 
 Our course coordinator, Edric Tam, will handle all inquiries about late work, extensions and absences in accordance with the late policy described in the syllabus below.
@@ -38,7 +38,7 @@ You are welcome to attend the office hours for **any** member of the teaching te
 All books are **freely available online**.
 
 |                                                                         |                          |                                   |                                                                                                                                  |
-|---------------|--------------|--------------|------------------------------|
+|---------------|---------------|---------------|--------------------------|
 | [R for Data Science, 2e](https://r4ds.hadley.nz/)                       | Grolemund, Wickham       | O'Reilly, 2nd edition, 2022       | Hard copy only available of 1st edition                                                                                          |
 | [Introduction to Modern Statistics](https://openintro-ims.netlify.app/) | Çetinkaya-Rundel, Hardin | OpenIntro Inc., 1st Edition, 2021 | Hard copy available [on Amazon](https://www.amazon.com/Introduction-Modern-Statistics-Mine-%C3%87etinkaya-Rundel/dp/1943450145/) |
 
