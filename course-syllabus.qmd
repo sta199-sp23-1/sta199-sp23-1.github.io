@@ -6,35 +6,27 @@ title: "Syllabus"
 [**Click here**](syllabus-spring23.pdf) **to download a PDF copy of the syllabus.**
 :::
 
-+--------------------+--------------------------------------------------------------------------------+
+|                    |                                                                                |
+|-----------------|-------------------------------------------------------|
 | Course             | STA199-001                                                                     |
-+--------------------+--------------------------------------------------------------------------------+
 | Instructor         | Dr. Alexander Fisher ([alexander.fisher\@duke.edu](alexander.fisher@duke.edu)) |
-+--------------------+--------------------------------------------------------------------------------+
 | Head TA            | Raphaël Morsomme ([raphael.morsomme\@duke.edu](raphael.morsomme@duke.edu))     |
-+--------------------+--------------------------------------------------------------------------------+
-| Course Coordinator | Edric Tam ([sta199@duke.edu](sta199@duke.edu))                          |
-+--------------------+--------------------------------------------------------------------------------+
+| Course Coordinator | Edric Tam ([sta199\@duke.edu](sta199@duke.edu))                                |
 
-Our course coordinator, Edric Tam, will handle all inquiries about late work, extensions and absences in accordance with the late policy described in the syllabus below. Please send emails to [sta199@duke.edu](sta199@duke.edu).
+Our course coordinator, Edric Tam, will handle all inquiries about late work, extensions and absences in accordance with the late policy described in the syllabus below.
+Please send emails to [sta199\@duke.edu](sta199@duke.edu).
 
 ## Class time and location
 
-+---------+---------------------+--------------------------------+
+|         |                     |                                |
+|---------|---------------------|--------------------------------|
 | Lecture | W/F: 10:15-11:30 AM | LSRC B101                      |
-+---------+---------------------+--------------------------------+
 | Lab 1   | M: 10:15-11:30 AM   | Perkins LINK 087 (Classroom 3) |
-+---------+---------------------+--------------------------------+
 | Lab 2   | M: 12:00-1:15 PM    | Perkins LINK 087 (Classroom 3) |
-+---------+---------------------+--------------------------------+
 | Lab 3   | M: 1:45-3:00 PM     | Perkins LINK 087 (Classroom 3) |
-+---------+---------------------+--------------------------------+
 | Lab 4   | M: 3:30-4:35 PM     | Perkins LINK 087 (Classroom 3) |
-+---------+---------------------+--------------------------------+
 | Lab 5   | M: 5:15-6:30 PM     | Perkins LINK 087 (Classroom 3) |
-+---------+---------------------+--------------------------------+
 | Lab 11  | M: 5:15 - 6:30 PM   | Perkins LINK 071 (Classroom 5) |
-+---------+---------------------+--------------------------------+
 
 ## Office hours
 
@@ -45,11 +37,10 @@ You are welcome to attend the office hours for **any** member of the teaching te
 
 All books are **freely available online**.
 
-+-------------------------------------------------------------------------+--------------------------+-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+|                                                                         |                          |                                   |                                                                                                                                  |
+|---------------|--------------|--------------|------------------------------|
 | [R for Data Science, 2e](https://r4ds.hadley.nz/)                       | Grolemund, Wickham       | O'Reilly, 2nd edition, 2022       | Hard copy only available of 1st edition                                                                                          |
-+-------------------------------------------------------------------------+--------------------------+-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 | [Introduction to Modern Statistics](https://openintro-ims.netlify.app/) | Çetinkaya-Rundel, Hardin | OpenIntro Inc., 1st Edition, 2021 | Hard copy available [on Amazon](https://www.amazon.com/Introduction-Modern-Statistics-Mine-%C3%87etinkaya-Rundel/dp/1943450145/) |
-+-------------------------------------------------------------------------+--------------------------+-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 
 ## Course learning objectives
 
@@ -141,7 +132,7 @@ The final course grade will be calculated as follows:
 | Project               | 15%        |
 | Exam 01               | 18%        |
 | Exam 02               | 18%        |
-| Application Exercises | 4%       |
+| Application Exercises | 4%         |
 
 The final letter grade will be determined based on the following thresholds:
 
