@@ -1,0 +1,12 @@
+---
+title: "Prepare"
+subtitle: "Due: Wednesday January 18, 2023"
+categories: "prepare"
+---
+
+-   Join the course Slack using the invitation link in your email.
+-   Reserve a STA 198-199 container at <https://cmgr.oit.duke.edu/containers>.
+-   📖 Read:
+    -   R for Data Science (R4DS): [Chp 1 - Introduction](https://r4ds.hadley.nz/intro.html)
+    -   Introduction to Modern Statistics (IMS): [Chp 1 - Hello data](https://openintro-ims.netlify.app/data-hello.html)
+    -   The [syllabus](/course-syllabus.html)!

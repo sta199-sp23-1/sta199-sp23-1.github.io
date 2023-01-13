@@ -389,7 +389,7 @@
     "href": "course-links.html",
     "title": "Useful links",
     "section": "",
-    "text": "RStudio containers\n🔗 on Duke Container Manager\n\n\n\n\nCourse GitHub organization\n🔗 on GitHub\n\n\nGradescope\n🔗 on Sakai\n\n\nOffice hours\n🔗 on Google docs\n\n\nTexbooks\n🔗 R for Data Science\n🔗 Introduction to Modern Statistics\n\n\nPackage documentation\n🔗 ggplot2: ggplot2.tidyverse.org\n🔗 dplyr: dplyr.tidyverse.org\n🔗 tidyr: tidyr.tidyverse.org\n🔗 forcats: forcats.tidyverse.org\n🔗 stringr: stringr.tidyverse.org\n🔗 lubridate: lubridate.tidyverse.org\n🔗 readr: readr.tidyverse.org\n🔗 readxl: readxl.tidyverse.org"
+    "text": "RStudio containers\n🔗 on Duke Container Manager\n\n\n\n\nCourse GitHub organization\n🔗 on GitHub\n\n\nSlack\n🔗 on Slack\n\n\nGradescope\n🔗 on Sakai\n\n\nOffice hours\n🔗 on Google docs\n\n\nTextbooks\n🔗 R for Data Science\n🔗 Introduction to Modern Statistics\n\n\nPackage documentation\n🔗 ggplot2: ggplot2.tidyverse.org\n🔗 dplyr: dplyr.tidyverse.org\n🔗 tidyr: tidyr.tidyverse.org\n🔗 forcats: forcats.tidyverse.org\n🔗 stringr: stringr.tidyverse.org\n🔗 lubridate: lubridate.tidyverse.org\n🔗 readr: readr.tidyverse.org\n🔗 readxl: readxl.tidyverse.org"
   },
   {
     "objectID": "hw/hw-5.html",
@@ -2783,7 +2783,7 @@
     "href": "slides/01-welcome-199.html#meet-each-other",
     "title": "Welcome to STA 199",
     "section": "Meet each other!",
-    "text": "Meet each other!\n\n\n\n−+\n03:00"
+    "text": "Meet each other!\n\n\n\n03:00"
   },
   {
     "objectID": "slides/01-welcome-199.html#meet-data-science",
@@ -2902,7 +2902,7 @@
     "href": "slides/01-welcome-199.html#course-toolkit",
     "title": "Welcome to STA 199",
     "section": "Course toolkit",
-    "text": "Course toolkit\nAll linked from the course website:\n\nGitHub organization: github.com/sta199-f22-1\nRStudio containers: cmgr.oit.duke.edu/containers\nCommunication: Slack\nAssignment submission and feedback: Gradescope\n\n\n\n\n\n\n\nImportant\n\n\nReserve an RStudio Container (titled STA 198-199) before lab on Monday!"
+    "text": "Course toolkit\n\ncourse website: https://sta199-sp23-1.github.io/\ncourse organization (on GitHub): https://github.com/sta199-sp23-1\nslack: https://sta199-sp23-001.slack.com"
   },
   {
     "objectID": "slides/01-welcome-199.html#activities-prepare-participate-practice-perform",
@@ -3021,7 +3021,7 @@
     "href": "slides/01-welcome-199.html#its-the-r-community",
     "title": "Welcome to STA 199",
     "section": "It’s the R community! 💛",
-    "text": "It’s the R community! 💛\n\n\n\n\n\n\n\n\n🔗 sta199-f22-1.github.io"
+    "text": "It’s the R community! 💛\n\n\n\n🔗 sta199-sp23-1.github.io"
   },
   {
     "objectID": "slides/07-tidying-data.html#while-you-wait-for-class-to-begin",
@@ -4862,7 +4862,7 @@
     "href": "course-syllabus.html#course-policies",
     "title": "Syllabus",
     "section": "Course policies",
-    "text": "Course policies\nInclusive community: It is my intent that students from all backgrounds and perspectives be well-served by this course, that students’ learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength, and benefit. It is my intent to present materials and activities that are respectful of diversity and in alignment with Duke’s Commitment to Diversity and Inclusion. Your suggestions are encouraged and appreciated. Please let me know ways to improve the effectiveness of the course for you personally, or for other students or student groups.\nAcademic honesty: You should be familiar with Duke’s community standard: https://studentaffairs.duke.edu/conduct/about-us/duke-community-standard\nBy enrolling in this course, you commit to upholding Duke’s community standard reproduced as follows:\n\nI will not lie, cheat, or steal in my academic endeavors;\nI will conduct myself honorably in all my endeavors; and\nI will act if the Standard is compromised.\n\nAny violations in academic honesty standards as outlined in the Duke Community Standard and those specific to this course will automatically result in a 0 for the assignment and will be reported to the Office of Student Conduct for further action.\nPlease abide by the following as you work on assignments in this course: - You may discuss lab assignments with other students; however, you may not directly share (or copy) code or write up with other students. For team assignments, you may collaborate freely within your team. You may discuss the assignment with other teams; however, you may not directly share (or copy) code or write up with another team. Unauthorized sharing (or copying) of the code or write up will be considered a violation for all students involved. - You may not discuss or otherwise work with others on the exams. Unauthorized collaboration or using unauthorized materials will be considered a violation for all students involved. More details will be given closer to the exam date. - Reusing code: Unless explicitly stated otherwise, you may make use of online resources (e.g. Stack- Overflow) for coding examples on assignments. If you directly use code from an outside source (or use it as inspiration), you must explicitly cite where you obtained the code. Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism.\nLate policy:\nHomeworks and labs can be turned in within 72 hours of the deadline for grade penalty (5% off per day, stacks to 15% by the third day). Exams cannot be turned in late and can only be excused under exceptional circumstances. The Duke policy for illness requires a short-term illness report or a letter from the Dean; except in emergencies, all other absenteeism must be approved in advance (e.g., an athlete who must miss class may be excused by prior arrangement for specific days). For emergencies, email notification is needed at the first reasonable time.\nProcedures for Requesting a Regrade\nEvery effort will be made to mark your work accurately. We are on your side, and want you to receive every point you have worked to earn. However, sometimes grading mistakes happen. If you believe that an error has been made, return the paper to the instructor within four days, stating your claim in writing.\nThe following claims will be considered for re-grading:\n\npoints are not totaled correctly;\nthe grader did not see a correct answer that is on your paper;\nyour answer is the same as the correct answer, but in a different form (e.g., you wrote a correct answer as 1/3 and the grader was looking for .333);\nyour answer to a free response question is essentially correct but stated slightly differently than the grader’s expectation.\n\nThe following claims will not be considered for re-grading:\n\narguments about the number of points lost;\n\n\n\narguments about question wording.\n\nConsidering re-grades consumes time and resources that TAs and the instructor would rather spend helping you understand material. Please bring only claims of type (i), (ii), (iii), or (iv) to our attention.\nCommunication: All lecture notes, assignment instructions, an up-to-date schedule, and other course materials may be found on the course website. Announcements will be emailed to the class through sakai. Please check your email regularly to ensure you have the latest announcements for the course. For quick communication with your peers and the teaching team, see the course slack for general questions and discussion.\nAccessibility: If there is any portion of the course that is not accessible to you due to challenges with technology or the course format, please let me know so we can make appropriate accommodations. The Student Disability Access Office (SDAO) is available to ensure that students are able to engage with their courses and related assignments. Students should be in touch with the Student Disability Access Office to request or update accommodations under these circumstances. Please note that accommodations are not retroactive and disability accommodations cannot be provided until a Faculty Accommodation Letter has been given to me. Please contact SDAO for more information: sdao@duke.edu or access.duke.edu."
+    "text": "Course policies\nInclusive community: It is my intent that students from all backgrounds and perspectives be well-served by this course, that students’ learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength, and benefit. It is my intent to present materials and activities that are respectful of diversity and in alignment with Duke’s Commitment to Diversity and Inclusion. Your suggestions are encouraged and appreciated. Please let me know ways to improve the effectiveness of the course for you personally, or for other students or student groups.\nAcademic honesty: You should be familiar with Duke’s community standard: https://studentaffairs.duke.edu/conduct/about-us/duke-community-standard\nBy enrolling in this course, you commit to upholding Duke’s community standard reproduced as follows:\n\nI will not lie, cheat, or steal in my academic endeavors;\nI will conduct myself honorably in all my endeavors; and\nI will act if the Standard is compromised.\n\nAny violations in academic honesty standards as outlined in the Duke Community Standard and those specific to this course will automatically result in a 0 for the assignment and will be reported to the Office of Student Conduct for further action.\nPlease abide by the following as you work on assignments in this course: - You may discuss lab assignments with other students; however, you may not directly share (or copy) code or write up with other students. For team assignments, you may collaborate freely within your team. You may discuss the assignment with other teams; however, you may not directly share (or copy) code or write up with another team. Unauthorized sharing (or copying) of the code or write up will be considered a violation for all students involved. - You may not discuss or otherwise work with others on the exams. Unauthorized collaboration or using unauthorized materials will be considered a violation for all students involved. More details will be given closer to the exam date. - Reusing code: Unless explicitly stated otherwise, you may make use of online resources (e.g. Stack- Overflow) for coding examples on assignments. If you directly use code from an outside source (or use it as inspiration), you must explicitly cite where you obtained the code. Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism.\nLate policy:\nHomeworks and labs can be turned in within 72 hours of the deadline for grade penalty (5% off per day, stacks to 15% by the third day). Exams cannot be turned in late and can only be excused under exceptional circumstances. The Duke policy for illness requires a short-term illness report or a letter from the Dean; except in emergencies, all other absenteeism must be approved in advance (e.g., an athlete who must miss class may be excused by prior arrangement for specific days). For emergencies, email notification is needed at the first reasonable time.\n\nAll exemptions will be handled by course coordinator, Ed Tam, at sta199@duke.edu\nLast minute coding/rendering issues will not be granted extensions.\n\nProcedures for Requesting a Regrade\nEvery effort will be made to mark your work accurately. We are on your side, and want you to receive every point you have worked to earn. However, sometimes grading mistakes happen. If you believe that an error has been made, return the paper to the instructor within four days, stating your claim in writing.\nThe following claims will be considered for re-grading:\n\npoints are not totaled correctly;\nthe grader did not see a correct answer that is on your paper;\nyour answer is the same as the correct answer, but in a different form (e.g., you wrote a correct answer as 1/3 and the grader was looking for .333);\nyour answer to a free response question is essentially correct but stated slightly differently than the grader’s expectation.\n\nThe following claims will not be considered for re-grading:\n\narguments about the number of points lost;\n\n\n\narguments about question wording.\n\nConsidering re-grades consumes time and resources that TAs and the instructor would rather spend helping you understand material. Please bring only claims of type (i), (ii), (iii), or (iv) to our attention.\nCommunication: All lecture notes, assignment instructions, an up-to-date schedule, and other course materials may be found on the course website. Announcements will be emailed to the class through sakai. Please check your email regularly to ensure you have the latest announcements for the course. For quick communication with your peers and the teaching team, see the course slack for general questions and discussion.\nAccessibility: If there is any portion of the course that is not accessible to you due to challenges with technology or the course format, please let me know so we can make appropriate accommodations. The Student Disability Access Office (SDAO) is available to ensure that students are able to engage with their courses and related assignments. Students should be in touch with the Student Disability Access Office to request or update accommodations under these circumstances. Please note that accommodations are not retroactive and disability accommodations cannot be provided until a Faculty Accommodation Letter has been given to me. Please contact SDAO for more information: sdao@duke.edu or access.duke.edu."
   },
   {
     "objectID": "course-syllabus.html#important-dates",
@@ -5262,5 +5262,208 @@
     "title": "Welcome to Lab",
     "section": "Remember",
     "text": "Remember\nNo programming experience is required or expected to take this class. Come to lecture, lab and office hours. It’s okay to be confused. Stick with it, you will get the hang of it!\n\n\n🔗 sta199-sp23-1.github.io"
+  },
+  {
+    "objectID": "slides/01-welcome-199.html#introductions",
+    "href": "slides/01-welcome-199.html#introductions",
+    "title": "Welcome to STA 199",
+    "section": "Introductions",
+    "text": "Introductions\n\n\n\n\nMeet the TA!\nIntroduce yourself (icebreaker)\n\n\n\n🔗 sta199-sp23-1.github.io"
+  },
+  {
+    "objectID": "slides/01-welcome-199.html#meet-the-professor",
+    "href": "slides/01-welcome-199.html#meet-the-professor",
+    "title": "Welcome to STA 199",
+    "section": "Meet the professor",
+    "text": "Meet the professor\n\n\n\n\n\n\nAlexander Fisher\nalexander.fisher@duke.edu\nOffice hours: Wednesday 1:30-3:30pm in Old Chem 207\nA little bit about my research…"
+  },
+  {
+    "objectID": "slides/01-welcome-199.html#next-slide",
+    "href": "slides/01-welcome-199.html#next-slide",
+    "title": "Welcome to STA 199",
+    "section": "Next slide",
+    "text": "Next slide\nExample 1\n\nExample 2\n\n\n🔗 sta199-sp23-1.github.io"
+  },
+  {
+    "objectID": "slides/01-welcome-199.html#why-data-science",
+    "href": "slides/01-welcome-199.html#why-data-science",
+    "title": "Welcome to STA 199",
+    "section": "Why data science?",
+    "text": "Why data science?\nData science turns data into knowledge.\n\nExamples"
+  },
+  {
+    "objectID": "slides/01-welcome-199.html#data-science-this-course",
+    "href": "slides/01-welcome-199.html#data-science-this-course",
+    "title": "Welcome to STA 199",
+    "section": "Data science & this course",
+    "text": "Data science & this course\n\n\n\n🔗 sta199-sp23-1.github.io"
+  },
+  {
+    "objectID": "slides/01-welcome-199.html#course-overview",
+    "href": "slides/01-welcome-199.html#course-overview",
+    "title": "Welcome to STA 199",
+    "section": "Course overview",
+    "text": "Course overview\n\n\n\n\n\n\n\n\nImportant\n\n\nNo programming experience required."
+  },
+  {
+    "objectID": "slides/01-welcome-199.html#learning-objectives",
+    "href": "slides/01-welcome-199.html#learning-objectives",
+    "title": "Welcome to STA 199",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of this course you will be able to…\n\nlearn to explore, visualize, and analyze data in a reproducible manner\ngain experience in data wrangling and munging, exploratory data analysis, predictive modeling, and data visualization\nwork on problems and case studies inspired by and based on real-world questions and data\nlearn to effectively communicate results through written assignments and project presentation\ndevelop your own question about a data set of your choosing and use techniques from this class to answer the question"
+  },
+  {
+    "objectID": "slides/01-welcome-199.html#assessments",
+    "href": "slides/01-welcome-199.html#assessments",
+    "title": "Welcome to STA 199",
+    "section": "Assessments",
+    "text": "Assessments\n\nPrepare: short videos, reading assignments, and lectures.\nPractice: application exercises\nPerform: labs, homework, exams, and the project.\n\n\n\n\nCategory\nPercentage\n\n\n\n\nHomework\n30%\n\n\nLabs\n15%\n\n\nProject\n15%\n\n\nExam 01\n18%\n\n\nExam 02\n18%\n\n\nApplication Exercises\n4%"
+  },
+  {
+    "objectID": "slides/01-welcome-199.html#policies",
+    "href": "slides/01-welcome-199.html#policies",
+    "title": "Welcome to STA 199",
+    "section": "Policies",
+    "text": "Policies\nclass: center, inverse"
+  },
+  {
+    "objectID": "slides/01-welcome-199.html#course-navigation",
+    "href": "slides/01-welcome-199.html#course-navigation",
+    "title": "Welcome to STA 199",
+    "section": "Course navigation",
+    "text": "Course navigation"
+  },
+  {
+    "objectID": "slides/01-welcome-199.html#where-to-get-help",
+    "href": "slides/01-welcome-199.html#where-to-get-help",
+    "title": "Welcome to STA 199",
+    "section": "Where to get help",
+    "text": "Where to get help\n\n\n🔗 sta199-sp23-1.github.io"
+  },
+  {
+    "objectID": "slides/01-welcome-199.html#community-and-learning-environment",
+    "href": "slides/01-welcome-199.html#community-and-learning-environment",
+    "title": "Welcome to STA 199",
+    "section": "Community and learning environment",
+    "text": "Community and learning environment\nUphold the Duke Community Standard:\n\nI will not lie, cheat, or steal in my academic endeavors;\nI will conduct myself honorably in all my endeavors; and\nI will act if the Standard is compromised.\n\nAny violations in academic honesty standards as outlined in the Duke Community Standard and those specific to this course will automatically result in a 0 for the assignment and will be reported to the Office of Student Conduct for further action.\n\nCreate a learning environment that is welcoming, inclusive, and accessible to everyone.\nRespect and honor each other.\n\n\nTeam work policy\nThe final project and several labs will be completed in teams. GitHub commits will be used to measure individual contribution to the assignment. All group members are expected to participate equally. Commit history may be used to give individual team members different grades. Your grade may differ from the rest of your group."
+  },
+  {
+    "objectID": "slides/01-welcome-199.html#learning-environment",
+    "href": "slides/01-welcome-199.html#learning-environment",
+    "title": "Welcome to STA 199",
+    "section": "Learning environment",
+    "text": "Learning environment\n\nCreate a learning environment that is welcoming, inclusive, and accessible to everyone.\nRespect and honor each other."
+  },
+  {
+    "objectID": "slides/01-welcome-199.html#late-policy",
+    "href": "slides/01-welcome-199.html#late-policy",
+    "title": "Welcome to STA 199",
+    "section": "Late policy",
+    "text": "Late policy\n\nHomeworks and labs can be turned in within 72 hours of the deadline for grade penalty (5% off per day).\nExams and the final project cannot be turned in late and can only be excused under exceptional circumstances.\nThe Duke policy for illness requires a short-term illness report or a letter from the Dean; except in emergencies, all other absenteeism must be approved in advance (e.g., an athlete who must miss class may be excused by prior arrangement for specific days). For emergencies, email notification is needed at the first reasonable time.\nAll exemptions will be handled by course coordinator, Ed Tam, at sta199@duke.edu\nLast minute coding/rendering issues will not be granted extensions."
+  },
+  {
+    "objectID": "slides/01-welcome-199.html#team-work-policy",
+    "href": "slides/01-welcome-199.html#team-work-policy",
+    "title": "Welcome to STA 199",
+    "section": "Team work policy",
+    "text": "Team work policy\nThe final project and several labs will be completed in teams. GitHub commits will be used to measure individual contribution to the assignment. All group members are expected to participate equally. Commit history may be used to give individual team members different grades. Your grade may differ from the rest of your group."
+  },
+  {
+    "objectID": "slides/01-welcome-199.html#communication",
+    "href": "slides/01-welcome-199.html#communication",
+    "title": "Welcome to STA 199",
+    "section": "Communication",
+    "text": "Communication\nIf you have questions about homework/lab exercises, debugging, or any question about course materials\n\ncome to office hours and/or\npost to a public channel in slack.\n\nWhen you need help debugging, screenshots and reproducible examples are essential!\n\n\n\n\n\n\nWarning\n\n\nThe teaching team will not debug via email.\n\n\n\n\n\n🔗 sta199-sp23-1.github.io"
+  },
+  {
+    "objectID": "slides/01-welcome-199.html#community",
+    "href": "slides/01-welcome-199.html#community",
+    "title": "Welcome to STA 199",
+    "section": "Community",
+    "text": "Community\nUphold the Duke Community Standard:\n\nI will not lie, cheat, or steal in my academic endeavors;\nI will conduct myself honorably in all my endeavors; and\nI will act if the Standard is compromised.\n\nAny violations in academic honesty standards as outlined in the Duke Community Standard and those specific to this course will automatically result in a 0 for the assignment and will be reported to the Office of Student Conduct for further action.\nLearning environment\n\nCreate a learning environment that is welcoming, inclusive, and accessible to everyone.\nRespect and honor each other.\n\nTeam work policy\nThe final project and several labs will be completed in teams. All group members are expected to participate equally. Commit history may be used to give individual team members different grades. Your grade may differ from the rest of your group."
+  },
+  {
+    "objectID": "slides/01-welcome-199.html#communication-and-missing-class",
+    "href": "slides/01-welcome-199.html#communication-and-missing-class",
+    "title": "Welcome to STA 199",
+    "section": "Communication and missing class",
+    "text": "Communication and missing class\nIf you have questions about homework/lab exercises, debugging, or any question about course materials\n\ncome to office hours\npost to a public channel in slack.\n\nWhen you need help debugging, it is essential you provide a reproducible example of the code that caused the error. Screenshots, or pasting a short snippet of the offending code is helpful!\n\n\n\n\n\n\n\nWarning\n\n\nThe teaching team will not debug via email.\n\n\n\n\n\nWhen you miss a class:\n\nwatch the recorded lecture on Sakai\ncome to office hours or post in a public channel of slack if you have questions"
+  },
+  {
+    "objectID": "slides/01-welcome-199.html#demo",
+    "href": "slides/01-welcome-199.html#demo",
+    "title": "Welcome to STA 199",
+    "section": "Demo",
+    "text": "Demo\n\nCheck your email / sakai announcements for slack invite.\nPost on slack\nAccept your course organization invite\nDive in with ae1\n\n\n\n🔗 sta199-sp23-1.github.io"
+  },
+  {
+    "objectID": "slides/01-welcome-199.html#jump-in",
+    "href": "slides/01-welcome-199.html#jump-in",
+    "title": "Welcome to STA 199",
+    "section": "Jump in",
+    "text": "Jump in\n\nCheck your email / sakai announcements for slack invite.\nPost on slack\nAccept your course organization invite\n\n\n\nDon’t have an invite? Follow the lab 0 instructions to create a lab-0-username repo here.\n\n\n\nDemo: ae1\n\n\n\n🔗 sta199-sp23-1.github.io"
+  },
+  {
+    "objectID": "ae/ae-01.html",
+    "href": "ae/ae-01.html",
+    "title": "Welcome to R",
+    "section": "",
+    "text": "By the end of today you will…\n\nbegin to know your way around RStudio\nbe able to define package, data frame, variable, function, argument\nuse the function glimpse()"
+  },
+  {
+    "objectID": "ae/ae-01.html#getting-started",
+    "href": "ae/ae-01.html#getting-started",
+    "title": "Welcome to R",
+    "section": "Getting started",
+    "text": "Getting started\nDownload this application exercise by pasting the code below into your console (bottom left of screen)\ndownload.file(\"https://sta101-fa22.netlify.app/static/appex/ae1.qmd\",\ndestfile = \"ae1.qmd\")"
+  },
+  {
+    "objectID": "ae/ae-01.html#r-as-a-calculator",
+    "href": "ae/ae-01.html#r-as-a-calculator",
+    "title": "Welcome to R",
+    "section": "R as a calculator",
+    "text": "R as a calculator\n\nUse R as a calculator by typing the following into the console:\n\n\n5 * 5 + 10\n\nx = 3\nx + x^2\n\nx = 1:10\nx * 7\nIn the last couple examples we save some value as the object “x”.\nWe can “print” x to the screen by typing the name of the object (“x”) in the console or in a code chunk."
+  },
+  {
+    "objectID": "ae/ae-01.html#tour-of-rstudio",
+    "href": "ae/ae-01.html#tour-of-rstudio",
+    "title": "Welcome to R",
+    "section": "Tour of RStudio",
+    "text": "Tour of RStudio\n\nenvironment\nR functions\nloading and viewing a data frame"
+  },
+  {
+    "objectID": "ae/ae-01.html#load-a-package",
+    "href": "ae/ae-01.html#load-a-package",
+    "title": "Welcome to R",
+    "section": "Load a package",
+    "text": "Load a package\n\nlibrary(tidyverse)"
+  },
+  {
+    "objectID": "ae/ae-01.html#load-data",
+    "href": "ae/ae-01.html#load-data",
+    "title": "Welcome to R",
+    "section": "Load data",
+    "text": "Load data\n\nroster = read_csv(\"https://sta101.github.io/static/appex/data/sample-roster.csv\")\nsurvey = read_csv(\"https://sta101.github.io/static/appex/data/sample-survey.csv\")\n\nQuestion: What objects store the data in the code chunk above? Can you print them to the screen?\nCreate a new code chunk with CMD+OPTION+I (mac) or CTRL+ALT+I (windows/linux)\nSo far we’ve already seen two functions. library and read_csv. Functions in R are attached to parentheses and take an input, aka an argument, and often (but not always) return an output. To learn more about a function, you can check the documentation with ?, e.g. ?library."
+  },
+  {
+    "objectID": "ae/ae-01.html#demos",
+    "href": "ae/ae-01.html#demos",
+    "title": "Welcome to R",
+    "section": "Demos",
+    "text": "Demos\nLet’s glimpse the data frame.\n\nglimpse(survey)\n\nRows: 12\nColumns: 5\n$ name                 <chr> \"A\", \"Appa\", \"Bumi\", \"Soka\", \"Katara\", \"Suki\", \"Z…\n$ email                <chr> \"the-last-Rbender@duke.edu\", \"yip-yip-appa@duke.e…\n$ bender               <chr> \"Airbender\", \"Airbender\", \"Earthbender\", \"None\", …\n$ previous_programming <chr> \"No\", \"No\", \"No\", \"Somewhat\", \"Yes\", \"Yes\", \"Yes\"…\n$ cat_dog              <chr> \"dog\", \"cat\", \"cat\", \"dog\", \"dog\", \"cat\", \"cat\", …\n\n\nTo look at all of it, we can use view()\n\nview(survey)\n\nView the roster data in the console\nTerminology: “columns” of a dataframe are called variables whereas “rows” are observations.\nQuestion: How many variables are in the data frame survey? How many observations? What about the data frame roster?\nWhy must I input a specific email format?\n\nroster %>% \n  left_join(survey, by = \"email\")"
+  },
+  {
+    "objectID": "prepare/prep1.html",
+    "href": "prepare/prep1.html",
+    "title": "Prepare",
+    "section": "",
+    "text": "Join the course Slack using the invitation link in your email.\nReserve a STA 198-199 container at https://cmgr.oit.duke.edu/containers.\n📖 Read:\n\nR for Data Science (R4DS): Chp 1 - Introduction\nIntroduction to Modern Statistics (IMS): Chp 1 - Hello data\nThe syllabus!"
+  },
+  {
+    "objectID": "prepare/prep2.html",
+    "href": "prepare/prep2.html",
+    "title": "Prepare",
+    "section": "",
+    "text": "⌨️ Watch: - Data and visualization - Visualising data with ggplot2"
   }
 ]
