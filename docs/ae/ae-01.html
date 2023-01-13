@@ -276,9 +276,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="getting-started" class="level2">
 <h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
-<p>Download this application exercise by pasting the code below into your <strong>console</strong> (bottom left of screen)</p>
-<pre><code>download.file("https://sta101-fa22.netlify.app/static/appex/ae1.qmd",
-destfile = "ae1.qmd")</code></pre>
+<p>Clone the <code>ae1</code> repo from the <a href="https://github.com/sta199-sp23-1/ae1">GitHub organization</a></p>
 </section>
 <section id="r-as-a-calculator" class="level2">
 <h2 class="anchored" data-anchor-id="r-as-a-calculator">R as a calculator</h2>
@@ -307,14 +305,14 @@ x * 7</code></pre>
 <section id="load-a-package" class="level2">
 <h2 class="anchored" data-anchor-id="load-a-package">Load a package</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="load-data" class="level2">
 <h2 class="anchored" data-anchor-id="load-data">Load data</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>roster <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"https://sta101.github.io/static/appex/data/sample-roster.csv"</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>survey <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"https://sta101.github.io/static/appex/data/sample-survey.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>roster <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"data/roster.csv"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>survey <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"data/survey.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Question</strong>: What objects store the data in the code chunk above? Can you print them to the screen?</p>
 <p>Create a new code chunk with <code>CMD+OPTION+I</code> (mac) or <code>CTRL+ALT+I</code> (windows/linux)</p>
@@ -324,7 +322,7 @@ x * 7</code></pre>
 <h2 class="anchored" data-anchor-id="demos">Demos</h2>
 <p>Let’s glimpse the data frame.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(survey)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(survey)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 12
 Columns: 5
@@ -332,20 +330,20 @@ $ name                 &lt;chr&gt; "A", "Appa", "Bumi", "Soka", "Katara", "Suki"
 $ email                &lt;chr&gt; "the-last-Rbender@duke.edu", "yip-yip-appa@duke.e…
 $ bender               &lt;chr&gt; "Airbender", "Airbender", "Earthbender", "None", …
 $ previous_programming &lt;chr&gt; "No", "No", "No", "Somewhat", "Yes", "Yes", "Yes"…
-$ cat_dog              &lt;chr&gt; "dog", "cat", "cat", "dog", "dog", "cat", "cat", …</code></pre>
+$ year                 &lt;dbl&gt; 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4</code></pre>
 </div>
 </div>
 <p>To look at all of it, we can use <code>view()</code></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(survey)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(survey)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>View the roster data in the console</strong></p>
 <p>Terminology: “columns” of a dataframe are called <strong>variables</strong> whereas “rows” are <strong>observations</strong>.</p>
 <p><strong>Question: How many variables are in the data frame <code>survey</code>? How many observations? What about the data frame <code>roster</code>?</strong></p>
-<p>Why must I input a specific email format?</p>
+<p>Why must I input specific email formats?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>roster <span class="sc">%&gt;%</span> </span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(survey, <span class="at">by =</span> <span class="st">"email"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>roster <span class="sc">|&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(survey, <span class="at">by =</span> <span class="st">"email"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 

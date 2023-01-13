@@ -14,10 +14,7 @@ By the end of today you will...
 
 ## Getting started
 
-Download this application exercise by pasting the code below into your **console** (bottom left of screen)
-
-    download.file("https://sta101-fa22.netlify.app/static/appex/ae1.qmd",
-    destfile = "ae1.qmd")
+Clone the `ae1` repo from the [GitHub organization](https://github.com/sta199-sp23-1/ae1)
 
 ## R as a calculator
 
@@ -52,8 +49,8 @@ library(tidyverse)
 ## Load data
 
 ```{r load-data, warning=F, message=F}
-roster = read_csv("https://sta199-sp23-1.github.io/ae/data/roster.csv")
-survey = read_csv("https://sta199-sp23-1.github.io/ae/data/survey.csv")
+roster = read_csv("data/roster.csv")
+survey = read_csv("data/survey.csv")
 ```
 
 **Question**: What objects store the data in the code chunk above?
