@@ -5465,5 +5465,47 @@
     "title": "Prepare",
     "section": "",
     "text": "⌨️ Watch: - Data and visualization - Visualising data with ggplot2"
+  },
+  {
+    "objectID": "teaching/GitHubClassroomManagement.html",
+    "href": "teaching/GitHubClassroomManagement.html",
+    "title": "GitHub Classroom Management",
+    "section": "",
+    "text": "library(ghclass)\nlibrary(tidyverse)\nEach code chunk below is designed to be self-contained (no dependency between chunks)."
+  },
+  {
+    "objectID": "teaching/GitHubClassroomManagement.html#to-make-new-repos",
+    "href": "teaching/GitHubClassroomManagement.html#to-make-new-repos",
+    "title": "GitHub Classroom Management",
+    "section": "To make new repos",
+    "text": "To make new repos\n\n\n\n\nCreate a new repo in the organization called “lab1” with a README.md\nPush to “lab1”: lab1.qmd, data/any_relevant_data.csv and optionally lab1.Rproj.\nSelect the repository, click “Settings” and check “Template repository”.\nFollow the code below.\n\n\n# initial assignment creation\norg = \"sta199-sp23-1\"\nusernames = ghclass::org_members(org)\n\n## edit this:\nassignment_template_repo = \"lab0_template\"\n\nghclass::org_create_assignment(\n  org = org,\n  repo = paste0(assignment_template_repo, \"-\", usernames),\n  user = usernames,\n  source_repo = paste0(org, \"/\", assignment_template_repo)\n)\n\nFeel free to test lab creation on my dummy account “fishswish” or on your own account with the code below\n\norg = \"sta199-sp23-1\"\nusernames = \"fishswish\"\nassignment_template_repo = \"lab0_template\"\nghclass::org_create_assignment(\n  org = org,\n  repo = paste0(assignment_template_repo, \"-\", usernames),\n  user = usernames,\n  source_repo = paste0(org, \"/\", assignment_template_repo)\n)\n\nIt’s possible some people are not in the organization and will need to be have additional repos created manually following the steps below:\n\ngo to template repo and click the green “Use this template” -> “Create a new repository” -> name it “lab-x-their_github_username” -> leave “Private” selected and click “Create repository from template”\nnext in the new repo go to “Settings” -> “Collaborators and Teams” -> click the green “Add people” button and type in their GitHub username.\nnext make sure to go to the “People” section of the organization and select “Invite member” so they join the organization too. Owning a repo in the org just makes them an outside collaborator. They still have to actually join the org"
+  },
+  {
+    "objectID": "teaching/GitHubClassroomManagement.html#oops.-file-management-after-you-create-repos",
+    "href": "teaching/GitHubClassroomManagement.html#oops.-file-management-after-you-create-repos",
+    "title": "GitHub Classroom Management",
+    "section": "Oops. File management after you create repos",
+    "text": "Oops. File management after you create repos\nThe magic happens in repo_add_file(). Be sure to edit/check each item below, specifically:\n\norg as appropriate\nrepos_to_modify object\narguments to repo_add_file()\n\n\norg = \"sta199-sp23-1\"\nusernames = ghclass::org_members(org)\n\n# get all existing labX repos\nrepos_to_modify = org_repos(org, filter = \"lab0-\") # edit this \"filter\"\n\nghclass::repo_add_file(repo = repos_to_modify,\n                       branch = \"main\",\n                       repo_folder = \"data/\", # edit this to be path to folder in repo\n                       message = \"commit message here\", # update to be a meaningful commit message\n                       file = \"~/Desktop/class/data/file.csv\", # update local path to the file you want to add\n                       overwrite = FALSE) # if you want to overwrite or not"
+  },
+  {
+    "objectID": "teaching-resources/GitHubClassroomManagement.html",
+    "href": "teaching-resources/GitHubClassroomManagement.html",
+    "title": "GitHub Classroom Management",
+    "section": "",
+    "text": "library(ghclass)\nlibrary(tidyverse)\nEach code chunk below is designed to be self-contained (no dependency between chunks)."
+  },
+  {
+    "objectID": "teaching-resources/GitHubClassroomManagement.html#to-make-new-repos",
+    "href": "teaching-resources/GitHubClassroomManagement.html#to-make-new-repos",
+    "title": "GitHub Classroom Management",
+    "section": "To make new repos",
+    "text": "To make new repos\n\n\n\n\nCreate a new repo in the organization called “lab1” with a README.md\nPush to “lab1”: lab1.qmd, data/any_relevant_data.csv and optionally lab1.Rproj.\nSelect the repository, click “Settings” and check “Template repository”.\nFollow the code below.\n\n\n# initial assignment creation\norg = \"sta199-sp23-1\"\nusernames = ghclass::org_members(org)\n\n## edit this:\nassignment_template_repo = \"lab0_template\"\n\nghclass::org_create_assignment(\n  org = org,\n  repo = paste0(assignment_template_repo, \"-\", usernames),\n  user = usernames,\n  source_repo = paste0(org, \"/\", assignment_template_repo)\n)\n\nFeel free to test lab creation on my dummy account “fishswish” or on your own account with the code below\n\norg = \"sta199-sp23-1\"\nusernames = \"fishswish\"\nassignment_template_repo = \"lab0_template\"\nghclass::org_create_assignment(\n  org = org,\n  repo = paste0(assignment_template_repo, \"-\", usernames),\n  user = usernames,\n  source_repo = paste0(org, \"/\", assignment_template_repo)\n)\n\nIt’s possible some people are not in the organization and will need to be have additional repos created manually following the steps below:\n\ngo to template repo and click the green “Use this template” -> “Create a new repository” -> name it “lab-x-their_github_username” -> leave “Private” selected and click “Create repository from template”\nnext in the new repo go to “Settings” -> “Collaborators and Teams” -> click the green “Add people” button and type in their GitHub username.\nnext make sure to go to the “People” section of the organization and select “Invite member” so they join the organization too. Owning a repo in the org just makes them an outside collaborator. They still have to actually join the org"
+  },
+  {
+    "objectID": "teaching-resources/GitHubClassroomManagement.html#oops.-file-management-after-you-create-repos",
+    "href": "teaching-resources/GitHubClassroomManagement.html#oops.-file-management-after-you-create-repos",
+    "title": "GitHub Classroom Management",
+    "section": "Oops. File management after you create repos",
+    "text": "Oops. File management after you create repos\nThe magic happens in repo_add_file(). Be sure to edit/check each item below, specifically:\n\norg as appropriate\nrepos_to_modify object\narguments to repo_add_file()\n\n\norg = \"sta199-sp23-1\"\nusernames = ghclass::org_members(org)\n\n# get all existing labX repos\nrepos_to_modify = org_repos(org, filter = \"lab0-\") # edit this \"filter\"\n\nghclass::repo_add_file(repo = repos_to_modify,\n                       branch = \"main\",\n                       repo_folder = \"data/\", # edit this to be path to folder in repo\n                       message = \"commit message here\", # update to be a meaningful commit message\n                       file = \"~/Desktop/class/data/file.csv\", # update local path to the file you want to add\n                       overwrite = FALSE) # if you want to overwrite or not"
   }
 ]

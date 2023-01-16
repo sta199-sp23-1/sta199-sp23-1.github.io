@@ -1,0 +1,90 @@
+---
+title: "GitHub Classroom Management"
+author: "Alexander Fisher"
+format: html
+eval: false
+---
+
+```{r load-libraries}
+library(ghclass)
+library(tidyverse)
+```
+
+Each code chunk below is designed to be self-contained (no dependency between chunks).
+
+## To make new repos
+
+<!-- ############################################## -->
+
+<!-- #### To make new repos -->
+
+<!-- ############################################## -->
+
+1.  Create a new repo in the organization called "lab1" with a `README.md`
+2.  Push to "lab1": `lab1.qmd`, `data/any_relevant_data.csv` and optionally `lab1.Rproj`.
+3.  Select the repository, click "Settings" and check "Template repository".
+4.  Follow the code below.
+
+```{r make-labs}
+# initial assignment creation
+org = "sta199-sp23-1"
+usernames = ghclass::org_members(org)
+
+## edit this:
+assignment_template_repo = "lab0_template"
+
+ghclass::org_create_assignment(
+  org = org,
+  repo = paste0(assignment_template_repo, "-", usernames),
+  user = usernames,
+  source_repo = paste0(org, "/", assignment_template_repo)
+)
+```
+
+Feel free to test lab creation on my dummy account "fishswish" or on your own account with the code below
+
+```{r test-lab-creation}
+org = "sta199-sp23-1"
+usernames = "fishswish"
+assignment_template_repo = "lab0_template"
+ghclass::org_create_assignment(
+  org = org,
+  repo = paste0(assignment_template_repo, "-", usernames),
+  user = usernames,
+  source_repo = paste0(org, "/", assignment_template_repo)
+)
+```
+
+It's possible some people are not in the organization and will need to be have additional repos created manually following the steps below:
+
+1.  go to `template repo` and click the green "Use this template" -\> "Create a new repository" -\> name it "lab-x-their_github_username" -\> leave "Private" selected and click "Create repository from template"
+
+2.  next in the new repo go to "Settings" -\> "Collaborators and Teams" -\> click the green "Add people" button and type in their GitHub username.
+
+3.  next make sure to go to the "People" section of the organization and select "Invite member" so they join the organization too.
+    Owning a repo in the org just makes them an outside collaborator.
+    They still have to actually join the org
+
+## Oops. File management after you create repos
+
+The magic happens in `repo_add_file()`.
+Be sure to edit/check each item below, specifically:
+
+-   `org` as appropriate
+-   `repos_to_modify` object
+-   arguments to `repo_add_file()`
+
+```{r}
+org = "sta199-sp23-1"
+usernames = ghclass::org_members(org)
+
+# get all existing labX repos
+repos_to_modify = org_repos(org, filter = "lab0-") # edit this "filter"
+
+ghclass::repo_add_file(repo = repos_to_modify,
+                       branch = "main",
+                       repo_folder = "data/", # edit this to be path to folder in repo
+                       message = "commit message here", # update to be a meaningful commit message
+                       file = "~/Desktop/class/data/file.csv", # update local path to the file you want to add
+                       overwrite = FALSE) # if you want to overwrite or not
+```
