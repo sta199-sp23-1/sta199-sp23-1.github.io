@@ -407,7 +407,6 @@ Then push.
 **This lab is not graded** but you should still submit it to Gradescope to practice marking pages and receive feedback on workflow/formatting.
 Remember, you must also be sure to commit and push all of your changes (nothing should be left in the Git pane) to your repo.
 
-
 # How to submit to gradescope
 
 Once you are finished with the lab, you will submit your final PDF document to Gradescope.
@@ -425,17 +424,19 @@ To submit your assignment:
 -   Click *School Credentials* $\rightarrow$ *Duke NetID* and log in using your NetID credentials.
 -   Click on your *STA 199* course.
 -   Click on the assignment, and you'll be prompted to submit it.
--   Mark all the pages associated with each exercise. All the pages of your lab should be associated with at least one question (i.e., should be "checked"). 
+-   Mark all the pages associated with each exercise. All the pages of your lab should be associated with at least one question (i.e., should be "checked").
 -   Select all pages of your .pdf submission to be associated with the *"Workflow & formatting"* question.
 
 # Grading
 
 ::: callout-note
-The "Workflow & formatting" grade is to assess the reproducible workflow. This includes:
+The "Workflow & formatting" grade is to assess the reproducible workflow.
+This includes:
 
-- linking all pages appropriately on Gradescope
-- putting your name in the YAML at the top of the document
-- committing your most recent version to GitHub
-- naming code chunks
-- Are you under the 80 character code limit? (You shouldn’t have to scroll to see all your code). Pipes `%>%`, `|>` and ggplot layers `+` should be followed by a new line
+-   linking all pages appropriately on Gradescope
+-   putting your name in the YAML at the top of the document
+-   committing the submitted version of your `.qmd` to GitHub
+-   Are you under the 80 character code limit? (You shouldn't have to scroll to see all your code). Pipes `%>%`, `|>` and ggplot layers `+` should be followed by a new line
+-   You should be consistent with stylistic choices, e.g. only use 1 of `=` vs `<-` and `%>%` vs `|>`
+-   All binary operators should be surrounded by space. For example `x + y` is appropriate. `x+y` is not.
 :::
