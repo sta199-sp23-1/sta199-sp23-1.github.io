@@ -1,5 +1,5 @@
 ---
-title: "Intro to statistics and plotting"
+title: "Intro statistics and plotting"
 subtitle: "STA 199"
 format: html
 ---

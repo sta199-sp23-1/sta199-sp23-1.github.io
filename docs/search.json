@@ -2,49 +2,49 @@
   {
     "objectID": "ae/ae-02.html",
     "href": "ae/ae-02.html",
-    "title": "Intro to statistics and plotting",
+    "title": "Intro statistics and plotting",
     "section": "",
     "text": "Office hours\nJoin GitHub organization if you haven’t already\nThis ae is not due for a grade, but when drop/add ends, aes will be graded for completion. You turn in your aes by committing to GitHub."
   },
   {
     "objectID": "ae/ae-02.html#getting-started",
     "href": "ae/ae-02.html#getting-started",
-    "title": "Intro to statistics and plotting",
+    "title": "Intro statistics and plotting",
     "section": "Getting started",
     "text": "Getting started\nClone your ae-2-username repo from the GitHub organization. If you don’t have an ae-2-username repo, you have not yet accepted your course org invite. You can still clone the public repo but note that you won’t be able to push."
   },
   {
     "objectID": "ae/ae-02.html#last-time",
     "href": "ae/ae-02.html#last-time",
-    "title": "Intro to statistics and plotting",
+    "title": "Intro statistics and plotting",
     "section": "Last time",
     "text": "Last time\n\nDefine package, data frame, variable and observation\nWhat’s a function? What’s an argument?\n\n\nglimpse(data)\nmean(x)\nlibrary(tidyverse)\n\n\nHow do you print to the screen?"
   },
   {
     "objectID": "ae/ae-02.html#today",
     "href": "ae/ae-02.html#today",
-    "title": "Intro to statistics and plotting",
+    "title": "Intro statistics and plotting",
     "section": "Today",
     "text": "Today\nBy the end of today you will…\n\npractice using glimpse(), names(), nrow(), ncol(), distinct(), count()\ndefine and give examples of statistics\nmake visualizations with ggplot\n\n\n“The simple graph has brought more information to the data analyst's mind than any other device\"\n- John Tukey"
   },
   {
     "objectID": "ae/ae-02.html#load-packages",
     "href": "ae/ae-02.html#load-packages",
-    "title": "Intro to statistics and plotting",
+    "title": "Intro statistics and plotting",
     "section": "Load packages",
     "text": "Load packages\n\nlibrary(tidyverse)\n\nA package within a package…\n\nThe tidyverse package is a collection of packages. ggplot2 and dplyr are two packages contained within tidyverse. ggplot2 contains functions for plotting data while dplyr contains tools to wrangle, manipulate and summarize data frames."
   },
   {
     "objectID": "ae/ae-02.html#load-data",
     "href": "ae/ae-02.html#load-data",
-    "title": "Intro to statistics and plotting",
+    "title": "Intro statistics and plotting",
     "section": "Load data",
     "text": "Load data\nThe data are stored as a CSV (comma separated values) file in the data folder of your repository. Let’s read it from there and save it as an object called flint.\n\nflint = read_csv(\"data/flint.csv\")\n\n\nData dictionary\n\nid: sample ID number (identifies the home)\nzip: ZIP code in Flint of the sample’s location\nward: ward in Flint of the sample’s location\ndraw: which time point the water was sampled from\nlead: lead content in parts per billion"
   },
   {
     "objectID": "ae/ae-02.html#goal",
     "href": "ae/ae-02.html#goal",
-    "title": "Intro to statistics and plotting",
+    "title": "Intro statistics and plotting",
     "section": "Goal",
     "text": "Goal\nWe want to learn about the population using a sample.\nIn the case we want to learn about the lead content in all of Flint, MI homes but we only have available water readings from a sample of homes (our data set).\n\nStatistics\nWhat is a statistic? It’s any mathematical function of the data. Sometimes, a statistic is referred to as “sample statistic” since you compute it from a sample (the data) and not the entire population.\n\nmeasure of central tendency:\n\nmean\nmedian\nmode\n\n\n\norder statistics:\n\nquantiles\n\nminimum (0 percentile)\nmedian (50th percentile)\nmaximum (100 percentile)\n\n\n\n\nmeasures of spread:\n\nvariance\nstandard deviation\nrange\nquartiles\ninter-quartile range (IQR)\n\n… and any other arbitrary function of the data you can come up with!\n\n\nExercise 3:\nCome up with your own statistic and write it in the narrative here.\nTo access a column of the data, we’ll use data$column.\nLet’s compute some of these statistics for lead ppb in R.\n\n# code here"
   },
@@ -58,7 +58,7 @@
   {
     "objectID": "ae/ae-02.html#exercise-2",
     "href": "ae/ae-02.html#exercise-2",
-    "title": "Intro to statistics and plotting",
+    "title": "Intro statistics and plotting",
     "section": "Exercise 2",
     "text": "Exercise 2\nFill in the code to count how many samples were taken from each zip code. Un-comment the lines (i.e. remove the # before running the code)\n\n# flint |>\n # count(______)\n\nWhich ZIP code had the most samples drawn?"
   },
@@ -72,21 +72,21 @@
   {
     "objectID": "ae/ae-02.html#intro-to-plotting",
     "href": "ae/ae-02.html#intro-to-plotting",
-    "title": "Intro to statistics and plotting",
+    "title": "Intro statistics and plotting",
     "section": "Intro to plotting",
     "text": "Intro to plotting\nLet’s take a look at the distribution of lead content in homes in Flint, MI by building a plot, layer by layer.\nggplot() creates the initial base coordinate system, and we will add layers to that base. We first specify the data set we will use with data = flint.\n\nggplot(data = flint)\n\n\n\n\nThe mapping argument is paired with an aesthetic (aes()), which tells us how the variables in our data set should be mapped to the visual properties of the graph.\n\nggplot(data = flint,\n       mapping = aes(x = lead)) # variable(s) we want to look at\n\n\n\n\nWe often omit the names of the first two arguments in R functions. So you’ll often see this written as:\n\nggplot(flint, \n       aes(x = lead))\n\n\n\n\nThe geom_xx function specifies the type of plot we want to use to represent the data. In the code below, we use geom_histogram which creates a plot where each observation is represented by a point.\n\nggplot(flint, \n       aes(x = lead)) +\n  geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\nWe can make this plot look nicer by adjusting the number of bins and/or the x-axis.\n\nflint |> # data\n  ggplot(aes(x = lead)) + # columns we want to look at\n  geom_histogram(bins = 50) + # geometry of the visualization\n  xlim(0, 100) # limit the x-axis to a certain range\n\n\n\n\nLet’s visualize some of our summary statistics on the plot.\n\nExercise 4:\nUn-comment the code below and fill in the blank with the mean.\n\nflint |> \n  ggplot(aes(x = lead)) + \n  geom_histogram(bins = 50) + \n  xlim(0,100) #+\n  #geom_vline(xintercept = __, color = \"red\")\n\nAdd another geom_vline with the median. Use a separate color."
   },
   {
     "objectID": "ae/ae-02.html#box-plots",
     "href": "ae/ae-02.html#box-plots",
-    "title": "Intro to statistics and plotting",
+    "title": "Intro statistics and plotting",
     "section": "Box plots",
     "text": "Box plots\nLet’s make some plots, where we will focus on zip codes 48503, 48504, 48505, 48506, and 48507. We will restrict our attention to samples with lead values less than 1,000 ppb.\n\nflint_focus <- flint |> \n  filter(zip %in% 48503:48507, lead < 1000)\n\nBelow are side-by-side box plots for the three flushing times in each of the five zip codes we considered. Add x and y labels; add a title by inserting title = \"title_name\" inside the labs() function.\n\nggplot(data = flint_focus, aes(x = factor(zip), y = lead)) +\n  geom_boxplot(aes(fill = factor(draw))) +\n  labs(x = \"--------\", y = \"--------\", fill = \"Flushing time\") +\n  scale_fill_discrete(breaks = c(\"first\", \"second\", \"third\"),\n                      labels = c(\"0 (sec)\", \"45 (sec)\", \"120 (sec)\")) +\n  coord_flip() +\n  theme_bw()\n\n\n\n\nAdd labels for x, y, a title, and subtitle to the code below to update the corresponding plot.\n\nggplot(data = flint_focus, aes(x = factor(zip), y = lead)) +\n  geom_boxplot(aes(fill = factor(draw))) + \n  labs(x = \"--------\", y = \"--------\", fill = \"Flushing time\",\n       subtitle = \"--------\") +\n  scale_fill_discrete(breaks = c(\"first\", \"second\", \"third\"),\n                      labels = c(\"0 (sec)\", \"45 (sec)\", \"120 (sec)\")) +\n  coord_flip(ylim = c(0, 50)) +\n  theme_bw()\n\n\n\n\nWhat is the difference between the two plots? What are the advantages and disadvantages to each plot?"
   },
   {
     "objectID": "ae/ae-02.html#references",
     "href": "ae/ae-02.html#references",
-    "title": "Intro to statistics and plotting",
+    "title": "Intro statistics and plotting",
     "section": "References",
     "text": "References\n\nLangkjaer-Bain, R. (2017). The murky tale of Flint’s deceptive water data. Significance, 14: 16-21.\nKelsey J. Pieper, Rebekah Martin, Min Tang, LeeAnne Walters, Jeffrey Parks, Siddhartha Roy, Christina Devine, and Marc A. Edwards Environmental Science & Technology 2018 52 (15), 8124-8132 DOI: 10.1021/acs.est.8b00791"
   },
@@ -1521,7 +1521,7 @@
   {
     "objectID": "ae/ae-02.html#describing-distributions",
     "href": "ae/ae-02.html#describing-distributions",
-    "title": "Intro to statistics and plotting",
+    "title": "Intro statistics and plotting",
     "section": "Describing distributions",
     "text": "Describing distributions\nTo describe a distribution we will use the terms below.\n\nshape\n\nskewness: right-skewed, left-skewed, symmetric\nmodality: unimodal, bimodal, multimodal, uniform\n\ncenter: mean (mean), median (median)\nspread: range (range), standard deviation (sd), interquartile range (IQR)\noutliers: observations outside the pattern of the data"
   },
@@ -1530,12 +1530,12 @@
     "href": "index.html",
     "title": "STA 199: Introduction to Data Science",
     "section": "",
-    "text": "week\n      dow\n      date\n      what\n      topic\n      prepare\n      slides\n      ae\n      hw\n      lab\n      exam\n      project\n      notes\n    \n  \n  \n    1\nW\nJan 11\nLab 0\nHello R!\n\n\n\n\n\n\n\n\n    \nF\nJan 13\nLec 1\nWelcome to STA 199\n\n\n\n\n\n\n\n\n    2\nM\nJan 16\n\nNo class -- Martin Luther King Jr. Day\n\n\n\n\n\n\n\n\n    \nW\nJan 18\nLec 2\nMeet the toolkit\n\n\n\n\n\n\n\n\n    \nF\nJan 20\nLec 3\nGrammar of graphics\n\n\n\n\n\n\n\n\n    3\nM\nJan 23\nLab 1\nData visualization\n\n\n\n\n\n\n\n\n    \nW\nJan 25\nLec 4\n\n\n\n\n\n\n\n\n\n    \nF\nJan 27\nLec 5\n\n\n\n\n\n\n\n\n\n    4\nM\nJan 30\nLab 2\n\n\n\n\n\n\n\n\n\n    \nW\nFeb 1\nLec 6\n\n\n\n\n\n\n\n\n\n    \nF\nFeb 3\nLec 7\n\n\n\n\n\n\n\n\n\n    5\nM\nFeb 6\nLab\n\n\n\n\n\n\n\n\n\n    \nW\nFeb 8\nLec 8\n\n\n\n\n\n\n\n\n\n    \nF\nFeb 10\nLec 9\n\n\n\n\n\n\n\n\n\n    6\nM\nFeb 13\nLab\n\n\n\n\n\n\n\n\n\n    \nW\nFeb 15\nLec 10\n\n\n\n\n\n\n\n\n\n    \nF\nFeb 17\nLec 11\n\n\n\n\n\n\n\n\n\n    7\nM\nFeb 20\nLab\n\n\n\n\n\n\n\n\n\n    \nW\nFeb 22\nLec 12\n\n\n\n\n\n\n\n\n\n    \nF\nFeb 24\nLec 13\n\n\n\n\n\n\n\n\n\n    8\nM\nFeb 27\nLab\n\n\n\n\n\n\n\n\n\n    \nW\nMar 1\nLec 14\n\n\n\n\n\n\n\n\n\n    \nF\nMar 3\nLec 15\n\n\n\n\n\n\n\n\n\n    9\nM\nMar 6\nLab\n\n\n\n\n\n\n\n\n\n    \nW\nMar 8\nLec 16\n\n\n\n\n\n\n\n\n\n    \nF\nMar 10\nLec 17\n\n\n\n\n\n\n\n\n\n    10\nM\nMar 13\n\nNo class -- Spring Break\n\n\n\n\n\n\n\n\n    \nW\nMar 15\n\nNo class -- Spring Break\n\n\n\n\n\n\n\n\n    \nF\nMar 17\n\nNo class -- Spring Break\n\n\n\n\n\n\n\n\n    11\nM\nMar 20\nLab\n\n\n\n\n\n\n\n\n\n    \nW\nMar 22\nLec 18\n\n\n\n\n\n\n\n\n\n    \nF\nMar 24\nLec 19\n\n\n\n\n\n\n\n\n\n    12\nM\nMar 27\nLab\n\n\n\n\n\n\n\n\n\n    \nW\nMar 29\nLec 20\n\n\n\n\n\n\n\n\n\n    \nF\nMar 31\nLec 21\n\n\n\n\n\n\n\n\n\n    13\nM\nApr 3\nLab\n\n\n\n\n\n\n\n\n\n    \nW\nApr 5\nLec 22\n\n\n\n\n\n\n\n\n\n    \nF\nApr 7\nLec 23\n\n\n\n\n\n\n\n\n\n    14\nM\nApr 10\nLab\n\n\n\n\n\n\n\n\n\n    \nW\nApr 12\nLec 24\n\n\n\n\n\n\n\n\n\n    \nF\nApr 14\nLec 25\n\n\n\n\n\n\n\n\n\n    15\nM\nApr 17\nLab\n\n\n\n\n\n\n\n\n\n    \nW\nApr 19\nLec 26\n\n\n\n\n\n\n\n\n\n    \nF\nApr 21\nLec 27\n\n\n\n\n\n\n\n\n\n    16\nM\nApr 24\nLab\n\n\n\n\n\n\n\n\n\n    \nW\nApr 26\nLec 28"
+    "text": "week\n      dow\n      date\n      what\n      topic\n      prepare\n      slides\n      ae\n      hw\n      lab\n      exam\n      project\n      notes\n    \n  \n  \n    1\nW\nJan 11\nLab 0\nHello R!\n\n\n\n\n\n\n\n\n    \nF\nJan 13\nLec 1\nWelcome to STA 199\n\n\n\n\n\n\n\n\n    2\nM\nJan 16\n\nNo class -- Martin Luther King Jr. Day\n\n\n\n\n\n\n\n\n    \nW\nJan 18\nLec 2\nIntro to statistics and plotting\n\n\n\n\n\n\n\n\n    \nF\nJan 20\nLec 3\nVisualizing various types of data\n\n\n\n\n\n\n\n\n    3\nM\nJan 23\nLab 1\nData visualization\n\n\n\n\n\n\n\n\n    \nW\nJan 25\nLec 4\nGrammar of data wrangling\n\n\n\n\n\n\n\n\n    \nF\nJan 27\nLec 5\nWorking with multiple data frames\n\n\n\n\n\n\n\n\n    4\nM\nJan 30\nLab 2\n\n\n\n\n\n\n\n\n\n    \nW\nFeb 1\nLec 6\n\n\n\n\n\n\n\n\n\n    \nF\nFeb 3\nLec 7\n\n\n\n\n\n\n\n\n\n    5\nM\nFeb 6\nLab\n\n\n\n\n\n\n\n\n\n    \nW\nFeb 8\nLec 8\n\n\n\n\n\n\n\n\n\n    \nF\nFeb 10\nLec 9\n\n\n\n\n\n\n\n\n\n    6\nM\nFeb 13\nLab\n\n\n\n\n\n\n\n\n\n    \nW\nFeb 15\nLec 10\n\n\n\n\n\n\n\n\n\n    \nF\nFeb 17\nLec 11\n\n\n\n\n\n\n\n\n\n    7\nM\nFeb 20\nLab\n\n\n\n\n\n\n\n\n\n    \nW\nFeb 22\nLec 12\n\n\n\n\n\n\n\n\n\n    \nF\nFeb 24\nLec 13\n\n\n\n\n\n\n\n\n\n    8\nM\nFeb 27\nLab\n\n\n\n\n\n\n\n\n\n    \nW\nMar 1\nLec 14\n\n\n\n\n\n\n\n\n\n    \nF\nMar 3\nLec 15\n\n\n\n\n\n\n\n\n\n    9\nM\nMar 6\nLab\n\n\n\n\n\n\n\n\n\n    \nW\nMar 8\nLec 16\n\n\n\n\n\n\n\n\n\n    \nF\nMar 10\nLec 17\n\n\n\n\n\n\n\n\n\n    10\nM\nMar 13\n\nNo class -- Spring Break\n\n\n\n\n\n\n\n\n    \nW\nMar 15\n\nNo class -- Spring Break\n\n\n\n\n\n\n\n\n    \nF\nMar 17\n\nNo class -- Spring Break\n\n\n\n\n\n\n\n\n    11\nM\nMar 20\nLab\n\n\n\n\n\n\n\n\n\n    \nW\nMar 22\nLec 18\n\n\n\n\n\n\n\n\n\n    \nF\nMar 24\nLec 19\n\n\n\n\n\n\n\n\n\n    12\nM\nMar 27\nLab\n\n\n\n\n\n\n\n\n\n    \nW\nMar 29\nLec 20\n\n\n\n\n\n\n\n\n\n    \nF\nMar 31\nLec 21\n\n\n\n\n\n\n\n\n\n    13\nM\nApr 3\nLab\n\n\n\n\n\n\n\n\n\n    \nW\nApr 5\nLec 22\n\n\n\n\n\n\n\n\n\n    \nF\nApr 7\nLec 23\n\n\n\n\n\n\n\n\n\n    14\nM\nApr 10\nLab\n\n\n\n\n\n\n\n\n\n    \nW\nApr 12\nLec 24\n\n\n\n\n\n\n\n\n\n    \nF\nApr 14\nLec 25\n\n\n\n\n\n\n\n\n\n    15\nM\nApr 17\nLab\n\n\n\n\n\n\n\n\n\n    \nW\nApr 19\nLec 26\n\n\n\n\n\n\n\n\n\n    \nF\nApr 21\nLec 27\n\n\n\n\n\n\n\n\n\n    16\nM\nApr 24\nLab\n\n\n\n\n\n\n\n\n\n    \nW\nApr 26\nLec 28"
   },
   {
     "objectID": "ae/ae-02.html#get-to-know-the-data",
     "href": "ae/ae-02.html#get-to-know-the-data",
-    "title": "Intro to statistics and plotting",
+    "title": "Intro statistics and plotting",
     "section": "Get to know the data",
     "text": "Get to know the data\n\nExercise 1:\nLook at the data, how many observations are there? How many variables?\n[answer here]\n\n\ndistinct() and count()\nLet’s use distinct to find the number of different time points water was sampled.\n\ndistinct(flint, draw)\n\n# A tibble: 3 × 1\n  draw  \n  <chr> \n1 first \n2 second\n3 third \n\n\nHow many unique homes are in the data set?\n\nflint |>\n  distinct(id)\n\n# A tibble: 269 × 1\n      id\n   <dbl>\n 1     1\n 2     2\n 3     4\n 4     5\n 5     6\n 6     7\n 7     8\n 8     9\n 9    12\n10    13\n# … with 259 more rows\n\n\n\nA note on pipes |> and %>%."
   }
