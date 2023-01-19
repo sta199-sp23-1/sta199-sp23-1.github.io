@@ -1,0 +1,18 @@
+---
+title: "Prepare"
+subtitle: "Due: Wednesday January 25, 2023"
+categories: "prepare"
+---
+
+📖 Read:
+
+- R4DS: [Chp 4 - Data transformation](https://r4ds.hadley.nz/data-transform.html)
+- IMS: [Chp 5 - Exploring numerical data](https://openintro-ims.netlify.app/explore-numerical.html)
+
+
+⌨️ Watch: 
+
+- [Grammar of data wrangling](https://youtu.be/ZCaYBES_VEk)
+- [Working with a single data frame](https://youtu.be/0229Uq2hkJo)
+
+
