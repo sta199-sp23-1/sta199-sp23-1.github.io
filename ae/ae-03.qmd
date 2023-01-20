@@ -21,6 +21,8 @@ By the end of today you will...
 
 - create and interpret scatter plots, bar plots, stacked bar plots, facet plots and be able to look up and use other ggplot geometries
 
+But first, we'll finish [ae2](/ae/ae-02.html)
+
 ## Load packages
 
 ```{r}

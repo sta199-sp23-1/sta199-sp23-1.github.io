@@ -1558,7 +1558,7 @@
     "href": "ae/ae-03.html#today",
     "title": "Visualizing various types of data",
     "section": "Today",
-    "text": "Today\nBy the end of today you will…\n\ncreate and interpret scatter plots, bar plots, stacked bar plots, facet plots and be able to look up and use other ggplot geometries"
+    "text": "Today\nBy the end of today you will…\n\ncreate and interpret scatter plots, bar plots, stacked bar plots, facet plots and be able to look up and use other ggplot geometries\n\nBut first, we’ll finish ae2"
   },
   {
     "objectID": "ae/ae-03.html#load-packages",
