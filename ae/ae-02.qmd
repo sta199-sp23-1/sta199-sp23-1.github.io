@@ -12,7 +12,7 @@ format: html
 
 ## Getting started
 
-Clone *your* `ae-2-username` repo from the [GitHub organization](https://github.com/sta199-sp23-1/). If you don't have an `ae-2-username` repo, you have not yet accepted your course org invite. You can still clone the *public repo* but note that you won't be able to push.
+Clone *your* `ae2-username` repo from the [GitHub organization](https://github.com/sta199-sp23-1/). If you don't have an `ae2-username` repo, you have not yet accepted your course org invite. You can still clone the *public repo* but note that you won't be able to push.
 
 ## Last time
 

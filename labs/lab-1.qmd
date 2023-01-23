@@ -18,12 +18,12 @@ In this lab, you will...
 
 # Getting started
 
--   Go to the [**sta199-f22-1**](https://www.github.com/sta199-f22-1) organization on GitHub.
+-   Go to the [the course organization](https://github.com/sta199-sp23-1) on GitHub.
     Click on the repo with the prefix **lab-01**.
     It contains the starter documents you need to complete the lab.
 
 -   Clone the repo and start a new project in RStudio.
-    See the [Lab 0 instructions](https://sta199-f22-1.github.io/labs/lab-0.html#clone-the-repo-start-new-rstudio-project) for details on cloning a repo and starting a new R project.
+    See the [lab 0 instructions](https://sta199-sp23-1.github.io/labs/lab-0.html) for details on cloning a repo and starting a new R project.
 
 ## Packages
 
@@ -48,7 +48,7 @@ Because the data set is part of the **ggplot2** package, you can read documentat
 
 # Exercises
 
-As we've discussed in lecture, your plots should include an informative title, axes should be labeled, and careful consideration should be given to aesthetic choices.
+Your plots should include an informative title, axes should be labeled, and careful consideration should be given to aesthetic choices.
 
 In addition, the code should not exceed the 80 character limit, so that all the code can be read when you render to PDF.
 To help with this, you can add a vertical line at 80 characters by clicking "Tools" $\rightarrow$ "Global Options" $\rightarrow$ "Code" $\rightarrow$ "Display", then set "Margin Column" to 80, and click "Apply".
@@ -101,7 +101,7 @@ Once again, make sure to commit and push all changed files so that your Git pane
 5.  *Do some states have counties that tend to be geographically larger than others?* To explore this question, create side-by-side boxplots of area (`area`) of a county based on state (`state`).
     -   Describe what you observe from the plot.
     -   Which state has the single largest county? How do you know based on the plot?
-6.  *Do some states have a higher percentage of their counties located in a metropolitan area?* Create a segmented bar chart with one bar per state and the fill determined by the distribution of `metro`, whether a county is considered in a metro area. The y axis of the segmented barplot should range from 0 to 1.
+6.  *Do some states have a higher percentage of their counties located in a metropolitan area?* Create a segmented (stacked) bar chart with one bar per state and the fill determined by the distribution of `metro`, whether a county is considered in a metro area. The y-axis of the segmented barplot should range from 0 to 1.
     -   What do you notice from the plot?
 
 ::: callout-note
@@ -121,8 +121,7 @@ midwest <- midwest |>
 Now is another good time to render, commit, and push your changes to GitHub with a meaningful commit message.
 
 And once again, make sure to commit and push all changed files so that your Git pane is empty afterwards.
-We keep repeating this because it's important, and because we see students forget to do this.
-So take a moment to make sure you're following along with the instructions around Git.
+We keep repeating this because it's important. So take a moment to make sure you're following along with the instructions around Git.
 :::
 
 7.  Recreate the plot below.
@@ -175,7 +174,15 @@ To submit your assignment:
 | Ex 7                  | 8      |
 | Workflow & formatting | 8      |
 
+
 ::: callout-note
 The "Workflow & formatting" grade is to assess the reproducible workflow.
-This includes having at least 3 informative commit messages, labeling the code chunks, and having readable code that does not exceed 80 characters, i.e., we can read all your code in the rendered PDF.
+This includes:
+
+-   linking all pages appropriately on Gradescope
+-   putting your name in the YAML at the top of the document
+-   committing the submitted version of your `.qmd` to GitHub
+-   Are you under the 80 character code limit? (You shouldn't have to scroll to see all your code). Pipes `%>%`, `|>` and ggplot layers `+` should be followed by a new line
+-   You should be consistent with stylistic choices, e.g. only use 1 of `=` vs `<-` and `%>%` vs `|>`
+-   All binary operators should be surrounded by space. For example `x + y` is appropriate. `x+y` is not.
 :::

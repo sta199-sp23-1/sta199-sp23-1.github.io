@@ -41,6 +41,39 @@ ghclass::org_create_assignment(
 )
 ```
 
+```{r}
+#| echo: false
+#| eval: false
+
+
+# initial assignment creation
+org = "sta199-sp23-1"
+usernames = ghclass::org_members(org)
+
+# to chunk it up:
+
+n = length(usernames)
+
+users1 = usernames[1:50]
+users2 = usernames[51:100]
+users3 = usernames[101:150]
+users4 = usernames[151:n]
+
+## edit this:
+assignment_template_repo = "ae3"
+users_segmented = c(users1, users2, users3, users4)
+
+for (uu in users_segmented) {
+ghclass::org_create_assignment(
+  org = org,
+  repo = paste0(assignment_template_repo, "-", uu),
+  user = uu,
+  source_repo = paste0(org, "/", assignment_template_repo)
+)
+}
+```
+
+
 Feel free to test lab creation on my dummy account "fishswish" or on your own account with the code below
 
 ```{r test-lab-creation}

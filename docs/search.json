@@ -11,7 +11,7 @@
     "href": "ae/ae-02.html#getting-started",
     "title": "Intro statistics and plotting",
     "section": "Getting started",
-    "text": "Getting started\nClone your ae-2-username repo from the GitHub organization. If you don’t have an ae-2-username repo, you have not yet accepted your course org invite. You can still clone the public repo but note that you won’t be able to push."
+    "text": "Getting started\nClone your ae2-username repo from the GitHub organization. If you don’t have an ae2-username repo, you have not yet accepted your course org invite. You can still clone the public repo but note that you won’t be able to push."
   },
   {
     "objectID": "ae/ae-02.html#last-time",
@@ -1285,7 +1285,7 @@
     "href": "teaching-resources/GitHubClassroomManagement.html#to-make-new-repos",
     "title": "GitHub Classroom Management",
     "section": "To make new repos",
-    "text": "To make new repos\n\n\n\n\nCreate a new repo in the organization called “lab1” with a README.md\nPush to “lab1”: lab1.qmd, data/any_relevant_data.csv and optionally lab1.Rproj.\nSelect the repository, click “Settings” and check “Template repository”.\nFollow the code below.\n\n\n# initial assignment creation\norg = \"sta199-sp23-1\"\nusernames = ghclass::org_members(org)\n\n## edit this:\nassignment_template_repo = \"lab0_template\"\n\nghclass::org_create_assignment(\n  org = org,\n  repo = paste0(assignment_template_repo, \"-\", usernames),\n  user = usernames,\n  source_repo = paste0(org, \"/\", assignment_template_repo)\n)\n\nFeel free to test lab creation on my dummy account “fishswish” or on your own account with the code below\n\norg = \"sta199-sp23-1\"\nusernames = \"fishswish\"\nassignment_template_repo = \"lab0_template\"\nghclass::org_create_assignment(\n  org = org,\n  repo = paste0(assignment_template_repo, \"-\", usernames),\n  user = usernames,\n  source_repo = paste0(org, \"/\", assignment_template_repo)\n)\n\nIt’s possible some people are not in the organization and will need to be have additional repos created manually following the steps below:\n\ngo to template repo and click the green “Use this template” -> “Create a new repository” -> name it “lab-x-their_github_username” -> leave “Private” selected and click “Create repository from template”\nnext in the new repo go to “Settings” -> “Collaborators and Teams” -> click the green “Add people” button and type in their GitHub username.\nnext make sure to go to the “People” section of the organization and select “Invite member” so they join the organization too. Owning a repo in the org just makes them an outside collaborator. They still have to actually join the org"
+    "text": "To make new repos\n\n\n\n\nCreate a new repo in the organization called “lab1” with a README.md\nPush to “lab1”: lab1.qmd, data/any_relevant_data.csv and optionally lab1.Rproj.\nSelect the repository, click “Settings” and check “Template repository”.\nFollow the code below.\n\n\n# initial assignment creation\norg = \"sta199-sp23-1\"\nusernames = ghclass::org_members(org)\n\n## edit this:\nassignment_template_repo = \"lab0_template\"\n\nghclass::org_create_assignment(\n  org = org,\n  repo = paste0(assignment_template_repo, \"-\", usernames),\n  user = usernames,\n  source_repo = paste0(org, \"/\", assignment_template_repo)\n)\n\n\n\n\nFeel free to test lab creation on my dummy account “fishswish” or on your own account with the code below\n\norg = \"sta199-sp23-1\"\nusernames = \"fishswish\"\nassignment_template_repo = \"lab0_template\"\nghclass::org_create_assignment(\n  org = org,\n  repo = paste0(assignment_template_repo, \"-\", usernames),\n  user = usernames,\n  source_repo = paste0(org, \"/\", assignment_template_repo)\n)\n\nIt’s possible some people are not in the organization and will need to be have additional repos created manually following the steps below:\n\ngo to template repo and click the green “Use this template” -> “Create a new repository” -> name it “lab-x-their_github_username” -> leave “Private” selected and click “Create repository from template”\nnext in the new repo go to “Settings” -> “Collaborators and Teams” -> click the green “Add people” button and type in their GitHub username.\nnext make sure to go to the “People” section of the organization and select “Invite member” so they join the organization too. Owning a repo in the org just makes them an outside collaborator. They still have to actually join the org"
   },
   {
     "objectID": "teaching-resources/GitHubClassroomManagement.html#oops.-file-management-after-you-create-repos",
@@ -1551,7 +1551,7 @@
     "href": "ae/ae-03.html#getting-started",
     "title": "Visualizing various types of data",
     "section": "Getting started",
-    "text": "Getting started\nClone your ae-3-username repo from the GitHub organization. If you don’t have an ae-3-username repo, you have not yet accepted your course org invite. You can still clone the public repo but note that you won’t be able to push."
+    "text": "Getting started\nClone your ae3-username repo from the GitHub organization. If you don’t have an ae3-username repo, you have not yet accepted your course org invite. You can still clone the public repo but note that you won’t be able to push."
   },
   {
     "objectID": "ae/ae-03.html#today",

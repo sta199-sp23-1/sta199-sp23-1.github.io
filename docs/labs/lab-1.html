@@ -294,8 +294,8 @@ Important
 <section id="getting-started" class="level1">
 <h1>Getting started</h1>
 <ul>
-<li><p>Go to the <a href="https://www.github.com/sta199-f22-1"><strong>sta199-f22-1</strong></a> organization on GitHub. Click on the repo with the prefix <strong>lab-01</strong>. It contains the starter documents you need to complete the lab.</p></li>
-<li><p>Clone the repo and start a new project in RStudio. See the <a href="https://sta199-f22-1.github.io/labs/lab-0.html#clone-the-repo-start-new-rstudio-project">Lab 0 instructions</a> for details on cloning a repo and starting a new R project.</p></li>
+<li><p>Go to the <a href="https://github.com/sta199-sp23-1">the course organization</a> on GitHub. Click on the repo with the prefix <strong>lab-01</strong>. It contains the starter documents you need to complete the lab.</p></li>
+<li><p>Clone the repo and start a new project in RStudio. See the <a href="https://sta199-sp23-1.github.io/labs/lab-0.html">lab 0 instructions</a> for details on cloning a repo and starting a new R project.</p></li>
 </ul>
 <section id="packages" class="level2">
 <h2 class="anchored" data-anchor-id="packages">Packages</h2>
@@ -314,7 +314,7 @@ Important
 </section>
 <section id="exercises" class="level1">
 <h1>Exercises</h1>
-<p>As we’ve discussed in lecture, your plots should include an informative title, axes should be labeled, and careful consideration should be given to aesthetic choices.</p>
+<p>Your plots should include an informative title, axes should be labeled, and careful consideration should be given to aesthetic choices.</p>
 <p>In addition, the code should not exceed the 80 character limit, so that all the code can be read when you render to PDF. To help with this, you can add a vertical line at 80 characters by clicking “Tools” <span class="math inline">\(\rightarrow\)</span> “Global Options” <span class="math inline">\(\rightarrow\)</span> “Code” <span class="math inline">\(\rightarrow\)</span> “Display”, then set “Margin Column” to 80, and click “Apply”.</p>
 <p>Remember that continuing to develop a sound workflow for reproducible data analysis is important as you complete the lab and other assignments in this course. There will be periodic reminders in this assignment to <strong>render, commit, and push</strong> your changes to GitHub. You should have at least 3 commits with meaningful commit messages by the end of the assignment.</p>
 <ol type="1">
@@ -384,7 +384,7 @@ Note
 <li>Describe what you observe from the plot.</li>
 <li>Which state has the single largest county? How do you know based on the plot?</li>
 </ul></li>
-<li><em>Do some states have a higher percentage of their counties located in a metropolitan area?</em> Create a segmented bar chart with one bar per state and the fill determined by the distribution of <code>metro</code>, whether a county is considered in a metro area. The y axis of the segmented barplot should range from 0 to 1.
+<li><em>Do some states have a higher percentage of their counties located in a metropolitan area?</em> Create a segmented (stacked) bar chart with one bar per state and the fill determined by the distribution of <code>metro</code>, whether a county is considered in a metro area. The y-axis of the segmented barplot should range from 0 to 1.
 <ul>
 <li>What do you notice from the plot?</li>
 </ul></li>
@@ -408,7 +408,7 @@ Note
 </div>
 <div class="render-commit-push">
 <p>Now is another good time to render, commit, and push your changes to GitHub with a meaningful commit message.</p>
-<p>And once again, make sure to commit and push all changed files so that your Git pane is empty afterwards. We keep repeating this because it’s important, and because we see students forget to do this. So take a moment to make sure you’re following along with the instructions around Git.</p>
+<p>And once again, make sure to commit and push all changed files so that your Git pane is empty afterwards. We keep repeating this because it’s important. So take a moment to make sure you’re following along with the instructions around Git.</p>
 </div>
 <ol start="7" type="1">
 <li>Recreate the plot below.</li>
@@ -507,7 +507,15 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The “Workflow &amp; formatting” grade is to assess the reproducible workflow. This includes having at least 3 informative commit messages, labeling the code chunks, and having readable code that does not exceed 80 characters, i.e., we can read all your code in the rendered PDF.</p>
+<p>The “Workflow &amp; formatting” grade is to assess the reproducible workflow. This includes:</p>
+<ul>
+<li>linking all pages appropriately on Gradescope</li>
+<li>putting your name in the YAML at the top of the document</li>
+<li>committing the submitted version of your <code>.qmd</code> to GitHub</li>
+<li>Are you under the 80 character code limit? (You shouldn’t have to scroll to see all your code). Pipes <code>%&gt;%</code>, <code>|&gt;</code> and ggplot layers <code>+</code> should be followed by a new line</li>
+<li>You should be consistent with stylistic choices, e.g.&nbsp;only use 1 of <code>=</code> vs <code>&lt;-</code> and <code>%&gt;%</code> vs <code>|&gt;</code></li>
+<li>All binary operators should be surrounded by space. For example <code>x + y</code> is appropriate. <code>x+y</code> is not.</li>
+</ul>
 </div>
 </div>
 

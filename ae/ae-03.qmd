@@ -11,8 +11,8 @@ format: html
 
 ## Getting started
 
-Clone *your* `ae-3-username` repo from the [GitHub organization](https://github.com/sta199-sp23-1/).
-If you don't have an `ae-3-username` repo, you have not yet accepted your course org invite.
+Clone *your* `ae3-username` repo from the [GitHub organization](https://github.com/sta199-sp23-1/).
+If you don't have an `ae3-username` repo, you have not yet accepted your course org invite.
 You can still clone the *public repo* but note that you won't be able to push.
 
 ## Today
