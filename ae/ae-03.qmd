@@ -149,7 +149,7 @@ penguins |>
   ggplot(aes(x = bill_length_mm, flipper_length_mm, color = species)) +
   geom_point() +
   facet_wrap(~ island) +
-  labs(x = "Bill length (mm)", y = "Flipper length (mm)", color = "Island") +
+  labs(x = "Bill length (mm)", y = "Flipper length (mm)", color = "Species") +
   scale_color_viridis(discrete = TRUE)
 ```
 
