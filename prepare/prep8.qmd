@@ -1,0 +1,14 @@
+---
+title: "Prepare"
+subtitle: "Due: Friday February 3, 2023"
+categories: "prepare"
+---
+
+📖 Read:
+
+-   R4DS: [Chp 17 - Factors](https://r4ds.hadley.nz/factors.html)
+
+⌨️ Watch:
+
+-   [Data types](https://youtu.be/WsxLbtWbEfc)
+-   [Data classes](https://youtu.be/dozvSVQcqqg)

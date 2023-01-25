@@ -1,0 +1,13 @@
+---
+title: "Prepare"
+subtitle: "Due: Wednesday February 1, 2023"
+categories: "prepare"
+---
+
+📖 Read:
+
+-   R4DS: [Chp 6 - Data tidying (Sections 6.3 and 6.4)](https://r4ds.hadley.nz/data-tidy.html#pivoting)
+
+⌨️ Watch:
+
+-   [Tidying data](https://youtu.be/x3KM5uxaFdI)

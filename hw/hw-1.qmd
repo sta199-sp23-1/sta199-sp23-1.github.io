@@ -5,17 +5,17 @@ editor: visual
 ---
 
 ::: callout-important
-This homework is due Thursday, Sep 15 at 11:59pm ET.
+This homework is due Friday, Feb 3 at 5:00pm.
 :::
 
 # Getting Started
 
--   Go to the [sta199-f22-1](https://github.com/sta199-f22-1) organization on GitHub.
+-   Go to the [sta199-sp23](https://github.com/sta199-sp23-1) organization on GitHub.
     Click on the repo with the prefix `hw-01`.
     It contains the starter documents you need to complete the homework assignment.
 
 -   Clone the repo and start a new project in RStudio.
-    See the [Lab 0 instructions](https://sta199-f22-1.github.io/labs/lab-0.html#clone-the-repo-start-new-rstudio-project) for details on cloning a repo and starting a new R project.
+    See the [Lab 0 instructions](/labs/lab-0.html) for details on cloning a repo and starting a new R project.
 
 ## Packages
 
@@ -29,7 +29,7 @@ library(openintro)
 
 ## Guidelines + tips
 
-As we've discussed in lecture, your plots should include an informative title, axes should be labeled, and careful consideration should be given to aesthetic choices.
+Your plots should include an **informative title, axes should be labeled, and careful consideration should be given to aesthetic choices**.
 
 Remember that continuing to develop a sound workflow for reproducible data analysis is important as you complete this homework and other assignments in this course.
 There will be periodic reminders in this assignment to remind you to knit, commit, and push your changes to GithHub.
@@ -41,23 +41,12 @@ For example, if the question asks for the number of columns in the data set, ple
 You are subject to lose points if you do not.
 :::
 
-## Workflow + formatting
-
-Make sure to
-
--   Update author name on your document.
--   Label all code chunks informatively and concisely.
--   Follow the Tidyverse code style guidelines.
--   Make at least 3 commits.
--   Resize figures where needed, avoid tiny or huge plots.
--   Turn in an organized, well formatted document.
-
 # Exercises
 
 ## Data 1: Duke Forest houses
 
 ::: callout-note
-Use this dataset for Exercises 1 and 2.
+Use the `duke_forest` dataset for Exercises 1 and 2.
 :::
 
 For the following two exercises you will work with data on houses that were sold in the Duke Forest neighborhood of Durham, NC in November 2020.
@@ -67,7 +56,7 @@ You can see a list of the variables on the [package website](https://openintrost
 ## Exercise 1
 
 Suppose you're helping some family friends who are looking to buy a house in Duke Forest.
-As they browse Zillow listings, they realize some houses have garages and others don't, and they wonder: **Does having a garage make a difference?**
+As they browse Zillow listings, they realize some houses have garages and others don't, and they wonder: **Does having a garage make a difference in price?**
 
 Luckily, you can help them answer this question with data visualization!
 
@@ -113,14 +102,14 @@ Once again, data visualization skills to the rescue!
 ::: render-commit-push
 Now is a good time to render, commit, and push.
 
-Make sure that you commit and push all changed documents and your Git pane is completely empty before proceding.
+Make sure that you commit and push **ALL** changed documents and your Git pane is completely empty before proceding.
 <br>
 :::
 
 ## Data 2: BRFSS
 
 ::: callout-note
-Use this dataset for Exercises 3 to 5.
+Use this dataset for Exercises 3 through 5.
 :::
 
 > The Behavioral Risk Factor Surveillance System (BRFSS) is the nation's premier system of health-related telephone surveys that collect state data about U.S. residents regarding their health-related risk behaviors, chronic health conditions, and use of preventive services.
@@ -222,7 +211,7 @@ Make sure that you commit and push all changed documents and your Git pane is co
 -   Click on your STA 199 course.
 -   Click on the assignment, and you'll be prompted to submit it.
 -   Mark all the pages associated with exercise. All the pages of your homework should be associated with at least one question (i.e., should be "checked"). If you do not do this, you will be subject to lose points on the assignment.
--   Select the first page of your PDF submission to be associated with the "Workflow & formatting" question.
+-   Do not select any pages of your PDF submission to be associated with the "Workflow & formatting" question.
 
 ## Grading
 
@@ -234,3 +223,16 @@ Make sure that you commit and push all changed documents and your Git pane is co
 -   Exercise 6: 8 points
 -   Workflow + formatting: 5 points
 -   Total: 50 points
+
+::: callout-note
+The "Workflow & formatting" grade is to assess the reproducible workflow.
+This includes:
+
+-   linking all pages appropriately on Gradescope
+-   putting your name in the YAML at the top of the document
+-   committing the submitted version of your `.qmd` to GitHub
+-   Are you under the 80 character code limit? (You shouldn't have to scroll to see all your code). 
+-   Pipes `%>%`, `|>` and ggplot layers `+` should be followed by a new line
+-   You should be consistent with stylistic choices, e.g. only use 1 of `=` vs `<-` and `%>%` vs `|>`
+-   All binary operators should be surrounded by space. For example `x + y` is appropriate. `x+y` is not.
+:::

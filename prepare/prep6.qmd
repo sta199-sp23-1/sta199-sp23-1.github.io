@@ -1,0 +1,10 @@
+---
+title: "Prepare"
+subtitle: "Due: Monday January 30, 2023"
+categories: "prepare"
+---
+
+📖 Read:
+
+- [tidy data](https://www.jstatsoft.org/article/view/v059i10) by Hadley Wickham\
+- [workflow style](https://r4ds.hadley.nz/workflow-style.html) 
