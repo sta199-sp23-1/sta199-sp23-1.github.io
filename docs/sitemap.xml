@@ -2,10 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://sta199-f22-1.github.io/index.html</loc>
-    <lastmod>2023-01-25T21:13:36.809Z</lastmod>
+    <lastmod>2023-01-26T04:58:15.358Z</lastmod>
   </url>
   <url>
     <loc>https://sta199-f22-1.github.io/labs/lab-2.html</loc>
     <lastmod>2023-01-25T21:17:48.248Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f22-1.github.io/ae/ae-05.html</loc>
+    <lastmod>2023-01-26T04:56:32.728Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f22-1.github.io/ae/ae-04.html</loc>
+    <lastmod>2023-01-26T04:58:24.331Z</lastmod>
   </url>
 </urlset>

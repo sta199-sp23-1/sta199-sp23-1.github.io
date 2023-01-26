@@ -1,0 +1,203 @@
+---
+title: "Working with multiple data frames"
+subtitle: "STA 199"
+editor: source
+format: html
+---
+
+## Bulletin
+
+- this `ae` is due for grade (48 hours from class). To turn in, simply push to GitHub
+- [homework 01](/hw/hw-1.html)
+- lab 01 due Monday at 5:00pm
+
+## Getting started
+
+Clone *your* `ae5-username` repo from the [GitHub organization](https://github.com/sta199-sp23-1/).
+
+## Today
+
+By the end of today you will...
+
+- join data frames
+
+## Load packages
+
+```{r load-libraries, message=F, warning=F}
+library(tidyverse)
+```
+
+
+## Joins
+
+There are six join functions in the `dplyr` package. Join functions take two data frames as arguments and return a data frame.
+
+The six joins can be broken down into two categories:
+
+- **Mutating joins**: joining data frames results in mutating new columns
+- **Filtering joins**: joining data frames results in filtering observations in one data frame based on another.
+
+In all of the following examples, `x` and `y` are two data frames:
+
+```{r}
+x = tibble(value = c(100, 200, 300),
+            xcol = c("x1", "x2", "x3"))
+y = tibble(value = c(100, 200, 400),
+            ycol = c("y1", "y2", "y4"))
+x
+y
+```
+
+
+
+### Mutating joins
+
+The most popular 2 joins:
+
+- `left_join(x, y)`: keep all rows from `x` and adds columns from `y`
+- `right_join(x, y)`: keeps all rows from `y` and adds columns from `x`
+
+Two more helpful joins:
+
+- `inner_join(x, y)`: join all rows from `x` where there are matching values in `y`.Returns all combinations in case of multiple matches
+- `full_join(x, y)`: include all rows in `x` or `y`
+
+Toy examples:
+
+```{r left-join}
+x %>%
+  left_join(y)
+```
+
+- What do you think `Joining, by = "value"` means?
+
+```{r right-join}
+x %>%
+  right_join(y, by = "value")
+```
+
+```{r inner-join}
+x %>%
+  inner_join(y)
+```
+
+```{r full-join}
+full_join(x, y)
+```
+
+
+### Filtering joins
+
+- `semi_join(x, y)`: return all rows from `x` with match in `y`
+- `anti_join(x, y)`: return all rows from `x` without a match in `y`
+
+In both of these "filtering" cases we do **not** add any new columns to our first argument (the data frame `x`).
+
+Toy examples:
+
+```{r semi-join}
+x %>%
+semi_join(y)
+```
+
+```{r anti-join}
+x %>%
+anti_join(y)
+```
+
+:::{.callout-note}
+We can manually specify which columns to **join by** and the columns do not have to have the same name! See the example below.
+:::
+
+Check out the new data frame `x2`:
+```{r different-name-columns}
+x2 = x %>%
+  mutate(new_value = value) %>%
+  select(new_value, xcol)
+
+x2
+```
+We can still join `x2` with `y` but `left_join(x2, y)` won't work. We have to manually specify which columns to join by:
+
+```{r join-x2}
+x2 %>%
+  left_join(y, by = c("new_value" = "value"))
+```
+
+## Practice
+
+We'll take a look at some New York flights data.
+
+This data set contains on-time data for all flights that departed NYC (i.e. JFK, LGA or EWR) in 2013.
+
+This data is a subset of the data set provided by the `nycflights13` package.
+
+### Codebook
+
+`flights2` contains
+
+- `year`: departure year
+- `time_hour`: departure time
+- `dep_delay`: departure delay in minutes
+- `arr_delay`: arrival delay in minutes
+- `origin`: origin
+- `dest`: destination
+- `carrier` two letter carrier abbreviation
+
+`airlines` contains
+
+- `carrier`: two letter carrier abbrevation
+- `name`: full carrier name
+
+`airports` contains 
+
+- `faa`: FAA airport code
+- `name`: name of airport
+- `lat`: latitude
+- `lon`: longitude
+
+```{r load-data}
+library(nycflights13)
+
+data(flights)
+data(airlines)
+data(airports)
+```
+
+#### Exercise 1
+
+`flights` contains the two letter carrier abbreviations and `airlines` contains a dictionary. It would be nice if this information was in one data frame so we could read off easily e.g. which airlines are most likely to have arrival delays.
+
+Use an appropriate join to add the column of `airlines` to `flights` and save the resulting data frame as `flights2`.
+
+```{r}
+# code here
+```
+#### Exercise 2
+
+Using `flights2`, report the average arrival delay for each carrier. Print only the 5 carrier airline with the worst arrival delays on average. No joins required here.
+
+```{r}
+# code here
+```
+
+#### Exercise 3
+
+Create a new data set called `dest_delays` that reports the median arrival delay at each destination airport.
+
+```{r}
+# code here
+```
+
+
+#### Exercise 4
+
+Which destination has the worst arrival delay? (Note: you will need to join `dest_delays` with `airports` to answer this question)
+
+```{r}
+# code here
+```
+
+#### Optional bonus
+
+- Is there anything else you might want to learn from the data before declaring one airport is most likely to have delayed arrival or one carrier is most likely to result in a delayed flight?

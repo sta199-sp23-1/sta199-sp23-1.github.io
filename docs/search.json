@@ -887,5 +887,47 @@
     "title": "Computing troubleshooting",
     "section": "",
     "text": "If the status shows something other than Operational, this means there is a known incident with the containers. Check back later to see if it’s been resolved. If there’s a deadline coming up soon, post on the course Slack to let us know that there’s an issue. We can look into how quickly it might get resolved and decide on what to do about the deadline accordingly. Note: We don’t anticipate this to happen regularly, the systems are Operational a huge majority of the time!\nIf the status shows Operational, this means the system is expected to be working. Check your internet connection, if need be, restart your computer to ensure a fresh new connection. If your issue persists, post on the course forum with details on what you’ve tried and the errors you see (including verbatim errors and/or screenshots).\n\nAnother approach is to request a restart of your container. To do so, select your container as you usually do and then, instead of Login, click on Request Restart. Read the warning in the next page, and then click once more to restart your container."
+  },
+  {
+    "objectID": "ae/ae-05.html",
+    "href": "ae/ae-05.html",
+    "title": "Working with multiple data frames",
+    "section": "",
+    "text": "this ae is due for grade (48 hours from class). To turn in, simply push to GitHub\nhomework 01\nlab 01 due Monday at 5:00pm"
+  },
+  {
+    "objectID": "ae/ae-05.html#getting-started",
+    "href": "ae/ae-05.html#getting-started",
+    "title": "Working with multiple data frames",
+    "section": "Getting started",
+    "text": "Getting started\nClone your ae5-username repo from the GitHub organization."
+  },
+  {
+    "objectID": "ae/ae-05.html#today",
+    "href": "ae/ae-05.html#today",
+    "title": "Working with multiple data frames",
+    "section": "Today",
+    "text": "Today\nBy the end of today you will…\n\njoin data frames"
+  },
+  {
+    "objectID": "ae/ae-05.html#load-packages",
+    "href": "ae/ae-05.html#load-packages",
+    "title": "Working with multiple data frames",
+    "section": "Load packages",
+    "text": "Load packages\n\nlibrary(tidyverse)"
+  },
+  {
+    "objectID": "ae/ae-05.html#joins",
+    "href": "ae/ae-05.html#joins",
+    "title": "Working with multiple data frames",
+    "section": "Joins",
+    "text": "Joins\nThere are six join functions in the dplyr package. Join functions take two data frames as arguments and return a data frame.\nThe six joins can be broken down into two categories:\n\nMutating joins: joining data frames results in mutating new columns\nFiltering joins: joining data frames results in filtering observations in one data frame based on another.\n\nIn all of the following examples, x and y are two data frames:\n\nx = tibble(value = c(100, 200, 300),\n            xcol = c(\"x1\", \"x2\", \"x3\"))\ny = tibble(value = c(100, 200, 400),\n            ycol = c(\"y1\", \"y2\", \"y4\"))\nx\n\n# A tibble: 3 × 2\n  value xcol \n  <dbl> <chr>\n1   100 x1   \n2   200 x2   \n3   300 x3   \n\ny\n\n# A tibble: 3 × 2\n  value ycol \n  <dbl> <chr>\n1   100 y1   \n2   200 y2   \n3   400 y4   \n\n\n\nMutating joins\nThe most popular 2 joins:\n\nleft_join(x, y): keep all rows from x and adds columns from y\nright_join(x, y): keeps all rows from y and adds columns from x\n\nTwo more helpful joins:\n\ninner_join(x, y): join all rows from x where there are matching values in y.Returns all combinations in case of multiple matches\nfull_join(x, y): include all rows in x or y\n\nToy examples:\n\nx %>%\n  left_join(y)\n\nJoining, by = \"value\"\n\n\n# A tibble: 3 × 3\n  value xcol  ycol \n  <dbl> <chr> <chr>\n1   100 x1    y1   \n2   200 x2    y2   \n3   300 x3    <NA> \n\n\n\nWhat do you think Joining, by = \"value\" means?\n\n\nx %>%\n  right_join(y, by = \"value\")\n\n# A tibble: 3 × 3\n  value xcol  ycol \n  <dbl> <chr> <chr>\n1   100 x1    y1   \n2   200 x2    y2   \n3   400 <NA>  y4   \n\n\n\nx %>%\n  inner_join(y)\n\nJoining, by = \"value\"\n\n\n# A tibble: 2 × 3\n  value xcol  ycol \n  <dbl> <chr> <chr>\n1   100 x1    y1   \n2   200 x2    y2   \n\n\n\nfull_join(x, y)\n\nJoining, by = \"value\"\n\n\n# A tibble: 4 × 3\n  value xcol  ycol \n  <dbl> <chr> <chr>\n1   100 x1    y1   \n2   200 x2    y2   \n3   300 x3    <NA> \n4   400 <NA>  y4   \n\n\n\n\nFiltering joins\n\nsemi_join(x, y): return all rows from x with match in y\nanti_join(x, y): return all rows from x without a match in y\n\nIn both of these “filtering” cases we do not add any new columns to our first argument (the data frame x).\nToy examples:\n\nx %>%\nsemi_join(y)\n\nJoining, by = \"value\"\n\n\n# A tibble: 2 × 2\n  value xcol \n  <dbl> <chr>\n1   100 x1   \n2   200 x2   \n\n\n\nx %>%\nanti_join(y)\n\nJoining, by = \"value\"\n\n\n# A tibble: 1 × 2\n  value xcol \n  <dbl> <chr>\n1   300 x3   \n\n\n\n\n\n\n\n\nNote\n\n\n\nWe can manually specify which columns to join by and the columns do not have to have the same name! See the example below.\n\n\nCheck out the new data frame x2:\n\nx2 = x %>%\n  mutate(new_value = value) %>%\n  select(new_value, xcol)\n\nx2\n\n# A tibble: 3 × 2\n  new_value xcol \n      <dbl> <chr>\n1       100 x1   \n2       200 x2   \n3       300 x3   \n\n\nWe can still join x2 with y but left_join(x2, y) won’t work. We have to manually specify which columns to join by:\n\nx2 %>%\n  left_join(y, by = c(\"new_value\" = \"value\"))\n\n# A tibble: 3 × 3\n  new_value xcol  ycol \n      <dbl> <chr> <chr>\n1       100 x1    y1   \n2       200 x2    y2   \n3       300 x3    <NA>"
+  },
+  {
+    "objectID": "ae/ae-05.html#practice",
+    "href": "ae/ae-05.html#practice",
+    "title": "Working with multiple data frames",
+    "section": "Practice",
+    "text": "Practice\nWe’ll take a look at some New York flights data.\nThis data set contains on-time data for all flights that departed NYC (i.e. JFK, LGA or EWR) in 2013.\nThis data is a subset of the data set provided by the nycflights13 package.\n\nCodebook\nflights2 contains\n\nyear: departure year\ntime_hour: departure time\ndep_delay: departure delay in minutes\narr_delay: arrival delay in minutes\norigin: origin\ndest: destination\ncarrier two letter carrier abbreviation\n\nairlines contains\n\ncarrier: two letter carrier abbrevation\nname: full carrier name\n\nairports contains\n\nfaa: FAA airport code\nname: name of airport\nlat: latitude\nlon: longitude\n\n\nlibrary(nycflights13)\n\ndata(flights)\ndata(airlines)\ndata(airports)\n\n\nExercise 1\nflights contains the two letter carrier abbreviations and airlines contains a dictionary. It would be nice if this information was in one data frame so we could read off easily e.g. which airlines are most likely to have arrival delays.\nUse an appropriate join to add the column of airlines to flights and save the resulting data frame as flights2.\n\n# code here\n\n\n\nExercise 2\nUsing flights2, report the average arrival delay for each carrier. Print only the 5 carrier airline with the worst arrival delays on average. No joins required here.\n\n# code here\n\n\n\nExercise 3\nCreate a new data set called dest_delays that reports the median arrival delay at each destination airport.\n\n# code here\n\n\n\nExercise 4\nWhich destination has the worst arrival delay? (Note: you will need to join dest_delays with airports to answer this question)\n\n# code here\n\n\n\nOptional bonus\n\nIs there anything else you might want to learn from the data before declaring one airport is most likely to have delayed arrival or one carrier is most likely to result in a delayed flight?"
   }
 ]
