@@ -676,14 +676,14 @@
     "href": "slides/01-welcome-199.html#why-data-science",
     "title": "Welcome to STA 199",
     "section": "Why data science?",
-    "text": "Why data science?\nData science turns data into knowledge.\n\nExamples"
+    "text": "Why data science?\nData science turns data into knowledge.\n\n\nExamples"
   },
   {
     "objectID": "slides/01-welcome-199.html#course-overview",
     "href": "slides/01-welcome-199.html#course-overview",
     "title": "Welcome to STA 199",
     "section": "Course overview",
-    "text": "Course overview\n\n\n\n\n\n\n\n\nImportant\n\n\nNo programming experience required."
+    "text": "Course overview\n\n\n\n\n\n\n\n\nImportant\n\n\n\nNo programming experience required."
   },
   {
     "objectID": "slides/01-welcome-199.html#learning-objectives",
@@ -704,7 +704,7 @@
     "href": "slides/01-welcome-199.html#community",
     "title": "Welcome to STA 199",
     "section": "Community",
-    "text": "Community\nUphold the Duke Community Standard:\n\nI will not lie, cheat, or steal in my academic endeavors;\nI will conduct myself honorably in all my endeavors; and\nI will act if the Standard is compromised.\n\nAny violations in academic honesty standards as outlined in the Duke Community Standard and those specific to this course will automatically result in a 0 for the assignment and will be reported to the Office of Student Conduct for further action.\nLearning environment\n\nCreate a learning environment that is welcoming, inclusive, and accessible to everyone.\nRespect and honor each other.\n\nTeam work policy\nThe final project and several labs will be completed in teams. All group members are expected to participate equally. Commit history may be used to give individual team members different grades. Your grade may differ from the rest of your group."
+    "text": "Community\nUphold the Duke Community Standard:\n\nI will not lie, cheat, or steal in my academic endeavors;\nI will conduct myself honorably in all my endeavors; and\nI will act if the Standard is compromised.\n\nAny violations in academic honesty standards as outlined in the Duke Community Standard and those specific to this course will automatically result in a 0 for the assignment and will be reported to the Office of Student Conduct for further action.\n\nLearning environment\n\nCreate a learning environment that is welcoming, inclusive, and accessible to everyone.\nRespect and honor each other.\n\n\n\nTeam work policy\nThe final project and several labs will be completed in teams. All group members are expected to participate equally. Commit history may be used to give individual team members different grades. Your grade may differ from the rest of your group."
   },
   {
     "objectID": "slides/01-welcome-199.html#late-policy",
@@ -725,14 +725,14 @@
     "href": "slides/01-welcome-199.html#communication-and-missing-class",
     "title": "Welcome to STA 199",
     "section": "Communication and missing class",
-    "text": "Communication and missing class\nIf you have questions about homework/lab exercises, debugging, or any question about course materials\n\ncome to office hours\npost to a public channel in slack.\n\nWhen you need help debugging, it is essential you provide a reproducible example of the code that caused the error. Screenshots, or pasting a short snippet of the offending code is helpful!\n\n\n\n\n\n\n\nWarning\n\n\nThe teaching team will not debug via email.\n\n\n\n\n\nWhen you miss a class:\n\nwatch the recorded lecture on Sakai\ncome to office hours or post in a public channel of slack if you have questions"
+    "text": "Communication and missing class\nIf you have questions about homework/lab exercises, debugging, or any question about course materials\n\ncome to office hours\npost to a public channel in slack.\n\nWhen you need help debugging, it is essential you provide a reproducible example of the code that caused the error. Screenshots, or pasting a short snippet of the offending code is helpful!\n\n\n\n\n\n\n\nWarning\n\n\n\nThe teaching team will not debug via email.\n\n\n\n\nWhen you miss a class:\n\nwatch the recorded lecture on Sakai\ncome to office hours or post in a public channel of slack if you have questions"
   },
   {
     "objectID": "slides/01-welcome-199.html#jump-in",
     "href": "slides/01-welcome-199.html#jump-in",
     "title": "Welcome to STA 199",
     "section": "Jump in",
-    "text": "Jump in\n\nCheck your email / sakai announcements for slack invite.\nPost on slack\nAccept your course organization invite\n\n\n\nDon’t have an invite? Follow the lab 0 instructions to create a lab-0-username repo here.\n\n\n\nDemo: ae1\n\n\n\n🔗 sta199-sp23-1.github.io"
+    "text": "Jump in\n\nCheck your email / sakai announcements for slack invite.\nPost on slack\nAccept your course organization invite\n\n\n\nDon’t have an invite? Follow the lab 0 instructions to create a lab-0-username repo here.\n\n\n\nDemo: ae1"
   },
   {
     "objectID": "slides/lab0-welcome.html#introductions",
@@ -929,5 +929,12 @@
     "title": "Working with multiple data frames",
     "section": "Practice",
     "text": "Practice\nWe’ll take a look at some New York flights data.\nThis data set contains on-time data for all flights that departed NYC (i.e. JFK, LGA or EWR) in 2013.\nThis data is a subset of the data set provided by the nycflights13 package.\n\nCodebook\nflights2 contains\n\nyear: departure year\ntime_hour: departure time\ndep_delay: departure delay in minutes\narr_delay: arrival delay in minutes\norigin: origin\ndest: destination\ncarrier two letter carrier abbreviation\n\nairlines contains\n\ncarrier: two letter carrier abbrevation\nname: full carrier name\n\nairports contains\n\nfaa: FAA airport code\nname: name of airport\nlat: latitude\nlon: longitude\n\n\nlibrary(nycflights13)\n\ndata(flights)\ndata(airlines)\ndata(airports)\n\n\nExercise 1\nflights contains the two letter carrier abbreviations and airlines contains a dictionary. It would be nice if this information was in one data frame so we could read off easily e.g. which airlines are most likely to have arrival delays.\nUse an appropriate join to add the column of airlines to flights and save the resulting data frame as flights2.\n\n# code here\n\n\n\nExercise 2\nUsing flights2, report the average arrival delay for each carrier. Print only the 5 carrier airline with the worst arrival delays on average. No joins required here.\n\n# code here\n\n\n\nExercise 3\nCreate a new data set called dest_delays that reports the median arrival delay at each destination airport.\n\n# code here\n\n\n\nExercise 4\nWhich destination has the worst arrival delay? (Note: you will need to join dest_delays with airports to answer this question)\n\n# code here\n\n\n\nOptional bonus\n\nIs there anything else you might want to learn from the data before declaring one airport is most likely to have delayed arrival or one carrier is most likely to result in a delayed flight?"
+  },
+  {
+    "objectID": "slides/01-welcome-199.html",
+    "href": "slides/01-welcome-199.html",
+    "title": "Welcome to STA 199",
+    "section": "",
+    "text": "Alexander Fisher\nalexander.fisher@duke.edu\nOffice hours: Wednesday 1:30-3:30pm in Old Chem 207\nA little bit about my research…"
   }
 ]
