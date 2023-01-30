@@ -134,27 +134,7 @@ This data is a subset of the data set provided by the `nycflights13` package.
 
 ### Codebook
 
-`flights2` contains
-
-- `year`: departure year
-- `time_hour`: departure time
-- `dep_delay`: departure delay in minutes
-- `arr_delay`: arrival delay in minutes
-- `origin`: origin
-- `dest`: destination
-- `carrier` two letter carrier abbreviation
-
-`airlines` contains
-
-- `carrier`: two letter carrier abbrevation
-- `name`: full carrier name
-
-`airports` contains 
-
-- `faa`: FAA airport code
-- `name`: name of airport
-- `lat`: latitude
-- `lon`: longitude
+Check out codebook for `flights`, `airlines` and `airports` with `?flights`, `?airlines` and `?airports`
 
 ```{r load-data}
 library(nycflights13)
