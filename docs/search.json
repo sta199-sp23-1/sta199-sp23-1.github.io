@@ -166,5 +166,768 @@
     "title": "Grammar of data wrangling",
     "section": "group_by()",
     "text": "group_by()\ngroup_by() is used for grouped operations. It’s very powerful when paired with summarise() to calculate summary statistics by group.\nHere we find the mean and standard deviation of departure delay for each month.\n\nflights |>\n  group_by(month) |>\n  summarize(\n    mean_dep_delay = mean(dep_delay, na.rm = TRUE), \n    sd_dep_delay = sd(dep_delay, na.rm = TRUE)\n    )\n\n# A tibble: 12 × 3\n   month mean_dep_delay sd_dep_delay\n   <int>          <dbl>        <dbl>\n 1     1          10.0          36.4\n 2     2          10.8          36.3\n 3     3          13.2          40.1\n 4     4          13.9          43.0\n 5     5          13.0          39.4\n 6     6          20.8          51.5\n 7     7          21.7          51.6\n 8     8          12.6          37.7\n 9     9           6.72         35.6\n10    10           6.24         29.7\n11    11           5.44         27.6\n12    12          16.6          41.9\n\n\n\nExercise 5\nWhat is the median departure delay for each airports around NYC (origin)?\n\nflights |>\n  group_by(origin) |>\n  summarize(\n    med_dep_delay = median(dep_delay, na.rm = TRUE)\n    )\n\n# A tibble: 3 × 2\n  origin med_dep_delay\n  <chr>          <dbl>\n1 EWR               -1\n2 JFK               -1\n3 LGA               -3"
+  },
+  {
+    "objectID": "labs/lab-0.html",
+    "href": "labs/lab-0.html",
+    "title": "Lab 0 - Hello R!",
+    "section": "",
+    "text": "Important\n\n\n\nThis lab is not a part of your grade in this course. You should still submit your completed lab to Gradescope to practice submitting to Gradescope and receive feedback. Since this lab precedes class lecture, you may be unable to complete the lab until next week.\nThis lab will introduce you to the course computing workflow. The main goal is to demo R and RStudio, which we will be using throughout the course both to learn the statistical concepts discussed in the course and to analyze real data and come to informed conclusions.\nAn additional goal is to reinforce Git and GitHub, the collaboration and version control system that we will be using throughout the course.\nAs the labs progress, you are encouraged to explore beyond what the labs dictate; a willingness to experiment will make you a much better programmer. Before we get to that stage, however, you need to build some basic fluency in R. Today we begin with the fundamental building blocks of R and RStudio: the interface, reading in data, and basic commands.\nTo make versioning simpler, this and the next lab are solo labs. In the future, you’ll learn about collaborating on GitHub and producing a single lab report for your lab team, but for now, concentrate on getting the basics down.\nBy the end of the lab, you will…"
+  },
+  {
+    "objectID": "labs/lab-0.html#log-in-to-rstudio",
+    "href": "labs/lab-0.html#log-in-to-rstudio",
+    "title": "Lab 0 - Hello R!",
+    "section": "Log in to RStudio",
+    "text": "Log in to RStudio\n\nGo to https://cmgr.oit.duke.edu/containers and login with your Duke NetID and Password.\nClick STA198-199 to log into the Docker container. You should now see the RStudio environment.\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you haven’t yet done so, you will need to reserve a container for STA198-199 first."
+  },
+  {
+    "objectID": "labs/lab-0.html#set-up-your-ssh-key",
+    "href": "labs/lab-0.html#set-up-your-ssh-key",
+    "title": "Lab 0 - Hello R!",
+    "section": "Set up your SSH key",
+    "text": "Set up your SSH key\nYou will authenticate GitHub using SSH. Below are an outline of the authentication steps; you are encouraged to follow along as your TA demonstrates the steps.\n\n\n\n\n\n\nNote\n\n\n\nYou only need to do this authentication process one time on a single system.\n\n\n\nType credentials::ssh_setup_github() into your console.\nR will ask “No SSH key found. Generate one now?” You should click 1 for yes.\nYou will generate a key. It will begin with “ssh-rsa….” R will then ask “Would you like to open a browser now?” You should click 1 for yes.\nYou may be asked to provide your GitHub username and password to log into GitHub. After entering this information, you should paste the key in and give it a name. You might name it in a way that indicates where the key will be used, e.g., sta199).\n\nYou can find more detailed instructions here if you’re interested."
+  },
+  {
+    "objectID": "labs/lab-0.html#configure-git",
+    "href": "labs/lab-0.html#configure-git",
+    "title": "Lab 0 - Hello R!",
+    "section": "Configure Git",
+    "text": "Configure Git\nThere is one more thing we need to do before getting started on the assignment. Specifically, we need to configure your git so that RStudio can communicate with GitHub. This requires two pieces of information: your name and email address.\nTo do so, you will use the use_git_config() function from the usethis package. (And we also need to install a package called gert just for this step.)\nType the following lines of code in the console in RStudio filling in your name and the email address associated with your GitHub account.\n\ndevtools::install_github(\"r-lib/gert\")\n\nusethis::use_git_config(\n  user.name = \"Your name\", \n  user.email = \"Email associated with your GitHub account\"\n  )\n\nFor example, mine would be\n\ndevtools::install_github(\"r-lib/gert\")\n\nusethis::use_git_config(\n  user.name = \"Alexander Fisher\", \n  user.email = \"alexander.fisher@duke.edu\"\n  )\n\nYou are now ready interact with GitHub via RStudio!"
+  },
+  {
+    "objectID": "labs/lab-0.html#clone-the-repo-start-new-rstudio-project",
+    "href": "labs/lab-0.html#clone-the-repo-start-new-rstudio-project",
+    "title": "Lab 0 - Hello R!",
+    "section": "Clone the repo & start new RStudio project",
+    "text": "Clone the repo & start new RStudio project\n\nGo to the course organization at github.com/sta199-sp23-1 organization on GitHub. Click on the repo with the prefix lab-0. It contains the starter documents you need to complete the lab.\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\nIn RStudio, go to File ➛ New Project ➛Version Control ➛ Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL. Again, please make sure to have SSH highlighted under Clone when you copy the address.\nClick Create Project, and the files from your GitHub repo will be displayed in the Files pane in RStudio.\nClick lab-0-datasaurus.qmd to open the template Quarto file. This is where you will write up your code and narrative for the lab."
+  },
+  {
+    "objectID": "labs/lab-0.html#r-and-r-studio",
+    "href": "labs/lab-0.html#r-and-r-studio",
+    "title": "Lab 0 - Hello R!",
+    "section": "R and R Studio",
+    "text": "R and R Studio\nBelow are the components of the RStudio IDE.\n\nBelow are the components of a Quarto (.qmd) file."
+  },
+  {
+    "objectID": "labs/lab-0.html#yaml",
+    "href": "labs/lab-0.html#yaml",
+    "title": "Lab 0 - Hello R!",
+    "section": "YAML",
+    "text": "YAML\nThe top portion of your R Markdown file (between the three dashed lines) is called YAML. It stands for “YAML Ain’t Markup Language”. It is a human friendly data serialization standard for all programming languages. All you need to know is that this area is called the YAML (we will refer to it as such) and that it contains meta information about your document.\n\n\n\n\n\n\nImportant\n\n\n\nOpen the Quarto (.qmd) file in your project, change the author name to your name, and render the document. Examine the rendered document."
+  },
+  {
+    "objectID": "labs/lab-0.html#committing-changes",
+    "href": "labs/lab-0.html#committing-changes",
+    "title": "Lab 0 - Hello R!",
+    "section": "Committing changes",
+    "text": "Committing changes\nNow, go to the Git pane in your RStudio instance. This will be in the top right hand corner in a separate tab.\nIf you have made changes to your Quarto (.qmd) file, you should see it listed here. Click on it to select it in this list and then click on Diff. This shows you the difference between the last committed state of the document and its current state including changes. You should see deletions in red and additions in green.\nIf you’re happy with these changes, we’ll prepare the changes to be pushed to your remote repository. First, stage your changes by checking the appropriate box on the files you want to prepare. Next, write a meaningful commit message (for instance, “updated author name”) in the Commit message box. Finally, click Commit. Note that every commit needs to have a commit message associated with it.\nYou don’t have to commit after every change, as this would get quite tedious. You should commit states that are meaningful to you for inspection, comparison, or restoration.\nIn the first few assignments we will tell you exactly when to commit and in some cases, what commit message to use. As the semester progresses we will let you make these decisions.\nNow let’s make sure all the changes went to GitHub. Go to your GitHub repo and refresh the page. You should see your commit message next to the updated files. If you see this, all your changes are on GitHub and you’re good to go!"
+  },
+  {
+    "objectID": "labs/lab-0.html#push-changes",
+    "href": "labs/lab-0.html#push-changes",
+    "title": "Lab 0 - Hello R!",
+    "section": "Push changes",
+    "text": "Push changes\nNow that you have made an update and committed this change, it’s time to push these changes to your repo on GitHub.\nIn order to push your changes to GitHub, you must have staged your commit to be pushed. click on Push."
+  },
+  {
+    "objectID": "labs/lab-0.html#data-visualization-and-summary",
+    "href": "labs/lab-0.html#data-visualization-and-summary",
+    "title": "Lab 0 - Hello R!",
+    "section": "Data visualization and summary",
+    "text": "Data visualization and summary\n\nPlot y vs. x for the dino dataset. Then, calculate the correlation coefficient between x and y for this dataset.\n\nBelow is the code you will need to complete this exercise. Basically, the answer is already given, but you need to include relevant bits in your document and successfully render it and view the results.\nStart with the datasaurus_dozen and pipe it into the filter function to filter for observations where dataset == \"dino\". Store the resulting filtered data frame as a new data frame called dino_data.\n\ndino_data <- datasaurus_dozen |>\n  filter(dataset == \"dino\")\n\nThere is a lot going on here, so let’s slow down and unpack it a bit.\nFirst, the pipe operator: |>, takes what comes before it and sends it as the first argument to what comes after it. So here, we’re saying filter the datasaurus_dozen data frame for observations where dataset == \"dino\".\nSecond, the assignment operator: <-, assigns the name dino_data to the filtered data frame.\nNext, we need to visualize these data. We will use the ggplot function for this. Its first argument is the data you’re visualizing. Next we define the aesthetic mappings. In other words, the columns of the data that get mapped to certain aesthetic features of the plot, e.g. the x axis will represent the variable called x and the y axis will represent the variable called y. Then, we add another layer to this plot where we define which geometric shapes we want to use to represent each observation in the data. In this case we want these to be points, hence geom_point.\n\nggplot(data = dino_data, mapping = aes(x = x, y = y)) +\n  geom_point()\n\nFor the second part of this exercise, we need to calculate a summary statistic: the correlation coefficient. Correlation coefficient, often referred to as \\(r\\) in statistics, measures the linear association between two variables. You will see that some of the pairs of variables we plot do not have a linear relationship between them. This is exactly why we want to visualize first: visualize to assess the form of the relationship, and calculate \\(r\\) only if relevant. In this case, calculating a correlation coefficient really doesn’t make sense since the relationship between x and y is definitely not linear (it’s dinosaurial)!\nFor illustrative purposes only, let’s calculate the correlation coefficient between x and y.\n\n\n\n\n\n\nNote\n\n\n\nStart with `dino_data` and calculate a summary statistic that we will call `r` as the `cor`relation between `x` and `y`.\n\n\n\ndino_data |>\n  summarize(r = cor(x, y))\n\n\nThis is a good place to pause, render, and commit changes with the commit message “Added answer for Ex 2.”\nThen, push these changes when you’re done.\n\n\nPlot y vs. x for the circle dataset. You can (and should) reuse code we introduced above, just replace the dataset name with the desired dataset. Then, calculate the correlation coefficient between x and y for this dataset. How does this value compare to the r of dino?\n\n\nThis is another good place to pause, render, and commit changes with the commit message “Added answer for Ex 3.”\nThen, push these changes when you’re done.\n\n\nPlot y vs. x for the star dataset. You can (and should) reuse code we introduced above, just replace the dataset name with the desired dataset. Then, calculate the correlation coefficient between x and y for this dataset. How does this value compare to the r of dino?\n\n\nYou should pause again, render, commit changes with the commit message “Added answer for Ex 4”.\nThen, push.\n\nFinally, let’s plot all datasets at once. In order to do this we will make use of faceting, given by the code below:\n\n\n\n\n\n\nNote\n\n\n\nFacet by the dataset variable, placing the plots in a 3 column grid, and don’t add a legend.\n\n\n\nggplot(datasaurus_dozen, aes(x = x, y = y, color = dataset))+\n  geom_point()+\n  facet_wrap(~ dataset, ncol = 3) +\n  theme(legend.position = \"none\")\n\nAnd we can use the group_by function to generate all the summary correlation coefficients. We’ll go through these functions next week when we learn about data wrangling.\n\ndatasaurus_dozen |>\n  group_by(dataset) |>\n  summarize(r = cor(x, y)) \n\n\nInclude the faceted plot and the summary of the correlation coefficients in your lab write-up by including relevant code in R chunks (and give them appropriate labels). In the narrative below the code chunks, briefly comment on what you notice about the plots and the correlations between x and y values within each of them (one or two sentences is fine!).\n\nYou’re done with the data analysis exercises, but we’d like to do one more thing to customize the look of the report."
+  },
+  {
+    "objectID": "labs/lab-0.html#resize-your-figures",
+    "href": "labs/lab-0.html#resize-your-figures",
+    "title": "Lab 0 - Hello R!",
+    "section": "Resize your figures",
+    "text": "Resize your figures\nWe can customize the output from a particular R chunk by including options in the header that will override any global settings.\n\nIn the R chunks you wrote for Exercises 2-5, customize the settings by modifying the options in the R chunks used to create those figures.\n\nFor Exercises 2, 3, and 4, we want square figures. We can use fig.height and fig.width in the options to adjust the height and width of figures. Modify the chunks in Exercises 2-4 to be as follows:\n\n```{r}\n#| label: ex2-chunk-label\n#| fig-height: 5\n#| fig-width: 5\n\n# Your code that created the figure\n```\n\nFor Exercise 5, modify your figure to have fig-height of 10 and fig-width of 6.\nNow, save and render.\nOnce you’ve created this PDF file, you’re done!\n\nCommit all remaining changes with the commit message “Done with Lab 1!”.\nThen push."
+  },
+  {
+    "objectID": "course-links.html",
+    "href": "course-links.html",
+    "title": "Useful links",
+    "section": "",
+    "text": "RStudio containers\n🔗 on Duke Container Manager\n\n\n\n\nCourse GitHub organization\n🔗 on GitHub\n\n\nSlack\n🔗 on Slack\n\n\nGradescope\n🔗 on Sakai\n\n\nOffice hours\n🔗 on Google docs\n\n\nTextbooks | 🔗 R for Data Science | | 🔗 Introduction to Modern Statistics\n\n\n\nPackage documentation\n🔗 ggplot2: ggplot2.tidyverse.org\n🔗 dplyr: dplyr.tidyverse.org\n🔗 tidyr: tidyr.tidyverse.org\n🔗 forcats: forcats.tidyverse.org\n🔗 stringr: stringr.tidyverse.org\n🔗 lubridate: lubridate.tidyverse.org\n🔗 readr: readr.tidyverse.org\n🔗 readxl: readxl.tidyverse.org"
+  },
+  {
+    "objectID": "hw/hw-1.html",
+    "href": "hw/hw-1.html",
+    "title": "HW 1 - Data visualization",
+    "section": "",
+    "text": "Important\n\n\n\nThis homework is due Friday, Feb 3 at 5:00pm."
+  },
+  {
+    "objectID": "hw/hw-1.html#packages",
+    "href": "hw/hw-1.html#packages",
+    "title": "HW 1 - Data visualization",
+    "section": "Packages",
+    "text": "Packages\n\nlibrary(tidyverse)\nlibrary(openintro)"
+  },
+  {
+    "objectID": "hw/hw-1.html#guidelines-tips",
+    "href": "hw/hw-1.html#guidelines-tips",
+    "title": "HW 1 - Data visualization",
+    "section": "Guidelines + tips",
+    "text": "Guidelines + tips\nYour plots should include an informative title, axes should be labeled, and careful consideration should be given to aesthetic choices.\nRemember that continuing to develop a sound workflow for reproducible data analysis is important as you complete this homework and other assignments in this course. There will be periodic reminders in this assignment to remind you to knit, commit, and push your changes to GithHub. You should have at least 3 commits with meaningful commit messages by the end of the assignment.\n\n\n\n\n\n\nNote\n\n\n\nNote: Do not let R output answer the question for you unless the question specifically asks for just a plot. For example, if the question asks for the number of columns in the data set, please type out the number of columns. You are subject to lose points if you do not."
+  },
+  {
+    "objectID": "hw/hw-1.html#data-1-duke-forest-houses",
+    "href": "hw/hw-1.html#data-1-duke-forest-houses",
+    "title": "HW 1 - Data visualization",
+    "section": "Data 1: Duke Forest houses",
+    "text": "Data 1: Duke Forest houses\n\n\n\n\n\n\nNote\n\n\n\nUse the duke_forest dataset for Exercises 1 and 2.\n\n\nFor the following two exercises you will work with data on houses that were sold in the Duke Forest neighborhood of Durham, NC in November 2020. The duke_forest dataset comes from the openintro package. You can see a list of the variables on the package website or by running ?duke_forest in your console."
+  },
+  {
+    "objectID": "hw/hw-1.html#exercise-1",
+    "href": "hw/hw-1.html#exercise-1",
+    "title": "HW 1 - Data visualization",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nSuppose you’re helping some family friends who are looking to buy a house in Duke Forest. As they browse Zillow listings, they realize some houses have garages and others don’t, and they wonder: Does having a garage make a difference in price?\nLuckily, you can help them answer this question with data visualization!\n\nMake histograms of the prices of houses in Duke Forest based on whether they have a garage.\n\nIn order to do this, you will first need to create a new variable called garage (with levels \"Garage\" and \"No garage\").\nBelow is the code for creating this new variable. Here, we mutate() the duke_forest data frame to add a new variable called garage which takes the value \"Garage\" if the text string \"Garage\" is detected in the parking variable and takes the test string \"No garage\" if not.\n\n\n\nduke_forest |>\n  mutate(garage = if_else(str_detect(parking, \"Garage\"),   \"Garage\", \"No garage\"))\n\n\nThen, facet by garage and use different colors for the two facets.\nChoose an appropriate binwidth and decide whether a legend is needed, and turn it off if not.\nInclude informative title and axis labels.\nFinally, include a brief (2-3 sentence) narrative comparing the distributions of prices of Duke Forest houses that do and don’t have garages. Your narrative should touch on whether having a garage “makes a difference” in terms of the price of the house.\n\n\nNow is a good time to render, commit, and push. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceding."
+  },
+  {
+    "objectID": "hw/hw-1.html#exercise-2",
+    "href": "hw/hw-1.html#exercise-2",
+    "title": "HW 1 - Data visualization",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nIt’s expected that within any given marker larger houses will be priced higher. It’s also expected that the age of the house will have an effect on the price. However in some markets new houses might be more expensive while in others new construction might mean “no character” and hence be less expensive. So your family friends ask: “In Duke Forest, do houses that are bigger and more expensive tend to be newer ones than those that are smaller and cheaper?”\nOnce again, data visualization skills to the rescue!\n\nCreate a scatter plot to exploring the relationship between price and area, conditioning for year_built.\nUse geom_smooth() with the argument se = FALSE to add a smooth curve fit to the data and color the points by year_built.\nInclude informative title, axis, and legend labels.\nDiscuss each of the following claims (1-2 sentences per claim). Your discussion should touch on specific things you observe in your plot as evidence for or against the claims.\n\nClaim 1: Larger houses are priced higher.\nClaim 2: Newer houses are priced higher.\nClaim 3: Bigger and more expensive houses tend to be newer ones than smaller and cheaper ones.\n\n\n\nNow is a good time to render, commit, and push.\nMake sure that you commit and push ALL changed documents and your Git pane is completely empty before proceding."
+  },
+  {
+    "objectID": "hw/hw-1.html#data-2-brfss",
+    "href": "hw/hw-1.html#data-2-brfss",
+    "title": "HW 1 - Data visualization",
+    "section": "Data 2: BRFSS",
+    "text": "Data 2: BRFSS\n\n\n\n\n\n\nNote\n\n\n\nUse this dataset for Exercises 3 through 5.\n\n\n\nThe Behavioral Risk Factor Surveillance System (BRFSS) is the nation’s premier system of health-related telephone surveys that collect state data about U.S. residents regarding their health-related risk behaviors, chronic health conditions, and use of preventive services. Established in 1984 with 15 states, BRFSS now collects data in all 50 states as well as the District of Columbia and three U.S. territories. BRFSS completes more than 400,000 adult interviews each year, making it the largest continuously conducted health survey system in the world.\nSource: cdc.gov/brfss\n\nIn the following exercises we will work with data from the 2020 BRFSS survey. The originally come from here, though we will work with a random sample of responses and a small number of variables from the data provided. These have already been sampled for you and the dataset you’ll use can be found in the data folder of your repo. It’s called brfss.csv.\n\nbrfss <- read_csv(\"data/brfss.csv\")"
+  },
+  {
+    "objectID": "hw/hw-1.html#exercise-3",
+    "href": "hw/hw-1.html#exercise-3",
+    "title": "HW 1 - Data visualization",
+    "section": "Exercise 3",
+    "text": "Exercise 3\n\nHow many rows are in the brfss dataset? What does each row represent?\nHow many columns are in the brfss dataset? Indicate the type of each variable.\nInclude the code and resulting output used to support your answer.\n\n\n Now is a good time to render, commit, and push."
+  },
+  {
+    "objectID": "hw/hw-1.html#exercise-4",
+    "href": "hw/hw-1.html#exercise-4",
+    "title": "HW 1 - Data visualization",
+    "section": "Exercise 4",
+    "text": "Exercise 4\nDo people who smoke more tend to have worse health conditions?\n\nUse a segmented bar chart to visualize the relationship between smoking (smoke_freq) and general health (general_health). Decide on which variable to represent with bars and which variable to fill the color of the bars by.\nPay attention to the order of the bars and, if need be, use the fct_relevel function to reorder the levels of the variables.\n\nBelow is sample code for releveling general_health. Here we first convert general_health to a factor (how R stores categorical data) and then order the levels from Excellent to Poor.\n\n\n\nbrfss |>\n  mutate(\n    general_health = as.factor(general_health),\n    general_health = fct_relevel(general_health, \"Excellent\", \"Very good\", \"Good\", \"Fair\", \"Poor\")\n  )\n\n\nInclude informative title, axis, and legend labels.\nComment on the motivating question based on evidence from the visualization: Do people who smoke more tend to have worse health conditions?\n\n\n Now is a good time to render, commit, and push."
+  },
+  {
+    "objectID": "hw/hw-1.html#exercise-5",
+    "href": "hw/hw-1.html#exercise-5",
+    "title": "HW 1 - Data visualization",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nHow are sleep and general health associated?\n\nCreate a visualization displaying the relationship between sleep and general_health.\nInclude informative title and axis labels.\nModify your plot to use a different theme than the default.\nComment on the motivating question based on evidence from the visualization: How are sleep and general health associated?\n\n\n Now is a good time to render, commit, and push."
+  },
+  {
+    "objectID": "hw/hw-1.html#exercise-6",
+    "href": "hw/hw-1.html#exercise-6",
+    "title": "HW 1 - Data visualization",
+    "section": "Exercise 6",
+    "text": "Exercise 6\n\nFill in the blanks:\n\nThe gg in the name of the package ggplot2 stands for ___.\nIf you map the same continuous variable to both x and y aesthetics in a scatterplot, you get a straight ___ line. (Choose between “vertical”, “horizontal”, or “diagonal”.)\n\nCode style: Fix up the code style by spaces and line breaks where needed. Briefly describe your fixes. (Hint: You can refer to the Tidyverse style guide.)\n\n\nggplot(data=mpg,mapping=aes(x=drv,fill=class))+geom_bar() +scale_fill_viridis_d()\n\n\nRead ?facet_wrap. What does nrow do? What does ncol do? What other options control the layout of the individual panels? Why doesn’t facet_grid() have nrow and ncol arguments?\n\n\n Render, commit, and push one last time.\nMake sure that you commit and push all changed documents and your Git pane is completely empty before proceding."
+  },
+  {
+    "objectID": "hw/hw-1.html#submission",
+    "href": "hw/hw-1.html#submission",
+    "title": "HW 1 - Data visualization",
+    "section": "Submission",
+    "text": "Submission\n\nGo to http://www.gradescope.com and click Log in in the top right corner.\nClick School Credentials Duke Net ID and log in using your Net ID credentials.\nClick on your STA 199 course.\nClick on the assignment, and you’ll be prompted to submit it.\nMark all the pages associated with exercise. All the pages of your homework should be associated with at least one question (i.e., should be “checked”). If you do not do this, you will be subject to lose points on the assignment.\nDo not select any pages of your PDF submission to be associated with the “Workflow & formatting” question."
+  },
+  {
+    "objectID": "hw/hw-1.html#grading",
+    "href": "hw/hw-1.html#grading",
+    "title": "HW 1 - Data visualization",
+    "section": "Grading",
+    "text": "Grading\n\nExercise 1: 7 points\nExercise 2: 9 points\nExercise 3: 5 points\nExercise 4: 9 points\nExercise 5: 7 points\nExercise 6: 8 points\nWorkflow + formatting: 5 points\nTotal: 50 points\n\n\n\n\n\n\n\nNote\n\n\n\nThe “Workflow & formatting” grade is to assess the reproducible workflow. This includes:\n\nlinking all pages appropriately on Gradescope\nputting your name in the YAML at the top of the document\ncommitting the submitted version of your .qmd to GitHub\nAre you under the 80 character code limit? (You shouldn’t have to scroll to see all your code).\nPipes %>%, |> and ggplot layers + should be followed by a new line\nYou should be consistent with stylistic choices, e.g. only use 1 of = vs <- and %>% vs |>\nAll binary operators should be surrounded by space. For example x + y is appropriate. x+y is not."
+  },
+  {
+    "objectID": "prepare/prep6.html",
+    "href": "prepare/prep6.html",
+    "title": "Prepare",
+    "section": "",
+    "text": "📖 Read:\n\ntidy data by Hadley Wickham\n\nworkflow style"
+  },
+  {
+    "objectID": "prepare/prep7.html",
+    "href": "prepare/prep7.html",
+    "title": "Prepare",
+    "section": "",
+    "text": "📖 Read:\n\nR4DS: Chp 6 - Data tidying (Sections 6.3 and 6.4)\n\n⌨️ Watch:\n\nTidying data"
+  },
+  {
+    "objectID": "prepare/prep5.html",
+    "href": "prepare/prep5.html",
+    "title": "Prepare",
+    "section": "",
+    "text": "📖 Read:\n\nR4DS: Chp 20 - Joins - Sections 20.1 - 20.4\n\n⌨️ Watch:\n\nWorking with multiple data frames"
+  },
+  {
+    "objectID": "prepare/prep4.html",
+    "href": "prepare/prep4.html",
+    "title": "Prepare",
+    "section": "",
+    "text": "📖 Read:\n\nR4DS: Chp 4 - Data transformation\nIMS: Chp 5 - Exploring numerical data\n\n⌨️ Watch:\n\nGrammar of data wrangling\nWorking with a single data frame"
+  },
+  {
+    "objectID": "prepare/prep1.html",
+    "href": "prepare/prep1.html",
+    "title": "Prepare",
+    "section": "",
+    "text": "Join the course Slack using the invitation link in your email.\nReserve a STA 198-199 container at https://cmgr.oit.duke.edu/containers.\n📖 Read:\n\nR for Data Science (R4DS): Chp 1 - Introduction\nIntroduction to Modern Statistics (IMS): Chp 1 - Hello data\nThe syllabus!"
+  },
+  {
+    "objectID": "prepare/prep3.html",
+    "href": "prepare/prep3.html",
+    "title": "Prepare",
+    "section": "",
+    "text": "📖 Read:\n\nIMS: Chp 4 - Exploring categorical data\nIMS: Chp 5 - Exploring numerical data\n\n⌨️ Watch:\n\nVisualizing numerical data\nVisualizing categorical data"
+  },
+  {
+    "objectID": "prepare/prep2.html",
+    "href": "prepare/prep2.html",
+    "title": "Prepare",
+    "section": "",
+    "text": "📖 Read: - R4DS: Chp 2 - Data visualization - Sections 2.1 and 2.4\n⌨️ Watch: - Data and visualization - Visualising data with ggplot2"
+  },
+  {
+    "objectID": "prepare/prep8.html",
+    "href": "prepare/prep8.html",
+    "title": "Prepare",
+    "section": "",
+    "text": "📖 Read:\n\nR4DS: Chp 17 - Factors\n\n⌨️ Watch:\n\nData types\nData classes"
+  },
+  {
+    "objectID": "ae/ae-05.html",
+    "href": "ae/ae-05.html",
+    "title": "Working with multiple data frames",
+    "section": "",
+    "text": "this ae is due for grade (48 hours from class). To turn in, simply push to GitHub\nhomework 01\nlab 01 due Monday at 5:00pm"
+  },
+  {
+    "objectID": "ae/ae-05.html#getting-started",
+    "href": "ae/ae-05.html#getting-started",
+    "title": "Working with multiple data frames",
+    "section": "Getting started",
+    "text": "Getting started\nClone your ae5-username repo from the GitHub organization."
+  },
+  {
+    "objectID": "ae/ae-05.html#today",
+    "href": "ae/ae-05.html#today",
+    "title": "Working with multiple data frames",
+    "section": "Today",
+    "text": "Today\nBy the end of today you will…\n\njoin data frames"
+  },
+  {
+    "objectID": "ae/ae-05.html#load-packages",
+    "href": "ae/ae-05.html#load-packages",
+    "title": "Working with multiple data frames",
+    "section": "Load packages",
+    "text": "Load packages\n\nlibrary(tidyverse)"
+  },
+  {
+    "objectID": "ae/ae-05.html#joins",
+    "href": "ae/ae-05.html#joins",
+    "title": "Working with multiple data frames",
+    "section": "Joins",
+    "text": "Joins\nThere are six join functions in the dplyr package. Join functions take two data frames as arguments and return a data frame.\nThe six joins can be broken down into two categories:\n\nMutating joins: joining data frames results in mutating new columns\nFiltering joins: joining data frames results in filtering observations in one data frame based on another.\n\nIn all of the following examples, x and y are two data frames:\n\nx = tibble(value = c(100, 200, 300),\n            xcol = c(\"x1\", \"x2\", \"x3\"))\ny = tibble(value = c(100, 200, 400),\n            ycol = c(\"y1\", \"y2\", \"y4\"))\nx\n\n# A tibble: 3 × 2\n  value xcol \n  <dbl> <chr>\n1   100 x1   \n2   200 x2   \n3   300 x3   \n\ny\n\n# A tibble: 3 × 2\n  value ycol \n  <dbl> <chr>\n1   100 y1   \n2   200 y2   \n3   400 y4   \n\n\n\nMutating joins\nThe most popular 2 joins:\n\nleft_join(x, y): keep all rows from x and adds columns from y\nright_join(x, y): keeps all rows from y and adds columns from x\n\nTwo more helpful joins:\n\ninner_join(x, y): join all rows from x where there are matching values in y.Returns all combinations in case of multiple matches\nfull_join(x, y): include all rows in x or y\n\nToy examples:\n\nx %>%\n  left_join(y)\n\nJoining, by = \"value\"\n\n\n# A tibble: 3 × 3\n  value xcol  ycol \n  <dbl> <chr> <chr>\n1   100 x1    y1   \n2   200 x2    y2   \n3   300 x3    <NA> \n\n\n\nWhat do you think Joining, by = \"value\" means?\n\n\nx %>%\n  right_join(y, by = \"value\")\n\n# A tibble: 3 × 3\n  value xcol  ycol \n  <dbl> <chr> <chr>\n1   100 x1    y1   \n2   200 x2    y2   \n3   400 <NA>  y4   \n\n\n\nx %>%\n  inner_join(y)\n\nJoining, by = \"value\"\n\n\n# A tibble: 2 × 3\n  value xcol  ycol \n  <dbl> <chr> <chr>\n1   100 x1    y1   \n2   200 x2    y2   \n\n\n\nfull_join(x, y)\n\nJoining, by = \"value\"\n\n\n# A tibble: 4 × 3\n  value xcol  ycol \n  <dbl> <chr> <chr>\n1   100 x1    y1   \n2   200 x2    y2   \n3   300 x3    <NA> \n4   400 <NA>  y4   \n\n\n\n\nFiltering joins\n\nsemi_join(x, y): return all rows from x with match in y\nanti_join(x, y): return all rows from x without a match in y\n\nIn both of these “filtering” cases we do not add any new columns to our first argument (the data frame x).\nToy examples:\n\nx %>%\nsemi_join(y)\n\nJoining, by = \"value\"\n\n\n# A tibble: 2 × 2\n  value xcol \n  <dbl> <chr>\n1   100 x1   \n2   200 x2   \n\n\n\nx %>%\nanti_join(y)\n\nJoining, by = \"value\"\n\n\n# A tibble: 1 × 2\n  value xcol \n  <dbl> <chr>\n1   300 x3   \n\n\n\n\n\n\n\n\nNote\n\n\n\nWe can manually specify which columns to join by and the columns do not have to have the same name! See the example below.\n\n\nCheck out the new data frame x2:\n\nx2 = x %>%\n  mutate(new_value = value) %>%\n  select(new_value, xcol)\n\nx2\n\n# A tibble: 3 × 2\n  new_value xcol \n      <dbl> <chr>\n1       100 x1   \n2       200 x2   \n3       300 x3   \n\n\nWe can still join x2 with y but left_join(x2, y) won’t work. We have to manually specify which columns to join by:\n\nx2 %>%\n  left_join(y, by = c(\"new_value\" = \"value\"))\n\n# A tibble: 3 × 3\n  new_value xcol  ycol \n      <dbl> <chr> <chr>\n1       100 x1    y1   \n2       200 x2    y2   \n3       300 x3    <NA>"
+  },
+  {
+    "objectID": "ae/ae-05.html#practice",
+    "href": "ae/ae-05.html#practice",
+    "title": "Working with multiple data frames",
+    "section": "Practice",
+    "text": "Practice\nWe’ll take a look at some New York flights data.\nThis data set contains on-time data for all flights that departed NYC (i.e. JFK, LGA or EWR) in 2013.\nThis data is a subset of the data set provided by the nycflights13 package.\n\nCodebook\nCheck out codebook for flights, airlines and airports with ?flights, ?airlines and ?airports\n\nlibrary(nycflights13)\n\ndata(flights)\ndata(airlines)\ndata(airports)\n\n\nExercise 1\nflights contains the two letter carrier abbreviations and airlines contains a dictionary. It would be nice if this information was in one data frame so we could read off easily e.g. which airlines are most likely to have arrival delays.\nUse an appropriate join to add the column of airlines to flights and save the resulting data frame as flights2.\n\n# code here\n\n\n\nExercise 2\nUsing flights2, report the average arrival delay for each carrier. Print only the 5 carrier airline with the worst arrival delays on average. No joins required here.\n\n# code here\n\n\n\nExercise 3\nCreate a new data set called dest_delays that reports the median arrival delay at each destination airport.\n\n# code here\n\n\n\nExercise 4\nWhich destination has the worst arrival delay? (Note: you will need to join dest_delays with airports to answer this question)\n\n# code here\n\n\n\nOptional bonus\n\nIs there anything else you might want to learn from the data before declaring one airport is most likely to have delayed arrival or one carrier is most likely to result in a delayed flight?"
+  },
+  {
+    "objectID": "ae/ae-01.html",
+    "href": "ae/ae-01.html",
+    "title": "Welcome to R",
+    "section": "",
+    "text": "By the end of today you will…\n\nbegin to know your way around RStudio\nbe able to define package, data frame, variable, function, argument\nuse the function glimpse()"
+  },
+  {
+    "objectID": "ae/ae-01.html#getting-started",
+    "href": "ae/ae-01.html#getting-started",
+    "title": "Welcome to R",
+    "section": "Getting started",
+    "text": "Getting started\nClone the ae1 repo from the GitHub organization"
+  },
+  {
+    "objectID": "ae/ae-01.html#r-as-a-calculator",
+    "href": "ae/ae-01.html#r-as-a-calculator",
+    "title": "Welcome to R",
+    "section": "R as a calculator",
+    "text": "R as a calculator\n\nUse R as a calculator by typing the following into the console:\n\n\n5 * 5 + 10\n\nx = 3\nx + x^2\n\nx = 1:10\nx * 7\nIn the last couple examples we save some value as the object “x”.\nWe can “print” x to the screen by typing the name of the object (“x”) in the console or in a code chunk."
+  },
+  {
+    "objectID": "ae/ae-01.html#tour-of-rstudio",
+    "href": "ae/ae-01.html#tour-of-rstudio",
+    "title": "Welcome to R",
+    "section": "Tour of RStudio",
+    "text": "Tour of RStudio\n\nenvironment\nR functions\nloading and viewing a data frame"
+  },
+  {
+    "objectID": "ae/ae-01.html#load-a-package",
+    "href": "ae/ae-01.html#load-a-package",
+    "title": "Welcome to R",
+    "section": "Load a package",
+    "text": "Load a package\n\nlibrary(tidyverse)"
+  },
+  {
+    "objectID": "ae/ae-01.html#load-data",
+    "href": "ae/ae-01.html#load-data",
+    "title": "Welcome to R",
+    "section": "Load data",
+    "text": "Load data\n\nroster = read_csv(\"data/roster.csv\")\nsurvey = read_csv(\"data/survey.csv\")\n\nQuestion: What objects store the data in the code chunk above? Can you print them to the screen?\nCreate a new code chunk with CMD+OPTION+I (mac) or CTRL+ALT+I (windows/linux)\nSo far we’ve already seen two functions. library and read_csv. Functions in R are attached to parentheses and take an input, aka an argument, and often (but not always) return an output. To learn more about a function, you can check the documentation with ?, e.g. ?library."
+  },
+  {
+    "objectID": "ae/ae-01.html#demos",
+    "href": "ae/ae-01.html#demos",
+    "title": "Welcome to R",
+    "section": "Demos",
+    "text": "Demos\nLet’s glimpse the data frame.\n\nglimpse(survey)\n\nRows: 12\nColumns: 5\n$ name                 <chr> \"A\", \"Appa\", \"Bumi\", \"Soka\", \"Katara\", \"Suki\", \"Z…\n$ email                <chr> \"the-last-Rbender@duke.edu\", \"yip-yip-appa@duke.e…\n$ bender               <chr> \"Airbender\", \"Airbender\", \"Earthbender\", \"None\", …\n$ previous_programming <chr> \"No\", \"No\", \"No\", \"Somewhat\", \"Yes\", \"Yes\", \"Yes\"…\n$ year                 <dbl> 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4\n\n\nTo look at all of it, we can use view()\n\nview(survey)\n\nView the roster data in the console\nTerminology: “columns” of a dataframe are called variables whereas “rows” are observations.\nQuestion: How many variables are in the data frame survey? How many observations? What about the data frame roster?\nWhy must I input specific email formats?\n\nroster |>\n  left_join(survey, by = \"email\")"
+  },
+  {
+    "objectID": "ae/ae-03.html",
+    "href": "ae/ae-03.html",
+    "title": "Visualizing various types of data",
+    "section": "",
+    "text": "Join GitHub organization if you haven’t already\nThis ae is not due for a grade, but when drop/add ends, aes will be graded for completion. You turn in your aes by committing to GitHub."
+  },
+  {
+    "objectID": "ae/ae-03.html#getting-started",
+    "href": "ae/ae-03.html#getting-started",
+    "title": "Visualizing various types of data",
+    "section": "Getting started",
+    "text": "Getting started\nClone your ae3-username repo from the GitHub organization. If you don’t have an ae3-username repo, you have not yet accepted your course org invite. You can still clone the public repo but note that you won’t be able to push."
+  },
+  {
+    "objectID": "ae/ae-03.html#today",
+    "href": "ae/ae-03.html#today",
+    "title": "Visualizing various types of data",
+    "section": "Today",
+    "text": "Today\nBy the end of today you will…\n\ncreate and interpret scatter plots, bar plots, stacked bar plots, facet plots and be able to look up and use other ggplot geometries\n\nBut first, we’ll finish ae2"
+  },
+  {
+    "objectID": "ae/ae-03.html#load-packages",
+    "href": "ae/ae-03.html#load-packages",
+    "title": "Visualizing various types of data",
+    "section": "Load packages",
+    "text": "Load packages\n\nlibrary(tidyverse)\nlibrary(palmerpenguins)\nlibrary(viridis) # we'll use to customize colors"
+  },
+  {
+    "objectID": "ae/ae-03.html#plots",
+    "href": "ae/ae-03.html#plots",
+    "title": "Visualizing various types of data",
+    "section": "Plots",
+    "text": "Plots\nThe procedure used to construct plots can be summarized using the code below.\n\nggplot(data = [data set], \n       mapping = aes(x = [x-variable], y = [y-variable])) +\n   geom_xxx() +\n   geom_xxx() + \n  other options\n\n\nExample: bar plot\n\nggplot(data = penguins, \n       mapping = aes(x = species)) +\n  geom_bar() +\n  labs(x = \"Species\", y = \"Count\", title = \"Palmer penguin species\")\n\n\n\n\n\n\nExample: stacked bar plot\n\npenguins |>\n  filter(!is.na(sex)) |>\nggplot(mapping = aes(x = species, fill = sex)) +\n  geom_bar(position = \"fill\") +\n  labs(x = \"Species\", y = \"Count\", title = \"Palmer penguin species\")\n\n\n\n\n\nExercise 1\n\ntry with and without position = \"fill\". What does this argument do?\n\n\n\n\nAesthetics\nAn aesthetic is a visual property in your plot that is derived from the data.\n\nshape\ncolor\nsize\nalpha (transparency)\n\nWe can map a variable in our data set to a color, a size, a transparency, and so on. The aesthetics that can be used with each geom_ can be found in the documentation.\nHere we are going to use the viridis package, which has more color-blind accessible colors. scale_color_viridis specifies which colors you want to use. You can learn more about the options here.\nOther sources that can be helpful in devising accessible color schemes include Color Brewer, the Wes Anderson package, and the cividis package.\nThis visualization shows a scatterplot of bill length (x variable) and flipper length (y variable). Using the viridis function, we make points for male penguins purple and female penguins yellow. We also add axes labels and a title.\n\nggplot(data = penguins, \n       mapping = aes(x = bill_length_mm, y = flipper_length_mm,\n                     color = sex)) + \n   geom_point() + \n   labs(title = \"Flipper length vs bill length\",\n        x = \"Bill length (mm)\", y = \"Flipper length (mm)\") + \n        scale_color_viridis(discrete=TRUE, option = \"D\", name=\"Sex\")\n\nWarning: Removed 11 rows containing missing values (`geom_point()`).\n\n\n\n\n\nIf you want to change, for exaple, color or fill for all points regardless of the data, you can pass the argument color = or fill = to the geometry itself. **Properties of the plot that are based on the data must be passed to the aes() function.\n\nExercise 2\n\nCreate a new code chunk and paste the code above into it. Remove the scale_color_viridis layer. Next change the above color to \"steelblue\". Since you are hard-coding the color of all the points, this must happen inside the geometry not the aesthetic. On the other hand, color = sex only works inside aes().\n\n\n\nExercise 3\n\nWhat will the visualization look like below? Write your answer down before running the code.\n\n\nggplot(data = penguins, \n       mapping = aes(x = bill_length_mm, y = flipper_length_mm,\n                     shape = sex)) + \n   geom_point() + \n   labs(title = \"Flipper length vs bill length\",\n        x = \"Bill length (mm)\", y = \"Flipper length (mm)\") + \n        scale_color_viridis(discrete = TRUE, option = \"D\", name=\"Sex\")\n\n\n\n\nA note on colors\nTo work with the viridis color palettes…\n\nscale_color_viridis() to change color\nscale_fill_viridis() to change fill\nargument discrete = TRUE to use a discrete color palette\nargument discrete = FALSE to use a continuous color palette\n\nTo use your own custom color palettes, you can use scale_color_manual() and scale_fill_manual(), but more on this later.\n\n\nFaceting\nWe can use smaller plots to display different subsets of the data using faceting. This is helpful to visualize \\(>2\\) variables and examine conditional relationships.\n\npenguins |>\n  ggplot(aes(x = bill_length_mm, flipper_length_mm, color = island)) +\n  geom_point() +\n  facet_wrap(~ species) +\n  labs(x = \"Bill length (mm)\", y = \"Flipper length (mm)\", color = \"Island\")\n\nWarning: Removed 2 rows containing missing values (`geom_point()`).\n\n\n\n\n\n\npenguins |>\n  ggplot(aes(x = bill_length_mm, flipper_length_mm, color = species)) +\n  geom_point() +\n  facet_wrap(~ island) +\n  labs(x = \"Bill length (mm)\", y = \"Flipper length (mm)\", color = \"Species\") +\n  scale_color_viridis(discrete = TRUE)\n\nWarning: Removed 2 rows containing missing values (`geom_point()`)."
+  },
+  {
+    "objectID": "ae/ae-03.html#ggplot-activity",
+    "href": "ae/ae-03.html#ggplot-activity",
+    "title": "Visualizing various types of data",
+    "section": "ggplot activity",
+    "text": "ggplot activity\n\n# code here"
+  },
+  {
+    "objectID": "ae/ae-03.html#additional-resources",
+    "href": "ae/ae-03.html#additional-resources",
+    "title": "Visualizing various types of data",
+    "section": "Additional resources",
+    "text": "Additional resources\n\nFind more ggplot geometries at https://ggplot2.tidyverse.org/reference/"
+  },
+  {
+    "objectID": "ae/ae-02.html",
+    "href": "ae/ae-02.html",
+    "title": "Intro statistics and plotting",
+    "section": "",
+    "text": "Office hours\nJoin GitHub organization if you haven’t already\nThis ae is not due for a grade, but when drop/add ends, aes will be graded for completion. You turn in your aes by committing to GitHub."
+  },
+  {
+    "objectID": "ae/ae-02.html#getting-started",
+    "href": "ae/ae-02.html#getting-started",
+    "title": "Intro statistics and plotting",
+    "section": "Getting started",
+    "text": "Getting started\nClone your ae2-username repo from the GitHub organization. If you don’t have an ae2-username repo, you have not yet accepted your course org invite. You can still clone the public repo but note that you won’t be able to push."
+  },
+  {
+    "objectID": "ae/ae-02.html#last-time",
+    "href": "ae/ae-02.html#last-time",
+    "title": "Intro statistics and plotting",
+    "section": "Last time",
+    "text": "Last time\n\nDefine package, data frame, variable and observation\nWhat’s a function? What’s an argument?\n\n\nglimpse(data)\nmean(x)\nlibrary(tidyverse)\n\n\nHow do you print to the screen?"
+  },
+  {
+    "objectID": "ae/ae-02.html#today",
+    "href": "ae/ae-02.html#today",
+    "title": "Intro statistics and plotting",
+    "section": "Today",
+    "text": "Today\nBy the end of today you will…\n\npractice using glimpse(), names(), nrow(), ncol(), distinct(), count()\ndefine and give examples of statistics\nmake visualizations with ggplot\n\n\n“The simple graph has brought more information to the data analyst's mind than any other device\"\n- John Tukey"
+  },
+  {
+    "objectID": "ae/ae-02.html#load-packages",
+    "href": "ae/ae-02.html#load-packages",
+    "title": "Intro statistics and plotting",
+    "section": "Load packages",
+    "text": "Load packages\n\nlibrary(tidyverse)\n\nA package within a package…\n\nThe tidyverse package is a collection of packages. ggplot2 and dplyr are two packages contained within tidyverse. ggplot2 contains functions for plotting data while dplyr contains tools to wrangle, manipulate and summarize data frames."
+  },
+  {
+    "objectID": "ae/ae-02.html#load-data",
+    "href": "ae/ae-02.html#load-data",
+    "title": "Intro statistics and plotting",
+    "section": "Load data",
+    "text": "Load data\nThe data are stored as a CSV (comma separated values) file in the data folder of your repository. Let’s read it from there and save it as an object called flint.\n\nflint = read_csv(\"data/flint.csv\")\n\n\nData dictionary\n\nid: sample ID number (identifies the home)\nzip: ZIP code in Flint of the sample’s location\nward: ward in Flint of the sample’s location\ndraw: which time point the water was sampled from\nlead: lead content in parts per billion"
+  },
+  {
+    "objectID": "ae/ae-02.html#get-to-know-the-data",
+    "href": "ae/ae-02.html#get-to-know-the-data",
+    "title": "Intro statistics and plotting",
+    "section": "Get to know the data",
+    "text": "Get to know the data\n\nExercise 1:\nLook at the data, how many observations are there? How many variables?\n[answer here]\n\n\ndistinct() and count()\nLet’s use distinct to find the number of different time points water was sampled.\n\ndistinct(flint, draw)\n\n# A tibble: 3 × 1\n  draw  \n  <chr> \n1 first \n2 second\n3 third \n\n\nHow many unique homes are in the data set?\n\nflint |>\n  distinct(id)\n\n# A tibble: 269 × 1\n      id\n   <dbl>\n 1     1\n 2     2\n 3     4\n 4     5\n 5     6\n 6     7\n 7     8\n 8     9\n 9    12\n10    13\n# … with 259 more rows\n\n\n\nA note on pipes |> and %>%."
+  },
+  {
+    "objectID": "ae/ae-02.html#exercise-2",
+    "href": "ae/ae-02.html#exercise-2",
+    "title": "Intro statistics and plotting",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nFill in the code to count how many samples were taken from each zip code. Un-comment the lines (i.e. remove the # before running the code)\n\n# flint |>\n # count(______)\n\nWhich ZIP code had the most samples drawn?"
+  },
+  {
+    "objectID": "ae/ae-02.html#goal",
+    "href": "ae/ae-02.html#goal",
+    "title": "Intro statistics and plotting",
+    "section": "Goal",
+    "text": "Goal\nWe want to learn about the population using a sample.\nIn the case we want to learn about the lead content in all of Flint, MI homes but we only have available water readings from a sample of homes (our data set).\n\nStatistics\nWhat is a statistic? It’s any mathematical function of the data. Sometimes, a statistic is referred to as “sample statistic” since you compute it from a sample (the data) and not the entire population.\n\nmeasure of central tendency:\n\nmean\nmedian\nmode\n\n\n\norder statistics:\n\nquantiles\n\nminimum (0 percentile)\nmedian (50th percentile)\nmaximum (100 percentile)\n\n\n\n\nmeasures of spread:\n\nvariance\nstandard deviation\nrange\nquartiles\ninter-quartile range (IQR)\n\n… and any other arbitrary function of the data you can come up with!\n\n\nExercise 3:\nCome up with your own statistic and write it in the narrative here.\nTo access a column of the data, we’ll use data$column.\nLet’s compute some of these statistics for lead ppb in R.\n\n# code here"
+  },
+  {
+    "objectID": "ae/ae-02.html#intro-to-plotting",
+    "href": "ae/ae-02.html#intro-to-plotting",
+    "title": "Intro statistics and plotting",
+    "section": "Intro to plotting",
+    "text": "Intro to plotting\nLet’s take a look at the distribution of lead content in homes in Flint, MI by building a plot, layer by layer.\nggplot() creates the initial base coordinate system, and we will add layers to that base. We first specify the data set we will use with data = flint.\n\nggplot(data = flint)\n\n\n\n\nThe mapping argument is paired with an aesthetic (aes()), which tells us how the variables in our data set should be mapped to the visual properties of the graph.\n\nggplot(data = flint,\n       mapping = aes(x = lead)) # variable(s) we want to look at\n\n\n\n\nWe often omit the names of the first two arguments in R functions. So you’ll often see this written as:\n\nggplot(flint, \n       aes(x = lead))\n\n\n\n\nThe geom_xx function specifies the type of plot we want to use to represent the data. In the code below, we use geom_histogram which creates a plot where each observation is represented by a point.\n\nggplot(flint, \n       aes(x = lead)) +\n  geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\nWe can make this plot look nicer by adjusting the number of bins and/or the x-axis.\n\nflint |> # data\n  ggplot(aes(x = lead)) + # columns we want to look at\n  geom_histogram(bins = 50) + # geometry of the visualization\n  xlim(0, 100) # limit the x-axis to a certain range\n\n\n\n\nLet’s visualize some of our summary statistics on the plot.\n\nExercise 4:\nUn-comment the code below and fill in the blank with the mean.\n\nflint |> \n  ggplot(aes(x = lead)) + \n  geom_histogram(bins = 50) + \n  xlim(0,100) #+\n  #geom_vline(xintercept = __, color = \"red\")\n\nAdd another geom_vline with the median. Use a separate color."
+  },
+  {
+    "objectID": "ae/ae-02.html#describing-distributions",
+    "href": "ae/ae-02.html#describing-distributions",
+    "title": "Intro statistics and plotting",
+    "section": "Describing distributions",
+    "text": "Describing distributions\nTo describe a distribution we will use the terms below.\n\nshape\n\nskewness: right-skewed, left-skewed, symmetric\nmodality: unimodal, bimodal, multimodal, uniform\n\ncenter: mean (mean), median (median)\nspread: range (range), standard deviation (sd), interquartile range (IQR)\noutliers: observations outside the pattern of the data"
+  },
+  {
+    "objectID": "ae/ae-02.html#box-plots",
+    "href": "ae/ae-02.html#box-plots",
+    "title": "Intro statistics and plotting",
+    "section": "Box plots",
+    "text": "Box plots\nLet’s make some plots, where we will focus on zip codes 48503, 48504, 48505, 48506, and 48507. We will restrict our attention to samples with lead values less than 1,000 ppb.\n\nflint_focus <- flint |> \n  filter(zip %in% 48503:48507, lead < 1000)\n\nBelow are side-by-side box plots for the three flushing times in each of the five zip codes we considered. Add x and y labels; add a title by inserting title = \"title_name\" inside the labs() function.\n\nggplot(data = flint_focus, aes(x = factor(zip), y = lead)) +\n  geom_boxplot(aes(fill = factor(draw))) +\n  labs(x = \"--------\", y = \"--------\", fill = \"Flushing time\") +\n  scale_fill_discrete(breaks = c(\"first\", \"second\", \"third\"),\n                      labels = c(\"0 (sec)\", \"45 (sec)\", \"120 (sec)\")) +\n  coord_flip() +\n  theme_bw()\n\n\n\n\nAdd labels for x, y, a title, and subtitle to the code below to update the corresponding plot.\n\nggplot(data = flint_focus, aes(x = factor(zip), y = lead)) +\n  geom_boxplot(aes(fill = factor(draw))) + \n  labs(x = \"--------\", y = \"--------\", fill = \"Flushing time\",\n       subtitle = \"--------\") +\n  scale_fill_discrete(breaks = c(\"first\", \"second\", \"third\"),\n                      labels = c(\"0 (sec)\", \"45 (sec)\", \"120 (sec)\")) +\n  coord_flip(ylim = c(0, 50)) +\n  theme_bw()\n\n\n\n\nWhat is the difference between the two plots? What are the advantages and disadvantages to each plot?"
+  },
+  {
+    "objectID": "ae/ae-02.html#references",
+    "href": "ae/ae-02.html#references",
+    "title": "Intro statistics and plotting",
+    "section": "References",
+    "text": "References\n\nLangkjaer-Bain, R. (2017). The murky tale of Flint’s deceptive water data. Significance, 14: 16-21.\nKelsey J. Pieper, Rebekah Martin, Min Tang, LeeAnne Walters, Jeffrey Parks, Siddhartha Roy, Christina Devine, and Marc A. Edwards Environmental Science & Technology 2018 52 (15), 8124-8132 DOI: 10.1021/acs.est.8b00791"
+  },
+  {
+    "objectID": "project-tips-resources.html",
+    "href": "project-tips-resources.html",
+    "title": "Project tips + resources",
+    "section": "",
+    "text": "The project is very open ended. For instance, in creating a compelling visualization(s) of your data in R, there is no limit on what tools or packages you may use. You do not need to visualize all of the data at once. A single high quality visualization will receive a much higher grade than a large number of poor quality visualizations.\nBefore you finalize your write up, make sure the printing of code chunks is turned off with the option echo: false. In addition to code chunks, ensure all messages are turned off with the options warning: false and message: false.\nFinally, pay attention to details in your write-up and presentation. Neatness, coherency, and clarity will count."
+  },
+  {
+    "objectID": "project-tips-resources.html#suppress-code-and-warnings",
+    "href": "project-tips-resources.html#suppress-code-and-warnings",
+    "title": "Project tips + resources",
+    "section": "Suppress code and warnings",
+    "text": "Suppress code and warnings\n\nInclude the following in the YAML of your report.qmd to suppress all code, warnings, and other messages.\n\nexecute:\n  echo: false\n  warning: false"
+  },
+  {
+    "objectID": "project-tips-resources.html#headers",
+    "href": "project-tips-resources.html#headers",
+    "title": "Project tips + resources",
+    "section": "Headers",
+    "text": "Headers\nUse headers to clearly label each section. Make sure there is a space between the previous line and the header. Use appropriate header levels."
+  },
+  {
+    "objectID": "project-tips-resources.html#references",
+    "href": "project-tips-resources.html#references",
+    "title": "Project tips + resources",
+    "section": "References",
+    "text": "References\nInclude all references in a section called “References” at the end of the report. This course does not have specific requirements for formatting citations and references. Optional: Use Quarto’s citation support for generating your reference. See Citations & Footnotes on the Quarto documentation for more on that."
+  },
+  {
+    "objectID": "project-tips-resources.html#appendix",
+    "href": "project-tips-resources.html#appendix",
+    "title": "Project tips + resources",
+    "section": "Appendix",
+    "text": "Appendix\nIf you have additional work that does not fit or does not belong in the body of the report, you may put it at the end of the document in section called “Appendix”. The items in the appendix should be properly labeled. The appendix should only be for additional material. The reader should be able to fully understand your report without viewing content in the appendix. We will not grade your appendix."
+  },
+  {
+    "objectID": "project-tips-resources.html#resize-figures",
+    "href": "project-tips-resources.html#resize-figures",
+    "title": "Project tips + resources",
+    "section": "Resize figures",
+    "text": "Resize figures\nResize plots and figures, so you have more space for the narrative. Resize individual figures: Set fig-width and fig-height in chunk options, e.g.,\n#| echo: fenced\n#| label: plot1\n#| fig-height: 3\n#| fig-width: 5\nreplacing plot1 with a meaningful label and the height and width with values appropriate for your write up.\nResize all figures: Include the fig-height and fig-width options in the YAML header as shown below:\nexecute:\n  fig-height: 3\n  fig-width: 5\nReplace the height and width values with values appropriate for your write up."
+  },
+  {
+    "objectID": "project-tips-resources.html#arranging-plots",
+    "href": "project-tips-resources.html#arranging-plots",
+    "title": "Project tips + resources",
+    "section": "Arranging plots",
+    "text": "Arranging plots\nArrange plots in a grid, instead of one after the other. This is especially useful when displaying plots for exploratory data analysis and to check assumptions.\nIf you’re using ggplot2 functions, the patchwork package makes it easy to arrange plots in a grid.\nMore to be added soon…"
+  },
+  {
+    "objectID": "computing-access.html",
+    "href": "computing-access.html",
+    "title": "Computing access",
+    "section": "",
+    "text": "To access computing resources for the introductory data science courses offered by the Duke University Department of Statistical Science, go to the Duke Container Manager website, cmgr.oit.duke.edu/containers.\nIf this is your first time accessing the containers, click on reserve STA198-199 on the Reservations available menu on the right. You only need to do this once, and when you do, you’ll see this container moved to the My reservations menu on the left.\nNext, click on STA198-199 under My reservations to access the RStudio instance you’ll use for the course."
+  },
+  {
+    "objectID": "teaching-resources/GitHubClassroomManagement.html",
+    "href": "teaching-resources/GitHubClassroomManagement.html",
+    "title": "GitHub Classroom Management",
+    "section": "",
+    "text": "library(ghclass)\nlibrary(tidyverse)\nEach code chunk below is designed to be self-contained (no dependency between chunks)."
+  },
+  {
+    "objectID": "teaching-resources/GitHubClassroomManagement.html#to-make-new-repos",
+    "href": "teaching-resources/GitHubClassroomManagement.html#to-make-new-repos",
+    "title": "GitHub Classroom Management",
+    "section": "To make new repos",
+    "text": "To make new repos\n\n\n\n\nCreate a new repo in the organization called “lab1” with a README.md\nPush to “lab1”: lab1.qmd, data/any_relevant_data.csv and optionally lab1.Rproj.\nSelect the repository, click “Settings” and check “Template repository”.\nFollow the code below.\n\n\n# initial assignment creation\norg = \"sta199-sp23-1\"\nusernames = ghclass::org_members(org)\n\n## edit this:\nassignment_template_repo = \"lab0_template\"\n\nghclass::org_create_assignment(\n  org = org,\n  repo = paste0(assignment_template_repo, \"-\", usernames),\n  user = usernames,\n  source_repo = paste0(org, \"/\", assignment_template_repo)\n)\n\n\n\n\nFeel free to test lab creation on my dummy account “fishswish” or on your own account with the code below\n\norg = \"sta199-sp23-1\"\nusernames = \"fishswish\"\nassignment_template_repo = \"lab0_template\"\nghclass::org_create_assignment(\n  org = org,\n  repo = paste0(assignment_template_repo, \"-\", usernames),\n  user = usernames,\n  source_repo = paste0(org, \"/\", assignment_template_repo)\n)\n\nIt’s possible some people are not in the organization and will need to be have additional repos created manually following the steps below:\n\ngo to template repo and click the green “Use this template” -> “Create a new repository” -> name it “lab-x-their_github_username” -> leave “Private” selected and click “Create repository from template”\nnext in the new repo go to “Settings” -> “Collaborators and Teams” -> click the green “Add people” button and type in their GitHub username.\nnext make sure to go to the “People” section of the organization and select “Invite member” so they join the organization too. Owning a repo in the org just makes them an outside collaborator. They still have to actually join the org"
+  },
+  {
+    "objectID": "teaching-resources/GitHubClassroomManagement.html#oops.-file-management-after-you-create-repos",
+    "href": "teaching-resources/GitHubClassroomManagement.html#oops.-file-management-after-you-create-repos",
+    "title": "GitHub Classroom Management",
+    "section": "Oops. File management after you create repos",
+    "text": "Oops. File management after you create repos\nThe magic happens in repo_add_file(). Be sure to edit/check each item below, specifically:\n\norg as appropriate\nrepos_to_modify object\narguments to repo_add_file()\n\n\norg = \"sta199-sp23-1\"\nusernames = ghclass::org_members(org)\n\n# get all existing labX repos\nrepos_to_modify = org_repos(org, filter = \"lab0-\") # edit this \"filter\"\n\nghclass::repo_add_file(repo = repos_to_modify,\n                       branch = \"main\",\n                       repo_folder = \"data/\", # edit this to be path to folder in repo\n                       message = \"commit message here\", # update to be a meaningful commit message\n                       file = \"~/Desktop/class/data/file.csv\", # update local path to the file you want to add\n                       overwrite = FALSE) # if you want to overwrite or not"
+  },
+  {
+    "objectID": "slides/01-welcome-199.html",
+    "href": "slides/01-welcome-199.html",
+    "title": "Welcome to STA 199",
+    "section": "",
+    "text": "Alexander Fisher\nalexander.fisher@duke.edu\nOffice hours: Wednesday 1:30-3:30pm in Old Chem 207\nA little bit about my research…"
+  },
+  {
+    "objectID": "slides/01-welcome-199.html#why-data-science",
+    "href": "slides/01-welcome-199.html#why-data-science",
+    "title": "Welcome to STA 199",
+    "section": "Why data science?",
+    "text": "Why data science?\nData science turns data into knowledge.\n\n\nExamples"
+  },
+  {
+    "objectID": "slides/01-welcome-199.html#course-overview",
+    "href": "slides/01-welcome-199.html#course-overview",
+    "title": "Welcome to STA 199",
+    "section": "Course overview",
+    "text": "Course overview\n\n\n\n\n\n\n\n\nImportant\n\n\n\nNo programming experience required."
+  },
+  {
+    "objectID": "slides/01-welcome-199.html#learning-objectives",
+    "href": "slides/01-welcome-199.html#learning-objectives",
+    "title": "Welcome to STA 199",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of this course you will be able to…\n\nlearn to explore, visualize, and analyze data in a reproducible manner\ngain experience in data wrangling and munging, exploratory data analysis, predictive modeling, and data visualization\nwork on problems and case studies inspired by and based on real-world questions and data\nlearn to effectively communicate results through written assignments and project presentation\ndevelop your own question about a data set of your choosing and use techniques from this class to answer the question"
+  },
+  {
+    "objectID": "slides/01-welcome-199.html#assessments",
+    "href": "slides/01-welcome-199.html#assessments",
+    "title": "Welcome to STA 199",
+    "section": "Assessments",
+    "text": "Assessments\n\nPrepare: short videos, reading assignments, and lectures.\nPractice: application exercises\nPerform: labs, homework, exams, and the project.\n\n\n\n\nCategory\nPercentage\n\n\n\n\nHomework\n30%\n\n\nLabs\n15%\n\n\nProject\n15%\n\n\nExam 01\n18%\n\n\nExam 02\n18%\n\n\nApplication Exercises\n4%"
+  },
+  {
+    "objectID": "slides/01-welcome-199.html#community",
+    "href": "slides/01-welcome-199.html#community",
+    "title": "Welcome to STA 199",
+    "section": "Community",
+    "text": "Community\nUphold the Duke Community Standard:\n\nI will not lie, cheat, or steal in my academic endeavors;\nI will conduct myself honorably in all my endeavors; and\nI will act if the Standard is compromised.\n\nAny violations in academic honesty standards as outlined in the Duke Community Standard and those specific to this course will automatically result in a 0 for the assignment and will be reported to the Office of Student Conduct for further action.\n\nLearning environment\n\nCreate a learning environment that is welcoming, inclusive, and accessible to everyone.\nRespect and honor each other.\n\n\n\nTeam work policy\nThe final project and several labs will be completed in teams. All group members are expected to participate equally. Commit history may be used to give individual team members different grades. Your grade may differ from the rest of your group."
+  },
+  {
+    "objectID": "slides/01-welcome-199.html#late-policy",
+    "href": "slides/01-welcome-199.html#late-policy",
+    "title": "Welcome to STA 199",
+    "section": "Late policy",
+    "text": "Late policy\n\nHomeworks and labs can be turned in within 72 hours of the deadline for grade penalty (5% off per day).\nExams and the final project cannot be turned in late and can only be excused under exceptional circumstances.\nThe Duke policy for illness requires a short-term illness report or a letter from the Dean; except in emergencies, all other absenteeism must be approved in advance (e.g., an athlete who must miss class may be excused by prior arrangement for specific days). For emergencies, email notification is needed at the first reasonable time.\nAll exemptions will be handled by course coordinator, Ed Tam, at sta199@duke.edu\nLast minute coding/rendering issues will not be granted extensions."
+  },
+  {
+    "objectID": "slides/01-welcome-199.html#course-toolkit",
+    "href": "slides/01-welcome-199.html#course-toolkit",
+    "title": "Welcome to STA 199",
+    "section": "Course toolkit",
+    "text": "Course toolkit\n\ncourse website: https://sta199-sp23-1.github.io/\ncourse organization (on GitHub): https://github.com/sta199-sp23-1\nslack: https://sta199-sp23-001.slack.com"
+  },
+  {
+    "objectID": "slides/01-welcome-199.html#communication-and-missing-class",
+    "href": "slides/01-welcome-199.html#communication-and-missing-class",
+    "title": "Welcome to STA 199",
+    "section": "Communication and missing class",
+    "text": "Communication and missing class\nIf you have questions about homework/lab exercises, debugging, or any question about course materials\n\ncome to office hours\npost to a public channel in slack.\n\nWhen you need help debugging, it is essential you provide a reproducible example of the code that caused the error. Screenshots, or pasting a short snippet of the offending code is helpful!\n\n\n\n\n\n\n\nWarning\n\n\n\nThe teaching team will not debug via email.\n\n\n\n\nWhen you miss a class:\n\nwatch the recorded lecture on Sakai\ncome to office hours or post in a public channel of slack if you have questions"
+  },
+  {
+    "objectID": "slides/01-welcome-199.html#jump-in",
+    "href": "slides/01-welcome-199.html#jump-in",
+    "title": "Welcome to STA 199",
+    "section": "Jump in",
+    "text": "Jump in\n\nCheck your email / sakai announcements for slack invite.\nPost on slack\nAccept your course organization invite\n\n\n\nDon’t have an invite? Follow the lab 0 instructions to create a lab-0-username repo here.\n\n\n\nDemo: ae1"
+  },
+  {
+    "objectID": "slides/lab0-welcome.html",
+    "href": "slides/lab0-welcome.html",
+    "title": "Welcome to Lab",
+    "section": "",
+    "text": "Meet the TA!\nIntroduce yourself (icebreaker)\nFollow along these slides on the course website (under slides): sta199-sp23-1.github.io\nBookmark this! It’s the course website."
+  },
+  {
+    "objectID": "slides/lab0-welcome.html#what-to-expect-in-labs",
+    "href": "slides/lab0-welcome.html#what-to-expect-in-labs",
+    "title": "Welcome to Lab",
+    "section": "What to expect in labs",
+    "text": "What to expect in labs\n\nIntroduce lab assignment (5-10 minutes, longer today)\nWork on the lab assignment (you can find it on the course website). You will work with others but your submission must be your own for the first several labs.\nTypically you won’t finish labs in-class and they will be due 1 week after they are released."
+  },
+  {
+    "objectID": "slides/lab0-welcome.html#tips",
+    "href": "slides/lab0-welcome.html#tips",
+    "title": "Welcome to Lab",
+    "section": "Tips",
+    "text": "Tips\n\nRead all instructions on the lab.\nOne work strategy is to get through portions that you think will be most challenging (which initially might be the coding component) during lab when we can help you on the spot and leave the narrative writing until later.\nMake use of office hours. Before you need help!"
+  },
+  {
+    "objectID": "slides/lab0-welcome.html#beginnings",
+    "href": "slides/lab0-welcome.html#beginnings",
+    "title": "Welcome to Lab",
+    "section": "Beginnings",
+    "text": "Beginnings\n\nCreate a GitHub account (unless you already have one) on https://github.com/\n\none day you might want to show off your work, so choose a username you will be proud to show to a future employer.\n\ntell us your username by taking this survey. This is essential to receive credit on future assignments.\n\n\n\n\n−+\n05:00"
+  },
+  {
+    "objectID": "slides/lab0-welcome.html#create-your-github-repo",
+    "href": "slides/lab0-welcome.html#create-your-github-repo",
+    "title": "Welcome to Lab",
+    "section": "Create your GitHub repo",
+    "text": "Create your GitHub repo\nCreate your own copy of today’s lab by clicking here. You may be prompted to login to GitHub. Your copy of of the lab is called your “repository”, or “repo” for short."
+  },
+  {
+    "objectID": "slides/lab0-welcome.html#demo-setting-up",
+    "href": "slides/lab0-welcome.html#demo-setting-up",
+    "title": "Welcome to Lab",
+    "section": "Demo: setting up",
+    "text": "Demo: setting up\nNow that your lab repo is created, let’s setup git to work within RStudio.\nTo begin, open\n\nthe lab instructions here and\nthe RStudio containers here\nyour repo (that contains your starting files for the lab) here\n\nFollow the instructions in the lab as I demo."
+  },
+  {
+    "objectID": "slides/lab0-welcome.html#remember",
+    "href": "slides/lab0-welcome.html#remember",
+    "title": "Welcome to Lab",
+    "section": "Remember",
+    "text": "Remember\nNo programming experience is required or expected to take this class. Come to lecture, lab and office hours. It’s okay to be confused. Stick with it, you will get the hang of it!"
+  },
+  {
+    "objectID": "course-faq.html",
+    "href": "course-faq.html",
+    "title": "FAQ",
+    "section": "",
+    "text": "Go to your Files tab, check the box next to the file you want to download, then click on the blue gear icon on the Files tab to reveal the drop down menu, and select Export… If you have selected multiple files to export, RStudio will zip them up into a single zip file for you. If you’ve selected just a single file, it will only download that. The downloaded file will go to wherever files you download off the internet goes on your computer (usually your Downloads folder)."
+  },
+  {
+    "objectID": "course-faq.html#how-can-i-submit-my-assignment-to-gradescope",
+    "href": "course-faq.html#how-can-i-submit-my-assignment-to-gradescope",
+    "title": "FAQ",
+    "section": "How can I submit my assignment to Gradescope?",
+    "text": "How can I submit my assignment to Gradescope?\nThe instructions for submitting your assignment to Gradescope can be found here. In a nutshell, you’ll upload your PDF and them mark the page(s) where each question can be found. It’s OK if a question spans multiple pages, just mark them all. It’s also OK if a page includes multiple questions."
+  },
+  {
+    "objectID": "course-faq.html#can-i-use-a-local-install-of-r-and-rstudio-instead-of-using-the-rstudio-containers",
+    "href": "course-faq.html#can-i-use-a-local-install-of-r-and-rstudio-instead-of-using-the-rstudio-containers",
+    "title": "FAQ",
+    "section": "Can I use a local install of R and RStudio instead of using the RStudio containers?",
+    "text": "Can I use a local install of R and RStudio instead of using the RStudio containers?\nYou are welcome to, but you will need to install specific versions of R and RStudio for everything to work as expected. You will also need to install the R packages we’re using as well as have git installed on your computer. These are not extremely challenging things to get right, but they are not trivial either, particularly on certain operating systems. Myself and the TAs are always happy to provide help with any computational questions when you’re working in the containers we have provided for you. If you’re working on your local setup, we can’t guarantee being able to resolve your issues, though we’re happy to try.\nIf you want to take this path, here is what you need to do:\n\nDownload and install R 4.2.1: https://cran.r-project.org/\nDownload and install the preview build of RStudio: https://www.rstudio.com/products/rstudio/download/preview/\nInstall git: https://happygitwithr.com/install-git.html\nInstall any necessary packages with install.packages(\"___\")\n\nAnd I’d like to reiterate again that successful installation of these software is not a learning goal of this course. So if any of this seems tedious or intimidating in any way, just use the computing environment we have set up for you. More on that here."
+  },
+  {
+    "objectID": "computing-cheatsheets.html",
+    "href": "computing-cheatsheets.html",
+    "title": "R cheatsheets",
+    "section": "",
+    "text": "The following cheatsheets come from https://www.rstudio.com/resources/cheatsheets. We haven’t covered every function and functionality listed on them, but you might still find them useful as references."
+  },
+  {
+    "objectID": "project-description.html",
+    "href": "project-description.html",
+    "title": "Project description",
+    "section": "",
+    "text": "Project details will be posted as the semester progresses."
+  },
+  {
+    "objectID": "course-syllabus.html",
+    "href": "course-syllabus.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "Click here to download a PDF copy of the syllabus.\nOur course coordinator, Edric Tam, will handle all inquiries about late work, extensions and absences in accordance with the late policy described in the syllabus below. Please send emails to sta199@duke.edu."
+  },
+  {
+    "objectID": "course-syllabus.html#class-time-and-location",
+    "href": "course-syllabus.html#class-time-and-location",
+    "title": "Syllabus",
+    "section": "Class time and location",
+    "text": "Class time and location\n\n\n\nLecture\nW/F: 10:15-11:30 AM\nLSRC B101\n\n\nLab 1\nM: 10:15-11:30 AM\nPerkins LINK 087 (Classroom 3)\n\n\nLab 2\nM: 12:00-1:15 PM\nPerkins LINK 087 (Classroom 3)\n\n\nLab 3\nM: 1:45-3:00 PM\nPerkins LINK 087 (Classroom 3)\n\n\nLab 4\nM: 3:30-4:35 PM\nPerkins LINK 087 (Classroom 3)\n\n\nLab 5\nM: 5:15-6:30 PM\nPerkins LINK 087 (Classroom 3)\n\n\nLab 11\nM: 5:15 - 6:30 PM\nPerkins LINK 071 (Classroom 5)"
+  },
+  {
+    "objectID": "course-syllabus.html#office-hours",
+    "href": "course-syllabus.html#office-hours",
+    "title": "Syllabus",
+    "section": "Office hours",
+    "text": "Office hours\nClick here for the instructor and TA office hours locations and Zoom links. You are welcome to attend the office hours for any member of the teaching team, regardless of section."
+  },
+  {
+    "objectID": "course-syllabus.html#textbooks",
+    "href": "course-syllabus.html#textbooks",
+    "title": "Syllabus",
+    "section": "Textbooks",
+    "text": "Textbooks\nAll books are freely available online.\n\n\n\nR for Data Science, 2e\nGrolemund, Wickham\nO’Reilly, 2nd edition, 2022\nHard copy only available of 1st edition\n\n\nIntroduction to Modern Statistics\nÇetinkaya-Rundel, Hardin\nOpenIntro Inc., 1st Edition, 2021\nHard copy available on Amazon"
+  },
+  {
+    "objectID": "course-syllabus.html#course-learning-objectives",
+    "href": "course-syllabus.html#course-learning-objectives",
+    "title": "Syllabus",
+    "section": "Course learning objectives",
+    "text": "Course learning objectives\nBy the end of the semester, you will…\n\nlearn to explore, visualize, and analyze data in a reproducible manner\ngain experience in data wrangling and munging, exploratory data analysis, predictive modeling, and data visualization\nwork on problems and case studies inspired by and based on real-world questions and data\nlearn to effectively communicate results through written assignments and project presentation\ndevelop your own question about a data set of your choosing and use techniques from this class to answer the question"
+  },
+  {
+    "objectID": "course-syllabus.html#assessment",
+    "href": "course-syllabus.html#assessment",
+    "title": "Syllabus",
+    "section": "Assessment",
+    "text": "Assessment\nThe activities and assessments in this course are designed to help you successfully achieve the course learning objectives. They are designed to follow the Prepare, Practice, Perform format.\n\nPrepare: Includes short videos, reading assignments, and lectures to introduce new concepts and ensure a basic comprehension of the material. The goal is to help you prepare for the in-class activities during lecture.\nPractice: In-class application exercises where you will begin to master the concepts and methods introduced in the prepare assignment. The activities will graded for completion, as they are designed for you to gain experience with the statistical and computing techniques before working on graded assignments.\nPerform: Includes labs, homework, exams, and the project. These assignments build upon the prepare and practice assignments and are the opportunity for you to demonstrate your understanding of the course material and how it is applied to analyze real-world data.\n\n\nTeam work policy\nThe final project and several labs will be completed in teams. GitHub commits will be used to measure individual contribution to the assignment. All group members are expected to participate equally. Commit history may be used to give individual team members different grades. Your grade may differ from the rest of your group.\n\n\nApplication exercises (practice)\nEach lecture, we will work through application exercise (AEs). These serve as notes you will fill in during class mixed with practice exercises. Exercises which give you an opportunity to practice statistical concepts and code introduced in the prepare assignment.\nBecause these AEs are for practice, they will be graded based on completion, i.e., a good-faith effort has been made in attempting all parts. Successful on-time completion of at least 80% of AEs will result in full credit for AEs in the final course grade. To submit an AE, you simply need to push your completed AE to the designated repo in GitHub.\n\n\nLabs (perform)\nIn labs, you will apply the concepts discussed in lecture to various data analysis scenarios, with a focus on the computation. Some lab assignments will be completed in teams, and all team members are expected to contribute equally to the completion of each assignment. You are expected to use the team’s git repository on the course’s GitHub page as the central platform for collaboration. Commits to this repository will be used as a metric of each team member’s relative contribution for each lab, see team work policy above. Lab assignments will be completed using Quarto, correspond to an appropriate GitHub repository, and be submitted for grading in Gradescope.\nThe lowest lab grade will be dropped at the end of the semester.\n\n\nHomework (perform)\nIn homework, you will apply what you’ve learned during lecture and lab to complete data analysis tasks. You may discuss homework assignments with other students; however, homework should be completed and submitted individually. Similar to lab assignments, homework must be typed up using Quarto and GitHub and submitted as a PDF in Gradescope.\nHomework assignments are due at 5:00 PM ET on the indicated due date.\nOne homework assignment will be dedicated to a statistics experience. The statistics experience is an opportunity to engage with statistics and data science outside of the classroom through podcasts, books, seminars, data analysis competitions, and other activities. As you complete these experiences, the goal is to consider how the material you’re learning in the course connects with society more broadly.\nThe lowest homework grade will be dropped at the end of the semester.\n\n\nExams (perform)\nThere will be two, take-home, open-note exams. Through these exams you have the opportunity to demonstrate what you’ve learned in the course thus far. Each exam will include small analysis and computational tasks related to the content in the prepare, practice, and perform assignments. More details about the content and structure of the exams will be discussed during the semester.\n\n\nProject (perform)\nThe purpose of the project is to apply what you’ve learned throughout the semester to analyze an interesting data-driven research question. The project will be completed with your lab teams, and each team will present their work in video and in writing during the final exam period. More information about the project will be provided during the semester."
+  },
+  {
+    "objectID": "course-syllabus.html#grading",
+    "href": "course-syllabus.html#grading",
+    "title": "Syllabus",
+    "section": "Grading",
+    "text": "Grading\nThe final course grade will be calculated as follows:\n\n\n\nCategory\nPercentage\n\n\n\n\nHomework\n30%\n\n\nLabs\n15%\n\n\nProject\n15%\n\n\nExam 01\n18%\n\n\nExam 02\n18%\n\n\nApplication Exercises\n4%\n\n\n\nThe final letter grade will be determined based on the following thresholds:\n\n\n\nLetter Grade\nFinal Course Grade\n\n\n\n\nA\n>= 93\n\n\nA-\n90 - 92.99\n\n\nB+\n87 - 89.99\n\n\nB\n83 - 86.99\n\n\nB-\n80 - 82.99\n\n\nC+\n77 - 79.99\n\n\nC\n73 - 76.99\n\n\nC-\n70 - 72.99\n\n\nD+\n67 - 69.99\n\n\nD\n63 - 66.99\n\n\nD-\n60 - 62.99\n\n\nF\n< 60"
+  },
+  {
+    "objectID": "course-syllabus.html#course-policies",
+    "href": "course-syllabus.html#course-policies",
+    "title": "Syllabus",
+    "section": "Course policies",
+    "text": "Course policies\nInclusive community: It is my intent that students from all backgrounds and perspectives be well-served by this course, that students’ learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength, and benefit. It is my intent to present materials and activities that are respectful of diversity and in alignment with Duke’s Commitment to Diversity and Inclusion. Your suggestions are encouraged and appreciated. Please let me know ways to improve the effectiveness of the course for you personally, or for other students or student groups.\nAcademic honesty: You should be familiar with Duke’s community standard: https://studentaffairs.duke.edu/conduct/about-us/duke-community-standard\nBy enrolling in this course, you commit to upholding Duke’s community standard reproduced as follows:\n\nI will not lie, cheat, or steal in my academic endeavors;\nI will conduct myself honorably in all my endeavors; and\nI will act if the Standard is compromised.\n\nAny violations in academic honesty standards as outlined in the Duke Community Standard and those specific to this course will automatically result in a 0 for the assignment and will be reported to the Office of Student Conduct for further action.\nPlease abide by the following as you work on assignments in this course: - You may discuss lab assignments with other students; however, you may not directly share (or copy) code or write up with other students. For team assignments, you may collaborate freely within your team. You may discuss the assignment with other teams; however, you may not directly share (or copy) code or write up with another team. Unauthorized sharing (or copying) of the code or write up will be considered a violation for all students involved. - You may not discuss or otherwise work with others on the exams. Unauthorized collaboration or using unauthorized materials will be considered a violation for all students involved. More details will be given closer to the exam date. - Reusing code: Unless explicitly stated otherwise, you may make use of online resources (e.g. Stack- Overflow) for coding examples on assignments. If you directly use code from an outside source (or use it as inspiration), you must explicitly cite where you obtained the code. Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism.\nLate policy:\nHomeworks and labs can be turned in within 72 hours of the deadline for grade penalty (5% off per day, stacks to 15% by the third day). Exams cannot be turned in late and can only be excused under exceptional circumstances. The Duke policy for illness requires a short-term illness report or a letter from the Dean; except in emergencies, all other absenteeism must be approved in advance (e.g., an athlete who must miss class may be excused by prior arrangement for specific days). For emergencies, email notification is needed at the first reasonable time.\n\nAll exemptions will be handled by course coordinator, Ed Tam, at sta199@duke.edu\nLast minute coding/rendering issues will not be granted extensions.\n\nProcedures for Requesting a Regrade\nEvery effort will be made to mark your work accurately. We are on your side, and want you to receive every point you have worked to earn. However, sometimes grading mistakes happen. If you believe that an error has been made, return the paper to the instructor within four days, stating your claim in writing.\nThe following claims will be considered for re-grading:\n\npoints are not totaled correctly;\nthe grader did not see a correct answer that is on your paper;\nyour answer is the same as the correct answer, but in a different form (e.g., you wrote a correct answer as 1/3 and the grader was looking for .333);\nyour answer to a free response question is essentially correct but stated slightly differently than the grader’s expectation.\n\nThe following claims will not be considered for re-grading:\n\narguments about the number of points lost;\n\n\n\narguments about question wording.\n\nConsidering re-grades consumes time and resources that TAs and the instructor would rather spend helping you understand material. Please bring only claims of type (i), (ii), (iii), or (iv) to our attention.\nCommunication: All lecture notes, assignment instructions, an up-to-date schedule, and other course materials may be found on the course website. Announcements will be emailed to the class through sakai. Please check your email regularly to ensure you have the latest announcements for the course. For quick communication with your peers and the teaching team, see the course slack for general questions and discussion.\nAccessibility: If there is any portion of the course that is not accessible to you due to challenges with technology or the course format, please let me know so we can make appropriate accommodations. The Student Disability Access Office (SDAO) is available to ensure that students are able to engage with their courses and related assignments. Students should be in touch with the Student Disability Access Office to request or update accommodations under these circumstances. Please note that accommodations are not retroactive and disability accommodations cannot be provided until a Faculty Accommodation Letter has been given to me. Please contact SDAO for more information: sdao@duke.edu or access.duke.edu."
+  },
+  {
+    "objectID": "course-syllabus.html#additional-resources",
+    "href": "course-syllabus.html#additional-resources",
+    "title": "Syllabus",
+    "section": "Additional resources",
+    "text": "Additional resources\nStudent mental health and wellness are of primary importance at Duke, and the university offers resources to support students in managing daily stress and self-care. Duke offers several resources for students to seek assistance on coursework and to nurture daily habits that support overall well-being, some of which are listed below\n\nThe Academic Resource Center: (919) 684-5917, theARC@duke.edu, or arc.duke.edu. The Academic Resource Center (the ARC) offers services to support students academically during their undergraduate careers at Duke. The ARC can provide support with time management, academic skills and strategies, course-specific tutoring, and more. ARC services are available free to any Duke undergraduate student, studying any discipline.\nDuWell: (919) 681-8421, provides Moments of Mindfulness (stress management and resilience building) and meditation programming (Koru workshop) to assist students in developing a daily emotional well-being practice. To see schedules for programs please see https://studentaffairs.duke.edu/duwell. All are welcome and no experience necessary.\n\nIf your mental health concerns and/or stressful events negatively affect your daily emotional state, academic performance, or ability to participate in your daily activities, many resources are available to help you through difficult times. Duke encourages all students to access these resources.\n\nDukeReach. Provides comprehensive outreach services to identify and support students in managing all aspects of well-being. If you have concerns about a student’s behavior or health visit the website for resources and assistance: https://students.duke.edu/wellness/dukereach/\nCounseling and Psychological Services (CAPS). CAPS services include individual and group counseling services, psychiatric services, and workshops. To initiate services, walk-in/call-in 9-4 M,W,Th,F and 9-6 Tuesdays. CAPS also provides referral to off- campus resources for specialized care.\n\n660-1000 or https://students.duke.edu/wellness/caps/\n\nTimelyCare (formerly known as Blue Devils Care). An online platform that is a convenient, confidential, and free way for Duke students to receive 24/7 mental health support through TalkNow and scheduled counseling. bluedevilscare.duke.edu"
+  },
+  {
+    "objectID": "computing-troubleshooting.html",
+    "href": "computing-troubleshooting.html",
+    "title": "Computing troubleshooting",
+    "section": "",
+    "text": "If you’re having difficulty launching an RStudio session from your reserved container, go to status.oit.duke.edu and scroll down to Teaching and Learning Tools. Under this heading you’ll find an entry called Container Manager (CMGR Coursework Containers).\n\nIf the status shows something other than Operational, this means there is a known incident with the containers. Check back later to see if it’s been resolved. If there’s a deadline coming up soon, post on the course Slack to let us know that there’s an issue. We can look into how quickly it might get resolved and decide on what to do about the deadline accordingly. Note: We don’t anticipate this to happen regularly, the systems are Operational a huge majority of the time!\nIf the status shows Operational, this means the system is expected to be working. Check your internet connection, if need be, restart your computer to ensure a fresh new connection. If your issue persists, post on the course forum with details on what you’ve tried and the errors you see (including verbatim errors and/or screenshots).\n\nAnother approach is to request a restart of your container. To do so, select your container as you usually do and then, instead of Login, click on Request Restart. Read the warning in the next page, and then click once more to restart your container."
   }
 ]
