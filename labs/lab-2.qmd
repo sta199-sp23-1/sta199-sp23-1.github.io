@@ -19,8 +19,8 @@ In this lab, you will...
 
 # Getting started
 
--   Go to the [sta199-s23-1](https://www.github.com/sta199-s23-1) organization on GitHub. Click on the repo with the prefix `lab-2`. It contains the starter documents you need to complete the lab.
--   Clone the repo and start a new project in RStudio. See the [Lab 0 instructions](https://sta199-s23-2.github.io/labs/lab-0.html#clone-the-repo-start-new-rstudio-project) for details on cloning a repo and starting a new R project.
+-   Go to the [sta199-sp23-1](https://www.github.com/sta199-sp23-1) organization on GitHub. Click on the repo with the prefix `lab-2`. It contains the starter documents you need to complete the lab.
+-   Clone the repo and start a new project in RStudio. See the [Lab 0 instructions](https://sta199-sp23-1.github.io/labs/lab-0.html#clone-the-repo-start-new-rstudio-project) for details on cloning a repo and starting a new R project.
 -   First, open the Quarto document `lab-2.qmd` and Render it.
 -   Make sure it compiles without errors.
 
@@ -218,7 +218,7 @@ To submit your assignment:
 -   Click on your *STA 199* course.
 -   Click on the assignment, and you'll be prompted to submit it.
 -   Mark all the pages associated with exercise. All the pages of your lab should be associated with at least one question (i.e., should be "checked"). *If you do not do this, you will be subject to lose points on the assignment.*
--   Select all of your .pdf submission to be associated with the *"Workflow & formatting"* question.
+-   Select *all* of your .pdf submission to be associated with the *"Workflow & formatting"* question.
 
 # Grading
 
@@ -235,5 +235,12 @@ To submit your assignment:
 
 ::: callout-note
 The "Workflow & formatting" grade is to assess the reproducible workflow.
-This includes updating your name in the YAML, committing the final version of your lab to Github, labeling the code chunks, and having readable code that does not exceed 80 characters on a given line, i.e., we can read all your code in the rendered PDF.
+This includes:
+
+-   linking all pages appropriately on Gradescope
+-   putting your name in the YAML at the top of the document
+-   committing the submitted version of your `.qmd` to GitHub
+-   Are you under the 80 character code limit? (You shouldn't have to scroll to see all your code). Pipes `%>%`, `|>` and ggplot layers `+` should be followed by a new line
+-   You should be consistent with stylistic choices, e.g. only use 1 of `=` vs `<-` and `%>%` vs `|>`
+-   All binary operators should be surrounded by space. For example `x + y` is appropriate. `x+y` is not.
 :::
