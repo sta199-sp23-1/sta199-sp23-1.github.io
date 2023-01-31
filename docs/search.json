@@ -1090,5 +1090,33 @@
     "title": "Data types and classes",
     "section": "Notes",
     "text": "Notes\nA type is how an object is stored in memory. In this course we’ll encounter the following types:\n\nnumeric types:\n\ndouble: a real number stored in double-precision floating point format\ninteger\n\ncharacter strings\nlogical (TRUE/FALSE)\nlists (a heterogeneous collection of the above)\nNULL\n\nSome objects have additional metadata associated with them, called a class. One popular example of a class is a factor. R stores categorical variables as factors.\n\nExample factor\n\nx = factor(c(\"Monday\", \"Friday\", \"Wednesday\"))\nstr(x) # look at the structure of x\n\n Factor w/ 3 levels \"Friday\",\"Monday\",..: 2 1 3\n\nattributes(x) # see metadata\n\n$levels\n[1] \"Friday\"    \"Monday\"    \"Wednesday\"\n\n$class\n[1] \"factor\"\n\nlevels(x) # look at levels of a factor\n\n[1] \"Friday\"    \"Monday\"    \"Wednesday\"\n\n\nThe levels of a factor default to alphabetical order but you can change the order of the levels:\n\nlevels(x) = c(\"Monday\", \"Wednesday\", \"Friday\")\nlevels(x)\n\n[1] \"Monday\"    \"Wednesday\" \"Friday\""
+  },
+  {
+    "objectID": "labs/lab-3.html",
+    "href": "labs/lab-3.html",
+    "title": "Lab 3 - Data tidying",
+    "section": "",
+    "text": "Important\n\n\n\nThis lab is due Monday, Feb 13 at 5:00pm."
+  },
+  {
+    "objectID": "labs/lab-3.html#warm-up",
+    "href": "labs/lab-3.html#warm-up",
+    "title": "Lab 3 - Data tidying",
+    "section": "Warm up",
+    "text": "Warm up\nBefore we introduce the data, let’s warm up with some simple exercises.\n\nUpdate the YAML, changing the author name to your name, and render the document.\nCommit your changes with a meaningful commit message.\nPush your changes to GitHub.\nGo to your repo on GitHub and confirm that your changes are visible in your `.qmd and .pdf files. If anything is missing, render, commit, and push again."
+  },
+  {
+    "objectID": "labs/lab-3.html#packages",
+    "href": "labs/lab-3.html#packages",
+    "title": "Lab 3 - Data tidying",
+    "section": "Packages",
+    "text": "Packages\nWe’ll use the tidyverse package for much of the data wrangling and the scales package for better plot labels. These packages are already installed for you. You can load it by running the following in your Console:\n\nlibrary(tidyverse)\nlibrary(scales)"
+  },
+  {
+    "objectID": "labs/lab-3.html#data",
+    "href": "labs/lab-3.html#data",
+    "title": "Lab 3 - Data tidying",
+    "section": "Data",
+    "text": "Data\nThe datasets that you will work with in this dataset come from the Organization for Economic Co-Operation and Development (OECD), stats.oecd.org."
   }
 ]
