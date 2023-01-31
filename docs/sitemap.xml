@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://sta199-f22-1.github.io/index.html</loc>
-    <lastmod>2023-01-30T11:28:55.045Z</lastmod>
+    <lastmod>2023-01-30T21:37:15.513Z</lastmod>
   </url>
   <url>
     <loc>https://sta199-f22-1.github.io/labs/lab-1.html</loc>
@@ -10,7 +10,7 @@
   </url>
   <url>
     <loc>https://sta199-f22-1.github.io/labs/lab-2.html</loc>
-    <lastmod>2023-01-30T15:04:57.412Z</lastmod>
+    <lastmod>2023-01-30T20:25:21.424Z</lastmod>
   </url>
   <url>
     <loc>https://sta199-f22-1.github.io/ae/ae-04.html</loc>
@@ -26,7 +26,7 @@
   </url>
   <url>
     <loc>https://sta199-f22-1.github.io/hw/hw-1.html</loc>
-    <lastmod>2023-01-30T15:04:40.813Z</lastmod>
+    <lastmod>2023-01-30T21:37:11.764Z</lastmod>
   </url>
   <url>
     <loc>https://sta199-f22-1.github.io/prepare/prep6.html</loc>
@@ -115,5 +115,25 @@
   <url>
     <loc>https://sta199-f22-1.github.io/computing-troubleshooting.html</loc>
     <lastmod>2023-01-30T15:04:55.572Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f22-1.github.io/prepare/prep11.html</loc>
+    <lastmod>2023-01-30T20:52:20.115Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f22-1.github.io/ae/ae-06.html</loc>
+    <lastmod>2023-01-30T23:37:16.493Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f22-1.github.io/ae/ae-07.html</loc>
+    <lastmod>2023-01-31T01:27:11.305Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f22-1.github.io/prepare/prep10.html</loc>
+    <lastmod>2023-01-30T20:25:49.723Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f22-1.github.io/prepare/prep9.html</loc>
+    <lastmod>2023-01-30T20:25:56.355Z</lastmod>
   </url>
 </urlset>

@@ -1,0 +1,11 @@
+---
+title: "Prepare"
+subtitle: "Due: Wednesday February 8, 2023"
+categories: "prepare"
+---
+
+📖 Read:
+
+-   R4DS: [Chp 8 - Data import](https://r4ds.hadley.nz/data-import.html)
+
+-   R4DS: [Chp 18 - Dates and times (Sections 18.1 - 18.3)](https://r4ds.hadley.nz/datetimes.html)
