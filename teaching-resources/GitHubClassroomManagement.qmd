@@ -50,7 +50,7 @@ org = "sta199-sp23-1"
 usernames = ghclass::org_members(org)
 
 ## edit this:
-assignment_template_repo = "ae6"
+assignment_template_repo = "ae7"
 
 # ghclass::org_create_assignment(
 #   org = org,

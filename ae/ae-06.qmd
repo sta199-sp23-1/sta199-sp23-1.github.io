@@ -10,6 +10,7 @@ format: html
 - this `ae` is due for grade (48 hours from class). To turn in, simply push to GitHub
 - [homework 01](/hw/hw-1.html) due Friday at 5:00pm
 - check out exam 01 date on [schedule](https://sta199-sp23-1.github.io/)
+- additional practice questions for exam up [here](/practice/practice1.html)
 - reminder: put course title `STA199` in the subject of all emails
 
 ## Getting started

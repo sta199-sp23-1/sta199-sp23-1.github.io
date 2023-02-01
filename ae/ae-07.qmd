@@ -7,8 +7,8 @@ format: html
 
 ## Bulletin
 
-- this `ae` is due for grade (48 hours from class). To turn in, simply push to GitHub
-- [homework 01](/hw/hw-1.html) due today at 5:00pm
+-   this `ae` is due for grade (48 hours from class). To turn in, simply push to GitHub
+-   [homework 01](/hw/hw-1.html) due today at 5:00pm
 
 ## Getting started
 
@@ -18,9 +18,8 @@ Clone *your* `ae7-username` repo from the [GitHub organization](https://github.c
 
 By the end of today you will...
 
-- learn how to check the type of a variable
-- utilize factors
-
+-   learn how to check the type of a variable
+-   utilize factors
 
 ## Load packages
 
@@ -39,17 +38,20 @@ library(scales)
 
 ## Notes
 
-A *type* is how an object is stored in memory. In this course we'll encounter the following types:
+A *type* is how an object is stored in memory.
+In this course we'll encounter the following types:
 
-- numeric types:
-  - double: a real number stored in double-precision floating point format 
-  - integer
-- character strings
-- logical (TRUE/FALSE)
-- lists (a heterogeneous collection of the above)
-- `NULL`
+-   numeric types:
+    -   double: a real number stored in double-precision floating point format
+    -   integer
+-   character strings
+-   logical (TRUE/FALSE)
+-   lists (a heterogeneous collection of the above)
+-   `NULL`
 
-Some objects have additional metadata associated with them, called a *class*. One popular example of a class is a factor. R stores categorical variables as factors.
+Some objects have additional metadata associated with them, called a *class*.
+One popular example of a class is a factor.
+R stores categorical variables as factors.
 
 ### Example factor
 
@@ -67,12 +69,10 @@ levels(x) = c("Monday", "Wednesday", "Friday")
 levels(x)
 ```
 
-
-
-
 ## Type coercion
 
--   **Demo:** Determine the type of the following vector. And then, change the type to numeric.
+-   **Demo:** Determine the type of the following vector.
+    And then, change the type to numeric.
 
     ```{r}
     #| label: typeof-x
@@ -83,7 +83,9 @@ levels(x)
     as.numeric(x)
     ```
 
--   **Demo:** Once again, determine the type of the following vector. And then, change the type to numeric. What's different than the previous exercise?
+-   **Demo:** Once again, determine the type of the following vector.
+    And then, change the type to numeric.
+    What's different than the previous exercise?
 
     ```{r}
     #| label: typeof-y
@@ -93,7 +95,9 @@ levels(x)
     # add code here
     ```
 
--   **Demo:** Once again, determine the type of the following vector. And then, change the type to numeric. What's different than the previous exercise?
+-   **Demo:** Once again, determine the type of the following vector.
+    And then, change the type to numeric.
+    What's different than the previous exercise?
 
     ```{r}
     #| label: typeof-z
@@ -103,7 +107,8 @@ levels(x)
     # add code here
     ```
 
--   **Demo:** Suppose you conducted a survey where you asked people how many cars their household owns collectively. And the answers are as follows:
+-   **Demo:** Suppose you conducted a survey where you asked people how many cars their household owns collectively.
+    And the answers are as follows:
 
 ```{r}
 #| label: survey-results
@@ -111,7 +116,9 @@ survey_results = tibble(cars = c(1, 2, "three"))
 survey_results
 ```
 
-This is annoying because of that third survey taker types a character string instead of providing a numeric value. So now you need to update the `cars` variable to be numeric. You do the following
+This is annoying because of that third survey taker types a character string instead of providing a numeric value.
+So now you need to update the `cars` variable to be numeric.
+You do the following
 
 ```{r}
 #| label: survey-results-mutate-1
@@ -120,7 +127,8 @@ survey_results |>
 mutate(cars = as.numeric(cars))
 ```
 
-Now you get a warning `NAs introduced by coercion` that happened while computing `cars = as.numeric(cars)` and the response from the third survey taker is now an `NA` (you lost their data). Fix your `mutate()` call to avoid this warning.
+Now you get a warning `NAs introduced by coercion` that happened while computing `cars = as.numeric(cars)` and the response from the third survey taker is now an `NA` (you lost their data).
+Fix your `mutate()` call to avoid this warning.
 
 ```{r}
 #| label: survey-results-mutate-2
@@ -132,9 +140,11 @@ survey_results |>
 
 #### Exercise 1
 
-First, guess the type of the vector. Then, check if you guessed right. I've done the first one for you, you'll see that it's helpful to check the type of each element of the vector first.
+First, guess the type of the vector.
+Then, check if you guessed right.
+I've done the first one for you, you'll see that it's helpful to check the type of each element of the vector first.
 
-- `c(1, 1L, "C")`
+-   `c(1, 1L, "C")`
 
 ```{r}
 v1 = c(1, 1L, "C")
@@ -147,8 +157,6 @@ typeof("C")
 # to check after you guess
 typeof(v1)
 ```
-
-
 
 ```{r}
 v2 = c(1L / 0, "A")
@@ -172,6 +180,30 @@ v4 = c(3, "3+")
 v5 = c(NA, TRUE)
 ```
 
+## Useful coercion
+
+#### Exercise 2
+
+```{r}
+data(mpg)
+```
+
+Recreate the plot below.
+Make sure axes and title labels are exactly matching, including spelling, capitalization, etc.
+
+::: callout-tip
+## Hint
+
+You will need to use `as.factor()` to cast the appropriate variable as a factor.
+:::
+
+![](images/mpgImage.png)
+
+```{r}
+# code here
+```
+
+
 ## Hotel bookings
 
 ```{r}
@@ -183,19 +215,42 @@ v5 = c(NA, TRUE)
 hotels = read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-02-11/hotels.csv")
 ```
 
-#### Exercise 2
+#### Exercise 3
 
-Take a look at the the following visualization. How are the months ordered? What would be a better order?
+Take a look at the the following visualization.
+How are the months ordered?
+What would be a better order?
 
 ![](images/hotel-prices-months.png){fig-align="center"}
 
-Reorder the months on the x-axis (levels of `arrival_date_month`) in a way that makes more sense. Use the `factor()` function to mutate the column into a factor. Read `?factor` for help.
+Reorder the months on the x-axis (levels of `arrival_date_month`) in a way that makes more sense.
+Use the `factor()` function to mutate the column into a factor.
+Read `?factor` for help.
 
 ```{r}
+#| eval: false
 #| label: hotels-plot
 
-# add code here
+hotels |>
+  group_by(hotel, arrival_date_month) |>   # group by hotel type and arrival month
+  summarise(mean_adr = mean(adr), .groups = "drop") |>       # calculate mean adr for each group
+  ggplot(aes(
+    x = arrival_date_month,                 # x-axis = arrival_date_month
+    y = mean_adr,                           # y-axis = mean_adr calculated above
+    group = hotel,                          # group lines by hotel type
+    color = hotel)                          # and color by hotel type
+  ) +
+  geom_line() +                             # use lines to represent data
+  theme_minimal() +                         # use a minimal theme
+  labs(
+    x = "Arrival month",                 # customize labels
+    y = "Mean ADR (average daily rate)",
+    title = "Comparison of resort and city hotel prices across months",
+    subtitle = "Resort hotel prices soar in the summer while ciry hotel prices remain relatively constant throughout the year",
+    color = "Hotel type"
+  ) 
 
 ```
 
-**Optional extra:** Change the y-axis label so the values are shown with dollar signs, e.g. \$80 instead of 80. You will want to use a function from the **scales** package, see <https://scales.r-lib.org/reference/index.html> for inspiration and help.
+**Optional extra:** Change the y-axis label so the values are shown with dollar signs, e.g. \$80 instead of 80.
+You will want to use a function from the **scales** package, see <https://scales.r-lib.org/reference/index.html> for inspiration and help.
