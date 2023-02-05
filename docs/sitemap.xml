@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://sta199-f22-1.github.io/index.html</loc>
-    <lastmod>2023-01-30T21:37:15.513Z</lastmod>
+    <lastmod>2023-02-05T04:46:40.496Z</lastmod>
   </url>
   <url>
     <loc>https://sta199-f22-1.github.io/labs/lab-1.html</loc>
@@ -139,5 +139,13 @@
   <url>
     <loc>https://sta199-f22-1.github.io/labs/lab-3.html</loc>
     <lastmod>2023-02-05T03:56:46.555Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f22-1.github.io/ae/ae-08.html</loc>
+    <lastmod>2023-02-05T04:46:14.099Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f22-1.github.io/exams/exam1.html</loc>
+    <lastmod>2023-02-05T04:47:46.624Z</lastmod>
   </url>
 </urlset>

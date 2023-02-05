@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>STA 199 - Spatial data</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<meta property="og:title" content="STA 199 - Spatial data">
+<meta property="og:description" content="STA 199">
+<meta property="og:site-name" content="STA 199">
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Spatial data</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="../" class="sidebar-logo-link">
+      <img src="../images/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/sta199-sp23-1" title="GitHub organization" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+    <a href="https://cmgr.oit.duke.edu/containers" title="RStudio Containers" class="sidebar-tool px-1"><i class="bi bi-code-square"></i></a>
+    <a href="https://docs.google.com/spreadsheets/d/16gf9dQ_41V628vKvFdS95JBOUKYSjuxJBo7OzPye-SI/edit?usp=sharing" title="Office Hours" class="sidebar-tool px-1"><i class="bi bi-people-fill"></i></a>
+</div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">Course information</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-syllabus.html" class="sidebar-item-text sidebar-link">Syllabus</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">Schedule</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-links.html" class="sidebar-item-text sidebar-link">Useful links</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-faq.html" class="sidebar-item-text sidebar-link">FAQ</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">Computing</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computing-access.html" class="sidebar-item-text sidebar-link">Access</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computing-troubleshooting.html" class="sidebar-item-text sidebar-link">Troubleshooting</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computing-cheatsheets.html" class="sidebar-item-text sidebar-link">Cheatsheets</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">Project</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../project-description.html" class="sidebar-item-text sidebar-link">Description</a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#bulletin" id="toc-bulletin" class="nav-link active" data-scroll-target="#bulletin">Bulletin</a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting started</a></li>
+  <li><a href="#today" id="toc-today" class="nav-link" data-scroll-target="#today">Today</a></li>
+  <li><a href="#load-packages" id="toc-load-packages" class="nav-link" data-scroll-target="#load-packages">Load packages</a></li>
+  <li><a href="#notes" id="toc-notes" class="nav-link" data-scroll-target="#notes">Notes</a>
+  <ul class="collapse">
+  <li><a href="#simple-features" id="toc-simple-features" class="nav-link" data-scroll-target="#simple-features">Simple features</a></li>
+  <li><a href="#sf-and-ggplot" id="toc-sf-and-ggplot" class="nav-link" data-scroll-target="#sf-and-ggplot"><code>sf</code> and <code>ggplot</code></a></li>
+  <li><a href="#north-carolina-registered-voters" id="toc-north-carolina-registered-voters" class="nav-link" data-scroll-target="#north-carolina-registered-voters">North Carolina Registered Voters</a></li>
+  <li><a href="#challenges" id="toc-challenges" class="nav-link" data-scroll-target="#challenges">Challenges</a></li>
+  </ul></li>
+  <li><a href="#dplyr" id="toc-dplyr" class="nav-link" data-scroll-target="#dplyr"><code>dplyr</code></a>
+  <ul class="collapse">
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
+  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources">Additional Resources</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/sta199-f22-1/sta199-f22-1.github.io/edit/main/ae/ae-08.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/sta199-f22-1/sta199-f22-1.github.io/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Spatial data</h1>
+<p class="subtitle lead">STA 199</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="bulletin" class="level2">
+<h2 class="anchored" data-anchor-id="bulletin">Bulletin</h2>
+<ul>
+<li>this <code>ae</code> is due for grade (48 hours from class). To turn in, simply push to GitHub</li>
+<li>check your <code>ae</code> grades in Sakai</li>
+<li><a href="../labs/lab-3.html">lab-3</a> due Friday at 5:00pm</li>
+<li><a href="../exams/exam1.html">exam 1</a> released Friday at 5:00pm</li>
+</ul>
+</section>
+<section id="getting-started" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
+<p>Clone <em>your</em> <code>ae8-username</code> repo from the <a href="https://github.com/sta199-sp23-1/">GitHub organization</a>.</p>
+</section>
+<section id="today" class="level2">
+<h2 class="anchored" data-anchor-id="today">Today</h2>
+<p>By the end of today you will…</p>
+<ul>
+<li>understand spatial data frame structure</li>
+<li>be able to create a visualization from a spatial data frame</li>
+</ul>
+</section>
+<section id="load-packages" class="level2">
+<h2 class="anchored" data-anchor-id="load-packages">Load packages</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="notes" class="level2">
+<h2 class="anchored" data-anchor-id="notes">Notes</h2>
+<p><strong>Spatial data is different.</strong></p>
+<p>Our typical “tidy” dataframe.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>mpg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 234 × 11
+   manufacturer model      displ  year   cyl trans drv     cty   hwy fl    class
+   &lt;chr&gt;        &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;
+ 1 audi         a4           1.8  1999     4 auto… f        18    29 p     comp…
+ 2 audi         a4           1.8  1999     4 manu… f        21    29 p     comp…
+ 3 audi         a4           2    2008     4 manu… f        20    31 p     comp…
+ 4 audi         a4           2    2008     4 auto… f        21    30 p     comp…
+ 5 audi         a4           2.8  1999     6 auto… f        16    26 p     comp…
+ 6 audi         a4           2.8  1999     6 manu… f        18    26 p     comp…
+ 7 audi         a4           3.1  2008     6 auto… f        18    27 p     comp…
+ 8 audi         a4 quattro   1.8  1999     4 manu… 4        18    26 p     comp…
+ 9 audi         a4 quattro   1.8  1999     4 auto… 4        16    25 p     comp…
+10 audi         a4 quattro   2    2008     4 manu… 4        20    28 p     comp…
+# … with 224 more rows</code></pre>
+</div>
+</div>
+<p>A new simple feature object.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>nc <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">"data/nc_regvoters.shp"</span>, <span class="at">quiet =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>nc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Simple feature collection with 100 features and 8 fields
+Geometry type: MULTIPOLYGON
+Dimension:     XY
+Bounding box:  xmin: -84.32385 ymin: 33.88199 xmax: -75.45698 ymax: 36.58965
+Geodetic CRS:  NAD27
+First 10 features:
+      county   dem   rep lib  unaf  male female  total
+1   ALAMANCE 38209 35967 670 35196 44651  54529 110042
+2  ALEXANDER  4772 11750 123  7967 10947  11768  24612
+3  ALLEGHANY  2030  3005  33  2466  3319   3548   7534
+4      ANSON  9130  2858  38  3599  5800   6980  15625
+5       ASHE  4261  8804 102  6232  8609   9525  19399
+6      AVERY  1343  6994  55  3673  5283   5829  12065
+7   BEAUFORT 10883 11873 124  9426 13591  16127  32306
+8     BERTIE  8178  1629  36  2835  5310   6610  12678
+9     BLADEN  9847  5005  77  6784  9472  11227  21713
+10 BRUNSWICK 26797 46557 618 42602 48199  55644 116574
+                         geometry
+1  MULTIPOLYGON (((-79.24619 3...
+2  MULTIPOLYGON (((-81.10889 3...
+3  MULTIPOLYGON (((-81.23989 3...
+4  MULTIPOLYGON (((-79.91995 3...
+5  MULTIPOLYGON (((-81.47276 3...
+6  MULTIPOLYGON (((-81.94135 3...
+7  MULTIPOLYGON (((-77.10377 3...
+8  MULTIPOLYGON (((-76.78307 3...
+9  MULTIPOLYGON (((-78.2615 34...
+10 MULTIPOLYGON (((-78.65572 3...</code></pre>
+</div>
+</div>
+<section id="exercise-1" class="level4">
+<h4 class="anchored" data-anchor-id="exercise-1">Exercise 1</h4>
+<p>What differences do you observe when comparing a typical tidy data frame to the new simple feature object?</p>
+</section>
+<section id="simple-features" class="level3">
+<h3 class="anchored" data-anchor-id="simple-features">Simple features</h3>
+<p>A <strong>simple feature</strong> is a standard, formal way to describe how real-world spatial objects (country, building, tree, road, etc) can be represented by a computer.</p>
+<p>The package <code>sf</code> implements simple features and other spatial functionality using <strong>tidy</strong> principles. Simple features have a geometry type. Common choices are shown in the slides associated with today’s lecture.</p>
+<p>Simple features are stored in a data frame, with the geographic information in a column called <code>geometry</code>. Simple features can contain both spatial and non-spatial data.</p>
+<p>All functions in the <code>sf</code> package helpfully begin <code>st_</code>.</p>
+</section>
+<section id="sf-and-ggplot" class="level3">
+<h3 class="anchored" data-anchor-id="sf-and-ggplot"><code>sf</code> and <code>ggplot</code></h3>
+<p>To read simple features from a file or database use the function <code>st_read()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>nc <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">"data/nc_regvoters.shp"</span>, <span class="at">quiet =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Notice <code>nc</code> contains both spatial and nonspatial information.</p>
+<p>We can build up a visualization layer-by-layer beginning with <code>ggplot</code>. Let’s start by making a basic plot of North Carolina counties.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>nc <span class="sc">|&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>() <span class="sc">+</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"North Carolina counties"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="ae-08_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="960"></p>
+</div>
+</div>
+<p>Now adjust the theme with <code>theme_bw()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(nc) <span class="sc">+</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>() <span class="sc">+</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"North Carolina counties with theme"</span>) <span class="sc">+</span> </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="ae-08_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="960"></p>
+</div>
+</div>
+<p>Now adjust <code>color</code> in <code>geom_sf</code> to change the color of the county borders.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(nc) <span class="sc">+</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">color =</span> <span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"North Carolina counties with theme and aesthetics"</span>) <span class="sc">+</span> </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="ae-08_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="960"></p>
+</div>
+</div>
+<p>Then increase the width of the county borders using <code>size</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(nc) <span class="sc">+</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">color =</span> <span class="st">"darkgreen"</span>, <span class="at">size =</span> <span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"North Carolina counties with theme and aesthetics"</span>) <span class="sc">+</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="ae-08_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="960"></p>
+</div>
+</div>
+<p>Fill the counties by specifying a <code>fill</code> argument.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(nc) <span class="sc">+</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">color =</span> <span class="st">"darkgreen"</span>, <span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">fill =</span> <span class="st">"orange"</span>) <span class="sc">+</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"North Carolina counties with theme and aesthetics"</span>) <span class="sc">+</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="ae-08_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="960"></p>
+</div>
+</div>
+<p>Finally, adjust the transparency using <code>alpha</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(nc) <span class="sc">+</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">color =</span> <span class="st">"darkgreen"</span>, <span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">fill =</span> <span class="st">"orange"</span>, <span class="at">alpha =</span> <span class="fl">0.50</span>) <span class="sc">+</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"North Carolina counties with theme and aesthetics"</span>) <span class="sc">+</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="ae-08_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="960"></p>
+</div>
+</div>
+</section>
+<section id="north-carolina-registered-voters" class="level3">
+<h3 class="anchored" data-anchor-id="north-carolina-registered-voters">North Carolina Registered Voters</h3>
+<p>The <code>nc</code> data was obtained from the <a href="https://vt.ncsbe.gov/RegStat/">NC Board of Elections</a> website and contains statistics on NC registered voters as of September 4, 2021.</p>
+<p>The data set contains the following variables on all North Carolina counties, categories provided by the NCSBE:</p>
+<ul>
+<li><code>county</code>: county name</li>
+<li><code>dem</code>: total number registered Democrats</li>
+<li><code>rep</code>: total number registered Republicans</li>
+<li><code>lib</code>: total number registered Libertarians</li>
+<li><code>unaf</code>: total number unaffiliated</li>
+<li><code>male</code>: total number male voters</li>
+<li><code>female</code>: total number female voters</li>
+<li><code>total</code>: total number of registered voters in county</li>
+<li><code>geometry</code>: geographic coordinates of the county</li>
+</ul>
+<p>Let’s use the NCBSE data to generate a <strong>choropleth map</strong> of the number of registered voters by county.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(nc) <span class="sc">+</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> total)) <span class="sc">+</span> </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Number of Registered Voters by County"</span>,</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"# voters"</span>) <span class="sc">+</span> </span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="ae-08_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="960"></p>
+</div>
+</div>
+<p>It is sometimes helpful to pick diverging colors, <a href="http://colorbrewer2.org/#type=sequential&amp;scheme=BuGn&amp;n=3">colorbrewer2</a> can help.</p>
+<p>One way to set fill colors is with <code>scale_fill_gradient()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(nc) <span class="sc">+</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> total)) <span class="sc">+</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient</span>(<span class="at">low =</span> <span class="st">"#fee8c8"</span>, <span class="at">high =</span> <span class="st">"#7f0000"</span>) <span class="sc">+</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"The Triangle and Charlotte have the Most Voters"</span>,</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"# cases"</span>) <span class="sc">+</span> </span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="ae-08_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="960"></p>
+</div>
+</div>
+</section>
+<section id="challenges" class="level3">
+<h3 class="anchored" data-anchor-id="challenges">Challenges</h3>
+<ol type="1">
+<li><p>Different types of data exist (raster and vector).</p></li>
+<li><p>The coordinate reference system (CRS) matters.</p></li>
+<li><p>Manipulating spatial data objects is similar, but not identical to manipulating data frames.</p></li>
+</ol>
+</section>
+</section>
+<section id="dplyr" class="level2">
+<h2 class="anchored" data-anchor-id="dplyr"><code>dplyr</code></h2>
+<p><code>sf</code> objects plays nicely with our earlier data wrangling functions from <code>dplyr</code>.</p>
+<section id="example" class="level3">
+<h3 class="anchored" data-anchor-id="example">Example</h3>
+<p>Maybe you are interested in the percentage of registered democrats/republicans in a county.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>nc <span class="sc">|&gt;</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">pct_dem =</span> dem <span class="sc">/</span> total,</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">pct_rep =</span> rep <span class="sc">/</span> total) <span class="sc">|&gt;</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(pct_dem, pct_rep)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Simple feature collection with 100 features and 2 fields
+Geometry type: MULTIPOLYGON
+Dimension:     XY
+Bounding box:  xmin: -84.32385 ymin: 33.88199 xmax: -75.45698 ymax: 36.58965
+Geodetic CRS:  NAD27
+First 10 features:
+     pct_dem   pct_rep                       geometry
+1  0.3472220 0.3268479 MULTIPOLYGON (((-79.24619 3...
+2  0.1938892 0.4774094 MULTIPOLYGON (((-81.10889 3...
+3  0.2694452 0.3988585 MULTIPOLYGON (((-81.23989 3...
+4  0.5843200 0.1829120 MULTIPOLYGON (((-79.91995 3...
+5  0.2196505 0.4538378 MULTIPOLYGON (((-81.47276 3...
+6  0.1113137 0.5796933 MULTIPOLYGON (((-81.94135 3...
+7  0.3368724 0.3675169 MULTIPOLYGON (((-77.10377 3...
+8  0.6450544 0.1284903 MULTIPOLYGON (((-76.78307 3...
+9  0.4535071 0.2305071 MULTIPOLYGON (((-78.2615 34...
+10 0.2298712 0.3993772 MULTIPOLYGON (((-78.65572 3...</code></pre>
+</div>
+</div>
+<p>Geometries are “sticky”. They are kept until deliberately dropped using <code>st_drop_geometry</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>nc <span class="sc">|&gt;</span> </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(county, total) <span class="sc">|&gt;</span> </span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_drop_geometry</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>          county  total
+1       ALAMANCE 110042
+2      ALEXANDER  24612
+3      ALLEGHANY   7534
+4          ANSON  15625
+5           ASHE  19399
+6          AVERY  12065
+7       BEAUFORT  32306
+8         BERTIE  12678
+9         BLADEN  21713
+10     BRUNSWICK 116574
+11      BUNCOMBE 201401
+12         BURKE  57481
+13      CABARRUS 148489
+14      CALDWELL  53537
+15        CAMDEN   7646
+16      CARTERET  52097
+17       CASWELL  15195
+18       CATAWBA 107060
+19       CHATHAM  57602
+20      CHEROKEE  22010
+21        CHOWAN   9685
+22          CLAY   9129
+23     CLEVELAND  66186
+24      COLUMBUS  35646
+25        CRAVEN  68989
+26    CUMBERLAND 201336
+27     CURRITUCK  21189
+28          DARE  30151
+29      DAVIDSON 111819
+30         DAVIE  31265
+31        DUPLIN  30586
+32        DURHAM 228967
+33     EDGECOMBE  33798
+34       FORSYTH 263103
+35      FRANKLIN  47475
+36        GASTON 150351
+37         GATES   8050
+38        GRAHAM   5944
+39     GRANVILLE  39468
+40        GREENE  10565
+41      GUILFORD 366867
+42       HALIFAX  36047
+43       HARNETT  79170
+44       HAYWOOD  45241
+45     HENDERSON  85808
+46      HERTFORD  14308
+47          HOKE  32002
+48          HYDE   3003
+49       IREDELL 129972
+50       JACKSON  28551
+51      JOHNSTON 144074
+52         JONES   6826
+53           LEE  37792
+54        LENOIR  35854
+55       LINCOLN  63412
+56         MACON  26868
+57       MADISON  16636
+58        MARTIN  15977
+59      MCDOWELL  29049
+60   MECKLENBURG 773683
+61      MITCHELL  11004
+62    MONTGOMERY  16821
+63         MOORE  72611
+64          NASH  66185
+65   NEW HANOVER 172138
+66   NORTHAMPTON  13139
+67        ONSLOW 107577
+68        ORANGE 105638
+69       PAMLICO   9157
+70    PASQUOTANK  27127
+71        PENDER  45024
+72    PERQUIMANS   9813
+73        PERSON  27017
+74          PITT 113718
+75          POLK  15772
+76      RANDOLPH  93805
+77      RICHMOND  27216
+78       ROBESON  69785
+79    ROCKINGHAM  60497
+80         ROWAN  95376
+81    RUTHERFORD  45278
+82       SAMPSON  37263
+83      SCOTLAND  20153
+84        STANLY  42752
+85        STOKES  31547
+86         SURRY  46850
+87         SWAIN   9774
+88  TRANSYLVANIA  25854
+89       TYRRELL   2268
+90         UNION 161006
+91         VANCE  28412
+92          WAKE 780519
+93        WARREN  12940
+94    WASHINGTON   8050
+95       WATAUGA  43127
+96         WAYNE  73786
+97        WILKES  43527
+98        WILSON  54424
+99        YADKIN  24494
+100       YANCEY  14197</code></pre>
+</div>
+</div>
+<section id="exercise-2" class="level4">
+<h4 class="anchored" data-anchor-id="exercise-2">Exercise 2</h4>
+<ol type="1">
+<li>Construct an effective visualization investigating the per county percentage of unaffiliated voters in NC. Use <code>#f7fbff</code> as “low” on the color gradient and <code>#08306b</code> as “high”. Which county has the highest percentage of unaffiliated voters? (You might want to use Google here.)</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="1">
+<li>Write a brief research question that you could answer with this data set and then investigate it here.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="3" type="1">
+<li>What are limitations of your visualizations above?</li>
+</ol>
+</section>
+</section>
+<section id="additional-resources" class="level3">
+<h3 class="anchored" data-anchor-id="additional-resources">Additional Resources</h3>
+<ul>
+<li><a href="https://r-spatial.github.io/sf/">Simple features in <code>R</code></a></li>
+<li><a href="https://www.nceas.ucsb.edu/sites/default/files/2020-04/OverviewCoordinateReferenceSystems.pdf">Coordinate references systems</a></li>
+<li><a href="https://geocompr.robinlovelace.net/spatial-class.html">Geographic data in <code>R</code></a></li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">© Copyright 2023, Alexander Fisher</div>   
+    <div class="nav-footer-right">This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a>.</div>
+  </div>
+</footer>
+
+
+
+</body></html>

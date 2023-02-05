@@ -1,0 +1,253 @@
+---
+title: "Spatial data"
+subtitle: "STA 199"
+editor: source
+format: html
+---
+
+## Bulletin
+
+-   this `ae` is due for grade (48 hours from class). To turn in, simply push to GitHub
+-   check your `ae` grades in Sakai
+-   [lab-3](/labs/lab-3.html) due Friday at 5:00pm
+-   [exam 1](/exams/exam1.html) released Friday at 5:00pm
+
+## Getting started
+
+Clone *your* `ae8-username` repo from the [GitHub organization](https://github.com/sta199-sp23-1/).
+
+## Today
+
+By the end of today you will...
+
+- understand spatial data frame structure
+- be able to create a visualization from a spatial data frame
+
+
+## Load packages
+
+```{r}
+#| label: load-packages
+#| message: false
+
+library(tidyverse)
+library(sf)
+```
+
+## Notes
+
+**Spatial data is different.**
+
+Our typical "tidy" dataframe.
+
+```{r tidy-data}
+mpg
+```
+
+A new simple feature object.
+
+```{r sf-data}
+nc <- st_read("data/nc_regvoters.shp", quiet = TRUE)
+nc
+```
+
+#### Exercise 1
+
+What differences do you observe when comparing a typical tidy
+data frame to the new simple feature object?
+
+### Simple features
+
+A **simple feature** is a standard, formal way to describe how real-world 
+spatial objects (country, building, tree, road, etc) can be represented by a 
+computer. 
+
+The package `sf` implements simple features and other spatial functionality 
+using **tidy** principles. Simple features have a geometry type. Common choices
+are shown in the slides associated with today's lecture. 
+
+Simple features are stored in a data frame, with the geographic information 
+in a column called `geometry`. Simple features can contain both spatial and
+non-spatial data.
+
+All functions in the `sf` package helpfully begin `st_`.
+
+### `sf` and `ggplot`
+
+To read simple features from a file or database use the function `st_read()`.
+
+```{r demo-read-in-data}
+nc <- st_read("data/nc_regvoters.shp", quiet = TRUE)
+```
+
+Notice `nc` contains both spatial and nonspatial information.
+
+We can build up a visualization layer-by-layer beginning with `ggplot`. Let's 
+start by making a basic plot of North Carolina counties.
+
+```{r}
+#| fig-height: 4
+#| fig.width: 10
+nc |>
+ggplot() +
+  geom_sf() +
+  labs(title = "North Carolina counties")
+```
+
+Now adjust the theme with `theme_bw()`.
+
+```{r}
+#| fig-height: 4
+#| fig.width: 10
+ggplot(nc) +
+  geom_sf() +
+  labs(title = "North Carolina counties with theme") + 
+  theme_bw()
+```
+
+Now adjust `color` in `geom_sf` to change the color of the county borders.
+
+```{r}
+#| fig-height: 4
+#| fig.width: 10
+ggplot(nc) +
+  geom_sf(color = "darkgreen") +
+  labs(title = "North Carolina counties with theme and aesthetics") + 
+  theme_bw() 
+```
+
+Then increase the width of the county borders using `size`.
+
+```{r}
+#| fig-height: 4
+#| fig.width: 10
+ggplot(nc) +
+  geom_sf(color = "darkgreen", size = 1.5) +
+  labs(title = "North Carolina counties with theme and aesthetics") +
+  theme_bw()
+```
+
+Fill the counties by specifying a `fill` argument.
+
+```{r}
+#| fig-height: 4
+#| fig.width: 10
+ggplot(nc) +
+  geom_sf(color = "darkgreen", size = 1.5, fill = "orange") +
+  labs(title = "North Carolina counties with theme and aesthetics") +
+  theme_bw()
+```
+
+Finally, adjust the transparency using `alpha`.
+
+```{r}
+#| fig-height: 4
+#| fig.width: 10
+ggplot(nc) +
+  geom_sf(color = "darkgreen", size = 1.5, fill = "orange", alpha = 0.50) +
+  labs(title = "North Carolina counties with theme and aesthetics") +
+  theme_bw()
+```
+
+
+### North Carolina Registered Voters
+
+The `nc` data was obtained from the [NC Board of Elections](https://vt.ncsbe.gov/RegStat/) website and contains statistics on NC registered voters as of September 4, 2021.
+
+The data set contains the following variables on all North Carolina counties, categories provided by the NCSBE:
+
+- `county`: county name
+- `dem`: total number registered Democrats
+- `rep`: total number registered Republicans
+- `lib`: total number registered Libertarians
+- `unaf`: total number unaffiliated
+- `male`: total number male voters
+- `female`: total number female voters
+- `total`: total number of registered voters in county
+- `geometry`: geographic coordinates of the county
+
+Let's use the NCBSE data to generate a **choropleth map** of the number of registered voters by county.
+
+```{r}
+#| fig-height: 4
+#| fig.width: 10
+ggplot(nc) +
+  geom_sf(aes(fill = total)) + 
+  labs(title = "Number of Registered Voters by County",
+       fill = "# voters") + 
+  theme_bw() 
+```
+
+It is sometimes helpful to pick diverging colors,
+[colorbrewer2](http://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3)
+can help.
+
+One way to set fill colors is with `scale_fill_gradient()`.
+
+```{r}
+#| fig-height: 4
+#| fig.width: 10
+ggplot(nc) +
+  geom_sf(aes(fill = total)) +
+  scale_fill_gradient(low = "#fee8c8", high = "#7f0000") +
+  labs(title = "The Triangle and Charlotte have the Most Voters",
+       fill = "# cases") + 
+  theme_bw() 
+```
+
+### Challenges
+
+1. Different types of data exist (raster and vector).
+
+2. The coordinate reference system (CRS) matters.
+
+3. Manipulating spatial data objects is similar, but not identical to
+manipulating data frames. 
+
+## `dplyr`
+
+`sf` objects plays nicely with our earlier data wrangling functions from 
+`dplyr`.
+
+### Example 
+
+Maybe you are interested in the percentage of registered democrats/republicans in a county.
+
+```{r sf-and-select}
+nc |>
+  mutate(pct_dem = dem / total,
+         pct_rep = rep / total) |>
+  select(pct_dem, pct_rep)
+```
+
+Geometries are "sticky". They are kept until deliberately dropped using 
+`st_drop_geometry`.
+
+```{r drop-geometry}
+nc |> 
+  select(county, total) |> 
+  st_drop_geometry()
+```
+
+#### Exercise 2
+
+(1) Construct an effective visualization investigating the per county percentage of unaffiliated voters in NC. Use `#f7fbff` as "low" on the color gradient and `#08306b` as "high". Which county has the highest percentage of unaffiliated voters? (You might want to use Google here.)
+
+```{r}
+# code here
+```
+
+(2) Write a brief research question that you could answer with this data set and then investigate it here.
+
+```{r}
+# code here
+```
+
+(3) What are limitations of your visualizations above?
+
+
+### Additional Resources
+
+- [Simple features in `R`](https://r-spatial.github.io/sf/)
+- [Coordinate references systems](https://www.nceas.ucsb.edu/sites/default/files/2020-04/OverviewCoordinateReferenceSystems.pdf)
+- [Geographic data in `R`](https://geocompr.robinlovelace.net/spatial-class.html)
