@@ -9,7 +9,7 @@ editor:
 ---
 
 ::: callout-important
-This lab is due Monday, Feb 13 at 5:00pm.
+This lab is due Friday, Feb 10 at 5:00pm.
 :::
 
 # Learning goals

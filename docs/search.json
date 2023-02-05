@@ -704,7 +704,7 @@
     "href": "teaching-resources/GitHubClassroomManagement.html#oops.-file-management-after-you-create-repos",
     "title": "GitHub Classroom Management",
     "section": "Oops. File management after you create repos",
-    "text": "Oops. File management after you create repos\nThe magic happens in repo_add_file(). Be sure to edit/check each item below, specifically:\n\norg as appropriate\nrepos_to_modify object\narguments to repo_add_file()\n\n\norg = \"sta199-sp23-1\"\nusernames = ghclass::org_members(org)\n\n# get all existing labX repos\nrepos_to_modify = org_repos(org, filter = \"lab0-\") # edit this \"filter\"\n\nghclass::repo_add_file(repo = repos_to_modify,\n                       branch = \"main\",\n                       repo_folder = \"data/\", # edit this to be path to folder in repo\n                       message = \"commit message here\", # update to be a meaningful commit message\n                       file = \"~/Desktop/class/data/file.csv\", # update local path to the file you want to add\n                       overwrite = FALSE) # if you want to overwrite or not"
+    "text": "Oops. File management after you create repos\nThe magic happens in repo_add_file(). Be sure to edit/check each item below, specifically:\n\norg as appropriate\nrepos_to_modify object\narguments to repo_add_file()\n\n\norg = \"sta199-sp23-1\"\nusernames = ghclass::org_members(org)\n\n# get all existing labX repos\nrepos_to_modify = org_repos(org, filter = \"practice1-\") # edit this \"filter\"\n\nghclass::repo_add_file(repo = repos_to_modify,\n                       branch = \"main\",\n                       repo_folder = \"\", # edit this to be path to folder in repo\n                       message = \"update README\", # update to be a meaningful commit message\n                       file = \"~/Desktop/README.md\", # update local path to the file you want to add\n                       overwrite = TRUE) # if you want to overwrite or not"
   },
   {
     "objectID": "slides/01-welcome-199.html",
@@ -1096,7 +1096,7 @@
     "href": "labs/lab-3.html",
     "title": "Lab 3 - Data tidying",
     "section": "",
-    "text": "Important\n\n\n\nThis lab is due Monday, Feb 13 at 5:00pm."
+    "text": "Important\n\n\n\nThis lab is due Friday, Feb 10 at 5:00pm."
   },
   {
     "objectID": "labs/lab-3.html#warm-up",

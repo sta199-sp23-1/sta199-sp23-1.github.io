@@ -50,7 +50,7 @@ org = "sta199-sp23-1"
 usernames = ghclass::org_members(org)
 
 ## edit this:
-assignment_template_repo = "ae7"
+assignment_template_repo = "practice1"
 
 # ghclass::org_create_assignment(
 #   org = org,
@@ -122,12 +122,12 @@ org = "sta199-sp23-1"
 usernames = ghclass::org_members(org)
 
 # get all existing labX repos
-repos_to_modify = org_repos(org, filter = "lab0-") # edit this "filter"
+repos_to_modify = org_repos(org, filter = "practice1-") # edit this "filter"
 
 ghclass::repo_add_file(repo = repos_to_modify,
                        branch = "main",
-                       repo_folder = "data/", # edit this to be path to folder in repo
-                       message = "commit message here", # update to be a meaningful commit message
-                       file = "~/Desktop/class/data/file.csv", # update local path to the file you want to add
-                       overwrite = FALSE) # if you want to overwrite or not
+                       repo_folder = "", # edit this to be path to folder in repo
+                       message = "update README", # update to be a meaningful commit message
+                       file = "~/Desktop/README.md", # update local path to the file you want to add
+                       overwrite = TRUE) # if you want to overwrite or not
 ```
