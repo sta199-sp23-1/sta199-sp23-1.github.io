@@ -1124,7 +1124,7 @@
     "href": "ae/ae-08.html",
     "title": "Spatial data",
     "section": "",
-    "text": "this ae is due for grade (48 hours from class). To turn in, simply push to GitHub\ncheck your ae grades in Sakai\nlab-3 due Friday at 5:00pm\nexam 1 released Friday at 5:00pm"
+    "text": "this ae is due for grade (48 hours from class). To turn in, simply push to GitHub\ncheck your ae grades in Sakai\nlab-3 due Friday at 5:00pm\nexam 1 released Friday at 5:00pm\nfind solutions to the practice, labs and aes on Sakai under resources tab"
   },
   {
     "objectID": "ae/ae-08.html#getting-started",
@@ -1222,7 +1222,7 @@
     "href": "ae/ae-09.html",
     "title": "Troubleshooting / Review",
     "section": "",
-    "text": "this ae is not due for grade. No need to push your solutions.\nlab-3 due today at 5:00pm\nexam 1 released today at 5:00pm"
+    "text": "this ae is not due for grade. No need to push your solutions.\nlab-3 due today at 5:00pm\nexam 1 released today at 5:00pm\ncheckout the cheat sheets on the website"
   },
   {
     "objectID": "ae/ae-09.html#getting-started",
@@ -1286,5 +1286,19 @@
     "title": "Troubleshooting / Review",
     "section": "Reminder on pivoting",
     "text": "Reminder on pivoting\nTwo functions:\n\npivot_longer()\npivot_wider()\n\nCheck out examples on the cheat sheet"
+  },
+  {
+    "objectID": "prepare/prep12.html",
+    "href": "prepare/prep12.html",
+    "title": "Prepare",
+    "section": "",
+    "text": "TBD"
+  },
+  {
+    "objectID": "prepare/prep13.html",
+    "href": "prepare/prep13.html",
+    "title": "Prepare",
+    "section": "",
+    "text": "TBD"
   }
 ]

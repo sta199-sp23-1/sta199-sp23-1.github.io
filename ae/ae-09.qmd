@@ -12,6 +12,7 @@ execute:
 -   this `ae` is **not due for grade**. No need to push your solutions.
 -   [lab-3](/labs/lab-3.html) due today at 5:00pm
 -   [exam 1](/exams/exam1.html) released today at 5:00pm
+-   checkout the [cheat sheets](https://sta199-sp23-1.github.io/computing-cheatsheets.html) on the website
 
 ## Getting started
 
@@ -191,14 +192,4 @@ Most often, you will open a project and the path to the data will be **relative*
 - Are you in the appropriate directory? AKA does the project you have open (upper right) match the quarto file you are working in?
 
 - Did you save the changes in your file? If you haven't changed the file, you can't commit changes.
-
-
-## Reminder on pivoting
-
-Two functions:
-
-- `pivot_longer()`
-- `pivot_wider()`
-
-Check out examples on the [cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/tidyr.pdf)
 

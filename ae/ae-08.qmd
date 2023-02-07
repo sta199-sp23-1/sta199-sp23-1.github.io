@@ -11,6 +11,7 @@ format: html
 -   check your `ae` grades in Sakai
 -   [lab-3](/labs/lab-3.html) due Friday at 5:00pm
 -   [exam 1](/exams/exam1.html) released Friday at 5:00pm
+-   find solutions to the practice, labs and aes on [Sakai](sakai.duke.edu) under `resources` tab
 
 ## Getting started
 
