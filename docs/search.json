@@ -326,14 +326,14 @@
     "href": "hw/hw-1.html#exercise-6",
     "title": "HW 1 - Data visualization",
     "section": "Exercise 6",
-    "text": "Exercise 6\n\nFill in the blanks:\n\nThe gg in the name of the package ggplot2 stands for ___.\nIf you map the same continuous variable to both x and y aesthetics in a scatterplot, you get a straight ___ line. (Choose between “vertical”, “horizontal”, or “diagonal”.)\n\nCode style: Fix up the code style by spaces and line breaks where needed. Briefly describe your fixes. (Hint: You can refer to the Tidyverse style guide.)\n\n\nggplot(data=mpg,mapping=aes(x=drv,fill=class))+geom_bar() +scale_fill_viridis_d()\n\n\nRead ?facet_wrap. What does nrow do? What does ncol do? What other options control the layout of the individual panels? Why doesn’t facet_grid() have nrow and ncol arguments?\n\n\n Render, commit, and push one last time.\nMake sure that you commit and push all changed documents and your Git pane is completely empty before proceding."
+    "text": "Exercise 6\n\nFill in the blanks:\n\nThe gg in the name of the package ggplot2 stands for ___.\nIf you map the same continuous variable to both x and y aesthetics in a scatterplot, you get a straight ___ line. (Choose between “vertical”, “horizontal”, or “diagonal”.)\n\nCode style: Fix up the code style by spaces and line breaks where needed. Briefly describe your fixes. (Hint: You can refer to the Tidyverse style guide.)\n\n\nggplot(data=mpg,mapping=aes(x=drv,fill=class))+geom_bar() +scale_fill_viridis_d()\n\n\nRead ?facet_wrap. What does nrow do? What does ncol do? What other options control the layout of the individual panels? Why doesn’t facet_grid() have nrow and ncol arguments?\n\n\n Render, commit, and push one last time.\nMake sure that you commit and push all changed documents and your Git pane is completely empty before proceeding."
   },
   {
     "objectID": "hw/hw-1.html#submission",
     "href": "hw/hw-1.html#submission",
     "title": "HW 1 - Data visualization",
     "section": "Submission",
-    "text": "Submission\n\nGo to http://www.gradescope.com and click Log in in the top right corner.\nClick School Credentials Duke Net ID and log in using your Net ID credentials.\nClick on your STA 199 course.\nClick on the assignment, and you’ll be prompted to submit it.\nMark all the pages associated with exercise. All the pages of your homework should be associated with at least one question (i.e., should be “checked”). If you do not do this, you will be subject to lose points on the assignment.\nDo not select any pages of your PDF submission to be associated with the “Workflow & formatting” question."
+    "text": "Submission\n\nGo to http://www.gradescope.com and click Log in in the top right corner.\nClick School Credentials Duke Net ID and log in using your Net ID credentials.\nClick on your STA 199 course.\nClick on the assignment, and you’ll be prompted to submit it.\nMark all the pages associated with exercise. All the pages of your homework should be associated with at least one question (i.e., should be “checked”). If you do not do this, you will be subject to lose points on the assignment.\nSelect all pages of your PDF submission to be associated with the “Workflow & formatting” question."
   },
   {
     "objectID": "hw/hw-1.html#grading",
@@ -1209,5 +1209,82 @@
     "title": "Exam 1",
     "section": "Academic Integrity",
     "text": "Academic Integrity\nBy taking this exam, you pledge to uphold the Duke Community Standard:\n\nI will not lie, cheat, or steal in my academic endeavors;\nI will conduct myself honorably in all my endeavors; and\nI will act if the Standard is compromised."
+  },
+  {
+    "objectID": "teaching-resources/GitHubClassroomManagement.html#creating-team-assignments",
+    "href": "teaching-resources/GitHubClassroomManagement.html#creating-team-assignments",
+    "title": "GitHub Classroom Management",
+    "section": "Creating team assignments",
+    "text": "Creating team assignments\n\n# example data frame for demo purposes\n# you will need to format your data frame to look like this\nroster = data.frame(\n  github = c(\"fishswish\", \"athos00\"),\n  lab1 = rep(\"lab1-team1\", 2)\n)\n\n# edit each item below\norg_create_assignment(\n  org = \"sta199-sp23-1\",\n  user = roster$github,\n  repo = roster$lab1,\n  team = roster$lab1,\n  source_repo = \"sta199-sp23-1/lab1_template\",\n  private = TRUE\n)\n\n\nroster = data.frame(\n  github = c(\"devinjohnson7\", \"athos00\"),\n  lab1 = rep(\"lab1-team-awesome\", 2)\n)\n\n# edit each item below\norg_create_assignment(\n  org = \"sta323-sp23\",\n  user = roster$github,\n  repo = roster$lab1,\n  team = roster$lab1,\n  source_repo = \"sta323-sp23/lab-1\", # template file\n  private = TRUE\n)"
+  },
+  {
+    "objectID": "ae/ae-09.html",
+    "href": "ae/ae-09.html",
+    "title": "Troubleshooting / Review",
+    "section": "",
+    "text": "this ae is not due for grade. No need to push your solutions.\nlab-3 due today at 5:00pm\nexam 1 released today at 5:00pm"
+  },
+  {
+    "objectID": "ae/ae-09.html#getting-started",
+    "href": "ae/ae-09.html#getting-started",
+    "title": "Troubleshooting / Review",
+    "section": "Getting started",
+    "text": "Getting started\nClone your ae9-username repo from the GitHub organization."
+  },
+  {
+    "objectID": "ae/ae-09.html#today",
+    "href": "ae/ae-09.html#today",
+    "title": "Troubleshooting / Review",
+    "section": "Today",
+    "text": "Today\nBy the end of today you will…\n\ndebug code"
+  },
+  {
+    "objectID": "ae/ae-09.html#data",
+    "href": "ae/ae-09.html#data",
+    "title": "Troubleshooting / Review",
+    "section": "Data",
+    "text": "Data\nIn this ae we will work within mpg data set within the ggplot2 package."
+  },
+  {
+    "objectID": "ae/ae-09.html#notes",
+    "href": "ae/ae-09.html#notes",
+    "title": "Troubleshooting / Review",
+    "section": "Notes",
+    "text": "Notes\nAlmost none of the code below runs. It’s your job to figure out why.\n\nExercise 1\nLet’s load the library that contains the data:\n\nlibrary(ggplot2)\n\nand then explicitly place the data into our environment:\n\ndata(mpg)\n\nand finally glimpse the data:\n\nglimpse(mpg)\n\nError in glimpse(mpg): could not find function \"glimpse\"\n\n\nwrite here what went wrong\nNext we’ll mutate a column called 2avg that reports the average of both city and highway miles per gallon.\n\nlibrary(dplyr)\nmpg |> \n  mutate(2avg = (cty + hwy) / 2)\n\nError: <text>:3:11: unexpected symbol\n2: mpg |> \n3:   mutate(2avg\n             ^\n\n\nwhat went wrong?\nNext, before we continue further, we want to make sure our document renders to “pdf”. Change the format to PDF in the YAML at the top of the document and render. What goes wrong?\nwhat went wrong?\nWe next decide to print the five most fuel efficient highway cars to the screen.\n\nmpg2 = mpg |>\n  arrange(desc(hwy)) |>\n  head(5)\n\nError in arrange(mpg, desc(hwy)): could not find function \"arrange\"\n\n\nwhat went wrong?\nNext, we want to plot cty vs hwy fuel efficiency. If you run into something you haven’t encountered, read the documentation with ? e.g. ?geom_abline and scroll to the bottom to find an example of the code in action.\n\nmpg = mpg |>\n  ggplot(aes(x = cty, y = hwy)) + \n  geom_point()\n\nmpg |>\n  ggplot(aes(x = cty, y = hwy)) + \n  geom_point() +\n  geom_abline(y = x)\n\nwhat went wrong?"
+  },
+  {
+    "objectID": "ae/ae-09.html#debug",
+    "href": "ae/ae-09.html#debug",
+    "title": "Troubleshooting / Review",
+    "section": "Debug",
+    "text": "Debug\nDebug the following code chunks.\n\nExercise 2\n\nmpg |>\n  ggplot(aes(x = hwy, y = count)) + \n  geom_histogram() + \n  labs(x = \"Highway MPG\", title = \"Histogram of fuel economy\")\n\n\nmpg\n  ggplot(aes(x = as.factor(cyl), y = cty))\n  geom_boxplot() +\n  labs(x = \"Cylinders\", title = \"Box plot of city MPG by engine size\")\n\n\nwhy doe we need as.factor() above?\n\n\n\nExercise 3\n\nWhen in doubt, comment out! A trick to figuring out what went wrong with your code is to try running it line by line, commenting out the rest (CMD + SHIFT + C : mac), (CTRL + SHIFT + C : windows).\n\n\nmpg |>\n  ggplot(aes(x = year, cty))) |>\n  geom_boxplot()\n  labs(x = Year,\n       y = \"City MPG\" title = \"Fuel efficiency by year\"} +\n    \"theme_bw\"()\n\n\ndf = data.frame(x = c(1, 2, NA, 5, 55, 32, 19, 12, 43, 6, 41, 3),\n                y = rep(c(\"A\", \"B\"), 6))\n\nglimpse(df)\n\nError in glimpse(df): could not find function \"glimpse\"\n\n\n\ndf |> \n  summarize(mean(x))\n\nError in summarize(df, mean(x)): could not find function \"summarize\""
+  },
+  {
+    "objectID": "exams/exam1.html#render-frequently",
+    "href": "exams/exam1.html#render-frequently",
+    "title": "Exam 1",
+    "section": "Render frequently",
+    "text": "Render frequently\nRender, commit and push your PDF to GitHub frequently. At least after every exercise.\n\nIf a PDF is not submitted on Gradescope (-10 points): If a PDF is not uploaded to Gradescope by the submission deadline, the PDF at your latest commit prior to the deadline will be used as your submission.\nIf there is no PDF in your repo, i.e., you’ve never rendered your .qmd file, your work will not be graded and you will receive a 0 on the exam."
+  },
+  {
+    "objectID": "ae/ae-09.html#yaml-errors",
+    "href": "ae/ae-09.html#yaml-errors",
+    "title": "Troubleshooting / Review",
+    "section": "YAML errors",
+    "text": "YAML errors\nThe YAML at the top of the document and the code chunk specific YAML matters.\nYAML below\n#| label:codeChunk1\nwill result in an error due to incorrect spacing around :\nERROR: Validation of YAML cell metadata failed.\nERROR: Render failed due to invalid YAML.\nAlso, you can’t have two code chunks with the same label."
+  },
+  {
+    "objectID": "ae/ae-09.html#directories",
+    "href": "ae/ae-09.html#directories",
+    "title": "Troubleshooting / Review",
+    "section": "Directories",
+    "text": "Directories\n\nWhere is the data?\nR has a host of functions to read in various types of data. From JSON to CSV to XML, there’s a function to load it and a package to interact with it.\nMost commonly, in this course, we will encounter comma separated values (CSV) files and excel files (e.g. with extension .xslx). A couple easy ways to read these in:\n\nTo read .csv files, readr::read_csv()\nTo read .xlsx files, readxl::read_xlsx()\n\nThe notation x::y() means that the function y() is found within the package x and can be loaded with library(x). readr is one of the core sub-packages of the tidyverse.\nMost often, you will open a project and the path to the data will be relative to the project folder.\n\n\nWhy can’t I push my .qmd file to GitHub?\n\nAre you in the appropriate directory? AKA does the project you have open (upper right) match the quarto file you are working in?\nDid you save the changes in your file? If you haven’t changed the file, you can’t commit changes."
+  },
+  {
+    "objectID": "ae/ae-09.html#reminder-on-pivoting",
+    "href": "ae/ae-09.html#reminder-on-pivoting",
+    "title": "Troubleshooting / Review",
+    "section": "Reminder on pivoting",
+    "text": "Reminder on pivoting\nTwo functions:\n\npivot_longer()\npivot_wider()\n\nCheck out examples on the cheat sheet"
   }
 ]

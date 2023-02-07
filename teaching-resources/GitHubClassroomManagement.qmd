@@ -50,7 +50,7 @@ org = "sta199-sp23-1"
 usernames = ghclass::org_members(org)
 
 ## edit this:
-assignment_template_repo = "practice1"
+assignment_template_repo = "ae8"
 
 # ghclass::org_create_assignment(
 #   org = org,
@@ -131,3 +131,42 @@ ghclass::repo_add_file(repo = repos_to_modify,
                        file = "~/Desktop/README.md", # update local path to the file you want to add
                        overwrite = TRUE) # if you want to overwrite or not
 ```
+
+## Creating team assignments
+
+```{r}
+# example data frame for demo purposes
+# you will need to format your data frame to look like this
+roster = data.frame(
+  github = c("fishswish", "athos00"),
+  lab1 = rep("lab1-team1", 2)
+)
+
+# edit each item below
+org_create_assignment(
+  org = "sta199-sp23-1",
+  user = roster$github,
+  repo = roster$lab1,
+  team = roster$lab1,
+  source_repo = "sta199-sp23-1/lab1_template",
+  private = TRUE
+)
+```
+
+```{r}
+roster = data.frame(
+  github = c("devinjohnson7", "athos00"),
+  lab1 = rep("lab1-team-awesome", 2)
+)
+
+# edit each item below
+org_create_assignment(
+  org = "sta323-sp23",
+  user = roster$github,
+  repo = roster$lab1,
+  team = roster$lab1,
+  source_repo = "sta323-sp23/lab-1", # template file
+  private = TRUE
+)
+```
+
