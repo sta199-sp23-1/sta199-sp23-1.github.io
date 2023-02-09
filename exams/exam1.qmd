@@ -6,7 +6,9 @@ format: html
 ---
 
 ::: callout-important
-Find your exam 1 instructions in the README of your `exam-1` repository
+Find your exam 1 instructions in the README of your `exam1-username` repository. 
+
+The exam is due Tuesday February 14th at 5:00pm!
 :::
 
 ## Rules
@@ -24,10 +26,9 @@ With the exception of major emergencies, late submissions will not be accepted. 
 
 Render, commit and push your PDF to GitHub frequently. At least after every exercise.
 
-- If a PDF is not submitted on Gradescope (-10 points): If a PDF is not uploaded to Gradescope by the submission deadline, the PDF at your latest commit prior to the deadline will be used as your submission.
+- If a PDF is not submitted on Gradescope (-10 points). If a PDF is not uploaded to Gradescope by the submission deadline, the PDF at your latest commit prior to the deadline will be used as your submission.
 
 - If there is no PDF in your repo, i.e., you've never rendered your `.qmd` file, your work will not be graded and you will receive a 0 on the exam.
-
 
 
 ## Academic Integrity
