@@ -1300,5 +1300,75 @@
     "title": "Prepare",
     "section": "",
     "text": "TBD"
+  },
+  {
+    "objectID": "labs/lab-4.html",
+    "href": "labs/lab-4.html",
+    "title": "Lab 4 - Merge Conflicts and Data Science Ethics",
+    "section": "",
+    "text": "Important\n\n\n\nThis lab is due Monday, February 27th at 5:00pm."
+  },
+  {
+    "objectID": "labs/lab-4.html#why-teams-rationale",
+    "href": "labs/lab-4.html#why-teams-rationale",
+    "title": "Lab 4 - Merge Conflicts and Data Science Ethics",
+    "section": "Why Teams: Rationale",
+    "text": "Why Teams: Rationale\nIn the real world, data scientists and statisticians often work in research teams. It is a skill to be able to communicate and work together on common projects. Thus, the remaining labs + your project will be team based.\nTeams work better when members have a common understanding of the team’s goals and expectations for collaboration. The purpose of this activity is to help your team making a plan for working together during lab and outside of the scheduled lab time.\nEach team member will have some ideas about how a team should operate. These ideas may be very different. This is your opportunity to share your thoughts and ideas to promote optimal team function and prevent misunderstandings in the future."
+  },
+  {
+    "objectID": "labs/lab-4.html#team-name",
+    "href": "labs/lab-4.html#team-name",
+    "title": "Lab 4 - Merge Conflicts and Data Science Ethics",
+    "section": "Team Name",
+    "text": "Team Name\nDiscuss with your group a team name to be called. Your GitHub repos will be created for this team name moving forward. Report your team name to your Lab Leader before moving on."
+  },
+  {
+    "objectID": "labs/lab-4.html#instructions",
+    "href": "labs/lab-4.html#instructions",
+    "title": "Lab 4 - Merge Conflicts and Data Science Ethics",
+    "section": "Instructions",
+    "text": "Instructions\nBefore completing the lab today, you will complete a team agreement. Discuss each of the items below with all in-person team members. If necessary, also follow up this week with any missing team members.\nHave one person act as the recorder and type the team’s decisions in the team-agreement.qmd file.\nBe sure the team agrees on an item before it is added to the document.\nOnce the document is complete, the recorder should render, commit, and push the team agreement to GitHub. All team members can refer to this document throughout the semester."
+  },
+  {
+    "objectID": "labs/lab-4.html#team-agreement",
+    "href": "labs/lab-4.html#team-agreement",
+    "title": "Lab 4 - Merge Conflicts and Data Science Ethics",
+    "section": "Team Agreement",
+    "text": "Team Agreement\n\nWeekly meetings\nIdentify a 1 - 2 hour weekly block outside of lab where the team can meet to work on assignments. All team members should block off this time on their calendar in case the group needs to meet to finish lab or work on the project.\n\n\nMeeting “location”\nHow the team will meet to work together (e.g. in-person, Zoom, Facetime, Google Hangouts). Be sure every member is able to access the virtual meeting space, if needed. If you are unable to find a weekly time when the team can meet, briefly outline a plan to work on assignments outside of lab. Otherwise, you can delete this item.\n\n\nPrimary method of communication\nThe team’s primary method of communication outside of meetings (e.g. Slack, text messages, etc.)\n\n\nHow should someone notify the other members if they are unable to attend lab or a scheduled team meeting?\n\n\nBy when should everyone have their portion of the lab completed?\nKeep in mind your team may want to have time to review the lab before turning it in to make sure it is a cohesive write up.\n\n\nAny other items the team would like to discuss or plan.\n\n\nMissing Teammates\nIf you are missing teammates for today’s lab, it is your responsibility to reach out, say hello, and communicate with them that they must contribute to the above and below questions before submitting lab-04 to Gradescope. You can find their email in the teams repo. The link to the teams repo is located on our website on the teaching team tab."
+  },
+  {
+    "objectID": "labs/lab-4.html#setup",
+    "href": "labs/lab-4.html#setup",
+    "title": "Lab 4 - Merge Conflicts and Data Science Ethics",
+    "section": "Setup",
+    "text": "Setup\n\nClone the repo and open the .qmd file.\nAssign the numbers 1, 2, 3, and 4 to each of the team members. If your team has fewer than 4 people, some people will need to have multiple numbers. If your team has more than 4 people, some people will need to share some numbers."
+  },
+  {
+    "objectID": "labs/lab-4.html#lets-cause-a-merge-conflict",
+    "href": "labs/lab-4.html#lets-cause-a-merge-conflict",
+    "title": "Lab 4 - Merge Conflicts and Data Science Ethics",
+    "section": "Let’s cause a merge conflict!",
+    "text": "Let’s cause a merge conflict!\nOur goal is to see two different types of merges: first we’ll see a type of merge that git can’t figure out on its own how to do on its own (a merge conflict) and requires human intervention, then another type of where that git can figure out how to do without human intervention.\nDoing this will require some tight choreography, so pay attention!\nTake turns in completing the exercises, only one member at a time. Others should just watch, not doing anything on their own projects (this includes not even pulling changes!) until they are instructed to. If you feel like you won’t be able to resist the urge to touch your computer when it’s not your turn, we recommend putting your hands in your pockets or sitting on them!\nBefore starting: everyone should have the repo cloned, open the lab4.qmd document, and know which role number(s) they are.\nRole 1:\n\nChange “TEAM NAME” in the YAML to your actual team name.\nrender, commit, push.\n\n🛑 Make sure the previous role has finished before moving on to the next step.\nRole 2:\n\nChange “TEAM NAME” to some other word.\nRender, commit, push. You should get an error.\nPull. Take a look at the document with the merge conflict.\nClear the merge conflict by editing the document to choose the correct/preferred change.\nRender.\nClick the Stage checkbox for all files in your Git tab. Make sure they all have check marks, not filled-in boxes.\ncommit and push.\n\n🛑 Make sure the previous role has finished before moving on to the next step.\nRole 3:\n\nAdd a code chunk for Exercise 2 and give it a label.\nRender, commit, push. You should get an error.\nPull. No merge conflicts should occur, but you should see a message about merging.\nNow push.\n\n🛑 Make sure the previous role has finished before moving on to the next step.\nRole 4:\n\nAdd a code chunk to Exercise 2 and give it a different label.\nRender, commit, push. You should get an error.\nPull. Take a look at the document with the merge conflict. Clear the merge conflict by choosing the correct/preferred change. render, and push.\n\n🛑 Make sure the previous role has finished before moving on to the next step.\nEveryone: Pull, and observe the changes in your document."
+  },
+  {
+    "objectID": "labs/lab-4.html#tips-for-collaborating-via-github",
+    "href": "labs/lab-4.html#tips-for-collaborating-via-github",
+    "title": "Lab 4 - Merge Conflicts and Data Science Ethics",
+    "section": "Tips for collaborating via GitHub",
+    "text": "Tips for collaborating via GitHub\n\nAlways pull first before you start working.\nResolve a merge conflict (render and push) before continuing your work. Never do new work while resolving a merge conflict.\nRender, commit, and push often to minimize merge conflicts and/or to make merge conflicts easier to resolve.\nIf you find yourself in a situation that is difficult to resolve, ask questions ASAP. Don’t let it linger and get bigger."
+  },
+  {
+    "objectID": "labs/lab-4.html#packages",
+    "href": "labs/lab-4.html#packages",
+    "title": "Lab 4 - Merge Conflicts and Data Science Ethics",
+    "section": "Packages",
+    "text": "Packages\nWe’ll use the tidyverse package for much of the data wrangling and visualization.\n\nlibrary(tidyverse)\n\nSince the exercises for this week are short it’s possible not every team member will get to commit and push during the workshop. However each team member should review what was created, fix typos, make edits for better presentation, etc. either during or after the workshop, and before the deadline.\nNote: Everyone should intellectually contribute to every question. However, no two teammates should work on the same question at the same time below."
+  },
+  {
+    "objectID": "labs/lab-4.html#data",
+    "href": "labs/lab-4.html#data",
+    "title": "Lab 4 - Merge Conflicts and Data Science Ethics",
+    "section": "Data",
+    "text": "Data\nIn this lab you’ll construct the data set!"
   }
 ]
