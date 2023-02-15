@@ -4,4 +4,4 @@ subtitle: "Due: Friday February 17, 2023"
 categories: "prepare"
 ---
 
--   TBD
+- Play with the Bayes' theorem applet [here](https://seeing-theory.brown.edu/bayesian-inference/index.html#section1) and write briefly about what you observe (not due for grade).

@@ -22,35 +22,49 @@ This lab is due Monday, February 27th at 5:00pm.
 
 ## Why Teams: Rationale
 
-In the real world, data scientists and statisticians often work in research teams. It is a skill to be able to communicate and work together on common projects. Thus, the remaining labs + your project will be team based.
+In the real world, data scientists and statisticians often work in research teams.
+It is a skill to be able to communicate and work together on common projects.
+Thus, the remaining labs + your project will be team based.
 
-Teams work better when members have a common understanding of the team's goals and expectations for collaboration. The purpose of this activity is to help your team making a plan for working together during lab and outside of the scheduled lab time.
+Teams work better when members have a common understanding of the team's goals and expectations for collaboration.
+The purpose of this activity is to help your team making a plan for working together during lab and outside of the scheduled lab time.
 
-Each team member will have some ideas about how a team should operate. These ideas may be very different. This is your opportunity to share your thoughts and ideas to promote optimal team function and prevent misunderstandings in the future.
+Each team member will have some ideas about how a team should operate.
+These ideas may be very different.
+This is your opportunity to share your thoughts and ideas to promote optimal team function and prevent misunderstandings in the future.
 
 ## Team Name
 
-Discuss with your group a team name to be called. Your GitHub repos will be created for this team name moving forward. Report your team name to your Lab Leader before moving on.
+Discuss with your group a team name to be called.
+Your GitHub repos will be created for this team name moving forward.
+Report your team name to your Lab Leader before moving on.
 
 ## Instructions
 
-Before completing the lab today, you will complete a team agreement. Discuss each of the items below with all in-person team members. If necessary, also follow up this week with any missing team members.
+Before completing the lab today, you will complete a team agreement.
+Discuss each of the items below with all in-person team members.
+If necessary, also follow up this week with any missing team members.
 
 Have *one person* act as the recorder and type the team's decisions in the `team-agreement.qmd` file.
 
 *Be sure the team agrees on an item before it is added to the document.*
 
-Once the document is complete, the recorder should render, commit, and push the team agreement to GitHub. All team members can refer to this document throughout the semester.
+Once the document is complete, the recorder should render, commit, and push the team agreement to GitHub.
+All team members can refer to this document throughout the semester.
 
 ## Team Agreement
 
 ### Weekly meetings
 
-Identify a 1 - 2 hour weekly block outside of lab where the team can meet to work on assignments. All team members should block off this time on their calendar in case the group needs to meet to finish lab or work on the project.
+Identify a 1 - 2 hour weekly block outside of lab where the team can meet to work on assignments.
+All team members should block off this time on their calendar in case the group needs to meet to finish lab or work on the project.
 
 ### Meeting "location"
 
-How the team will meet to work together (e.g. in-person, Zoom, Facetime, Google Hangouts). Be sure every member is able to access the virtual meeting space, if needed. If you are unable to find a weekly time when the team can meet, briefly outline a plan to work on assignments outside of lab. Otherwise, you can delete this item.
+How the team will meet to work together (e.g. in-person, Zoom, Facetime, Google Hangouts).
+Be sure every member is able to access the virtual meeting space, if needed.
+If you are unable to find a weekly time when the team can meet, briefly outline a plan to work on assignments outside of lab.
+Otherwise, you can delete this item.
 
 ### Primary method of communication
 
@@ -66,17 +80,23 @@ Keep in mind your team may want to have time to review the lab before turning it
 
 ### Missing Teammates
 
-If you are missing teammates for today's lab, it is your responsibility to reach out, say hello, and communicate with them that they must contribute to the above and below questions before submitting lab-04 to Gradescope. You can find their email in the teams repo. The link to the teams repo is located on our website on the teaching team tab.
+If you are missing teammates for today's lab, it is your responsibility to reach out, say hello, and communicate with them that they must contribute to the above and below questions before submitting lab-04 to Gradescope.
+You can find their email in the teams repo.
+The link to the teams repo is located on our website on the teaching team tab.
 
 # Resolving merge conflicts
 
-Working in teams includes using a shared GitHub repo for labs and projects. Sometimes things will go swimmingly, and sometimes you'll run into merge conflicts.  
+Working in teams includes using a shared GitHub repo for labs and projects.
+Sometimes things will go swimmingly, and sometimes you'll run into merge conflicts.
+ 
 
-When you and your teammates work on the same lines of code within a document, and both try to push your changes, you will run into issues. Merge conflicts happen when you merge branches that have competing renders, and Git needs your help to decide which changes to incorporate in the final merge.\
+When you and your teammates work on the same lines of code within a document, and both try to push your changes, you will run into issues.
+Merge conflicts happen when you merge branches that have competing renders, and Git needs your help to decide which changes to incorporate in the final merge.\
 
 Our first task today is to walk you through a merge conflict!\
 
-If you haven't yet done so since filling out the *Team Agreement*, now is a good time to render, commit, and push. Make sure that you render and push all changed documents and your Git pane is completely empty before proceeding.
+If you haven't yet done so since filling out the *Team Agreement*, now is a good time to render, commit, and push.
+Make sure that you render and push all changed documents and your Git pane is completely empty before proceeding.
 
 -   Pushing to a repo replaces the code on GitHub with the code you have on your computer.
 -   If a collaborator has made a change to your repo on GitHub that you haven't incorporated into your local work, GitHub will stop you from pushing to the repo because this could overwrite your collaborator's work!
@@ -104,7 +124,8 @@ And at the bottom you see `some1alpha2numeric3string4` (well, it probably looks 
 
 This is the **hash** (a unique identifier) of the render your collaborator made with the conflicting change.
 
-Your job is to *reconcile* the changes: edit the file so that it incorporates the best of both versions and delete the `<<<`, `===`, and `>>>` lines. Then you can stage and render the result.
+Your job is to *reconcile* the changes: edit the file so that it incorporates the best of both versions and delete the `<<<`, `===`, and `>>>` lines.
+Then you can stage and render the result.
 
 # Merge conflict activity
 
@@ -119,7 +140,9 @@ Our goal is to see two different types of merges: first we'll see a type of merg
 
 Doing this will require some tight choreography, so pay attention!
 
-Take turns in completing the exercises, only one member at a time. **Others should just watch, not doing anything on their own projects (this includes not even pulling changes!)** until they are instructed to. If you feel like you won't be able to resist the urge to touch your computer when it's not your turn, we recommend putting your hands in your pockets or sitting on them!
+Take turns in completing the exercises, only one member at a time.
+**Others should just watch, not doing anything on their own projects (this includes not even pulling changes!)** until they are instructed to.
+If you feel like you won't be able to resist the urge to touch your computer when it's not your turn, we recommend putting your hands in your pockets or sitting on them!
 
 **Before starting**: everyone should have the repo cloned, open the `lab4.qmd` document, and know which role number(s) they are.
 
@@ -178,9 +201,11 @@ We'll use the **tidyverse** package for much of the data wrangling and visualiza
 library(tidyverse)
 ```
 
-Since the exercises for this week are short it's possible not every team member will get to commit and push **during** the workshop. However each team member should review what was created, fix typos, make edits for better presentation, etc. either during or after the workshop, and before the deadline.
+Since the exercises for this week are short it's possible not every team member will get to commit and push **during** the workshop.
+However each team member should review what was created, fix typos, make edits for better presentation, etc. either during or after the workshop, and before the deadline.
 
-Note: Everyone should intellectually contribute to every question. However, no two teammates should work on the same question at the same time below.
+Note: Everyone should intellectually contribute to every question.
+However, no two teammates should work on the same question at the same time below.
 
 ## Data
 
@@ -195,7 +220,8 @@ The following visualization was shared [on Twitter](https://twitter.com/JonBoeck
 1.  What is misleading about this visualization and how might you go about fixing it?
 
 ::: render-commit-push
-If you haven't yet done so, now is a good time to render, commit, and push. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.
+If you haven't yet done so, now is a good time to render, commit, and push.
+Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.
 
 <br>
 :::
@@ -215,10 +241,13 @@ df <- tribble(
 )
 ```
 
-Print the first 5 rows of the data frame after creating it. You may name the data frame what you like. We often try and keep data frame names small and informative.
+Print the first 5 rows of the data frame after creating it.
+You may name the data frame what you like.
+We often try and keep data frame names small and informative.
 
 ::: render-commit-push
-If you haven't yet done so, now is a good time to render, commit, and push. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.
+If you haven't yet done so, now is a good time to render, commit, and push.
+Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.
 
 <br>
 :::
@@ -237,7 +266,8 @@ If you haven't yet done so, now is a good time to render, commit, and push. Make
 ```
 
 ::: render-commit-push
-If you haven't yet done so, now is a good time to render, commit, and push. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.
+If you haven't yet done so, now is a good time to render, commit, and push.
+Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.
 
 <br>
 :::
@@ -247,7 +277,8 @@ If you haven't yet done so, now is a good time to render, commit, and push. Make
 4.  What message is more clear in your visualization than it was in the original visualization? Why is it more clear?
 
 ::: render-commit-push
-If you haven't yet done so, now is a good time to render, commit, and push. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.
+If you haven't yet done so, now is a good time to render, commit, and push.
+Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.
 
 <br>
 :::
@@ -257,7 +288,8 @@ If you haven't yet done so, now is a good time to render, commit, and push. Make
 5.  What, if any, useful information do these data and your visualization tell us about mask wearing and COVID? Answers should focus only on what the visualization tells.
 
 ::: render-commit-push
-If you haven't yet done so, now is a good time to render, commit, and push. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.
+If you haven't yet done so, now is a good time to render, commit, and push.
+Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.
 
 <br>
 :::
@@ -269,11 +301,14 @@ If you haven't yet done so, now is a good time to render, commit, and push. Make
 Once you are finished with the lab, you will upload your final PDF document to Gradescope.
 
 ::: callout-warning
-Before you wrap up the assignment, make sure all documents are updated on your GitHub repo. We will be checking these to make sure you have been practicing how to render and push changes.
+Before you wrap up the assignment, make sure all documents are updated on your GitHub repo.
+We will be checking these to make sure you have been practicing how to render and push changes.
 
 You must turn in a PDF file to the Gradescope page by the submission deadline to be considered "on time".
 
-Make sure your data are tidy! That is, your code should not be running off the pages and spaced properly. See: https://style.tidyverse.org/ggplot2.html
+Make sure your data are tidy!
+That is, your code should not be running off the pages and spaced properly.
+See: https://style.tidyverse.org/ggplot2.html
 :::
 
 To submit your assignment:

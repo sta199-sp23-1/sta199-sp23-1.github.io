@@ -2,7 +2,7 @@
   background: inherit;
   position: absolute;
   cursor: pointer;
-  font-size: 3em;
+  font-size: 1.5em;
   line-height: 1;
   border-color: #ddd;
   border-width: 3px;
@@ -25,14 +25,14 @@
   padding: 0;
 }
 .countdown-digits {
-  color: #325b74;
+  color: inherit;
 }
 .countdown.running {
-  border-color: #3C9A5F;
-  background-color: #43AC6A;
+  border-color: #23689C;
+  background-color: #2774AE;
 }
 .countdown.running .countdown-digits {
-  color: #102B1A;
+  color: #C9DCEA;
 }
 .countdown.finished {
   border-color: #D83A20;

@@ -4,6 +4,7 @@ project:
   resources:
     - sta199-f22-1-syllabus.pdf
     - slides/27-interactive-web-apps.pdf
+    - /data/
 
 website:
   page-navigation: true

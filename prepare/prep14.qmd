@@ -1,0 +1,9 @@
+---
+title: "Prepare"
+subtitle: "Due: Wednesday February 22, 2023"
+categories: "prepare"
+---
+
+-   Read (optional) [section 7.1, 7.2: Linear regression with a single predictor](https://openintro-ims.netlify.app/)
+-   Watch [The language of models](https://www.youtube.com/watch?v=MWkkvDopBKc)
+-   Watch [Fitting and interpreting models](https://www.youtube.com/watch?v=69U92Q3pwnA)

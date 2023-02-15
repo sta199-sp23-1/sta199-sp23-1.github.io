@@ -2,7 +2,7 @@
 title: "Troubleshooting / Review"
 subtitle: "STA 199"
 editor: source
-format: pdf
+format: html
 execute:
   error: true
 ---
