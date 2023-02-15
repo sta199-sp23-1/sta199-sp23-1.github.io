@@ -54,6 +54,16 @@ library(knitr)
 #sta199 = read_csv()
 ```
 
+```{r}
+#| eval: false
+sta199 = sta199 |>
+  rename(year = `What year are you in school?`,
+         animal = `Choose your favorite`,
+         tv = `Favorite TV`,
+         major = `Probable Major?`)
+```
+
+
 For this Application Exercise, we will look at our newly collected data.
 
 Data includes
@@ -122,8 +132,9 @@ How large is the sample space of any individual's response? Can we check this in
 Now let's make at table looking at the relationship between year and favorite tv.
 
 ```{r count-yr-major}
-# sta199 %>%
-#   count(year, tv)
+#| eval: false
+sta199 %>%
+  count(year, tv)
 ```
 
 We'll reformat the data into a **contingency table**, a table frequently used to study the association between two categorical variables. In this contingency table, each row will represent a year, each column will represent a tv show, and each cell is the number of students have a particular combination of year and major. 
@@ -133,13 +144,13 @@ To make the contingency table, we will use a new function in `dplry` called `piv
 We will also use the `kable()` function in the `knitr` package to neatly format our new table.
 
 ```{r pivot-wider}
-# sta199 %>%
-#   count(year, tv) %>%
-#   pivot_wider(id_cols = c(year, tv),#how we identify unique obs
-#               names_from = tv, #how we will name the columns
-#               values_from = n, #values used for each cell
-#               values_fill = 0) %>% #how to fill cells with 0 observations
-#   kable() # neatly display the results
+#| eval: false
+sta199 %>%
+  count(year, tv) %>%
+  pivot_wider(names_from = tv, #how we will name the columns
+              values_from = n, #values used for each cell
+              values_fill = 0) %>% #how to fill cells with 0 observations
+  kable() # neatly display the results
 
 ```
 - How many students in STA 199 are juniors and like dramas?
@@ -159,7 +170,7 @@ For each of the following exercises:
 
 ```
 
-- What is the probability that a randomly selected STA 199 student is a statistics major? 
+- What is the probability that a randomly selected STA 199 student is likes anime **or** action/adventure? 
 
 ```{r 7-2}
 # code here
@@ -167,14 +178,14 @@ For each of the following exercises:
 ```
 
 
-- What is the probability that a randomly selected STA 199 student is a sophomore **or** a statistics major? 
+- What is the probability that a randomly selected STA 199 student is a sophomore **or** likes comedy? 
 
 ```{r 7-3}
 # code here
 
 ```
 
-- What is the probability that a randomly selected STA 199 student is a sophomore **and** and a statistics major?
+- What is the probability that a randomly selected STA 199 student is a sophomore **and** and likes drama?
 
 ```{r prob-sophomore-cs-2}
 # code here
