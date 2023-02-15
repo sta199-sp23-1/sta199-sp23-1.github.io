@@ -44,13 +44,14 @@ ghclass::org_create_assignment(
 ```{r}
 #| echo: false
 #| eval: false
+library(ghclass)
 
 # initial assignment creation
 org = "sta199-sp23-1"
 usernames = ghclass::org_members(org)
 
 ## edit this:
-assignment_template_repo = "exam1"
+assignment_template_repo = "ae10"
 
 # ghclass::org_create_assignment(
 #   org = org,
