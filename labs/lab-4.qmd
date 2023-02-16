@@ -17,7 +17,7 @@ This lab is due Monday, February 27th at 5:00pm.
 
 # Getting started
 
--   Go to the [sta199-sp23-01](https://github.com/sta199-sp23-1) organization on GitHub. Click on the repo with the prefix `lab-04`. It contains the starter documents you need to complete the lab.
+-   Go to the [sta199-s23-01](https://github.com/sta199-sp23-1) organization on GitHub. Click on the repo with the prefix `lab-04`. It contains the starter documents you need to complete the lab.
 -   Clone the repo and start a new project in RStudio. See the [Lab 0 instructions](https://sta199-sp23-1.github.io/labs/lab-0.html#clone-the-repo-start-new-rstudio-project) for details on cloning a repo and starting a new R project.
 
 ## Why Teams: Rationale
@@ -90,7 +90,7 @@ Working in teams includes using a shared GitHub repo for labs and projects.
 Sometimes things will go swimmingly, and sometimes you'll run into merge conflicts.
  
 
-When you and your teammates work on the same lines of code within a document, and both try to push your changes, you will run into issues.
+When you and your teammates work on the lines of code within a document, and both try to push your changes, you will run into issues.
 Merge conflicts happen when you merge branches that have competing renders, and Git needs your help to decide which changes to incorporate in the final merge.\
 
 Our first task today is to walk you through a merge conflict!\
@@ -145,6 +145,14 @@ Take turns in completing the exercises, only one member at a time.
 If you feel like you won't be able to resist the urge to touch your computer when it's not your turn, we recommend putting your hands in your pockets or sitting on them!
 
 **Before starting**: everyone should have the repo cloned, open the `lab4.qmd` document, and know which role number(s) they are.
+
+**Everyone**:
+
+-   In order to resolve merge conflicts using the instructions below, git needs to have the correct settings.
+-   To ensure this is true, copy and paste `git config pull.rebase false` into your **terminal** and press enter. (Look for the tab next to the console, and ask if you can't find it.)
+-   Note that if a merge conflict comes up in a later assignment, you may need to do this step again before resolving it. If that's the case, you'll likely get a warning suggesting it when you try to pull and there's a conflict.
+
+🛑 Make sure everyone has completed this step before moving on.
 
 **Role 1:**
 
@@ -298,7 +306,7 @@ Make sure that you commit and push all changed documents and your Git pane is co
 
 # Submission
 
-Once you are finished with the lab, you will upload your final PDF document to Gradescope.
+Once you are finished with the lab, you will your final PDF document to Gradescope.
 
 ::: callout-warning
 Before you wrap up the assignment, make sure all documents are updated on your GitHub repo.
@@ -318,7 +326,7 @@ To submit your assignment:
 -   Click on your *STA 199* course.
 -   Click on the assignment, and you'll be prompted to submit it.
 -   Mark all the pages associated with exercise. All the pages of your lab should be associated with at least one question (i.e., should be "checked"). *If you do not do this, you will be subject to lose points on the assignment.*
--   Select *all pages* of your .pdf submission to be associated with the *"Workflow & formatting"* question.
+- Select *all* pages of your .pdf submission to be associated with the *"Workflow & formatting"* question.
 
 # Grading
 
