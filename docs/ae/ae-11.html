@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STA 199 - Intro to probability</title>
+<title>STA 199 - Conditional probability</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -118,7 +118,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta property="og:title" content="STA 199 - Intro to probability">
+<meta property="og:title" content="STA 199 - Conditional probability">
 <meta property="og:description" content="STA 199">
 <meta property="og:site-name" content="STA 199">
 </head>
@@ -129,7 +129,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Intro to probability</h1>
+      <h1 class="quarto-secondary-nav-title">Conditional probability</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -236,24 +236,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#click-here-while-you-wait" id="toc-click-here-while-you-wait" class="nav-link active" data-scroll-target="#click-here-while-you-wait"><span>Click here while you wait</span></a></li>
-  <li><a href="#bulletin" id="toc-bulletin" class="nav-link" data-scroll-target="#bulletin">Bulletin</a></li>
+  <li><a href="#bulletin" id="toc-bulletin" class="nav-link active" data-scroll-target="#bulletin">Bulletin</a></li>
+  <li><a href="#recap-last-time" id="toc-recap-last-time" class="nav-link" data-scroll-target="#recap-last-time">Recap: last time</a></li>
   <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting started</a></li>
   <li><a href="#today" id="toc-today" class="nav-link" data-scroll-target="#today">Today</a>
   <ul class="collapse">
   <li><a href="#definitions" id="toc-definitions" class="nav-link" data-scroll-target="#definitions">Definitions</a></li>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#more-definitions-next-time" id="toc-more-definitions-next-time" class="nav-link" data-scroll-target="#more-definitions-next-time">More definitions (next time)</a></li>
+  <li><a href="#bayes-theorem" id="toc-bayes-theorem" class="nav-link" data-scroll-target="#bayes-theorem">Bayes’ Theorem</a></li>
+  <li><a href="#simpsons-paradox" id="toc-simpsons-paradox" class="nav-link" data-scroll-target="#simpsons-paradox">Simpson’s paradox</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/sta199-f22-1/sta199-f22-1.github.io/edit/main/ae/ae-10.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/sta199-f22-1/sta199-f22-1.github.io/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/sta199-f22-1/sta199-f22-1.github.io/edit/main/ae/ae-11.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/sta199-f22-1/sta199-f22-1.github.io/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Intro to probability</h1>
+<h1 class="title d-none d-lg-block">Conditional probability</h1>
 <p class="subtitle lead">STA 199</p>
 </div>
 
@@ -268,190 +268,152 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<section id="click-here-while-you-wait" class="level2">
-<h2 class="anchored" data-anchor-id="click-here-while-you-wait"><a href="https://forms.gle/wE7yhe7i7xaqnC2G8">Click here while you wait</a></h2>
-</section>
 <section id="bulletin" class="level2">
 <h2 class="anchored" data-anchor-id="bulletin">Bulletin</h2>
 <ul>
-<li>this <code>ae</code> is <strong>not due for grade</strong>.</li>
-<li>team announcement in slack</li>
+<li>this <code>ae</code> is <strong>due for grade</strong>. Push your completed ae to GitHub within 48 hours to receive credit</li>
+<li><a href="https://classroom.github.com/a/GMQtFgcP">Click here</a> to make your <code>ae-11</code> repo</li>
+<li>team announcement in slack. sign-up for teams by 5:00pm today.</li>
+<li>homework 02 <a href="../hw/hw-2.html">released</a></li>
+</ul>
+</section>
+<section id="recap-last-time" class="level2">
+<h2 class="anchored" data-anchor-id="recap-last-time">Recap: last time</h2>
+<ul>
+<li><p>What is our definition of probability?</p></li>
+<li><p>Let <span class="math inline">\(A\)</span> be an event. What is <span class="math inline">\(A^C\)</span>? What is pr(<span class="math inline">\(A\)</span>) + pr(<span class="math inline">\(A^C\)</span>)?</p></li>
+<li><p>Based on the contingency table from last time, which events are disjoint?</p></li>
 </ul>
 </section>
 <section id="getting-started" class="level2">
 <h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
-<p>Clone <em>your</em> <code>ae10-username</code> repo from the <a href="https://github.com/sta199-sp23-1/">GitHub organization</a>.</p>
+<p>Clone <em>your</em> <code>ae11-username</code> repo from the <a href="https://github.com/sta199-sp23-1/">GitHub organization</a>.</p>
 </section>
 <section id="today" class="level1">
 <h1>Today</h1>
 <p>By the end of today you will</p>
 <ul>
-<li>have a working understanding of the terms <strong>probability</strong>, <strong>sample space</strong>, <strong>event</strong>, <strong>population</strong> and <strong>sample</strong>.</li>
-<li>compute <strong>probabilities</strong> of <strong>events</strong> from data</li>
-<li>create a contingency table using <code>pivot_wider()</code> and <code>kable()</code></li>
-<li>use a contingency table to explore the relationship between two categorical variables.</li>
+<li>be able to define and compute <strong>marginal</strong>, <strong>joint</strong> and <strong>conditional</strong> probabilities</li>
+<li>identify when events are independent</li>
+<li>apply Bayes’ theorem to examine COVID test specificity</li>
 </ul>
-<section id="definitions" class="level2">
-<h2 class="anchored" data-anchor-id="definitions">Definitions</h2>
-<ul>
-<li>The <strong>probability</strong> of an event tells us how likely an event is to occur, and it can take values from 0 to 1, inclusive. It can be viewed as
-<ul>
-<li>the proportion of times the event would occur if it could be observed an infinite number of times.</li>
-<li>our degree of belief an event will happen.</li>
-</ul></li>
-<li>An <strong>event</strong> is the basic element to which probability is applied, e.g.&nbsp;the result of an observation or experiment.
-<ul>
-<li>Example: <span class="math inline">\(A\)</span> is the event a student in STA 199 is a sophomore.</li>
-<li>We use capital letters, e.g.&nbsp;<span class="math inline">\(A\)</span> to denote events.</li>
-<li>For any event <span class="math inline">\(A\)</span> and its complement, <span class="math inline">\(A^C\)</span>, Pr(A) + Pr(<span class="math inline">\(A^C\)</span>) = 1.</li>
-</ul></li>
-<li>A <strong>sample space</strong> is the set of all possible outcomes. Each outcome in the sample space is <strong>disjoint</strong> or <strong>mutually exclusive</strong> meaning they can’t occur simultaneously.
-<ul>
-<li>Example: The sample space for year is {First-year, Sophomore, Junior, Senior}, each item brackets is a distinct <strong>outcome</strong> from the questionnaire.</li>
-<li>The probability of the entire sample space is 1.</li>
-</ul></li>
-</ul>
-</section>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#sta199 = read_csv()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>sta199 <span class="ot">=</span> sta199 <span class="sc">|&gt;</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">year =</span> <span class="st">`</span><span class="at">What year are you in school?</span><span class="st">`</span>,</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">animal =</span> <span class="st">`</span><span class="at">Choose your favorite</span><span class="st">`</span>,</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">tv =</span> <span class="st">`</span><span class="at">Favorite TV</span><span class="st">`</span>,</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">major =</span> <span class="st">`</span><span class="at">Probable Major?</span><span class="st">`</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>For this Application Exercise, we will look at our newly collected data.</p>
-<p>Data includes</p>
+<section id="definitions" class="level2">
+<h2 class="anchored" data-anchor-id="definitions">Definitions</h2>
+<p>Let A and B be events.</p>
 <ul>
-<li><code>year</code>: Year in school</li>
-<li><code>animal</code>: Whether you prefer cats or dogs</li>
-<li><code>tv</code>: Favorite TV genre</li>
-<li><code>major</code>: probable major (statistical science or not)</li>
+<li><strong>Marginal probability:</strong> The probability an event occurs regardless of values of other events
+<ul>
+<li><em>P(A)</em></li>
+<li>Example: What’s the probability a student in STA199 favors dogs?</li>
+</ul></li>
+<li><strong>Joint probability</strong>: The probability two or more events simultaneously occur
+<ul>
+<li>Example: What’s the probability a student is a junior <strong>and</strong> favors dogs?</li>
+<li><em>P(A and B)</em></li>
+</ul></li>
+<li><strong>Conditional probability</strong>: The probability an event occurs given the other has occurred
+<ul>
+<li><em>P(A|B)</em> or <em>P(B|A)</em></li>
+<li>Eample: What is the probability a student is a junior <strong>given</strong> they favor dogs?</li>
+</ul></li>
+<li><strong>Independent events</strong>: Knowing one event has occurred does not lead to any change in the probability we assign to another event.
+<ul>
+<li><em>P(A|B) = P(A)</em> or <em>P(B|A) = P(B)</em></li>
+<li>Example: P(Junior | dogs) = P(junior)</li>
+</ul></li>
 </ul>
+</section>
+<section id="bayes-theorem" class="level2">
+<h2 class="anchored" data-anchor-id="bayes-theorem">Bayes’ Theorem</h2>
+<p>In 2020, the FDA enacted emergency authorization for a number of serological tests for COVID-19. From the FDA website:</p>
+<blockquote class="blockquote">
+<p>Serology tests detect the presence of antibodies in the blood from the body’s adaptive immune response to an infection, like COVID-19. They do not detect the virus itself. In the early days of an infection when the body’s adaptive immune response is still building, antibodies may not be detected.</p>
+</blockquote>
+<p>Full details of these tests may be found on the FDA’s website <a href="https://www.fda.gov/medical-devices/coronavirus-disease-2019-covid-19-emergency-use-authorizations-medical-devices/eua-authorized-serology-test-performance">here</a>.</p>
+<p>We will define the following events:</p>
+<ul>
+<li><strong>Pos</strong>: The event the Alinity test returns positive.</li>
+<li><strong>Neg</strong>: The event the Alinity test returns negative.</li>
+<li><strong>Covid</strong>: The event a person has COVID</li>
+<li><strong>No Covid</strong>: The event a person does not have COVID</li>
+</ul>
+<p>Assume the Abbott Alinity test has an estimated sensitivity of 100%, <em>P(Pos | Covid) = 1</em>, and specificity of 99%, <em>P(Neg | No Covid) = 0.99</em>.</p>
+<p>Suppose the prevalence of COVID-19 in the general population is about 2%, <em>P(Covid) = 0.02</em>.</p>
 <section id="exercise-1" class="level4">
 <h4 class="anchored" data-anchor-id="exercise-1">Exercise 1</h4>
-<p>Give two examples of an event from the data set.</p>
+<p>Use the “hypothetical 10,000” to calculate the probability a person has COVID given they get a positive test result, i.e.&nbsp;<em>P(Covid | Pos)</em>.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th></th>
+<th>Covid</th>
+<th>No Covid</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Pos</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>Neg</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>Total</strong></td>
+<td></td>
+<td></td>
+<td>10000</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="exercise-2" class="level4">
 <h4 class="anchored" data-anchor-id="exercise-2">Exercise 2</h4>
-<p>Let’s take a look at favorite TV genre. Note that we have categorized genres so that each person can only have one favorite genre.</p>
+<p>Use Bayes’ Theorem to calculate <em>P(Covid|Pos)</em>.</p>
+</section>
+</section>
+<section id="simpsons-paradox" class="level2">
+<h2 class="anchored" data-anchor-id="simpsons-paradox">Simpson’s paradox</h2>
+<p>This example comes from <em>Confounding and Simpson’s paradox</em><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> by Julious and Mullee.</p>
+<p>The data examines 901 individuals with diabetes and includes the following variables</p>
 <ul>
-<li>What is the sample space for favorite TV genre? You can use code to identify the sample space.</li>
+<li><code>insulin_dep</code>: whether or not the patient has <em>insulin dependent</em> or <em>non-insulin dependent</em> diabetes</li>
+<li><code>less_than_40</code>: whether or not the individual is less than 40 years old</li>
+<li><code>survival</code>: whether or not the individual survived the length of the study</li>
 </ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>diabetes <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"https://sta101.github.io/static/appex/data/diabetes.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>One might be interested in the mortality associated with each type of diabetes. What’s the marginal probability of survival for insulin independent and insulin dependent diabetes?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>What about the probability conditional on age group?</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+
+
 </section>
-<section id="exercise-3" class="level4">
-<h4 class="anchored" data-anchor-id="exercise-3">Exercise 3</h4>
-<ul>
-<li>Let’s make a table that includes the TV genre, the number of people who prefer each, and the associated probabilities.</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </section>
-<section id="exercise-4" class="level4">
-<h4 class="anchored" data-anchor-id="exercise-4">Exercise 4</h4>
-<p>How large is the sample space of any individual’s response? Can we check this in <code>R</code>?</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="exercise-5" class="level4">
-<h4 class="anchored" data-anchor-id="exercise-5">Exercise 5</h4>
-<ul>
-<li>What is the probability a randomly selected STA 199 student favors cats?</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ul>
-<li>What is the probability a randomly selected STA 199 student is not a senior and prefers dogs?</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ul>
-<li>What is the probability a randomly selected STA 199 student is a first year and a statistics major?</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="exercise-6" class="level4">
-<h4 class="anchored" data-anchor-id="exercise-6">Exercise 6</h4>
-<p>Now let’s make at table looking at the relationship between year and favorite tv.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>sta199 <span class="sc">%&gt;%</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(year, tv)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>We’ll reformat the data into a <strong>contingency table</strong>, a table frequently used to study the association between two categorical variables. In this contingency table, each row will represent a year, each column will represent a tv show, and each cell is the number of students have a particular combination of year and major.</p>
-<p>To make the contingency table, we will use a new function in <code>dplry</code> called <code>pivot_wider()</code>. It will take the data frame produced by <code>count()</code> that is current in a “long” format and reshape it to be in a “wide” format.</p>
-<p>We will also use the <code>kable()</code> function in the <code>knitr</code> package to neatly format our new table.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>sta199 <span class="sc">%&gt;%</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(year, tv) <span class="sc">%&gt;%</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> tv, <span class="co">#how we will name the columns</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">values_from =</span> n, <span class="co">#values used for each cell</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">values_fill =</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span> <span class="co">#how to fill cells with 0 observations</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>() <span class="co"># neatly display the results</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ul>
-<li>How many students in STA 199 are juniors and like dramas?</li>
-</ul>
-</section>
-<section id="exercise-7" class="level4">
-<h4 class="anchored" data-anchor-id="exercise-7">Exercise 7</h4>
-<p>For each of the following exercises:</p>
-<ol type="1">
-<li><p>Calculate the probability using the contingency table above.</p></li>
-<li><p>Then write code to check your answer using the <code>sta199</code> data frame and <code>dplyr</code> functions.</p></li>
+
+
+<div id="quarto-appendix" class="default"><section class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1" role="doc-endnote"><p>Julious, S A, and M A Mullee. “Confounding and Simpson’s paradox.” BMJ (Clinical research ed.) vol.&nbsp;309,6967 (1994): 1480-1. doi:10.1136/bmj.309.6967.1480<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-<ul>
-<li>What is the probability a randomly selected STA 199 student is a sophomore?</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ul>
-<li>What is the probability that a randomly selected STA 199 student likes anime <strong>or</strong> action/adventure?</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ul>
-<li>What is the probability that a randomly selected STA 199 student is a sophomore <strong>or</strong> likes comedy?</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ul>
-<li>What is the probability that a randomly selected STA 199 student is a sophomore <strong>and</strong> and likes drama?</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-</section>
-<section id="more-definitions-next-time" class="level2">
-<h2 class="anchored" data-anchor-id="more-definitions-next-time">More definitions (next time)</h2>
-<p><strong>Population</strong>: the entire group you want to learn about. Often, it’s useful to think the population is “truth”</p>
-<p><strong>Sample</strong>: Your sample of the population from which you draw inference.</p>
-
-
-</section>
-</section>
-
-</main> <!-- /main -->
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

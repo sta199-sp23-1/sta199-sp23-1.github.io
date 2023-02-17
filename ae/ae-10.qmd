@@ -11,7 +11,7 @@ execute:
 
 ## Bulletin
 
--   this `ae` is **due for grade**. Push your completed ae to GitHub within 48 hours to receive credit
+-   this `ae` is **not due for grade**.
 -   team announcement in slack
 
 ## Getting started
@@ -170,7 +170,7 @@ For each of the following exercises:
 
 ```
 
-- What is the probability that a randomly selected STA 199 student is likes anime **or** action/adventure? 
+- What is the probability that a randomly selected STA 199 student likes anime **or** action/adventure? 
 
 ```{r 7-2}
 # code here

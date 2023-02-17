@@ -1,0 +1,123 @@
+---
+title: "Conditional probability"
+subtitle: "STA 199"
+editor: source
+format: html
+execute:
+  error: true
+---
+
+## Bulletin
+
+-   this `ae` is **due for grade**. Push your completed ae to GitHub within 48 hours to receive credit
+-   [Click here](https://classroom.github.com/a/GMQtFgcP) to make your `ae-11` repo
+-   team announcement in slack. sign-up for teams by 5:00pm today. 
+-   homework 02 [released](/hw/hw-2.html)
+
+## Recap: last time
+
+- What is our definition of probability?
+
+- Let $A$ be an event. What is $A^C$? What is pr($A$) + pr($A^C$)?
+
+- Based on the contingency table from last time, which events are disjoint?
+
+## Getting started
+
+Clone *your* `ae11-username` repo from the [GitHub organization](https://github.com/sta199-sp23-1/).
+
+# Today
+
+By the end of today you will 
+
+- be able to define and compute **marginal**, **joint** and **conditional** probabilities
+- identify when events are independent
+- apply Bayes' theorem to examine COVID test specificity
+
+```{r load-packages}
+#| warning: false
+library(tidyverse)
+library(knitr)
+```
+
+## Definitions
+
+Let A and B be events.
+
+-   **Marginal probability:** The probability an event occurs regardless of values of other events
+    - *P(A)*
+    - Example: What's the probability a student in STA199 favors dogs?
+
+-   **Joint probability**: The probability two or more events simultaneously occur
+    - Example: What's the probability a student is a junior **and** favors dogs?
+    - *P(A and B)* 
+  
+-   **Conditional probability**: The probability an event occurs given the other has occurred
+    - *P(A|B)* or *P(B|A)*
+    - Eample: What is the probability a student is a junior **given** they favor dogs?
+
+-   **Independent events**: Knowing one event has occurred does not lead to any change in the probability we assign to another event.
+    - *P(A|B) = P(A)* or *P(B|A) = P(B)*
+    - Example: P(Junior | dogs) = P(junior)
+
+## Bayes' Theorem
+
+In 2020, the FDA enacted emergency authorization for a number of serological tests for COVID-19. From the FDA website: 
+
+> Serology tests detect the presence of antibodies in the blood from the body’s adaptive immune response to an infection, like COVID-19. They do not detect the virus itself. In the early days of an infection when the body's adaptive immune response is still building, antibodies may not be detected. 
+
+Full details of these tests may be found on the FDA's website [here](https://www.fda.gov/medical-devices/coronavirus-disease-2019-covid-19-emergency-use-authorizations-medical-devices/eua-authorized-serology-test-performance).
+
+We will define the following events:
+
+-   **Pos**: The event the Alinity test returns positive.
+-   **Neg**: The event the Alinity test returns negative.
+-   **Covid**: The event a person has COVID
+-   **No Covid**: The event a person does not have COVID
+
+Assume the Abbott Alinity test has an estimated sensitivity of 100%, *P(Pos \| Covid) = 1*, and specificity of 99%, *P(Neg \| No Covid) = 0.99*.
+
+Suppose the prevalence of COVID-19 in the general population is about 2%, *P(Covid) = 0.02*.
+
+#### Exercise 1
+
+Use the "hypothetical 10,000" to calculate the probability a person has COVID given they get a positive test result, i.e. *P(Covid | Pos)*.
+
+|           | Covid | No Covid | Total |
+|-----------|-------|----------|-------|
+| **Pos**   |       |          |       |
+| **Neg**   |       |          |       |
+| **Total** |       |          | 10000 |
+
+
+#### Exercise 2
+
+Use Bayes' Theorem to calculate *P(Covid|Pos)*. 
+
+## Simpson's paradox
+
+This example comes from *Confounding and Simpson's paradox*^[Julious, S A, and M A Mullee. "Confounding and Simpson's paradox." BMJ (Clinical research ed.) vol. 309,6967 (1994): 1480-1. doi:10.1136/bmj.309.6967.1480] by Julious and Mullee.
+
+The data examines 901 individuals with diabetes and includes the following variables
+
+- `insulin_dep`: whether or not the patient has *insulin dependent* or *non-insulin dependent* diabetes
+- `less_than_40`: whether or not the individual is less than 40 years old
+- `survival`: whether or not the individual survived the length of the study
+
+```{r}
+#| warning: false
+diabetes = read_csv("https://sta101.github.io/static/appex/data/diabetes.csv")
+```
+
+One might be interested in the mortality associated with each type of diabetes. What's the marginal probability of survival for insulin independent and insulin dependent diabetes?
+
+```{r}
+# code here
+```
+
+What about the probability conditional on age group?
+
+```{r}
+# code here
+```
+
