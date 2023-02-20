@@ -5,6 +5,15 @@ format: html
 eval: false
 ---
 
+```{r}
+#| eval: false
+# $ git clone ghclass
+# $ git checkout artifacts
+
+#devtools::install("/path/to/ghclass")
+```
+
+
 ```{r load-libraries}
 library(ghclass)
 library(tidyverse)
@@ -51,7 +60,7 @@ org = "sta199-sp23-1"
 usernames = ghclass::org_members(org)
 
 ## edit this:
-assignment_template_repo = "ae10"
+assignment_template_repo = "hw02"
 
 # ghclass::org_create_assignment(
 #   org = org,
@@ -77,9 +86,6 @@ for (uu in usernames) {
     finally = failed_users <- c(failed_users, uu)
   )
   i = i + 1
-  if(i == 100) {
-    Sys.sleep(30*60)
-  }
 }
 
 ```
@@ -169,5 +175,18 @@ org_create_assignment(
   source_repo = "sta323-sp23/lab-1", # template file
   private = TRUE
 )
+```
+
+
+```{r}
+org = "sta323-sp23"
+repos = ghclass::org_repos(org, filter = "lab-2")
+```
+
+
+
+```{r}
+# repos = "sta323-sp23/lab-1"
+ghclass::action_artifact_delete(repos, ids=action_artifacts(repos, which="all"))
 ```
 
