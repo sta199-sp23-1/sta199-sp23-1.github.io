@@ -1412,5 +1412,82 @@
     "title": "Computing troubleshooting",
     "section": "",
     "text": "If the status shows something other than Operational, this means there is a known incident with the containers. Check back later to see if it’s been resolved. If there’s a deadline coming up soon, post on the course Slack to let us know that there’s an issue. We can look into how quickly it might get resolved and decide on what to do about the deadline accordingly. Note: We don’t anticipate this to happen regularly, the systems are Operational a huge majority of the time!\nIf the status shows Operational, this means the system is expected to be working. Check your internet connection, if need be, restart your computer to ensure a fresh new connection. If your issue persists, post on the course forum with details on what you’ve tried and the errors you see (including verbatim errors and/or screenshots).\n\nAnother approach is to request a restart of your container. To do so, select your container as you usually do and then, instead of Login, click on Request Restart. Read the warning in the next page, and then click once more to restart your container."
+  },
+  {
+    "objectID": "hw/hw-2.html",
+    "href": "hw/hw-2.html",
+    "title": "HW 2 - The Joy of Probability",
+    "section": "",
+    "text": "Important\n\n\n\nThis homework is due Friday, Feb 24 at 5:00pm."
+  },
+  {
+    "objectID": "hw/hw-2.html#getting-started",
+    "href": "hw/hw-2.html#getting-started",
+    "title": "HW 2 - The Joy of Probability",
+    "section": "Getting Started",
+    "text": "Getting Started\n\nGo to the Github Organization page and open your hw3-username repo\nClone the repository, open a new project in RStudio. It contains the starter documents you need to complete the homework assignment."
+  },
+  {
+    "objectID": "hw/hw-2.html#exercise-1",
+    "href": "hw/hw-2.html#exercise-1",
+    "title": "HW 2 - The Joy of Probability",
+    "section": "Exercise 1",
+    "text": "Exercise 1\n\nHow many episodes are there of the show: Joy of Painting?\n\n\n“There’s nothing wrong with having a tree as a friend.”\n\n\nIn how many episodes was a at least one tree painted?\nWhat is the probability a randomly selected episode featured at least one tree?\nWhat is the probability a randomly selected episode featured a conifer tree?"
+  },
+  {
+    "objectID": "hw/hw-2.html#exercise-2",
+    "href": "hw/hw-2.html#exercise-2",
+    "title": "HW 2 - The Joy of Probability",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nThe Joy of Painting occasionally featured a guest painter other than Bob Ross. One guest painter was Bob’s son Steve Ross.\n\nWhat’s the probability the show featured Steve Ross given there was a guest painter?\nDid Steve Ross like to paint mountains more or less than the other guest painters? Create a stacked bar plot of guest painters. Have whether or not Steve was the guest painter on the x-axis and fill the bars according to whether or not a mountain exists in the painting. Note: rename observations so that they are more informative than 0 and 1."
+  },
+  {
+    "objectID": "hw/hw-2.html#exercise-3",
+    "href": "hw/hw-2.html#exercise-3",
+    "title": "HW 2 - The Joy of Probability",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nThe next few questions will focus only on paintings created by Bob Ross. Make a new data frame called ross_paintings that only includes episodes (and thus paintings) made by Bob Ross. Save this data frame and use it for exercises 4 - 6."
+  },
+  {
+    "objectID": "hw/hw-2.html#exercise-4",
+    "href": "hw/hw-2.html#exercise-4",
+    "title": "HW 2 - The Joy of Probability",
+    "section": "Exercise 4",
+    "text": "Exercise 4\n\n“Let’s build us a happy, little cloud that floats around the sky.”\n\nAre the following two events disjoint? Why or why not?\n\nA: Bob Ross paints a cirrus cloud\nB: Bob Ross paints a cumulus cloud\n\nAre the following two events disjoint? Why or why not?\n\nA: Bob Ross paints waves\nB: Bob Ross paints a windmill"
+  },
+  {
+    "objectID": "hw/hw-2.html#exercise-5",
+    "href": "hw/hw-2.html#exercise-5",
+    "title": "HW 2 - The Joy of Probability",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nSuppose you randomly select a Bob Ross painting and see that it features a mountain. Use Bayes Theorem to calculate the probability this painting also features a river. Show your work by using a code chunk as a calculator.\nHint: p(mountain | river) = 0.39\n\nFollow up question: Does Bob Ross paint mountains independent of whether or not he paints rivers? Why? In other words, is event A independent of B? Here we define events:\nA: Bob Ross paints a mountain\nB: Bob Ross paints a river"
+  },
+  {
+    "objectID": "hw/hw-2.html#exercise-6",
+    "href": "hw/hw-2.html#exercise-6",
+    "title": "HW 2 - The Joy of Probability",
+    "section": "Exercise 6",
+    "text": "Exercise 6\n\n“However you think it should be, that’s exactly how it should be.”\n\nYour turn! Use this data to explore a question of your choice about paintings created in the TV show The Joy of Painting. Your question should explore the relationship between 3 variables in the data set; at least one of the variables must be one that hasn’t been used in exercises 1 - 6. You may use the entire data set or focus the analysis on paintings made by Bob Ross.\n\nClearly state the question you’re exploring.\nCreate 1 - 2 visualizations that can be used to explore the question. Customize the colors of your visualization using some of the colors commonly used in Bob Ross paintings. Click here for a list of common Bob Ross hex codes.\n\nHint: Click here for functions to manually create color palettes in ggplot2.\n\nCalculate the relevant probabilities needed to answer your question.\nWrite a short narrative, about 2 - 4 sentences, answering the research question based on the visualization and probabilities. Note: The narrative should not exceed 4 sentences."
+  },
+  {
+    "objectID": "hw/hw-2.html#reminder",
+    "href": "hw/hw-2.html#reminder",
+    "title": "HW 2 - The Joy of Probability",
+    "section": "Reminder:",
+    "text": "Reminder:\n\nAll plots should follow the best visualization practices: include an informed title, label axes, and carefully consider aesthetic choices.\nAll code should follow the tidyverse style guidelines, including not exceeding the 80 character limit."
+  },
+  {
+    "objectID": "hw/hw-2.html#submission",
+    "href": "hw/hw-2.html#submission",
+    "title": "HW 2 - The Joy of Probability",
+    "section": "Submission",
+    "text": "Submission\n\nGo to http://www.gradescope.com and click Log in in the top right corner.\nClick School Credentials Duke Net ID and log in using your Net ID credentials.\nClick on your STA 199 course.\nClick on the assignment, and you’ll be prompted to submit it.\nMark all the pages associated with exercise. All the pages of your homework should be associated with at least one question (i.e., should be “checked”). If you do not do this, you will be subject to lose points on the assignment.\nSelect all pages of your PDF submission to be associated with the “Workflow & formatting” question."
+  },
+  {
+    "objectID": "hw/hw-2.html#rubric",
+    "href": "hw/hw-2.html#rubric",
+    "title": "HW 2 - The Joy of Probability",
+    "section": "Rubric",
+    "text": "Rubric\n\nEx 1: 5 pts.\nEx 2: 8 pts.\nEx 3: 3 pts.\nEx 4: 10 pts.\nEx 5: 10 pts.\nEx 6: 9 pts.\nWorkflow and formatting - 5 pts\n\n\n\n\n\n\n\nNote\n\n\n\nThe “Workflow & formatting” grade is to assess the reproducible workflow. This includes:\n\nlinking all pages appropriately on Gradescope\nputting your name in the YAML at the top of the document\ncommitting the submitted version of your .qmd to GitHub\nAre you under the 80 character code limit? (You shouldn’t have to scroll to see all your code).\nPipes %>%, |> and ggplot layers + should be followed by a new line\nYou should be consistent with stylistic choices, e.g. only use 1 of = vs <- and %>% vs |>\nAll binary operators should be surrounded by space. For example x + y is appropriate. x+y is not."
   }
 ]
