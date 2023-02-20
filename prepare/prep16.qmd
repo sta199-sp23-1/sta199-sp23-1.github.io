@@ -1,0 +1,8 @@
+---
+title: "Prepare"
+subtitle: "Due: Wednesday March 1, 2023"
+categories: "prepare"
+---
+
+-   Watch [Models with multiple predictors](https://www.youtube.com/watch?v=mjkNabD4oi4)
+-   Read (optional): [chapter 8: linear regression with multiple predictors](https://openintro-ims.netlify.app/index.html)
