@@ -20,6 +20,13 @@ This lab is due Monday, February 27th at 5:00pm.
 -   Go to the [sta199-sp23-1](https://github.com/sta199-sp23-1) organization on GitHub. Click on the repo with the prefix `lab-04`. It contains the starter documents you need to complete the lab.
 -   Clone the repo and start a new project in RStudio. See the [Lab 0 instructions](https://sta199-sp23-1.github.io/labs/lab-0.html#clone-the-repo-start-new-rstudio-project) for details on cloning a repo and starting a new R project.
 
+# Bonus Setup Instructions 
+1. Find your team and have all team members clone the repo to create a new project on their rstudio container.
+2. Designate one student in each group to take *Student Role 0*
+3. STUDENT ROLE 0: add `*.pdf` to a newline in the file `.gitignore` in your project directory and then save, commit and push the changes you made to that file.
+4. All other students in the group: **delete** your  `.gitignore` files and pull the changes that were pushed by team member 0.
+5. Now, all students should have `.gitignore` files in their directory that include the line `*.pdf`
+
 ## Why Teams: Rationale
 
 In the real world, data scientists and statisticians often work in research teams.
