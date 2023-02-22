@@ -58,9 +58,7 @@ library(tidymodels)
 ## Exercises
 
 ::: callout-important
-Pick another member of the team write the answer to Exercise 1.
-All others should contribute to the discussion but only one person should type up the answer, render the document, commit, and push to GitHub.
-All others should **not** touch the document.
+It may be helpful to designate one team member to work on each of the problems and only edit your designated portion of the quarto document. However, after last week you should have experience resolving merge conflicts. Consider referring back to that lab or asking lab instructors for help if you run into merge conflicts.
 :::
 
 To get started, load the data and save the data frame as `parasites`.
@@ -72,13 +70,6 @@ To get started, load the data and save the data frame as `parasites`.
 
     c.  Use the visualization to describe the relationship between the two variables.
 
-::: callout-important
-After the team member working on Exercise 1 renders, commits, and pushes, another team member should pull their changes and render the document.
-Then, they should write the answer to Exercise 2.
-All others should contribute to the discussion but only one person should type up the answer, render the document, commit, and push to GitHub.
-All others should **not** touch the document.
-:::
-
 2.  Next, we'll model this relationship.
 
     a.  Fit the model and write the estimated regression equation.
@@ -89,12 +80,6 @@ All others should **not** touch the document.
 
     d.  What do you notice about the prediction (regression) line that may be strange, particularly for very large divergence times?
 
-::: callout-important
-After the team member working on Exercise 2 renders, commits, and pushes, another team member should pull their changes and render the document.
-Then, they should write the answer to Exercise 3.
-All others should contribute to the discussion but only one person should type up the answer, render the document, commit, and push to GitHub.
-All others should **not** touch the document.
-:::
 
 3.  Since `parsim` takes values between 0 and 1, we want to transform this variable so that it can range between (−∞,+∞).
     This will be better suited for fitting a regression model (and interpreting predicted values!)
@@ -108,12 +93,6 @@ All others should **not** touch the document.
 
     c.  Write a 1-2 sentence description of what you observe in the visualization.
 
-::: callout-important
-After the team member working on Exercise 3 renders, commits, and pushes, another team member should pull their changes and render the document.
-Then, they should write the answer to Exercise 4.
-All others should contribute to the discussion but only one person should type up the answer, render the document, commit, and push to GitHub.
-All others should **not** touch the document.
-:::
 
 4.  *Which variable is the strongest individual predictor of parasite similarity between species?* To answer this question, begin by fitting separate linear regression models predicting `transformed_parsim` with each of the following predictor variables:
 
@@ -134,12 +113,6 @@ Then,
     b.  To answer the question of interest, would it be useful to compare the slopes in each model to choose the variable that is the strongest predictor of parasite similarity?
         Why or why not?
 
-::: callout-important
-After the team member working on Exercise 4 renders, commits, and pushes, another team member should pull their changes and render the document.
-Then, they should write the answer to Exercise 5.
-All others should contribute to the discussion but only one person should type up the answer, render the document, commit, and push to GitHub.
-All others should **not** touch the document.
-:::
 
 5.  Regardless of your answer to exercise 4b, we will also calculate the $R^2$ of each model to help us identify the strongest individual linear predictor of `transformed_parsim`. $R^2$ measures the percent of the variability in the response that is explained by the model.
 
@@ -155,11 +128,6 @@ For example, you can calculate $R^2$ for dt_model using the code `glance(dt_mode
 
     b.  To answer our question of interest, would it be useful to compare the $R^2$ in each model to choose the variable that is the strongest predictor of parasite similarity?
         Why or why not?
-
-::: callout-important
-After the team member working on Exercise 5 renders, commits, and pushes, **all other team members** should pull the changes and render the document.
-Finally, a team member different than the one responsible for typing up responses to Exercise 5 should do the last task outlined below.
-:::
 
 # Submission
 
