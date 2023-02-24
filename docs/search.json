@@ -1,0 +1,191 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "STA 199: Introduction to Data Science",
+    "section": "",
+    "text": "week\n      dow\n      date\n      what\n      topic\n      prepare\n      slides\n      ae\n      hw\n      lab\n      exam\n      project\n      notes\n    \n  \n  \n    0\nW\nJan 11\nLab 0\nHello R!\n\n\n\n\n\n\n\n\n    \nF\nJan 13\nLec 1\nWelcome to STA 199\n\n\n\n\n\n\n\n\n    1\nM\nJan 16\n\nNo class -- Martin Luther King Jr. Day\n\n\n\n\n\n\n\n\n    \nW\nJan 18\nLec 2\nIntro to statistics and plotting\n\n\n\n\n\n\n\n\n    \nF\nJan 20\nLec 3\nVisualizing various types of data\n\n\n\n\n\n\n\n\n    2\nM\nJan 23\nLab 1\nData visualization\n\n\n\n\n\n\n\n\n    \nW\nJan 25\nLec 4\nGrammar of data wrangling\n\n\n\n\n\n\n\nHomework 1 released\n    \nF\nJan 27\nLec 5\nWorking with multiple data frames\n\n\n\n\n\n\n\n\n    3\nM\nJan 30\nLab 2\nData wrangling\n\n\n\n\n\n\n\n\n    \nW\nFeb 1\nLec 6\nTidy data\n\n\n\n\n\n\n\n\n    \nF\nFeb 3\nLec 7\nData types and classes\n\n\n\n\n\n\n\nHomework 1 due\n    4\nM\nFeb 6\nLab 3\nData tidying\n\n\n\n\n\n\n\n\n    \nW\nFeb 8\nLec 8\nSpatial data\n\n\n\n\n\n\n\n\n    \nF\nFeb 10\nLec 9\nTroubleshooting / Review\n\n\n\n\n\n\n\nExam 01 released! Due Feb 14 5:00pm\n    5\nM\nFeb 13\nLab\nNo lab: exam 1\n\n\n\n\n\n\n\n\n    \nW\nFeb 15\nLec 10\nIntro to probability\n\n\n\n\n\n\n\n\n    \nF\nFeb 17\nLec 11\nConditional probability\n\n\n\n\n\n\n\nHomework 2 released\n    6\nM\nFeb 20\nLab 4\nMerge conflicts\n\n\n\n\n\n\n\n\n    \nW\nFeb 22\nLec 12\nSimple regression\n\n\n\n\n\n\n\n\n    \nF\nFeb 24\nLec 13\nMultiple regression I\n\n\n\n\n\n\n\nHomework 2 due\n    7\nM\nFeb 27\nLab 5\n\n\n\n\n\n\n\n\n\n    \nW\nMar 1\nLec 14\nMultiple regression II\n\n\n\n\n\n\n\n\n    \nF\nMar 3\nLec 15\nModel selection\n\n\n\n\n\n\n\n\n    8\nM\nMar 6\nLab\nWork on project proposal\n\n\n\n\n\n\n\n\n    \nW\nMar 8\nLec 16\nLogistic Regression\n\n\n\n\n\n\n\n\n    \nF\nMar 10\nLec 17\nPrediction\n\n\n\n\n\n\n\n\n    9\nM\nMar 13\n\nNo class -- Spring Break\n\n\n\n\n\n\n\n\n    \nW\nMar 15\n\nNo class -- Spring Break\n\n\n\n\n\n\n\n\n    \nF\nMar 17\n\nNo class -- Spring Break\n\n\n\n\n\n\n\n\n    10\nM\nMar 20\nLab\n\n\n\n\n\n\n\n\n\n    \nW\nMar 22\nLec 18\nBootstrap\n\n\n\n\n\n\n\n\n    \nF\nMar 24\nLec 19\nCentral limit theorem I\n\n\n\n\n\n\n\n\n    11\nM\nMar 27\nLab\n\n\n\n\n\n\n\n\n\n    \nW\nMar 29\nLec 20\nCentral limit theorem II\n\n\n\n\n\n\n\n\n    \nF\nMar 31\nLec 21\nHypothesis testing I\n\n\n\n\n\n\n\n\n    12\nM\nApr 3\nLab\nProject work day\n\n\n\n\n\n\n\n\n    \nW\nApr 5\nLec 22\nHypothesis testing II\n\n\n\n\n\n\n\n\n    \nF\nApr 7\nLec 23\nHypothesis testing III\n\n\n\n\n\n\n\n\n    13\nM\nApr 10\nLab\nNo lab: exam 2\n\n\n\n\n\n\n\n\n    \nW\nApr 12\nLec 24\nProject tips\n\n\n\n\n\n\n\n\n    \nF\nApr 14\nLec 25\nEthics\n\n\n\n\n\n\n\n\n    14\nM\nApr 17\nLab\nProject peer review\n\n\n\n\n\n\n\n\n    \nW\nApr 19\nLec 26\nSpecial topic\n\n\n\n\n\n\n\n\n    \nF\nApr 21\nLec 27\nSpecial topic\n\n\n\n\n\n\n\n\n    15\nM\nApr 24\nLab\nProject presentations\n\n\n\n\n\n\n\n\n    \nW\nApr 26\nLec 28\nSpecial topic"
+  },
+  {
+    "objectID": "labs/lab-4.html",
+    "href": "labs/lab-4.html",
+    "title": "Lab 4 - Merge Conflicts and Misrepresentation",
+    "section": "",
+    "text": "Important\n\n\n\nThis lab is due Monday, February 27th at 5:00pm."
+  },
+  {
+    "objectID": "labs/lab-4.html#why-teams-rationale",
+    "href": "labs/lab-4.html#why-teams-rationale",
+    "title": "Lab 4 - Merge Conflicts and Misrepresentation",
+    "section": "Why Teams: Rationale",
+    "text": "Why Teams: Rationale\nIn the real world, data scientists and statisticians often work in research teams. It is a skill to be able to communicate and work together on common projects. Thus, the remaining labs + your project will be team based.\nTeams work better when members have a common understanding of the team’s goals and expectations for collaboration. The purpose of this activity is to help your team making a plan for working together during lab and outside of the scheduled lab time.\nEach team member will have some ideas about how a team should operate. These ideas may be very different. This is your opportunity to share your thoughts and ideas to promote optimal team function and prevent misunderstandings in the future."
+  },
+  {
+    "objectID": "labs/lab-4.html#team-name",
+    "href": "labs/lab-4.html#team-name",
+    "title": "Lab 4 - Merge Conflicts and Misrepresentation",
+    "section": "Team Name",
+    "text": "Team Name\nDiscuss with your group a team name to be called. Your GitHub repos will be created for this team name moving forward. Report your team name to your Lab Leader before moving on."
+  },
+  {
+    "objectID": "labs/lab-4.html#instructions",
+    "href": "labs/lab-4.html#instructions",
+    "title": "Lab 4 - Merge Conflicts and Misrepresentation",
+    "section": "Instructions",
+    "text": "Instructions\nBefore completing the lab today, you will complete a team agreement. Discuss each of the items below with all in-person team members. If necessary, also follow up this week with any missing team members.\nHave one person act as the recorder and type the team’s decisions in the team-agreement.qmd file.\nBe sure the team agrees on an item before it is added to the document.\nOnce the document is complete, the recorder should render, commit, and push the team agreement to GitHub. All team members can refer to this document throughout the semester."
+  },
+  {
+    "objectID": "labs/lab-4.html#team-agreement",
+    "href": "labs/lab-4.html#team-agreement",
+    "title": "Lab 4 - Merge Conflicts and Misrepresentation",
+    "section": "Team Agreement",
+    "text": "Team Agreement\n\nWeekly meetings\nIdentify a 1 - 2 hour weekly block outside of lab where the team can meet to work on assignments. All team members should block off this time on their calendar in case the group needs to meet to finish lab or work on the project.\n\n\nMeeting “location”\nHow the team will meet to work together (e.g. in-person, Zoom, Facetime, Google Hangouts). Be sure every member is able to access the virtual meeting space, if needed. If you are unable to find a weekly time when the team can meet, briefly outline a plan to work on assignments outside of lab. Otherwise, you can delete this item.\n\n\nPrimary method of communication\nThe team’s primary method of communication outside of meetings (e.g. Slack, text messages, etc.)\n\n\nHow should someone notify the other members if they are unable to attend lab or a scheduled team meeting?\n\n\nBy when should everyone have their portion of the lab completed?\nKeep in mind your team may want to have time to review the lab before turning it in to make sure it is a cohesive write up.\n\n\nAny other items the team would like to discuss or plan.\n\n\nMissing Teammates\nIf you are missing teammates for today’s lab, it is your responsibility to reach out, say hello, and communicate with them that they must contribute to the above and below questions before submitting lab-04 to Gradescope. You can find their email in the teams repo. The link to the teams repo is located on our website on the teaching team tab."
+  },
+  {
+    "objectID": "labs/lab-4.html#setup",
+    "href": "labs/lab-4.html#setup",
+    "title": "Lab 4 - Merge Conflicts and Misrepresentation",
+    "section": "Setup",
+    "text": "Setup\n\nClone the repo and open the .qmd file.\nAssign the numbers 1, 2, 3, and 4 to each of the team members. If your team has fewer than 4 people, some people will need to have multiple numbers. If your team has more than 4 people, some people will need to share some numbers.\nUpdate your git settings! Copy and paste git config --global pull.rebase false into your Terminal in RStudio and press enter. (Look for the tab next to the Console, and ask if you can’t find it.)"
+  },
+  {
+    "objectID": "labs/lab-4.html#lets-cause-a-merge-conflict",
+    "href": "labs/lab-4.html#lets-cause-a-merge-conflict",
+    "title": "Lab 4 - Merge Conflicts and Misrepresentation",
+    "section": "Let’s cause a merge conflict!",
+    "text": "Let’s cause a merge conflict!\nOur goal is to see two different types of merges: first we’ll see a type of merge that git can’t figure out on its own how to do on its own (a merge conflict) and requires human intervention, then another type of where that git can figure out how to do without human intervention.\nDoing this will require some tight choreography, so pay attention!\nTake turns in completing the exercises, only one member at a time. Others should just watch, not doing anything on their own projects (this includes not even pulling changes!) until they are instructed to. If you feel like you won’t be able to resist the urge to touch your computer when it’s not your turn, we recommend putting your hands in your pockets or sitting on them!\nBefore starting: everyone on your team should have followed the instructions in the Setup section above. Repeating from earlier: everyone should clone the repo, open the lab4.qmd document, run git config --global pull.rebase false in the Terminal, and know which role number(s) they are.\n🛑 Make sure everyone has completed this step before moving on.\nRole 1:\n\nChange “TEAM NAME” in the YAML to your actual team name.\nrender, commit, push.\n\n🛑 Make sure the previous role has finished before moving on to the next step.\nRole 2:\n\nChange “TEAM NAME” to some other word.\nRender, commit, push. You should get an error.\nPull. Take a look at the document with the merge conflict.\nClear the merge conflict by editing the document to choose the correct/preferred change.\nRender.\nClick the Stage checkbox for all files in your Git tab. Make sure they all have check marks, not filled-in boxes.\ncommit and push.\n\n🛑 Make sure the previous role has finished before moving on to the next step.\nRole 3:\n\nAdd a code chunk for Exercise 2 and give it a label.\nRender, commit, push. You should get an error.\nPull. No merge conflicts should occur, but you should see a message about merging.\nNow push.\n\n🛑 Make sure the previous role has finished before moving on to the next step.\nRole 4:\n\nAdd a code chunk to Exercise 2 and give it a different label.\nRender, commit, push. You should get an error.\nPull. Take a look at the document with the merge conflict. Clear the merge conflict by choosing the correct/preferred change. render, and push.\n\n🛑 Make sure the previous role has finished before moving on to the next step.\nEveryone: Pull, and observe the changes in your document."
+  },
+  {
+    "objectID": "labs/lab-4.html#tips-for-collaborating-via-github",
+    "href": "labs/lab-4.html#tips-for-collaborating-via-github",
+    "title": "Lab 4 - Merge Conflicts and Misrepresentation",
+    "section": "Tips for collaborating via GitHub",
+    "text": "Tips for collaborating via GitHub\n\nAlways pull first before you start working.\nResolve a merge conflict (render and push) before continuing your work. Never do new work while resolving a merge conflict.\nRender, commit, and push often to minimize merge conflicts and/or to make merge conflicts easier to resolve.\nIf you find yourself in a situation that is difficult to resolve, ask questions ASAP. Don’t let it linger and get bigger."
+  },
+  {
+    "objectID": "labs/lab-4.html#packages",
+    "href": "labs/lab-4.html#packages",
+    "title": "Lab 4 - Merge Conflicts and Misrepresentation",
+    "section": "Packages",
+    "text": "Packages\nWe’ll use the tidyverse package for much of the data wrangling and visualization.\n\nlibrary(tidyverse)\n\nSince the exercises for this week are short it’s possible not every team member will get to commit and push during the workshop. However each team member should review what was created, fix typos, make edits for better presentation, etc. either during or after the workshop, and before the deadline.\nNote: Everyone should intellectually contribute to every question. However, no two teammates should work on the same question at the same time below."
+  },
+  {
+    "objectID": "labs/lab-4.html#data",
+    "href": "labs/lab-4.html#data",
+    "title": "Lab 4 - Merge Conflicts and Misrepresentation",
+    "section": "Data",
+    "text": "Data\nIn this lab you’ll construct the data set!"
+  },
+  {
+    "objectID": "prepare/prep18.html",
+    "href": "prepare/prep18.html",
+    "title": "Prepare",
+    "section": "",
+    "text": "Watch Logistic Regression\nWatch StringR\nRead (optional): chapter 9: logistic regression"
+  },
+  {
+    "objectID": "prepare/prep19.html",
+    "href": "prepare/prep19.html",
+    "title": "Prepare",
+    "section": "",
+    "text": "No required prepare.\nRead (optional) review: Chapter 10 Applications: Model"
+  },
+  {
+    "objectID": "ae/ae-13.html",
+    "href": "ae/ae-13.html",
+    "title": "Multiple regression I",
+    "section": "",
+    "text": "this ae is due for grade. Push your completed ae to GitHub within 48 hours to receive credit\nhomework 02 due today"
+  },
+  {
+    "objectID": "ae/ae-13.html#getting-started",
+    "href": "ae/ae-13.html#getting-started",
+    "title": "Multiple regression I",
+    "section": "Getting started",
+    "text": "Getting started\nClone your ae13-username repo from the GitHub organization."
+  },
+  {
+    "objectID": "ae/ae-13.html#recap-warmup",
+    "href": "ae/ae-13.html#recap-warmup",
+    "title": "Multiple regression I",
+    "section": "Recap (warmup)",
+    "text": "Recap (warmup)\nFrom last time…\n\nWhat is \\(\\hat{y}\\)? How is it different than \\(y\\)?\nWhat is \\(\\hat{\\beta}\\)? How is it different than \\(\\beta\\)?\nWhat is a residual? How is it different than error?"
+  },
+  {
+    "objectID": "ae/ae-13.html#today",
+    "href": "ae/ae-13.html#today",
+    "title": "Multiple regression I",
+    "section": "Today",
+    "text": "Today\nBy the end of today you will…\n\ncompute \\(R^2\\) and use it to select between models\nunderstand the geometric picture of multiple linear regression\nbe able to build, fit and interpret linear models with \\(>1\\) predictor"
+  },
+  {
+    "objectID": "ae/ae-13.html#load-packages-and-data",
+    "href": "ae/ae-13.html#load-packages-and-data",
+    "title": "Multiple regression I",
+    "section": "Load packages and data",
+    "text": "Load packages and data\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(scatterplot3d)\n\nToday’s data is a collection of tech stock prices from January 1st 2020 to December 31st 2021. I pulled this data off Yahoo finance using their API via the tidyquant package July 2022.\n\nstocks = read_csv(\"https://sta101-fa22.netlify.app/static/appex/data/stocks2.csv\")"
+  },
+  {
+    "objectID": "ae/ae-13.html#notes",
+    "href": "ae/ae-13.html#notes",
+    "title": "Multiple regression I",
+    "section": "Notes",
+    "text": "Notes"
+  },
+  {
+    "objectID": "ae/ae-13.html#r2-and-checking-model-fit",
+    "href": "ae/ae-13.html#r2-and-checking-model-fit",
+    "title": "Multiple regression I",
+    "section": "\\(R^2\\) and checking model fit",
+    "text": "\\(R^2\\) and checking model fit\n\nConceptual introduction\n\\(R^2\\), aka “the coefficient of determination” or “correlation squared” is a way to see how well a given model fits the data. Formally,\n\\[\nR^2 = 1 - \\frac{\\sum_i r_i^2}{\\sum_i (y_i - \\bar{y})^2}\n\\]\nwhere \\(\\bar{y}\\) is the mean of all y values.\nIn words,\n\\[\nR^2 = 1 - \\frac{\\text{sum of squared residuals}}{\\text{sum of outcome squared distance from the mean}}\n\\]\nLet’s focus on the word version to build intuition.\n\nThe sum of squared residuals is a measure of how wrong our model is (how much our model doesn’t explain)\nThe denominator is proportional to the average square distance from the mean, i.e. the variance, i.e. the amount of variability in the data.\nTogether, the fraction represents the proportion of variability that is not explained by the model.\n\nIf the sum of squared residuals is 0, then the model explains all variability and \\(R^2 = 1 - 0 = 1\\).\nSimilarly if the sum of squared residuals is the same as all the variability in the data, then model does not explain any variability and \\(R^2 = 1 - 1 = 0\\).\nFinal take-away: \\(R^2\\) is a measure of the proportion of variability the model explains. An \\(R^2\\) of 0 is a poor fit and \\(R^2\\) of 1 is a perfect fit.\n\n\nHow to find \\(R^2\\)\nTo find \\(R^2\\) simply call the function glance() on your modelFit, e.g.\nmodelFit = linear_reg() %>%\n  set_engine(\"lm\") %>%\n  fit(outcome ~ predictor, data = data_set)\n  \nglance(modelFit)"
+  },
+  {
+    "objectID": "ae/ae-13.html#two-predictor-main-effects-model-and-notation",
+    "href": "ae/ae-13.html#two-predictor-main-effects-model-and-notation",
+    "title": "Multiple regression I",
+    "section": "Two predictor main effects model and notation",
+    "text": "Two predictor main effects model and notation\n\\[\ny = \\beta_0 + \\beta_1 x_1 + \\beta_2 x_2 + \\epsilon\n\\]\n\n\\(y\\): the outcome variable. Also called the “response” or “dependent variable”. In prediction problems, this is what we are interested in predicting.\n\\(x_i\\): the \\(i^{th}\\) predictor. Also commonly referred to as “regressor”, “independent variable”, “covariate”, “feature”, “the data”.\n\\(\\beta_i\\): “constants” or coefficients i.e. fixed numbers. These are population parameters. \\(\\beta_0\\) has another special name, “the intercept”.\n\\(\\epsilon\\): the error. This quantity represents observational error, i.e. the difference between our observation and the true population-level expected value: \\(\\beta_0 + \\beta_1 x\\).\n\nEffectively this model says our data \\(y\\) is linearly related to the \\(x_1\\) and \\(x_2\\) but is not perfectly observed due to some error.\n\nA simple example\nLet’s examine the first quarter of 2020 high prices of Microsoft, IBM and Apple stocks to illustrate some ideas.\n\n\n\n\n\n\nIf we have three measurements (variables) then each observation is a point in three-dimensional space. In this example, we can choose one of our measurements to be the outcome variable (e.g. Apple stock price) and use our other two measurements (MSFT and IBM price) as predictors.\nIn general, the total number of measurements, i.e. variables (columns) in our linear model represents the spatial dimension of our model.\nOur fitted linear model no longer looks like a line, but instead looks like a plane.\n\n\n\n\n\n\n\nThis plane shows our prediction of AAPL price (\\(y\\)) given both MSFT price (\\(x_1\\)) and IBM price (\\(x_2\\))\nDemo: building intuition for higher dimensional linear models\n\n\nExercise 1\nIn \\(n\\)-dimensional space, a linear equation creates a \\(\\text{insert number here}\\)-dimensional object."
+  },
+  {
+    "objectID": "ae/ae-13.html#fitting-a-multiple-regression-model-in-r",
+    "href": "ae/ae-13.html#fitting-a-multiple-regression-model-in-r",
+    "title": "Multiple regression I",
+    "section": "Fitting a multiple regression model in R",
+    "text": "Fitting a multiple regression model in R\nFind the equation of the plane above with this one simple trick!\nmyModelFit = linear_reg() %>%\n  set_engine(\"lm\") %>%\n  fit(outcome ~ predictor1 + predictor2 + predictor3 + ..., data = data-set-here)\nwe can simply ‘add’ in new predictors! This code template will fit the model according to the ordinary least squares (OLS) objective function, i.e. we are finding the equation of the hyperplane that minimizes the sum of squared residuals.\nYou can subsequently print the coefficients (\\(\\beta\\)s) to the screen by simply typing the model name, e.g. myModelFit or calling the tidy() function on your fitted model, e.g. tidy(myModelFit).\n\nExercise 2\nIn the code chunk below, fit the multiple regression model described above where\n\\(y\\): AAPL high price, \\(x_1\\): MSFT high price, \\(x_2\\): IBM high price.\nThen write the equation of your fitted model below.\n\nNote: you should change the name of “myModelFit” to be something more meaningful, e.g. apple_high_fit\n\n\n# code here \n\nThe equation of the plane above:\n\\[\n\\text{your equation here}\n\\]\n\n\nExercise 3\nInterpret the coefficients in your equation above.\n[your interpretation here]"
+  },
+  {
+    "objectID": "ae/ae-13.html#a-better-model",
+    "href": "ae/ae-13.html#a-better-model",
+    "title": "Multiple regression I",
+    "section": "A better model",
+    "text": "A better model\n\nLog return\nApplying a model to values outside of the original data is called extrapolation. Extrapolation can be very unreliable.\nThat being noted, it would be nice if our model was only able to predict realistic outcomes. If we consider extrapolating our forecast, we will see that our linear model can easily predict unrealistic values. For example, with a negative slope, we can imagine that a very high Microsoft price drives our Apple prediction down to a negative value.\nHowever, stock prices cannot be negative. A more useful modeling framework used by investors is to predict the “log return” of a stock. Over the course of day, the log return is defined:\n\\[\n\\log(\\text{close price}) - \\log(\\text{open price}) = \\log \\left( \\frac{\\text{close price}}{\\text{open price}} \\right)\n\\]\n\nExercise 4\nStarting with your stocks data frame, create new columns AAPL.LogReturn, MSFT.LogReturn, IBM.LogReturn that shows the daily log return of each stock. Continue this for the remaining stocks in the data frame. Save your new data frame as stock_returns.\n\n# code here\n\n\n\nExercise 5\nFit the following model:\n\\[\ny = \\beta_0 + x_1 \\beta_1 + x_2 \\beta_2 + \\epsilon\n\\]\nwhere\n\n\\(y\\): AAPL daily log return\n\\(x_1\\): MSFT daily log return\n\\(x_2\\): IBM daily log return\n\nand report \\(R^2\\).\n\n# code here \n\n\n\n\nPredicting the future\nSo far we’ve only used the present to predict the present. i.e. we’ve used January 1st IBM prices to predict January 1st AAPL prices. While the resulting models are quite good, they are not particularly useful.\nIt would be much more useful if we could predict the return of AAPL tomorrow so that we could make an informed decision about buying or selling it.\nTo begin such an endeavor, let’s build a model that uses yesterday’s log-return of IBM and MSFT to predict today’s log return of AAPL.\n\nExercise 6\nWhat should our data frame look like?\n[ your answer here ]\nLet’s make that data frame! Adapt the example below to create new columns for yesterday’s IBM and MSFT returns.\n\nstock_returns2 = stock_returns %>%\n  mutate(AAPL.LogReturnYesterday = lag(AAPL.LogReturn, 1)) %>%\n  filter(!is.na(AAPL.LogReturnYesterday))\n\nstock_returns2\n\n\n\nExercise 7\nFit the following model:\n\\[\ny = \\beta_0 + x_1 \\beta_1 + x_2 \\beta_2 + \\epsilon\n\\]\nwhere\n\\(y\\): AAPL daily log return \\(x_1\\): MSFT log return yesterday \\(x_2\\): IBM log return yesterday\nand report \\(R^2\\). What do you notice?\n\n# code here"
+  },
+  {
+    "objectID": "teaching-resources/GitHubClassroomManagement.html",
+    "href": "teaching-resources/GitHubClassroomManagement.html",
+    "title": "GitHub Classroom Management",
+    "section": "",
+    "text": "# $ git clone ghclass\n# $ git checkout artifacts\n\n#devtools::install(\"/path/to/ghclass\")\nEach code chunk below is designed to be self-contained (no dependency between chunks)."
+  },
+  {
+    "objectID": "teaching-resources/GitHubClassroomManagement.html#to-make-new-repos",
+    "href": "teaching-resources/GitHubClassroomManagement.html#to-make-new-repos",
+    "title": "GitHub Classroom Management",
+    "section": "To make new repos",
+    "text": "To make new repos\n\n\n\n\nCreate a new repo in the organization called “lab1” with a README.md\nPush to “lab1”: lab1.qmd, data/any_relevant_data.csv and optionally lab1.Rproj.\nSelect the repository, click “Settings” and check “Template repository”.\nFollow the code below.\n\n\n# initial assignment creation\norg = \"sta199-sp23-1\"\nusernames = ghclass::org_members(org)\n\n## edit this:\nassignment_template_repo = \"lab0_template\"\n\nghclass::org_create_assignment(\n  org = org,\n  repo = paste0(assignment_template_repo, \"-\", usernames),\n  user = usernames,\n  source_repo = paste0(org, \"/\", assignment_template_repo)\n)\n\n\n\n\nFeel free to test lab creation on my dummy account “fishswish” or on your own account with the code below\n\norg = \"sta199-sp23-1\"\nusernames = \"fishswish\"\nassignment_template_repo = \"lab0_template\"\nghclass::org_create_assignment(\n  org = org,\n  repo = paste0(assignment_template_repo, \"-\", usernames),\n  user = usernames,\n  source_repo = paste0(org, \"/\", assignment_template_repo)\n)\n\nIt’s possible some people are not in the organization and will need to be have additional repos created manually following the steps below:\n\ngo to template repo and click the green “Use this template” -> “Create a new repository” -> name it “lab-x-their_github_username” -> leave “Private” selected and click “Create repository from template”\nnext in the new repo go to “Settings” -> “Collaborators and Teams” -> click the green “Add people” button and type in their GitHub username.\nnext make sure to go to the “People” section of the organization and select “Invite member” so they join the organization too. Owning a repo in the org just makes them an outside collaborator. They still have to actually join the org"
+  },
+  {
+    "objectID": "teaching-resources/GitHubClassroomManagement.html#oops.-file-management-after-you-create-repos",
+    "href": "teaching-resources/GitHubClassroomManagement.html#oops.-file-management-after-you-create-repos",
+    "title": "GitHub Classroom Management",
+    "section": "Oops. File management after you create repos",
+    "text": "Oops. File management after you create repos\nThe magic happens in repo_add_file(). Be sure to edit/check each item below, specifically:\n\norg as appropriate\nrepos_to_modify object\narguments to repo_add_file()\n\n\norg = \"sta199-sp23-1\"\nusernames = ghclass::org_members(org)\n\n# get all existing labX repos\nrepos_to_modify = org_repos(org, filter = \"practice1-\") # edit this \"filter\"\n\nghclass::repo_add_file(repo = repos_to_modify,\n                       branch = \"main\",\n                       repo_folder = \"\", # edit this to be path to folder in repo\n                       message = \"update README\", # update to be a meaningful commit message\n                       file = \"~/Desktop/README.md\", # update local path to the file you want to add\n                       overwrite = TRUE) # if you want to overwrite or not"
+  },
+  {
+    "objectID": "teaching-resources/GitHubClassroomManagement.html#creating-team-assignments",
+    "href": "teaching-resources/GitHubClassroomManagement.html#creating-team-assignments",
+    "title": "GitHub Classroom Management",
+    "section": "Creating team assignments",
+    "text": "Creating team assignments\n\n# example data frame for demo purposes\n# you will need to format your data frame to look like this\nroster = data.frame(\n  github = c(\"fishswish\", \"athos00\"),\n  lab1 = rep(\"lab1-team1\", 2)\n)\n\n# edit each item below\norg_create_assignment(\n  org = \"sta199-sp23-1\",\n  user = roster$github,\n  repo = roster$lab1,\n  team = roster$lab1,\n  source_repo = \"sta199-sp23-1/lab1_template\",\n  private = TRUE\n)\n\n\nroster = data.frame(\n  github = c(\"devinjohnson7\", \"athos00\"),\n  lab1 = rep(\"lab1-team-awesome\", 2)\n)\n\n# edit each item below\norg_create_assignment(\n  org = \"sta323-sp23\",\n  user = roster$github,\n  repo = roster$lab1,\n  team = roster$lab1,\n  source_repo = \"sta323-sp23/lab-1\", # template file\n  private = TRUE\n)\n\n\norg = \"sta323-sp23\"\nrepos = ghclass::org_repos(org, filter = \"lab-2\")\n\n\n# repos = \"sta323-sp23/lab-1\"\nghclass::action_artifact_delete(repos, ids=action_artifacts(repos, which=\"all\"))"
+  }
+]
