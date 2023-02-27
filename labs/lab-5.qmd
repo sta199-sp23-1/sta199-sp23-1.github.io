@@ -58,12 +58,15 @@ library(tidymodels)
 ## Exercises
 
 ::: callout-important
-It may be helpful to designate one team member to work on each of the problems and only edit your designated portion of the quarto document. However, after last week you should have experience resolving merge conflicts. Consider referring back to that lab or asking lab instructors for help if you run into merge conflicts.
+It may be helpful to designate one team member to work on each of the problems and only edit your designated portion of the quarto document.
+However, after last week you should have experience resolving merge conflicts.
+Consider referring back to that lab or asking lab instructors for help if you run into merge conflicts.
 :::
 
 To get started, load the data and save the data frame as `parasites`.
 
 1.  Let's start by examining the relationship between `divergence_time` and `parsim`.
+
     a.  Based on the goals of the analysis, what is the response variable?
 
     b.  Visualize the relationship between the two variables.
@@ -72,7 +75,7 @@ To get started, load the data and save the data frame as `parasites`.
 
 2.  Next, we'll model this relationship.
 
-    a.  Fit the model and write the estimated regression equation.
+    a.  Fit the model and write the estimated ("fitted") regression equation.
 
     b.  Interpret the slope and the intercept in the context of the data.
 
@@ -80,19 +83,17 @@ To get started, load the data and save the data frame as `parasites`.
 
     d.  What do you notice about the prediction (regression) line that may be strange, particularly for very large divergence times?
 
-
 3.  Since `parsim` takes values between 0 and 1, we want to transform this variable so that it can range between (−∞,+∞).
     This will be better suited for fitting a regression model (and interpreting predicted values!)
 
     a.  Using mutate, create a new variable `transformed_parsim` that is calculated as `log(parsim/(1-parsim))`.
         Add this variable to your data frame.
-        Note: `log()` in R represents taking the **nautral log**.
+        Note: `log()` in R represents taking the **natural log**.
 
     b.  Then, visualize the relationship between divergence_time and `transformed_parsim`.
         Add a regression line to your visualization.
 
     c.  Write a 1-2 sentence description of what you observe in the visualization.
-
 
 4.  *Which variable is the strongest individual predictor of parasite similarity between species?* To answer this question, begin by fitting separate linear regression models predicting `transformed_parsim` with each of the following predictor variables:
 
@@ -112,7 +113,6 @@ Then,
 
     b.  To answer the question of interest, would it be useful to compare the slopes in each model to choose the variable that is the strongest predictor of parasite similarity?
         Why or why not?
-
 
 5.  Regardless of your answer to exercise 4b, we will also calculate the $R^2$ of each model to help us identify the strongest individual linear predictor of `transformed_parsim`. $R^2$ measures the percent of the variability in the response that is explained by the model.
 
@@ -137,9 +137,7 @@ We will be checking these to make sure you have been practicing how to render an
 
 You must turn in a PDF file to the Gradescope page by the submission deadline to be considered "on time".
 
-Make sure your data are tidy!
-That is, your code should not be running off the pages and spaced properly.
-See: <https://style.tidyverse.org/ggplot2.html>.
+Link your teammates with the assignment when you submit to Gradescope. If you're unsure how, please ask a member of the teaching team.
 :::
 
 To submit your assignment:
@@ -165,9 +163,21 @@ To submit your assignment:
 
 ::: callout-note
 The "Workflow & formatting" grade is to assess the reproducible workflow.
-This includes: - linking all pages appropriately on Gradescope - putting your team and member names in the YAML at the top of the document - committing the submitted version of your `.qmd` to GitHub - Are you under the 80 character code limit?
+This includes: 
+
+- linking all pages appropriately on Gradescope 
+
+- putting your team and member names in the YAML at the top of the document 
+
+- committing the submitted version of your `.qmd` to GitHub 
+
+- Are you under the 80 character code limit?
 (You shouldn't have to scroll to see all your code).
-Pipes `%>%`, `|>` and ggplot layers `+` should be followed by a new line - You should be consistent with stylistic choices, e.g. only use 1 of `=` vs `<-` and `%>%` vs `|>` - All binary operators should be surrounded by space.
-For example `x + y` is appropriate.
+
+- Pipes `%>%`, `|>` and ggplot layers `+` should be followed by a new line 
+
+- You should be consistent with stylistic choices, e.g. only use 1 of `=` vs `<-` and `%>%` vs `|>` 
+
+- All binary operators should be surrounded by space. For example `x + y` is appropriate.
 `x+y` is not.
 :::
