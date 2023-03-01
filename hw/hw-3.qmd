@@ -21,7 +21,6 @@ This homework is due Wednesday, March 8 at 5:00pm.
 #| message: false
 #| warning: false
 
-
 library(tidyverse)
 library(tidymodels)
 ```
@@ -36,7 +35,7 @@ The data dictionary for this dataset from tidytuesday is reproduced below:
 #### Dictionary
 
 | variable         | class     | description                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-|:---------------|:---------------|:---------------------------------------|
+|:-----------------|:----------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | name             | character | Individual lifter name                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | sex              | character | Binary gender (M/F)                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | event            | character | The type of competition that the lifter entered.<br><br>Values are as follows:<br>- SBD: Squat-Bench-Deadlift, also commonly called "Full Power".<br>- BD: Bench-Deadlift, also commonly called "Ironman" or "Push-Pull"<br>- SD: Squat-Deadlift, very uncommon.<br>- SB: Squat-Bench, very uncommon.<br>- S: Squat-only.<br>- B: Bench-only.<br>- D: Deadlift-only.                                                                                                       |
@@ -67,7 +66,8 @@ This is good practice.
 2.  Write down the full linear model to predict lift squat lbs from age in $x$, $y$, $\beta$ notation.
     What is $x$?
     What is $y$?
-    Next, fit the linear model. Use the `ipf_squat` data frame.
+    Next, fit the linear model.
+    Use the `ipf_squat` data frame.
     Re-write your previous equation replacing $\beta$ with the numeric estimates.
     This is called the "fitted" linear model.
     Interpret each estimate of $\beta$.
@@ -87,11 +87,13 @@ This is good practice.
 
 -   If you were to add body weight as a second predictor to the age$^2$ model, would $R^2$ increase or decrease? Explain.
 
-5.  Fit an interaction effects model with bodywieght (in lbs) and sex as predictors of best bench press (in lbs).
+5.  Starting with the original `ipf` dataframe, filter and mutate the data as we did in exercise 1, but this time filtering for `best3bench_kg` \> 0 and creating a `best3_bench_lbs` variable, a `bodyweight_lbs` variable, and a `sex` variable that is a factor rather than a character.
+    Fit an interaction effects model with bodywieght (in lbs) and sex as predictors of best bench press (in lbs).
     Write down the **fitted model equation** only, replacing $\hat{\beta}$ with the fitted estimates.
     Interpret the $\hat{\beta}$.
 
-6.  Plot the model from exercise 5.
+6.  Visualize the interaction effects model we built in exercise 5.
+    Hint: there should be two lines with different slopes.
     Bodyweight should be on the x-axis.
     Add a linear trend-line.
     Be sure to label all axes and give the plot a title.
@@ -108,7 +110,7 @@ This is good practice.
 Check the data dictionary at the top to figure out what variables will help you build the `doping_status` column.
 :::
 
-8.  Using `ipf_dope` from the previous exercise, compute the 5%, 50%, 95% quantiles for bench press across both `sex` and `doping_status`. You can use either bench press in kg or lbs here. With this information, answer the question "Do lifters who fail a drug test perform better or worse at bench press than other lifters?"
+8.  Using `ipf_dope` from the previous exercise, compute the 5%, 50%, 95% quantiles for bench press across both `sex` and `doping_status`. You can use either bench press in kg or lbs here. With this information, answer the question "Do lifters who fail a drug test perform better or worse at bench press than other lifters? Is this consistent across sex and quantiles?"
 
 # Wrap up
 
