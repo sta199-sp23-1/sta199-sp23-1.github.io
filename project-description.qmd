@@ -6,9 +6,9 @@ title: "Project description"
 
 [Proposal](#project-proposal) due Friday, March 10th
 
-[Draft](#project-draft) due Friday April 14th
+[Draft](#project-draft) due Friday April 7th
 
-[Peer review](#peer-review) in lab Monday April 17th
+[Peer review](#peer-review) in lab Monday April 10th
 
 [Presentation + slides + report](#presentation-slides) and final GitHub repo due Monday April 24th
 
