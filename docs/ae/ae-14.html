@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STA 199 - HW 2 - The Joy of Probability</title>
+<title>STA 199 - Multiple regression II</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -116,9 +116,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta property="og:title" content="STA 199 - HW 2 - The Joy of Probability">
-<meta property="og:description" content="We will work with the tidyverse package as usual. Our data comes from the fivethirtyeight package. You may also want to use viridis to help with palette colors.">
+<meta property="og:title" content="STA 199 - Multiple regression II">
+<meta property="og:description" content="STA 199">
 <meta property="og:site-name" content="STA 199">
 </head>
 
@@ -128,7 +129,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">HW 2 - The Joy of Probability</h1>
+      <h1 class="quarto-secondary-nav-title">Multiple regression II</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -235,36 +236,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started">Getting Started</a></li>
-  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
-  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a>
+  <li><a href="#bulletin" id="toc-bulletin" class="nav-link active" data-scroll-target="#bulletin">Bulletin</a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting started</a></li>
+  <li><a href="#warm-up" id="toc-warm-up" class="nav-link" data-scroll-target="#warm-up">Warm-up</a></li>
+  <li><a href="#today" id="toc-today" class="nav-link" data-scroll-target="#today">Today</a></li>
+  <li><a href="#load-packages-and-data" id="toc-load-packages-and-data" class="nav-link" data-scroll-target="#load-packages-and-data">Load packages and data</a></li>
+  <li><a href="#notes" id="toc-notes" class="nav-link" data-scroll-target="#notes">Notes</a></li>
+  <li><a href="#main-effects" id="toc-main-effects" class="nav-link" data-scroll-target="#main-effects">Main effects</a>
   <ul class="collapse">
-  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
-  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
-  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
-  <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
-  <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5">Exercise 5</a></li>
-  <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6">Exercise 6</a></li>
-  </ul></li>
-  <li><a href="#wrap-up" id="toc-wrap-up" class="nav-link" data-scroll-target="#wrap-up">Wrap up</a>
-  <ul class="collapse">
-  <li><a href="#reminder" id="toc-reminder" class="nav-link" data-scroll-target="#reminder">Reminder:</a></li>
-  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
-  <li><a href="#rubric" id="toc-rubric" class="nav-link" data-scroll-target="#rubric">Rubric</a></li>
+  <li><a href="#interaction-effects" id="toc-interaction-effects" class="nav-link" data-scroll-target="#interaction-effects">Interaction effects</a></li>
+  <li><a href="#interpreting" id="toc-interpreting" class="nav-link" data-scroll-target="#interpreting">Interpreting</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/sta199-f22-1/sta199-f22-1.github.io/edit/main/hw/hw-2.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/sta199-f22-1/sta199-f22-1.github.io/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/sta199-f22-1/sta199-f22-1.github.io/edit/main/ae/ae-14.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/sta199-f22-1/sta199-f22-1.github.io/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">HW 2 - The Joy of Probability</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">Homework</div>
-  </div>
-  </div>
+<h1 class="title d-none d-lg-block">Multiple regression II</h1>
+<p class="subtitle lead">STA 199</p>
+</div>
 
 
 
@@ -277,179 +270,206 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<div class="callout-important callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This homework is due Friday, Feb 24 at 5:00pm.</p>
-</div>
-</div>
-<section id="getting-started" class="level2">
-<h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
+<section id="bulletin" class="level2">
+<h2 class="anchored" data-anchor-id="bulletin">Bulletin</h2>
 <ul>
-<li><p>Go to the <a href="https://github.com/sta199-sp23-1">Github Organization page</a> and open your <code>hw2-username</code> repo</p></li>
-<li><p>Clone the repository, open a new project in RStudio. It contains the starter documents you need to complete the homework assignment.</p></li>
+<li>this <code>ae</code> is <strong>due for grade</strong>. Push your completed ae to GitHub within 48 hours to receive credit</li>
+<li>homework 03 released today</li>
+<li>final project instructions</li>
 </ul>
 </section>
-<section id="packages" class="level1">
-<h1>Packages</h1>
-<p>We will work with the <code>tidyverse</code> package as usual. Our data comes from the <code>fivethirtyeight</code> package. You may also want to use <code>viridis</code> to help with palette colors.</p>
+<section id="getting-started" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
+<p>Clone <em>your</em> <code>ae14-username</code> repo from the <a href="https://github.com/sta199-sp23-1/">GitHub organization</a>.</p>
+</section>
+<section id="warm-up" class="level2">
+<h2 class="anchored" data-anchor-id="warm-up">Warm-up</h2>
+<p>Check you understanding! Answer the following…</p>
+<ol type="1">
+<li><p>To “fit” a linear model means…[fill in the blank]</p></li>
+<li><p>Is <span class="math inline">\(y = \beta_0 + \beta_1 \log(x_1)+ \beta_2 x_2^2 + \epsilon\)</span> a linear model? Why or why not?</p></li>
+</ol>
+</section>
+<section id="today" class="level2">
+<h2 class="anchored" data-anchor-id="today">Today</h2>
+<p>By the end of today you will…</p>
+<ul>
+<li>fit and interpret models with categorical predictors</li>
+<li>fit and interpret models with interactive effects</li>
+</ul>
+</section>
+<section id="load-packages-and-data" class="level2">
+<h2 class="anchored" data-anchor-id="load-packages-and-data">Load packages and data</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fivethirtyeight)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(viridis)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="data" class="level1">
-<h1>Data</h1>
-<p>Bob Ross was a painter who was most famous for his PBS television show The Joy of Painting. In each episode, Ross created a new oil painting and provided instructions and commentary as he painted it. Ambitious viewers could paint along but viewers also simply enjoyed watching and listening to Ross’s soothing voice as he painted an outdoor scene in 30 minutes.</p>
-<p>In 2014, Walt Hickey wrote an article for FiveThirtyEight using statistics to analyze the paintings created on the show.The article focused on features that were often seen in Ross’s paintings, such as trees, clouds, cabins, among others. <a href="https://fivethirtyeight.com/features/a-statistical-analysis-of-the-work-of-bob-ross/">Click here to see the article</a></p>
-<p>In this assignment, you will analyze the data that was used for the article. The data is in the <code>bob_ross</code> data set in the fivethirtyeight R package. Each observation represents an episode of the TV show. One painting was created in an episode. To access the full codebook of variables, explore the documentation using <code>?bob_ross</code>.</p>
-<p>We’ll focus on the following variables in this assignment:</p>
-<ul>
-<li><code>conifer</code>: Whether or not the painting contains conifer trees</li>
-<li><code>tree</code>: Whether or not the painting contains at least 1 tree</li>
-<li><code>guest</code>: Whether or not the episode featured a guest painter</li>
-<li><code>steve_ross</code>: Whether or not Steve Ross was the featured guest</li>
-<li><code>cirrus</code>: Whether the painting contains cirrus clouds</li>
-<li><code>cumulus</code>: Whether the painting contains cumulus clouds</li>
-<li><code>mountain</code>: Whether the painting contains a mountain</li>
-<li><code>river</code>: Whether the painting contains a river</li>
-<li><code>cabin</code>: Whether the painting contains a cabin</li>
-<li><code>lake</code>: Whether the painting contains a lake</li>
-<li><code>waves</code>: Whether the painting contains waves</li>
-<li><code>windmill</code>: Whether the painting contains a windmill</li>
-</ul>
-<section id="exercise-1" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-1">Exercise 1</h2>
-<ul>
-<li>How many episodes are there of the show: <strong>Joy of Painting</strong>?</li>
-</ul>
-<blockquote class="blockquote">
-<p>“There’s nothing wrong with having a tree as a friend.”</p>
-</blockquote>
-<ul>
-<li><p>In how many episodes was a at least one tree painted?</p></li>
-<li><p>What is the probability a randomly selected episode featured at least one tree?</p></li>
-<li><p>What is the probability a randomly selected episode featured a conifer tree?</p></li>
-</ul>
-</section>
-<section id="exercise-2" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
-<p>The <strong>Joy of Painting</strong> occasionally featured a guest painter other than Bob Ross. One guest painter was Bob’s son Steve Ross.</p>
-<ul>
-<li><p>What’s the probability the show featured Steve Ross given there was a guest painter?</p></li>
-<li><p>Did Steve Ross like to paint mountains more or less than the other guest painters? Create a stacked bar plot of guest painters. Have whether or not Steve was the guest painter on the x-axis and fill the bars according to whether or not a mountain exists in the painting. Note: rename observations so that they are more informative than 0 and 1.</p></li>
-</ul>
-</section>
-<section id="exercise-3" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-3">Exercise 3</h2>
-<p>The next few questions will focus only on paintings created by Bob Ross. Make a new data frame called <code>ross_paintings</code> that only includes episodes (and thus paintings) made by Bob Ross. Save this data frame and use it for exercises 4 - 6.</p>
-</section>
-<section id="exercise-4" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-4">Exercise 4</h2>
-<blockquote class="blockquote">
-<p>“Let’s build us a happy, little cloud that floats around the sky.”</p>
-</blockquote>
-<p>Are the following two events disjoint? Why or why not?</p>
-<ul>
-<li>A: Bob Ross paints a <code>cirrus</code> cloud</li>
-<li>B: Bob Ross paints a <code>cumulus</code> cloud</li>
-</ul>
-<p>Are the following two events disjoint? Why or why not?</p>
-<ul>
-<li>A: Bob Ross paints waves</li>
-<li>B: Bob Ross paints a windmill</li>
-</ul>
-</section>
-<section id="exercise-5" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-5">Exercise 5</h2>
-<p>Suppose you randomly select a Bob Ross painting and see that it features a mountain. Use Bayes Theorem to calculate the probability this painting also features a river. Show your work by using a code chunk as a calculator.</p>
-<p>Hint: p(mountain | river) = 0.39</p>
-<ul>
-<li><p>Follow up question: Does Bob Ross paint mountains independent of whether or not he paints rivers? Why? In other words, is event A independent of B? Here we define events:</p></li>
-<li><p>A: Bob Ross paints a mountain</p></li>
-<li><p>B: Bob Ross paints a river</p></li>
-</ul>
-</section>
-<section id="exercise-6" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-6">Exercise 6</h2>
-<blockquote class="blockquote">
-<p>“However you think it should be, that’s exactly how it should be.”</p>
-</blockquote>
-<p>Your turn! Use this data to explore a question of your choice about paintings created in the TV show The Joy of Painting. Your question should explore the relationship between 3 variables in the data set; at least one of the variables must be one that hasn’t been used in exercises 1 - 6. You may use the entire data set or focus the analysis on paintings made by Bob Ross.</p>
-<ul>
-<li>Clearly state the question you’re exploring.</li>
-<li>Create 1 - 2 visualizations that can be used to explore the question. Customize the colors of your visualization using some of the colors commonly used in Bob Ross paintings. <a href="https://sites.radford.edu/~cdc/seansevillair.html">Click here</a> for a list of common Bob Ross hex codes.</li>
-</ul>
-<p>Hint: <a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">Click here for functions to manually create color palettes in ggplot2.</a></p>
-<ul>
-<li>Calculate the relevant probabilities needed to answer your question.</li>
-<li>Write a short narrative, about 2 - 4 sentences, answering the research question based on the visualization and probabilities. Note: The narrative should not exceed 4 sentences.</li>
-</ul>
-</section>
-</section>
-<section id="wrap-up" class="level1">
-<h1>Wrap up</h1>
-<section id="reminder" class="level2">
-<h2 class="anchored" data-anchor-id="reminder">Reminder:</h2>
-<ul>
-<li>All plots should follow the best visualization practices: include an informed title, label axes, and carefully consider aesthetic choices.</li>
-<li>All code should follow the tidyverse style guidelines, including not exceeding the 80 character limit.</li>
-</ul>
-</section>
-<section id="submission" class="level2">
-<h2 class="anchored" data-anchor-id="submission">Submission</h2>
-<ul>
-<li>Go to <a href="http://www.gradescope.com" class="uri">http://www.gradescope.com</a> and click Log in in the top right corner.</li>
-<li>Click School Credentials Duke Net ID and log in using your Net ID credentials.</li>
-<li>Click on your STA 199 course.</li>
-<li>Click on the assignment, and you’ll be prompted to submit it.</li>
-<li>Mark all the pages associated with exercise. All the pages of your homework should be associated with at least one question (i.e., should be “checked”). If you do not do this, you will be subject to lose points on the assignment.</li>
-<li>Select <strong>all pages</strong> of your PDF submission to be associated with the “Workflow &amp; formatting” question.</li>
-</ul>
-</section>
-<section id="rubric" class="level2">
-<h2 class="anchored" data-anchor-id="rubric">Rubric</h2>
-<ul>
-<li><p>Ex 1: 5 pts.</p></li>
-<li><p>Ex 2: 8 pts.</p></li>
-<li><p>Ex 3: 3 pts.</p></li>
-<li><p>Ex 4: 10 pts.</p></li>
-<li><p>Ex 5: 10 pts.</p></li>
-<li><p>Ex 6: 9 pts.</p></li>
-<li><p>Workflow and formatting - 5 pts</p></li>
-</ul>
-<div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<p>Today we will return to our Palmer penguins data set</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="callout-caption-container flex-fill">
-Note
+<p>Use <code>?penguins</code> or <a href="https://github.com/allisonhorst/palmerpenguins">click here</a> for more info.</p>
+</section>
+<section id="notes" class="level2">
+<h2 class="anchored" data-anchor-id="notes">Notes</h2>
+</section>
+<section id="main-effects" class="level2">
+<h2 class="anchored" data-anchor-id="main-effects">Main effects</h2>
+<p>Up until now, we’ve seen models that look like this:</p>
+<p><span class="math display">\[
+y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \ldots + \epsilon
+\]</span></p>
+<p>Here’s an example:</p>
+<p><span class="math inline">\(y\)</span>: body mass (g)</p>
+<p><span class="math inline">\(x_1\)</span>: bill length (mm)</p>
+<p><span class="math inline">\(x_2\)</span>: 1 if island Dream, 0 otherwise</p>
+<p><span class="math inline">\(x_3\)</span>: 1 if island Torgersen, 0 otherwise</p>
+<p><span class="math display">\[
+y = \beta_0 + {\beta_1} x_1 + {\beta_2} x_2 + {\beta_3} x_3 + \epsilon
+\]</span></p>
+<p>Notice that</p>
+<ul>
+<li><p>We have a categorical predictor <code>island</code> that takes three values: Dream, Torgersen, and Biscoe.</p></li>
+<li><p>Despite taking three values, there are only two island variables in the model. One for <code>Dream</code> and one for <code>Torgersen</code>. Biscoe island is considered the default. This always occurs when we have a categorical variable – one category is considered the default.</p></li>
+<li><p>Bill length only impacts body mass via the term <span class="math inline">\(\beta_1 x_1\)</span>.</p></li>
+<li><p><span class="math inline">\(x_2\)</span> and <span class="math inline">\(x_3\)</span> can be thought of as turning on or off a constant.</p></li>
+</ul>
+<p>Let’s visualize the main effects model below.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="ae-14_files/figure-html/main-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p>The “Workflow &amp; formatting” grade is to assess the reproducible workflow. This includes:</p>
+<p>We can fit the “main effects” model above with our standard procedure:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>main_fit <span class="ot">=</span> <span class="fu">linear_reg</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_engine</span>(<span class="st">"lm"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fit</span>(body_mass_g <span class="sc">~</span> bill_length_mm <span class="sc">+</span> island, <span class="at">data =</span> penguins)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  main_fit <span class="sc">%&gt;%</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tidy</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 5
+  term            estimate std.error statistic  p.value
+  &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+1 (Intercept)       1226.     243.        5.04 7.58e- 7
+2 bill_length_mm      77.1      5.31     14.5  1.66e-37
+3 islandDream       -919.      58.6     -15.7  5.15e-42
+4 islandTorgersen   -523.      85.5      -6.12 2.64e- 9</code></pre>
+</div>
+</div>
+<p>If we want to know how bill length relates to body mass for penguins on island Biscoe, we plug in <span class="math inline">\(0\)</span> for <span class="math inline">\(x_2\)</span> and <span class="math inline">\(x_3\)</span> and write the resulting model. If we repeat as appropriate for each island, the result is 3 separate fitted models:</p>
+<p>Biscoe:</p>
+<p><span class="math display">\[
+\hat{y} = 1225.8 + 77.1 x_1
+\]</span></p>
+<p>Dream:</p>
+<p><span class="math display">\[
+\hat{y} = 1225.8 + 77.1 x_1 - 919.1
+\]</span></p>
+<p>Torgersen:</p>
+<p><span class="math display">\[
+\hat{y} = 1225.8 + 77.1 x_1 -523.3
+\]</span></p>
+<p>Notice that in each case, the slope associated with bill length (<span class="math inline">\(x_1\)</span>) is the same.</p>
+<section id="interaction-effects" class="level3">
+<h3 class="anchored" data-anchor-id="interaction-effects">Interaction effects</h3>
+<p>Interaction effect models contain products of predictors, e.g.</p>
+<p><span class="math display">\[
+y = {\beta_0} + {\beta_1} x_1 + {\beta_2} x_2 + {\beta_3} x_3 +  {\beta_4} x_1 x_2 + {\beta_5} x_1 x_3 + \epsilon
+\]</span></p>
+<p>Here we have an interaction between bill length and island (<span class="math inline">\(\beta_4 x_1 x_2\)</span> and <span class="math inline">\(\beta_5 x_1 x_3\)</span>).</p>
+<p>Take-away idea: <span class="math inline">\(x_1\)</span> is related to <span class="math inline">\(y\)</span> but the relationship changes depending on <span class="math inline">\(x_2\)</span> and <span class="math inline">\(x_3\)</span>.</p>
+<p>The simplest scenario is one of “group membership”. In other words, knowing the group your measurement belongs to affects the relationship between <span class="math inline">\(x_1\)</span> and <span class="math inline">\(y\)</span>.</p>
+<p>Here, we see bill length (<span class="math inline">\(x_1\)</span>) show up multiple times in our linear model paired with islands. In other words, the relationship between bill length and body mass depends on the island a penguin is from.</p>
+<p>We fit this interaction model using the code below:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>interaction_fit <span class="ot">=</span> <span class="fu">linear_reg</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_engine</span>(<span class="st">"lm"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fit</span>(body_mass_g <span class="sc">~</span> bill_length_mm <span class="sc">*</span> island, <span class="at">data =</span> penguins)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  interaction_fit <span class="sc">%&gt;%</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tidy</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 5
+  term                           estimate std.error statistic  p.value
+  &lt;chr&gt;                             &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+1 (Intercept)                     -1726.     292.       -5.91 8.43e- 9
+2 bill_length_mm                    142.       6.42     22.2  9.14e-68
+3 islandDream                      4479.     395.       11.3  2.03e-25
+4 islandTorgersen                  2871.     778.        3.69 2.60e- 4
+5 bill_length_mm:islandDream       -121.       8.77    -13.8  1.93e-34
+6 bill_length_mm:islandTorgersen    -76.6     19.5      -3.92 1.07e- 4</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="ae-14_files/figure-html/interaction-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Interpreting interactions can be difficult, especially without writing things down. To make it easier, we will compare the implied linear models:</p>
+<p>Plug in 0 for <code>islandDream</code> (<span class="math inline">\(x_2\)</span>) and 0 for <code>islandTorgersen</code> (<span class="math inline">\(x_3\)</span>) to get the linear model for <code>islandBiscoe</code> penguins</p>
+<p>Plug in 1 for <code>islandDream</code> (<span class="math inline">\(x_2\)</span>) and 0 for <code>islandTorgersen</code> (<span class="math inline">\(x_3\)</span>) to get the linear model for <code>islandDream</code> penguins</p>
+<p>Plug in 0 for <code>islandDream</code> (<span class="math inline">\(x_2\)</span>) and 1 for <code>islandTorgersen</code> (<span class="math inline">\(x_3\)</span>) to get the linear model for <code>islandTorgersen</code> penguins</p>
 <ul>
-<li><p>linking all pages appropriately on Gradescope</p></li>
-<li><p>putting your name in the YAML at the top of the document</p></li>
-<li><p>committing the submitted version of your <code>.qmd</code> to GitHub</p></li>
-<li><p>Are you under the 80 character code limit? (You shouldn’t have to scroll to see all your code).</p></li>
-<li><p>Pipes <code>%&gt;%</code>, <code>|&gt;</code> and ggplot layers <code>+</code> should be followed by a new line</p></li>
-<li><p>You should be consistent with stylistic choices, e.g.&nbsp;only use 1 of <code>=</code> vs <code>&lt;-</code> and <code>%&gt;%</code> vs <code>|&gt;</code></p></li>
-<li><p>All binary operators should be surrounded by space. For example <code>x + y</code> is appropriate. <code>x+y</code> is not.</p></li>
+<li>Biscoe fitted model:</li>
 </ul>
-</div>
-</div>
+<p><span class="math display">\[
+\hat{y} = -1726.0+ 142.3 x_1
+\]</span></p>
+<ul>
+<li>Dream fitted model:</li>
+</ul>
+<p><span class="math display">\[
+\hat{y} = -1726.0 + 142.3 x_1 + 4478.7 -120.6 x_1
+\]</span></p>
+<p>Combine terms:</p>
+<p><span class="math display">\[
+\hat{y} = 2752.7 + 21.7 x_1
+\]</span></p>
+<section id="exercise-1" class="level4">
+<h4 class="anchored" data-anchor-id="exercise-1">Exercise 1</h4>
+<p>Write out the fitted model for Torgersen island below.</p>
+<ul>
+<li>Torgersen model:</li>
+</ul>
+<p><span class="math display">\[
+\hat{y} = [\text{write here}]
+\]</span></p>
+</section>
+</section>
+<section id="interpreting" class="level3">
+<h3 class="anchored" data-anchor-id="interpreting">Interpreting</h3>
+<p>Now we can interpret the interaction model by comparing bill length slopes between islands.</p>
+<ul>
+<li>For a unit increase in bill length of a penguin from the island Dream, how much do we expect the body mass to increase?</li>
+</ul>
+<section id="exercise-2" class="level4">
+<h4 class="anchored" data-anchor-id="exercise-2">Exercise 2</h4>
+<ul>
+<li>You measured the bill length of a penguin from island Biscoe and a penguin from island Torgersen a year ago. You re-measure them today and find the bill length of each one grew by exactly 2 mm. How much mass do you expect each penguin to have gained?</li>
+</ul>
+</section>
+<section id="exercise-3" class="level4">
+<h4 class="anchored" data-anchor-id="exercise-3">Exercise 3</h4>
+<p>Are the intercepts meaningful?</p>
+</section>
+<section id="exercise-4" class="level4">
+<h4 class="anchored" data-anchor-id="exercise-4">Exercise 4</h4>
+<p>Is the relationship between Body mass (g) and Bill depth (mm) positive or negative? Create a convincing argument from the data.</p>
+</section>
+<section id="exercise-5" class="level4">
+<h4 class="anchored" data-anchor-id="exercise-5">Exercise 5</h4>
+<p>Build a linear model of body mass using bill depth and one other predictor of your choosing (hint: see previous exercise!)</p>
+<ul>
+<li><p>Write out a linear model with both predictors and fit the model.</p></li>
+<li><p>Fit the linear model</p></li>
+<li><p>Do you prefer this model to the interaction effects model from a previous exercise? Why?</p></li>
+</ul>
 
 
+</section>
 </section>
 </section>
 

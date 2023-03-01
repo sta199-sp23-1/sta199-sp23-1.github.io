@@ -9,7 +9,7 @@ This homework is due Friday, Feb 24 at 5:00pm.
 
 ## Getting Started
 
--   Go to the [Github Organization page](https://github.com/sta199-sp23-1) and open your `hw3-username` repo
+-   Go to the [Github Organization page](https://github.com/sta199-sp23-1) and open your `hw2-username` repo
 
 -   Clone the repository, open a new project in RStudio.
     It contains the starter documents you need to complete the homework assignment.

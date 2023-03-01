@@ -13,7 +13,6 @@ eval: false
 #devtools::install("/path/to/ghclass")
 ```
 
-
 ```{r load-libraries}
 library(ghclass)
 library(tidyverse)
@@ -60,7 +59,7 @@ org = "sta199-sp23-1"
 usernames = ghclass::org_members(org)
 
 ## edit this:
-assignment_template_repo = "ae13"
+assignment_template_repo = "ae14"
 
 # ghclass::org_create_assignment(
 #   org = org,
@@ -89,7 +88,6 @@ for (uu in usernames) {
 }
 
 ```
-
 
 Feel free to test lab creation on my dummy account "fishswish" or on your own account with the code below
 
@@ -177,16 +175,12 @@ org_create_assignment(
 )
 ```
 
-
 ```{r}
 org = "sta323-sp23"
 repos = ghclass::org_repos(org, filter = "lab-2")
 ```
 
-
-
 ```{r}
 # repos = "sta323-sp23/lab-1"
 ghclass::action_artifact_delete(repos, ids=action_artifacts(repos, which="all"))
 ```
-

@@ -1,0 +1,296 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "STA 199: Introduction to Data Science",
+    "section": "",
+    "text": "week\n      dow\n      date\n      what\n      topic\n      prepare\n      slides\n      ae\n      hw\n      lab\n      exam\n      project\n      notes\n    \n  \n  \n    0\nW\nJan 11\nLab 0\nHello R!\n\n\n\n\n\n\n\n\n    \nF\nJan 13\nLec 1\nWelcome to STA 199\n\n\n\n\n\n\n\n\n    1\nM\nJan 16\n\nNo class -- Martin Luther King Jr. Day\n\n\n\n\n\n\n\n\n    \nW\nJan 18\nLec 2\nIntro to statistics and plotting\n\n\n\n\n\n\n\n\n    \nF\nJan 20\nLec 3\nVisualizing various types of data\n\n\n\n\n\n\n\n\n    2\nM\nJan 23\nLab 1\nData visualization\n\n\n\n\n\n\n\n\n    \nW\nJan 25\nLec 4\nGrammar of data wrangling\n\n\n\n\n\n\n\nHomework 1 released\n    \nF\nJan 27\nLec 5\nWorking with multiple data frames\n\n\n\n\n\n\n\n\n    3\nM\nJan 30\nLab 2\nData wrangling\n\n\n\n\n\n\n\n\n    \nW\nFeb 1\nLec 6\nTidy data\n\n\n\n\n\n\n\n\n    \nF\nFeb 3\nLec 7\nData types and classes\n\n\n\n\n\n\n\nHomework 1 due\n    4\nM\nFeb 6\nLab 3\nData tidying\n\n\n\n\n\n\n\n\n    \nW\nFeb 8\nLec 8\nSpatial data\n\n\n\n\n\n\n\n\n    \nF\nFeb 10\nLec 9\nTroubleshooting / Review\n\n\n\n\n\n\n\nExam 1 released! Due Feb 14 5:00pm\n    5\nM\nFeb 13\nLab\nNo lab: exam 1\n\n\n\n\n\n\n\n\n    \nW\nFeb 15\nLec 10\nIntro to probability\n\n\n\n\n\n\n\n\n    \nF\nFeb 17\nLec 11\nConditional probability\n\n\n\n\n\n\n\nHomework 2 released\n    6\nM\nFeb 20\nLab 4\nMerge conflicts\n\n\n\n\n\n\n\n\n    \nW\nFeb 22\nLec 12\nSimple regression\n\n\n\n\n\n\n\n\n    \nF\nFeb 24\nLec 13\nMultiple regression I\n\n\n\n\n\n\n\nHomework 2 due\n    7\nM\nFeb 27\nLab 5\nPredicting a numerical outcome\n\n\n\n\n\n\n\n\n    \nW\nMar 1\nLec 14\nMultiple regression II\n\n\n\n\n\n\n\nHomework 3 released\n    \nF\nMar 3\nLec 15\nModel selection\n\n\n\n\n\n\n\n\n    8\nM\nMar 6\nLab\nWork on project proposal\n\n\n\n\n\n\n\n\n    \nW\nMar 8\nLec 16\nLogistic Regression\n\n\n\n\n\n\n\nHomework 3 due\n    \nF\nMar 10\nLec 17\nPrediction\n\n\n\n\n\n\n\n\n    9\nM\nMar 13\n\nNo class -- Spring Break\n\n\n\n\n\n\n\n\n    \nW\nMar 15\n\nNo class -- Spring Break\n\n\n\n\n\n\n\n\n    \nF\nMar 17\n\nNo class -- Spring Break\n\n\n\n\n\n\n\n\n    10\nM\nMar 20\nLab\n\n\n\n\n\n\n\n\n\n    \nW\nMar 22\nLec 18\nBootstrap\n\n\n\n\n\n\n\n\n    \nF\nMar 24\nLec 19\nCentral limit theorem I\n\n\n\n\n\n\n\n\n    11\nM\nMar 27\nLab\n\n\n\n\n\n\n\n\n\n    \nW\nMar 29\nLec 20\nCentral limit theorem II\n\n\n\n\n\n\n\n\n    \nF\nMar 31\nLec 21\nHypothesis testing I\n\n\n\n\n\n\n\n\n    12\nM\nApr 3\nLab\nProject work day\n\n\n\n\n\n\n\n\n    \nW\nApr 5\nLec 22\nHypothesis testing II\n\n\n\n\n\n\n\n\n    \nF\nApr 7\nLec 23\nHypothesis testing III\n\n\n\n\n\n\n\nExam 2 released! Due Tue April 11 5:00pm\n    13\nM\nApr 10\nLab\nNo lab: exam 2\n\n\n\n\n\n\n\n\n    \nW\nApr 12\nLec 24\nProject tips\n\n\n\n\n\n\n\n\n    \nF\nApr 14\nLec 25\nEthics\n\n\n\n\n\n\n\n\n    14\nM\nApr 17\nLab\nProject peer review\n\n\n\n\n\n\n\n\n    \nW\nApr 19\nLec 26\nSpecial topic\n\n\n\n\n\n\n\n\n    \nF\nApr 21\nLec 27\nSpecial topic\n\n\n\n\n\n\n\n\n    15\nM\nApr 24\nLab\nProject presentations\n\n\n\n\n\n\n\n\n    \nW\nApr 26\nLec 28\nSpecial topic"
+  },
+  {
+    "objectID": "ae/ae-12.html",
+    "href": "ae/ae-12.html",
+    "title": "Simple regression",
+    "section": "",
+    "text": "this ae is due for grade. Push your completed ae to GitHub within 48 hours to receive credit\nhomework 02 due Friday"
+  },
+  {
+    "objectID": "ae/ae-12.html#getting-started",
+    "href": "ae/ae-12.html#getting-started",
+    "title": "Simple regression",
+    "section": "Getting started",
+    "text": "Getting started\nClone your ae12-username repo from the GitHub organization."
+  },
+  {
+    "objectID": "ae/ae-12.html#data",
+    "href": "ae/ae-12.html#data",
+    "title": "Simple regression",
+    "section": "Data",
+    "text": "Data\nToday’s data is Apple and Microsoft stock prices from January 1st 2020 to December 31st 2021. I pulled this data off the Yahoo finance using their API via the tidyquant package July 2022.\n\nstocks = read_csv(\"https://sta101.github.io/static/appex/data/stocks1.csv\")"
+  },
+  {
+    "objectID": "ae/ae-12.html#notes",
+    "href": "ae/ae-12.html#notes",
+    "title": "Simple regression",
+    "section": "Notes",
+    "text": "Notes\n\nThe simple regression model and notation\n\\[\ny = \\beta_0 + \\beta_1 x + \\epsilon\n\\]\n\n\\(y\\): the outcome variable. Also called the “response” or “dependent variable”. In prediction problems, this is what we are interested in predicting.\n\\(x\\): the predictor. Also commonly referred to as “regressor”, “independent variable”, “covariate”, “feature”, “the data”.\n\\(\\beta_0\\), \\(\\beta_1\\) are called “constants” or coefficients. They are fixed numbers. These are population parameters. \\(\\beta_0\\) has another special name, “the intercept”.\n\\(\\epsilon\\): the error. This quantity represents observational error, i.e. the difference between our observation and the true population-level expected value: \\(\\beta_0 + \\beta_1 x\\).\n\nEffectively this model says our data \\(y\\) is linearly related to \\(x\\) but is not perfectly observed due to some error.\n\n\nA simple example\nLet’s examine January 2020 open prices of Microsoft and Apple stocks to illustrate some ideas.\n\nstocks_subset = stocks %>%\n  slice(1:21)\n\nstocks_subset %>%\n  ggplot(aes(x = MSFT.Open, y = AAPL.Open)) +\n  geom_point() + \n  labs(x = \"MSFT Open\", y = \"AAPL Open\", title = \"Open prices of MSFT and AAPL January 2020\") +\n  theme_bw() \n\n\n\n  # more code here\n\n\nExercise 1\nAdd geom_abline() to the above plot and try different slopes and intercepts until you find a trendline you are satisfied with. The equation below describes your fitted model. Re-write the equation below, filling in \\(\\hat{\\beta_0}\\) and \\(\\hat{\\beta_1}\\) with your estimates.\n\\[\n\\hat{y} = \\hat{\\beta_0} +  \\hat{\\beta_1} x\n\\]\n\n\\(\\hat{y}\\) is the expected outcome.\n\\(\\hat{\\beta}\\) is the estimated or fitted coefficient\nthere is no error term here because we do not predict error\n\nThe equation of my line above:\n\\[\n\\text{[your equation here]}\n\\]\nThe central idea is that if we measure every \\(x\\) and every \\(y\\) in existence, (“the entire population”) there is some true “best” \\(\\beta_0\\) and \\(\\beta_1\\) that describe the relationship between \\(x\\) and \\(y\\). Since we only have a sample of the data, we estimate \\(\\beta_0\\) and \\(\\beta_1\\). We call our estimates \\(\\hat{\\beta_0}\\), \\(\\hat{\\beta_1}\\) “beta hat”. We never have all the data, thus we never can really know what the true \\(\\beta\\)s are."
+  },
+  {
+    "objectID": "ae/ae-12.html#ordinary-least-squares-ols-regression",
+    "href": "ae/ae-12.html#ordinary-least-squares-ols-regression",
+    "title": "Simple regression",
+    "section": "Ordinary least squares (OLS) regression",
+    "text": "Ordinary least squares (OLS) regression\n\nThe residuals\nFor any linear equation we write down, there will be some difference between the predicted outcome of our linear model (\\(\\hat{y}\\)) and what we observe (\\(y\\))… (But of course! Otherwise everything would fall on a perfect straight line!)\nThis difference between what we observe and what we predict \\(y - \\hat{y}\\) is known as a residual \\(r\\).\nMore concisely,\n\\[\nr = y - \\hat{y}\n\\]\nResiduals are dependent on the line we draw. Visually, here is a model of the data, \\(y = -5 + \\frac{1}{2}x\\) and 1 of the residuals is outlined in red.\n\n\n\n\n\nThere is, in fact, a residual associated with every single point in the plot.\n\npredictAAPL = function(x) {\n  return(-5 + (0.5*x))\n}\n\nxPoints = stocks$MSFT.Open[1:21]\nyPoints = stocks$AAPL.Open[1:21]\nyHat = predictAAPL(xPoints)\n\nstocks_subset %>%\n  ggplot(aes(x = MSFT.Open, y = AAPL.Open)) +\n  geom_point() + \n  labs(x = \"MSFT Open\", y = \"AAPL Open\", title = \"Open prices of MSFT and AAPL January 2020\") +\n  theme_bw() +\n  geom_abline(slope = 0.5, intercept = -5) +\n  geom_segment(x = xPoints, xend = xPoints, y  = yPoints, yend = yHat, color = 'red')\n\n\n\n\nWe often wish to find a line that fits the data “really well”, but what does this mean? Well, we want small residuals! So we pick an objective function. That is, a function we wish to minimize or maximize.\n\n\nThe objective function\n\nExercise 2\nAt first, you might be tempted to minimize \\(\\sum_i r_i\\), but this is problematic. Why? Can you come up with a better solution (other than the one listed below)?\n[answer here]\nIn practice, we minimize the sum of squared residuals:\n\\[\n\\sum_i r_i^2\n\\]\nNote, this is the same as\n\\[\n\\sum_i (y_i - \\hat{y})^2\n\\]\n\n\nExercise 3\nCheck out an interactive visualization of “least squares regression” here. Click on I and drag the points around to get started. Describe what you see.\n[response here]\n\n\nExercise 4\n\nCheck for understanding\n\nHow far off is your model (from exercise 1) from the actual observed data on January 11 2020? The observed value is MSFT: $164.35 and AAPL: $78.4. Compute the single square residual using your fitted model from exercise 1.\n\n# code here"
+  },
+  {
+    "objectID": "ae/ae-12.html#plotting-the-ols-regression-line",
+    "href": "ae/ae-12.html#plotting-the-ols-regression-line",
+    "title": "Simple regression",
+    "section": "Plotting the OLS regression line",
+    "text": "Plotting the OLS regression line\nPlotting the OLS regression line, that is, the line that minimizes the sum of square residuals is very easy with ggplot. Simply add\ngeom_smooth(method = 'lm', se = F)\nto your plot.\nmethod = lm says to draw a line according to a “linear model” and se = F turns off standard error bars. You can try without these options for comparison.\nOptionally, you can change the color of the line, e.g.\ngeom_smooth(method = 'lm', se = F, color = 'red')\n\nExercise 5\nCopy your code from exercise 1 below. Add geom_smooth() as described above with color = 'steelblue' to see how close your line is.\n\n# code here"
+  },
+  {
+    "objectID": "ae/ae-12.html#finding-hatbeta",
+    "href": "ae/ae-12.html#finding-hatbeta",
+    "title": "Simple regression",
+    "section": "Finding \\(\\hat{\\beta}\\)",
+    "text": "Finding \\(\\hat{\\beta}\\)\nTo fit the model in R, i.e. to “find \\(\\hat{\\beta}\\)”, use the code below as a template:\nmodelFit = linear_reg() %>%\n  set_engine(\"lm\") %>%\n  fit(y-variable-here ~ x-variable-here, data = data-frame-here)\n\nlinear_reg tells R we will perform linear regression\nset_engine tells R to use the standard linear modeling (lm) machinery\nfit defines the outcome \\(y\\), predictor \\(x\\) and the data set\n\nRunning the code above, but replacing the arguments of the fit command appropriately will create a new object called “modelFit” (defined on the first line) that stores all information about your fitted model.\nTo access the information, you can run, e.g.\ntidy(modelFit)\nLet’s try it out.\n\nExercise 6\nFind the OLS fitted linear model \\(\\hat{y} = \\hat{\\beta_0} + \\hat{\\beta_1} x\\) for January 2020, where \\(x\\) is Microsoft’s opening price and \\(y\\) is Apple’s opening price. Print your results to the screen\n\n# code here\n\n\n\nExercise 7\nRe-write the fitted equation replacing \\(\\beta_0\\) and \\(\\beta_1\\) with the OLS fitted values.\n\\[\n\\text{[your equation here]}\n\\]"
+  },
+  {
+    "objectID": "ae/ae-14.html",
+    "href": "ae/ae-14.html",
+    "title": "Multiple regression II",
+    "section": "",
+    "text": "this ae is due for grade. Push your completed ae to GitHub within 48 hours to receive credit\nhomework 03 released today\nfinal project instructions"
+  },
+  {
+    "objectID": "ae/ae-14.html#getting-started",
+    "href": "ae/ae-14.html#getting-started",
+    "title": "Multiple regression II",
+    "section": "Getting started",
+    "text": "Getting started\nClone your ae14-username repo from the GitHub organization."
+  },
+  {
+    "objectID": "ae/ae-14.html#warm-up",
+    "href": "ae/ae-14.html#warm-up",
+    "title": "Multiple regression II",
+    "section": "Warm-up",
+    "text": "Warm-up\nCheck you understanding! Answer the following…\n\nTo “fit” a linear model means…[fill in the blank]\nIs \\(y = \\beta_0 + \\beta_1 \\log(x_1)+ \\beta_2 x_2^2 + \\epsilon\\) a linear model? Why or why not?"
+  },
+  {
+    "objectID": "ae/ae-14.html#today",
+    "href": "ae/ae-14.html#today",
+    "title": "Multiple regression II",
+    "section": "Today",
+    "text": "Today\nBy the end of today you will…\n\nfit and interpret models with categorical predictors\nfit and interpret models with interactive effects"
+  },
+  {
+    "objectID": "ae/ae-14.html#load-packages-and-data",
+    "href": "ae/ae-14.html#load-packages-and-data",
+    "title": "Multiple regression II",
+    "section": "Load packages and data",
+    "text": "Load packages and data\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(palmerpenguins)\n\nToday we will return to our Palmer penguins data set\n\ndata(penguins)\n\nUse ?penguins or click here for more info."
+  },
+  {
+    "objectID": "ae/ae-14.html#notes",
+    "href": "ae/ae-14.html#notes",
+    "title": "Multiple regression II",
+    "section": "Notes",
+    "text": "Notes"
+  },
+  {
+    "objectID": "ae/ae-14.html#main-effects",
+    "href": "ae/ae-14.html#main-effects",
+    "title": "Multiple regression II",
+    "section": "Main effects",
+    "text": "Main effects\nUp until now, we’ve seen models that look like this:\n\\[\ny = \\beta_0 + \\beta_1 x_1 + \\beta_2 x_2 + \\ldots + \\epsilon\n\\]\nHere’s an example:\n\\(y\\): body mass (g)\n\\(x_1\\): bill length (mm)\n\\(x_2\\): 1 if island Dream, 0 otherwise\n\\(x_3\\): 1 if island Torgersen, 0 otherwise\n\\[\ny = \\beta_0 + {\\beta_1} x_1 + {\\beta_2} x_2 + {\\beta_3} x_3 + \\epsilon\n\\]\nNotice that\n\nWe have a categorical predictor island that takes three values: Dream, Torgersen, and Biscoe.\nDespite taking three values, there are only two island variables in the model. One for Dream and one for Torgersen. Biscoe island is considered the default. This always occurs when we have a categorical variable – one category is considered the default.\nBill length only impacts body mass via the term \\(\\beta_1 x_1\\).\n\\(x_2\\) and \\(x_3\\) can be thought of as turning on or off a constant.\n\nLet’s visualize the main effects model below.\n\n\n\n\n\nWe can fit the “main effects” model above with our standard procedure:\n\nmain_fit = linear_reg() %>%\n  set_engine(\"lm\") %>%\n  fit(body_mass_g ~ bill_length_mm + island, data = penguins)\n\n  main_fit %>%\n  tidy()\n\n# A tibble: 4 × 5\n  term            estimate std.error statistic  p.value\n  <chr>              <dbl>     <dbl>     <dbl>    <dbl>\n1 (Intercept)       1226.     243.        5.04 7.58e- 7\n2 bill_length_mm      77.1      5.31     14.5  1.66e-37\n3 islandDream       -919.      58.6     -15.7  5.15e-42\n4 islandTorgersen   -523.      85.5      -6.12 2.64e- 9\n\n\nIf we want to know how bill length relates to body mass for penguins on island Biscoe, we plug in \\(0\\) for \\(x_2\\) and \\(x_3\\) and write the resulting model. If we repeat as appropriate for each island, the result is 3 separate fitted models:\nBiscoe:\n\\[\n\\hat{y} = 1225.8 + 77.1 x_1\n\\]\nDream:\n\\[\n\\hat{y} = 1225.8 + 77.1 x_1 - 919.1\n\\]\nTorgersen:\n\\[\n\\hat{y} = 1225.8 + 77.1 x_1 -523.3\n\\]\nNotice that in each case, the slope associated with bill length (\\(x_1\\)) is the same.\n\nInteraction effects\nInteraction effect models contain products of predictors, e.g.\n\\[\ny = {\\beta_0} + {\\beta_1} x_1 + {\\beta_2} x_2 + {\\beta_3} x_3 +  {\\beta_4} x_1 x_2 + {\\beta_5} x_1 x_3 + \\epsilon\n\\]\nHere we have an interaction between bill length and island (\\(\\beta_4 x_1 x_2\\) and \\(\\beta_5 x_1 x_3\\)).\nTake-away idea: \\(x_1\\) is related to \\(y\\) but the relationship changes depending on \\(x_2\\) and \\(x_3\\).\nThe simplest scenario is one of “group membership”. In other words, knowing the group your measurement belongs to affects the relationship between \\(x_1\\) and \\(y\\).\nHere, we see bill length (\\(x_1\\)) show up multiple times in our linear model paired with islands. In other words, the relationship between bill length and body mass depends on the island a penguin is from.\nWe fit this interaction model using the code below:\n\ninteraction_fit = linear_reg() %>%\n  set_engine(\"lm\") %>%\n  fit(body_mass_g ~ bill_length_mm * island, data = penguins)\n\n  interaction_fit %>%\n  tidy()\n\n# A tibble: 6 × 5\n  term                           estimate std.error statistic  p.value\n  <chr>                             <dbl>     <dbl>     <dbl>    <dbl>\n1 (Intercept)                     -1726.     292.       -5.91 8.43e- 9\n2 bill_length_mm                    142.       6.42     22.2  9.14e-68\n3 islandDream                      4479.     395.       11.3  2.03e-25\n4 islandTorgersen                  2871.     778.        3.69 2.60e- 4\n5 bill_length_mm:islandDream       -121.       8.77    -13.8  1.93e-34\n6 bill_length_mm:islandTorgersen    -76.6     19.5      -3.92 1.07e- 4\n\n\n\n\n\n\n\nInterpreting interactions can be difficult, especially without writing things down. To make it easier, we will compare the implied linear models:\nPlug in 0 for islandDream (\\(x_2\\)) and 0 for islandTorgersen (\\(x_3\\)) to get the linear model for islandBiscoe penguins\nPlug in 1 for islandDream (\\(x_2\\)) and 0 for islandTorgersen (\\(x_3\\)) to get the linear model for islandDream penguins\nPlug in 0 for islandDream (\\(x_2\\)) and 1 for islandTorgersen (\\(x_3\\)) to get the linear model for islandTorgersen penguins\n\nBiscoe fitted model:\n\n\\[\n\\hat{y} = -1726.0+ 142.3 x_1\n\\]\n\nDream fitted model:\n\n\\[\n\\hat{y} = -1726.0 + 142.3 x_1 + 4478.7 -120.6 x_1\n\\]\nCombine terms:\n\\[\n\\hat{y} = 2752.7 + 21.7 x_1\n\\]\n\nExercise 1\nWrite out the fitted model for Torgersen island below.\n\nTorgersen model:\n\n\\[\n\\hat{y} = [\\text{write here}]\n\\]\n\n\n\nInterpreting\nNow we can interpret the interaction model by comparing bill length slopes between islands.\n\nFor a unit increase in bill length of a penguin from the island Dream, how much do we expect the body mass to increase?\n\n\nExercise 2\n\nYou measured the bill length of a penguin from island Biscoe and a penguin from island Torgersen a year ago. You re-measure them today and find the bill length of each one grew by exactly 2 mm. How much mass do you expect each penguin to have gained?\n\n\n\nExercise 3\nAre the intercepts meaningful?\n\n\nExercise 4\nIs the relationship between Body mass (g) and Bill depth (mm) positive or negative? Create a convincing argument from the data.\n\n\nExercise 5\nBuild a linear model of body mass using bill depth and one other predictor of your choosing (hint: see previous exercise!)\n\nWrite out a linear model with both predictors and fit the model.\nFit the linear model\nDo you prefer this model to the interaction effects model from a previous exercise? Why?"
+  },
+  {
+    "objectID": "hw/hw-2.html",
+    "href": "hw/hw-2.html",
+    "title": "HW 2 - The Joy of Probability",
+    "section": "",
+    "text": "Important\n\n\n\nThis homework is due Friday, Feb 24 at 5:00pm."
+  },
+  {
+    "objectID": "hw/hw-2.html#getting-started",
+    "href": "hw/hw-2.html#getting-started",
+    "title": "HW 2 - The Joy of Probability",
+    "section": "Getting Started",
+    "text": "Getting Started\n\nGo to the Github Organization page and open your hw2-username repo\nClone the repository, open a new project in RStudio. It contains the starter documents you need to complete the homework assignment."
+  },
+  {
+    "objectID": "hw/hw-2.html#exercise-1",
+    "href": "hw/hw-2.html#exercise-1",
+    "title": "HW 2 - The Joy of Probability",
+    "section": "Exercise 1",
+    "text": "Exercise 1\n\nHow many episodes are there of the show: Joy of Painting?\n\n\n“There’s nothing wrong with having a tree as a friend.”\n\n\nIn how many episodes was a at least one tree painted?\nWhat is the probability a randomly selected episode featured at least one tree?\nWhat is the probability a randomly selected episode featured a conifer tree?"
+  },
+  {
+    "objectID": "hw/hw-2.html#exercise-2",
+    "href": "hw/hw-2.html#exercise-2",
+    "title": "HW 2 - The Joy of Probability",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nThe Joy of Painting occasionally featured a guest painter other than Bob Ross. One guest painter was Bob’s son Steve Ross.\n\nWhat’s the probability the show featured Steve Ross given there was a guest painter?\nDid Steve Ross like to paint mountains more or less than the other guest painters? Create a stacked bar plot of guest painters. Have whether or not Steve was the guest painter on the x-axis and fill the bars according to whether or not a mountain exists in the painting. Note: rename observations so that they are more informative than 0 and 1."
+  },
+  {
+    "objectID": "hw/hw-2.html#exercise-3",
+    "href": "hw/hw-2.html#exercise-3",
+    "title": "HW 2 - The Joy of Probability",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nThe next few questions will focus only on paintings created by Bob Ross. Make a new data frame called ross_paintings that only includes episodes (and thus paintings) made by Bob Ross. Save this data frame and use it for exercises 4 - 6."
+  },
+  {
+    "objectID": "hw/hw-2.html#exercise-4",
+    "href": "hw/hw-2.html#exercise-4",
+    "title": "HW 2 - The Joy of Probability",
+    "section": "Exercise 4",
+    "text": "Exercise 4\n\n“Let’s build us a happy, little cloud that floats around the sky.”\n\nAre the following two events disjoint? Why or why not?\n\nA: Bob Ross paints a cirrus cloud\nB: Bob Ross paints a cumulus cloud\n\nAre the following two events disjoint? Why or why not?\n\nA: Bob Ross paints waves\nB: Bob Ross paints a windmill"
+  },
+  {
+    "objectID": "hw/hw-2.html#exercise-5",
+    "href": "hw/hw-2.html#exercise-5",
+    "title": "HW 2 - The Joy of Probability",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nSuppose you randomly select a Bob Ross painting and see that it features a mountain. Use Bayes Theorem to calculate the probability this painting also features a river. Show your work by using a code chunk as a calculator.\nHint: p(mountain | river) = 0.39\n\nFollow up question: Does Bob Ross paint mountains independent of whether or not he paints rivers? Why? In other words, is event A independent of B? Here we define events:\nA: Bob Ross paints a mountain\nB: Bob Ross paints a river"
+  },
+  {
+    "objectID": "hw/hw-2.html#exercise-6",
+    "href": "hw/hw-2.html#exercise-6",
+    "title": "HW 2 - The Joy of Probability",
+    "section": "Exercise 6",
+    "text": "Exercise 6\n\n“However you think it should be, that’s exactly how it should be.”\n\nYour turn! Use this data to explore a question of your choice about paintings created in the TV show The Joy of Painting. Your question should explore the relationship between 3 variables in the data set; at least one of the variables must be one that hasn’t been used in exercises 1 - 6. You may use the entire data set or focus the analysis on paintings made by Bob Ross.\n\nClearly state the question you’re exploring.\nCreate 1 - 2 visualizations that can be used to explore the question. Customize the colors of your visualization using some of the colors commonly used in Bob Ross paintings. Click here for a list of common Bob Ross hex codes.\n\nHint: Click here for functions to manually create color palettes in ggplot2.\n\nCalculate the relevant probabilities needed to answer your question.\nWrite a short narrative, about 2 - 4 sentences, answering the research question based on the visualization and probabilities. Note: The narrative should not exceed 4 sentences."
+  },
+  {
+    "objectID": "hw/hw-2.html#reminder",
+    "href": "hw/hw-2.html#reminder",
+    "title": "HW 2 - The Joy of Probability",
+    "section": "Reminder:",
+    "text": "Reminder:\n\nAll plots should follow the best visualization practices: include an informed title, label axes, and carefully consider aesthetic choices.\nAll code should follow the tidyverse style guidelines, including not exceeding the 80 character limit."
+  },
+  {
+    "objectID": "hw/hw-2.html#submission",
+    "href": "hw/hw-2.html#submission",
+    "title": "HW 2 - The Joy of Probability",
+    "section": "Submission",
+    "text": "Submission\n\nGo to http://www.gradescope.com and click Log in in the top right corner.\nClick School Credentials Duke Net ID and log in using your Net ID credentials.\nClick on your STA 199 course.\nClick on the assignment, and you’ll be prompted to submit it.\nMark all the pages associated with exercise. All the pages of your homework should be associated with at least one question (i.e., should be “checked”). If you do not do this, you will be subject to lose points on the assignment.\nSelect all pages of your PDF submission to be associated with the “Workflow & formatting” question."
+  },
+  {
+    "objectID": "hw/hw-2.html#rubric",
+    "href": "hw/hw-2.html#rubric",
+    "title": "HW 2 - The Joy of Probability",
+    "section": "Rubric",
+    "text": "Rubric\n\nEx 1: 5 pts.\nEx 2: 8 pts.\nEx 3: 3 pts.\nEx 4: 10 pts.\nEx 5: 10 pts.\nEx 6: 9 pts.\nWorkflow and formatting - 5 pts\n\n\n\n\n\n\n\nNote\n\n\n\nThe “Workflow & formatting” grade is to assess the reproducible workflow. This includes:\n\nlinking all pages appropriately on Gradescope\nputting your name in the YAML at the top of the document\ncommitting the submitted version of your .qmd to GitHub\nAre you under the 80 character code limit? (You shouldn’t have to scroll to see all your code).\nPipes %>%, |> and ggplot layers + should be followed by a new line\nYou should be consistent with stylistic choices, e.g. only use 1 of = vs <- and %>% vs |>\nAll binary operators should be surrounded by space. For example x + y is appropriate. x+y is not."
+  },
+  {
+    "objectID": "hw/hw-3.html",
+    "href": "hw/hw-3.html",
+    "title": "HW 3 - Do you even lift?",
+    "section": "",
+    "text": "Important\n\n\n\nThis homework is due Wednesday, March 8 at 5:00pm."
+  },
+  {
+    "objectID": "hw/hw-3.html#getting-started",
+    "href": "hw/hw-3.html#getting-started",
+    "title": "HW 3 - Do you even lift?",
+    "section": "Getting Started",
+    "text": "Getting Started\n\nGo to the Github Organization page and open your hw3-username repo\nClone the repository, open a new project in RStudio. It contains the starter documents you need to complete the homework assignment."
+  },
+  {
+    "objectID": "hw/hw-3.html#exercise-1",
+    "href": "hw/hw-3.html#exercise-1",
+    "title": "HW 3 - Regression",
+    "section": "Exercise 1",
+    "text": "Exercise 1\n\nHow many episodes are there of the show: Joy of Painting?\n\n\n“There’s nothing wrong with having a tree as a friend.”\n\n\nIn how many episodes was a at least one tree painted?\nWhat is the probability a randomly selected episode featured at least one tree?\nWhat is the probability a randomly selected episode featured a conifer tree?"
+  },
+  {
+    "objectID": "hw/hw-3.html#exercise-2",
+    "href": "hw/hw-3.html#exercise-2",
+    "title": "HW 3 - Regression",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nThe Joy of Painting occasionally featured a guest painter other than Bob Ross. One guest painter was Bob’s son Steve Ross.\n\nWhat’s the probability the show featured Steve Ross given there was a guest painter?\nDid Steve Ross like to paint mountains more or less than the other guest painters? Create a stacked bar plot of guest painters. Have whether or not Steve was the guest painter on the x-axis and fill the bars according to whether or not a mountain exists in the painting. Note: rename observations so that they are more informative than 0 and 1."
+  },
+  {
+    "objectID": "hw/hw-3.html#exercise-3",
+    "href": "hw/hw-3.html#exercise-3",
+    "title": "HW 3 - Regression",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nThe next few questions will focus only on paintings created by Bob Ross. Make a new data frame called ross_paintings that only includes episodes (and thus paintings) made by Bob Ross. Save this data frame and use it for exercises 4 - 6."
+  },
+  {
+    "objectID": "hw/hw-3.html#exercise-4",
+    "href": "hw/hw-3.html#exercise-4",
+    "title": "HW 3 - Regression",
+    "section": "Exercise 4",
+    "text": "Exercise 4\n\n“Let’s build us a happy, little cloud that floats around the sky.”\n\nAre the following two events disjoint? Why or why not?\n\nA: Bob Ross paints a cirrus cloud\nB: Bob Ross paints a cumulus cloud\n\nAre the following two events disjoint? Why or why not?\n\nA: Bob Ross paints waves\nB: Bob Ross paints a windmill"
+  },
+  {
+    "objectID": "hw/hw-3.html#exercise-5",
+    "href": "hw/hw-3.html#exercise-5",
+    "title": "HW 3 - Regression",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nSuppose you randomly select a Bob Ross painting and see that it features a mountain. Use Bayes Theorem to calculate the probability this painting also features a river. Show your work by using a code chunk as a calculator.\nHint: p(mountain | river) = 0.39\n\nFollow up question: Does Bob Ross paint mountains independent of whether or not he paints rivers? Why? In other words, is event A independent of B? Here we define events:\nA: Bob Ross paints a mountain\nB: Bob Ross paints a river"
+  },
+  {
+    "objectID": "hw/hw-3.html#exercise-6",
+    "href": "hw/hw-3.html#exercise-6",
+    "title": "HW 3 - Regression",
+    "section": "Exercise 6",
+    "text": "Exercise 6\n\n“However you think it should be, that’s exactly how it should be.”\n\nYour turn! Use this data to explore a question of your choice about paintings created in the TV show The Joy of Painting. Your question should explore the relationship between 3 variables in the data set; at least one of the variables must be one that hasn’t been used in exercises 1 - 6. You may use the entire data set or focus the analysis on paintings made by Bob Ross.\n\nClearly state the question you’re exploring.\nCreate 1 - 2 visualizations that can be used to explore the question. Customize the colors of your visualization using some of the colors commonly used in Bob Ross paintings. Click here for a list of common Bob Ross hex codes.\n\nHint: Click here for functions to manually create color palettes in ggplot2.\n\nCalculate the relevant probabilities needed to answer your question.\nWrite a short narrative, about 2 - 4 sentences, answering the research question based on the visualization and probabilities. Note: The narrative should not exceed 4 sentences."
+  },
+  {
+    "objectID": "hw/hw-3.html#reminder",
+    "href": "hw/hw-3.html#reminder",
+    "title": "HW 3 - Do you even lift?",
+    "section": "Reminder:",
+    "text": "Reminder:\n\nAll plots should follow the best visualization practices: include an informed title, label axes, and carefully consider aesthetic choices.\nAll code should follow the tidyverse style guidelines, including not exceeding the 80 character limit."
+  },
+  {
+    "objectID": "hw/hw-3.html#submission",
+    "href": "hw/hw-3.html#submission",
+    "title": "HW 3 - Do you even lift?",
+    "section": "Submission",
+    "text": "Submission\n\nGo to http://www.gradescope.com and click Log in in the top right corner.\nClick School Credentials Duke Net ID and log in using your Net ID credentials.\nClick on your STA 199 course.\nClick on the assignment, and you’ll be prompted to submit it.\nMark all the pages associated with exercise. All the pages of your homework should be associated with at least one question (i.e., should be “checked”). If you do not do this, you will be subject to lose points on the assignment.\nSelect all pages of your PDF submission to be associated with the “Workflow & formatting” question."
+  },
+  {
+    "objectID": "hw/hw-3.html#rubric",
+    "href": "hw/hw-3.html#rubric",
+    "title": "HW 3 - Do you even lift?",
+    "section": "Rubric",
+    "text": "Rubric\n\nEx 1: 6 pts.\nEx 2: 7 pts.\nEx 3: 6 pts.\nEx 4: 5 pts.\nEx 5: 8 pts.\nEx 6: 4 pts.\nEx 7: 4 pts\nEx 8: 5 pts\nWorkflow and formatting - 5 pts\n\n\n\n\n\n\n\nNote\n\n\n\nThe “Workflow & formatting” grade is to assess the reproducible workflow. This includes:\n\nlinking all pages appropriately on Gradescope\nputting your name in the YAML at the top of the document\ncommitting the submitted version of your .qmd to GitHub\nAre you under the 80 character code limit? (You shouldn’t have to scroll to see all your code).\nPipes %>%, |> and ggplot layers + should be followed by a new line\nYou should be consistent with stylistic choices, e.g. only use 1 of = vs <- and %>% vs |>\nAll binary operators should be surrounded by space. For example x + y is appropriate. x+y is not."
+  },
+  {
+    "objectID": "teaching-resources/GitHubClassroomManagement.html",
+    "href": "teaching-resources/GitHubClassroomManagement.html",
+    "title": "GitHub Classroom Management",
+    "section": "",
+    "text": "# $ git clone ghclass\n# $ git checkout artifacts\n\n#devtools::install(\"/path/to/ghclass\")\nEach code chunk below is designed to be self-contained (no dependency between chunks)."
+  },
+  {
+    "objectID": "teaching-resources/GitHubClassroomManagement.html#to-make-new-repos",
+    "href": "teaching-resources/GitHubClassroomManagement.html#to-make-new-repos",
+    "title": "GitHub Classroom Management",
+    "section": "To make new repos",
+    "text": "To make new repos\n\n\n\n\nCreate a new repo in the organization called “lab1” with a README.md\nPush to “lab1”: lab1.qmd, data/any_relevant_data.csv and optionally lab1.Rproj.\nSelect the repository, click “Settings” and check “Template repository”.\nFollow the code below.\n\n\n# initial assignment creation\norg = \"sta199-sp23-1\"\nusernames = ghclass::org_members(org)\n\n## edit this:\nassignment_template_repo = \"lab0_template\"\n\nghclass::org_create_assignment(\n  org = org,\n  repo = paste0(assignment_template_repo, \"-\", usernames),\n  user = usernames,\n  source_repo = paste0(org, \"/\", assignment_template_repo)\n)\n\n\n\n\nFeel free to test lab creation on my dummy account “fishswish” or on your own account with the code below\n\norg = \"sta199-sp23-1\"\nusernames = \"fishswish\"\nassignment_template_repo = \"lab0_template\"\nghclass::org_create_assignment(\n  org = org,\n  repo = paste0(assignment_template_repo, \"-\", usernames),\n  user = usernames,\n  source_repo = paste0(org, \"/\", assignment_template_repo)\n)\n\nIt’s possible some people are not in the organization and will need to be have additional repos created manually following the steps below:\n\ngo to template repo and click the green “Use this template” -> “Create a new repository” -> name it “lab-x-their_github_username” -> leave “Private” selected and click “Create repository from template”\nnext in the new repo go to “Settings” -> “Collaborators and Teams” -> click the green “Add people” button and type in their GitHub username.\nnext make sure to go to the “People” section of the organization and select “Invite member” so they join the organization too. Owning a repo in the org just makes them an outside collaborator. They still have to actually join the org"
+  },
+  {
+    "objectID": "teaching-resources/GitHubClassroomManagement.html#oops.-file-management-after-you-create-repos",
+    "href": "teaching-resources/GitHubClassroomManagement.html#oops.-file-management-after-you-create-repos",
+    "title": "GitHub Classroom Management",
+    "section": "Oops. File management after you create repos",
+    "text": "Oops. File management after you create repos\nThe magic happens in repo_add_file(). Be sure to edit/check each item below, specifically:\n\norg as appropriate\nrepos_to_modify object\narguments to repo_add_file()\n\n\norg = \"sta199-sp23-1\"\nusernames = ghclass::org_members(org)\n\n# get all existing labX repos\nrepos_to_modify = org_repos(org, filter = \"practice1-\") # edit this \"filter\"\n\nghclass::repo_add_file(repo = repos_to_modify,\n                       branch = \"main\",\n                       repo_folder = \"\", # edit this to be path to folder in repo\n                       message = \"update README\", # update to be a meaningful commit message\n                       file = \"~/Desktop/README.md\", # update local path to the file you want to add\n                       overwrite = TRUE) # if you want to overwrite or not"
+  },
+  {
+    "objectID": "teaching-resources/GitHubClassroomManagement.html#creating-team-assignments",
+    "href": "teaching-resources/GitHubClassroomManagement.html#creating-team-assignments",
+    "title": "GitHub Classroom Management",
+    "section": "Creating team assignments",
+    "text": "Creating team assignments\n\n# example data frame for demo purposes\n# you will need to format your data frame to look like this\nroster = data.frame(\n  github = c(\"fishswish\", \"athos00\"),\n  lab1 = rep(\"lab1-team1\", 2)\n)\n\n# edit each item below\norg_create_assignment(\n  org = \"sta199-sp23-1\",\n  user = roster$github,\n  repo = roster$lab1,\n  team = roster$lab1,\n  source_repo = \"sta199-sp23-1/lab1_template\",\n  private = TRUE\n)\n\n\nroster = data.frame(\n  github = c(\"devinjohnson7\", \"athos00\"),\n  lab1 = rep(\"lab1-team-awesome\", 2)\n)\n\n# edit each item below\norg_create_assignment(\n  org = \"sta323-sp23\",\n  user = roster$github,\n  repo = roster$lab1,\n  team = roster$lab1,\n  source_repo = \"sta323-sp23/lab-1\", # template file\n  private = TRUE\n)\n\n\norg = \"sta323-sp23\"\nrepos = ghclass::org_repos(org, filter = \"lab-2\")\n\n\n# repos = \"sta323-sp23/lab-1\"\nghclass::action_artifact_delete(repos, ids=action_artifacts(repos, which=\"all\"))"
+  },
+  {
+    "objectID": "hw/hw-3.html#exercises",
+    "href": "hw/hw-3.html#exercises",
+    "title": "HW 3 - Do you even lift?",
+    "section": "Exercises",
+    "text": "Exercises\nFor all of the following exercises, you should include units on axes labels, e.g. “Bench press (lbs)” or “Bench press (kg)”. “Age (years)” etc. This is good practice.\n\nLet’s begin by taking a look at the squat powerlifting records. To begin, remove any observations that are negative for squat. Next, create a new column called best3_squat_lbs that converts the record from kg to lbs (you may have to google the conversion). Save your data frame as ipf_squat.\n\n\nUsing ipf_squat, create a scatter plot to investigate the relationship between squat (in lbs) and age. Age should be on the x-axis. Add a linear trend-line. Remove the standard error. Be sure to label all axes and give the plot a title. Comment on what you observe.\n\n\nWrite down the full linear model to predict lift squat lbs from age in \\(x\\), \\(y\\), \\(\\beta\\) notation. What is \\(x\\)? What is \\(y\\)? Next, fit the linear model. Use the ipf_squat data frame. Re-write your previous equation replacing \\(\\beta\\) with the numeric estimates. This is called the “fitted” linear model. Interpret each estimate of \\(\\beta\\). Are the interpretations reasonable?\nBuilding on your ipf_squat data frame, create a new column called age2 that takes the age of each lifter and squares it. Save your data frame with an appropriate name. Next, plot squat in lbs vs age2 and add a linear best fit line. Does this model look like it fits the data better? Is this still a linear model?\nOne metric to assess the fit of a model is the correlation squared, also known as \\(R^2\\). Fit the age\\(^2\\) model and save the object as age2Fit. Subsequently report the \\(R^2\\). Compare \\(R^2\\) of the age\\(^2\\) model to the model from exercise 3. Which model do you prefer?\n\n\nIf you were to add body weight as a second predictor to the age\\(^2\\) model, would \\(R^2\\) increase or decrease? Explain.\n\n\nFit an interaction effects model with bodywieght (in lbs) and sex as predictors of best bench press (in lbs). Write down the fitted model equation only, replacing \\(\\hat{\\beta}\\) with the fitted estimates. Interpret the \\(\\hat{\\beta}\\).\nPlot the model from exercise 5. Bodyweight should be on the x-axis. Add a linear trend-line. Be sure to label all axes and give the plot a title. Comment on what you observe.\nDo lifters who fail a drug test perform better or worse at bench press than other lifters? Does this vary across sexes? We’ll answer this question in two parts. First, remove all observations from the data frame that have NA listed under bench press. Next, create a new column called doping_status that takes value doping if the lifter failed a drug test and not doping otherwise. Save this data frame as ipf_dope.\n\n\n\n\n\n\n\nHint\n\n\n\nCheck the data dictionary at the top to figure out what variables will help you build the doping_status column.\n\n\n\nUsing ipf_dope from the previous exercise, compute the 5%, 50%, 95% quantiles for bench press across both sex and doping_status. You can use either bench press in kg or lbs here. With this information, answer the question “Do lifters who fail a drug test perform better or worse at bench press than other lifters?”"
+  }
+]

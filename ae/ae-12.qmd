@@ -235,7 +235,7 @@ Let's try it out.
 
 #### Exercise 6
 
-Find the OLS fitted linear model $y = \hat{\beta_0} + \hat{\beta_1} x$ for January 2020, where $x$ is Microsoft's opening price and $y$ is Apple's opening price. Print your results to the screen
+Find the OLS fitted linear model $\hat{y} = \hat{\beta_0} + \hat{\beta_1} x$ for January 2020, where $x$ is Microsoft's opening price and $y$ is Apple's opening price. Print your results to the screen
 
 ```{r fit-MSFT-AAPL-January}
 # code here
