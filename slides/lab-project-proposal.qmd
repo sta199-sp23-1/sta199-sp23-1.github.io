@@ -1,0 +1,102 @@
+---
+title: "Project proposal"
+date: "Spring, 2023"
+execute:
+  warning: true
+format: revealjs
+---
+
+
+## Project proposal steps
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(rvest)
+courage = read_csv("data/courage.csv")
+```
+
+::: {style="font-size: 0.7em; text-align: left"}
+
+
+1. Find a data set that satisfies [the guidelines](https://sta199-sp23-1.github.io/project-description.html).
+
+2. Write about:
+
+    - the source of data
+    - when and how it was originally collected (by the curator, not necessarily how you found the data)
+    - a brief description of the observations
+
+3. Choose 1-2 research questions and write a hypothesis for each.
+
+4. put your data in the data folder and push. `glimpse` the data
+
+:::
+
+## Demo: data in data folder
+
+::: {style="font-size: 0.7em; text-align: left"}
+
+**load data from your computer**
+
+- upload button in R files pane
+
+**read and write a `csv` to file from a URL**
+
+- `dinosaur_dataset = read_csv("website-url-here")`
+- `write_csv(dataset, "data/dinosaur_dataset.csv")`
+
+- Note `read_csv` and `write_csv` are from the `readr` package and loaded automatically with `library(tidyverse)`
+
+**read in an excel spreadsheet**
+
+- `readxl::read_xlsx()`
+- `readxl::read_xls()`
+
+:::
+
+## Ex: Introduction and Data
+
+::: {style="font-size: 0.7em; text-align: left"}
+
+Data set #1: NC Courage Homefield Advantage 
+Our first data set comes from the [National Women's Soccer League (NSWL) Github](https://github.com/adror1/nwslR) and was sourced from [nwslsoccer.com](https://www.nwslsoccer.com/).
+
+The dataset contains 78 observations (soccer games) played by the NC courage spanning three seasons: 2017, 2018, 2019. There are 10 variables in this dataset. Some of the variables we care about are `home_team`, `away_team`, and `result` (of the game).
+
+:::
+
+## Ex: Research question(s):
+
+::: {style="font-size: 0.7em; text-align: left"}
+
+Does NC Courage have a home-field advantage? We hypothesize that NC Courage is more likely to win on their home field than another team's field.
+
+- To answer this question we will use information about the `home_team`, and the `result` of the game.
+
+Does winning propagate winning? When NC Courage win a game, does it increase the probability of winning the very next game?
+
+- To answer this question we will use information about the `result` of the game and the `game_number`.
+
+:::
+
+## Ex: Glimpse
+
+```{r}
+glimpse(courage)
+```
+
+
+
+## Remember
+
+::: {style="font-size: 0.7em; text-align: left"}
+
+- list data sets in your proposal **in your order of preference** 
+
+- all work for the proposal should go into `proposal.qmd` within your project repo.
+
+- render to pdf and submit to Gradescope, selecting all for the exercise "proposal"
+
+- link your teammates in Gradescope when you submit
+
+:::
