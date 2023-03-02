@@ -132,17 +132,17 @@ Check the data dictionary at the top to figure out what variables will help you 
 
 -   Ex 1: 6 pts.
 
--   Ex 2: 7 pts.
+-   Ex 2: 6 pts.
 
--   Ex 3: 6 pts.
+-   Ex 3: 5 pts.
 
 -   Ex 4: 5 pts.
 
--   Ex 5: 8 pts.
+-   Ex 5: 10 pts.
 
--   Ex 6: 4 pts.
+-   Ex 6: 5 pts.
 
--   Ex 7: 4 pts
+-   Ex 7: 3 pts
 
 -   Ex 8: 5 pts
 

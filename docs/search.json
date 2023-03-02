@@ -151,7 +151,7 @@
     "href": "hw/hw-3.html#rubric",
     "title": "HW 3 - Do you even lift?",
     "section": "Rubric",
-    "text": "Rubric\n\nEx 1: 6 pts.\nEx 2: 7 pts.\nEx 3: 6 pts.\nEx 4: 5 pts.\nEx 5: 8 pts.\nEx 6: 4 pts.\nEx 7: 4 pts\nEx 8: 5 pts\nWorkflow and formatting - 5 pts\n\n\n\n\n\n\n\nNote\n\n\n\nThe “Workflow & formatting” grade is to assess the reproducible workflow. This includes:\n\nlinking all pages appropriately on Gradescope\nputting your name in the YAML at the top of the document\ncommitting the submitted version of your .qmd to GitHub\nAre you under the 80 character code limit? (You shouldn’t have to scroll to see all your code).\nPipes %>%, |> and ggplot layers + should be followed by a new line\nYou should be consistent with stylistic choices, e.g. only use 1 of = vs <- and %>% vs |>\nAll binary operators should be surrounded by space. For example x + y is appropriate. x+y is not."
+    "text": "Rubric\n\nEx 1: 6 pts.\nEx 2: 6 pts.\nEx 3: 5 pts.\nEx 4: 5 pts.\nEx 5: 10 pts.\nEx 6: 5 pts.\nEx 7: 3 pts\nEx 8: 5 pts\nWorkflow and formatting - 5 pts\n\n\n\n\n\n\n\nNote\n\n\n\nThe “Workflow & formatting” grade is to assess the reproducible workflow. This includes:\n\nlinking all pages appropriately on Gradescope\nputting your name in the YAML at the top of the document\ncommitting the submitted version of your .qmd to GitHub\nAre you under the 80 character code limit? (You shouldn’t have to scroll to see all your code).\nPipes %>%, |> and ggplot layers + should be followed by a new line\nYou should be consistent with stylistic choices, e.g. only use 1 of = vs <- and %>% vs |>\nAll binary operators should be surrounded by space. For example x + y is appropriate. x+y is not."
   },
   {
     "objectID": "hw/hw-2.html",
@@ -231,6 +231,7 @@
     "text": "Rubric\n\nEx 1: 5 pts.\nEx 2: 8 pts.\nEx 3: 3 pts.\nEx 4: 10 pts.\nEx 5: 10 pts.\nEx 6: 9 pts.\nWorkflow and formatting - 5 pts\n\n\n\n\n\n\n\nNote\n\n\n\nThe “Workflow & formatting” grade is to assess the reproducible workflow. This includes:\n\nlinking all pages appropriately on Gradescope\nputting your name in the YAML at the top of the document\ncommitting the submitted version of your .qmd to GitHub\nAre you under the 80 character code limit? (You shouldn’t have to scroll to see all your code).\nPipes %>%, |> and ggplot layers + should be followed by a new line\nYou should be consistent with stylistic choices, e.g. only use 1 of = vs <- and %>% vs |>\nAll binary operators should be surrounded by space. For example x + y is appropriate. x+y is not."
   },
   {
+<<<<<<< HEAD
     "objectID": "ae/ae-15.html",
     "href": "ae/ae-15.html",
     "title": "Model selection",
@@ -278,5 +279,47 @@
     "title": "Model selection",
     "section": "Example",
     "text": "Example\n\nExercise\n\nWill forward selection and backward elimination always yield the same model? Type your answer below before running any code.\nNext, see if you are right in using the data set below.\n\nSolution below\n\ntest_df = read_csv(\"https://sta101-fa22.netlify.app/static/appex/data/test_df.csv\")\n\nIn the following two examples, we will use stepwise selection to build a main effects model.\nPerform 1 step of forward selection. What variable will be in the final forward selection model?\n\nlinear_reg() %>%\n  set_engine(\"lm\") %>%\n  fit(y ~ x1, data = test_df) %>%\n  glance() %>%\n  pull(AIC)\n\n[1] 93.08637\n\nlinear_reg() %>%\n  set_engine(\"lm\") %>%\n  fit(y ~ x2, data = test_df) %>%\n  glance() %>%\n  pull(AIC)\n\n[1] 131.8917\n\nlinear_reg() %>%\n  set_engine(\"lm\") %>%\n  fit(y ~ x3, data = test_df) %>%\n  glance() %>%\n  pull(AIC)\n\n[1] 152.9043\n\n\nNext, perform 1 step of backward elimination. Which variable will not be in the final backward elimination model?\n\nlinear_reg() %>%\n  set_engine(\"lm\") %>%\n  fit(y ~ x2 + x3, data = test_df) %>%\n  glance() %>%\n  pull(AIC)\n\n[1] 35.25949\n\nlinear_reg() %>%\n  set_engine(\"lm\") %>%\n  fit(y ~ x1 + x3, data = test_df) %>%\n  glance() %>%\n  pull(AIC)\n\n[1] 94.2536\n\nlinear_reg() %>%\n  set_engine(\"lm\") %>%\n  fit(y ~ x1 + x2, data = test_df) %>%\n  glance() %>%\n  pull(AIC)\n\n[1] 87.1686"
+=======
+    "objectID": "slides/lab-project-proposal.html",
+    "href": "slides/lab-project-proposal.html",
+    "title": "Project proposal",
+    "section": "",
+    "text": "Find a data set that satisfies the guidelines.\nWrite about:\n\nthe source of data\nwhen and how it was originally collected (by the curator, not necessarily how you found the data)\na brief description of the observations\n\nChoose 1-2 research questions and write a hypothesis for each.\nput your data in the data folder and push. glimpse the data"
+  },
+  {
+    "objectID": "slides/lab-project-proposal.html#demo-data-in-data-folder",
+    "href": "slides/lab-project-proposal.html#demo-data-in-data-folder",
+    "title": "Project proposal",
+    "section": "Demo: data in data folder",
+    "text": "Demo: data in data folder\n\nload data from your computer\n\nupload button in R files pane\n\nread and write a csv to file from a URL\n\ndinosaur_dataset = read_csv(\"website-url-here\")\nwrite_csv(dataset, \"data/dinosaur_dataset.csv\")\nNote read_csv and write_csv are from the readr package and loaded automatically with library(tidyverse)\n\nread in an excel spreadsheet\n\nreadxl::read_xlsx()\nreadxl::read_xls()"
+  },
+  {
+    "objectID": "slides/lab-project-proposal.html#ex-introduction-and-data",
+    "href": "slides/lab-project-proposal.html#ex-introduction-and-data",
+    "title": "Project proposal",
+    "section": "Ex: Introduction and Data",
+    "text": "Ex: Introduction and Data\n\nData set #1: NC Courage Homefield Advantage Our first data set comes from the National Women’s Soccer League (NSWL) Github and was sourced from nwslsoccer.com.\nThe dataset contains 78 observations (soccer games) played by the NC courage spanning three seasons: 2017, 2018, 2019. There are 10 variables in this dataset. Some of the variables we care about are home_team, away_team, and result (of the game)."
+  },
+  {
+    "objectID": "slides/lab-project-proposal.html#ex-research-questions",
+    "href": "slides/lab-project-proposal.html#ex-research-questions",
+    "title": "Project proposal",
+    "section": "Ex: Research question(s):",
+    "text": "Ex: Research question(s):\n\nDoes NC Courage have a home-field advantage? We hypothesize that NC Courage is more likely to win on their home field than another team’s field.\n\nTo answer this question we will use information about the home_team, and the result of the game.\n\nDoes winning propagate winning? When NC Courage win a game, does it increase the probability of winning the very next game?\n\nTo answer this question we will use information about the result of the game and the game_number."
+  },
+  {
+    "objectID": "slides/lab-project-proposal.html#ex-glimpse",
+    "href": "slides/lab-project-proposal.html#ex-glimpse",
+    "title": "Project proposal",
+    "section": "Ex: Glimpse",
+    "text": "Ex: Glimpse\n\nglimpse(courage)\n\nRows: 78\nColumns: 10\n$ game_id     <chr> \"washington-spirit-vs-north-carolina-courage-2017-04-15\", …\n$ game_date   <chr> \"4/15/2017\", \"4/22/2017\", \"4/29/2017\", \"5/7/2017\", \"5/14/2…\n$ game_number <dbl> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17,…\n$ home_team   <chr> \"WAS\", \"NC\", \"NC\", \"BOS\", \"ORL\", \"NC\", \"NC\", \"CHI\", \"NC\", …\n$ away_team   <chr> \"NC\", \"POR\", \"ORL\", \"NC\", \"NC\", \"CHI\", \"NJ\", \"NC\", \"KC\", \"…\n$ opponent    <chr> \"WAS\", \"POR\", \"ORL\", \"BOS\", \"ORL\", \"CHI\", \"NJ\", \"CHI\", \"KC…\n$ home_pts    <dbl> 0, 1, 3, 0, 3, 1, 2, 3, 2, 3, 0, 0, 2, 1, 1, 0, 1, 2, 2, 2…\n$ away_pts    <dbl> 1, 0, 1, 1, 1, 3, 0, 2, 0, 1, 1, 1, 0, 0, 0, 1, 2, 0, 3, 1…\n$ result      <chr> \"win\", \"win\", \"win\", \"win\", \"loss\", \"loss\", \"win\", \"loss\",…\n$ season      <dbl> 2017, 2017, 2017, 2017, 2017, 2017, 2017, 2017, 2017, 2017…"
+  },
+  {
+    "objectID": "slides/lab-project-proposal.html#remember",
+    "href": "slides/lab-project-proposal.html#remember",
+    "title": "Project proposal",
+    "section": "Remember",
+    "text": "Remember\n\n\nlist data sets in your proposal in your order of preference\nall work for the proposal should go into proposal.qmd within your project repo.\nrender to pdf and submit to Gradescope, selecting all for the exercise “proposal”\nlink your teammates in Gradescope when you submit"
+>>>>>>> 4cb0823a0a3207b4f6d1e9d840114c20acce8936
   }
 ]
