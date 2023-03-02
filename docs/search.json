@@ -1,237 +1,5 @@
 [
   {
-    "objectID": "project-description.html",
-    "href": "project-description.html",
-    "title": "Project description",
-    "section": "",
-    "text": "Proposal due Friday, March 10th\nDraft due Friday April 7th\nPeer review in lab Monday April 10th\nPresentation + slides + report and final GitHub repo due Monday April 24th\nIn addition to the above, a component of the grade will be comprised of evaluating group members via survey by exam period.\n\n\nFind a data set, develop a question you can answer with the data, and do it."
-  },
-  {
-    "objectID": "project-description.html#where-to-find-data",
-    "href": "project-description.html#where-to-find-data",
-    "title": "Project description",
-    "section": "Where to find data?",
-    "text": "Where to find data?\n\nAwesome public datasets\nBikeshare data portal\nCDC\nData.gov\nData is Plural\nDurham Open Data Portal\nEdinburgh Open Data\nElection Studies\nEuropean Statistics\nCORGIS: The Collection of Really Great, Interesting, Situated Datasets\nGeneral Social Survey\nGoogle Dataset Search\nHarvard Dataverse\nInternational Monetary Fund\nIPUMS survey data from around the world\nLos Angeles Open Data\nNHS Scotland Open Data\nNYC OpenData\nOpen access to Scotland’s official statistics\nPew Research\nPRISM Data Archive Project\nStatistics Canada\nThe National Bureau of Economic Research\nTidyTuesday\nUCI Machine Learning Repository\nUK Government Data\nUNICEF Data\nUnited Nations Data\nUnited Nations Statistics Division\nUS Census Data\nUS Government Data\nWorld Bank Data\nYouth Risk Behavior Surveillance System (YRBSS)"
-  },
-  {
-    "objectID": "project-description.html#presentation",
-    "href": "project-description.html#presentation",
-    "title": "Project description",
-    "section": "Presentation",
-    "text": "Presentation\nPresentations will take place in class during the last lab of the semester.\nThe presentation must be no longer than 5 minutes."
-  },
-  {
-    "objectID": "project-description.html#reproducibility-organization",
-    "href": "project-description.html#reproducibility-organization",
-    "title": "Project description",
-    "section": "Reproducibility + organization",
-    "text": "Reproducibility + organization\nAll written work (with exception of presentation slides) should be reproducible, and the GitHub repo should be neatly organized.\nPoints for reproducibility + organization will be based on the reproducibility of the written report and the organization of the project GitHub repo.\nThe repo should be neatly organized as described above, there should be no extraneous files, all text in the README should be easily readable."
-  },
-  {
-    "objectID": "project-description.html#teamwork",
-    "href": "project-description.html#teamwork",
-    "title": "Project description",
-    "section": "Teamwork",
-    "text": "Teamwork\nYou will be asked to fill out a survey where you rate the contribution and teamwork of each team member.\nFilling out the survey is a prerequisite for getting credit on the teamwork portion of the grade.\nThe teamwork survey together with GitHub commits will be used to measure individual contribution to the assignment. All group members are expected to participate equally. In the event of team concerns and low effort commits, individual grades may differ from the rest of the group.\nIf you have concerns with the teamwork and/or contribution from any team members, please reach out to me or the head TA as early as possible."
-  },
-  {
-    "objectID": "labs/lab-5.html",
-    "href": "labs/lab-5.html",
-    "title": "Lab 5 - Predicting a numerical outcome",
-    "section": "",
-    "text": "Important\n\n\n\nThis lab is due Monday, March 6 at 5:00pm."
-  },
-  {
-    "objectID": "labs/lab-5.html#intro",
-    "href": "labs/lab-5.html#intro",
-    "title": "Lab 5 - Predicting a numerical outcome",
-    "section": "Intro",
-    "text": "Intro\nParasites can cause infectious disease – but not all animals are affected by the same parasites. Some parasites are present in a multitude of species and others are confined to a single host. It is hypothesized that closely related hosts are more likely to share the same parasites. More specifically, it is thought that closely related hosts will live in similar environments and have similar genetic makeup that coincides with optimal conditions for the same parasite to flourish.\nIn this lab we will see how much evolutionary history predicts parasite similarity."
-  },
-  {
-    "objectID": "labs/lab-5.html#the-data",
-    "href": "labs/lab-5.html#the-data",
-    "title": "Lab 5 - Predicting a numerical outcome",
-    "section": "The Data",
-    "text": "The Data\nToday’s dataset comes from an Ecology Letters paper by Cooper at al. (2012) “Phylogenetic host specificity and understanding parasite sharing in primates” which can be found here. The goal of the paper was to identify the ability of evolutionary history and ecological traits to characterize parasite host specificity.\nEach row of the data contains two species, species1 and species2.\nSubsequent columns describe metrics that compare the species:\n\ndivergence_time: how many (millions) of years ago the two species diverged. i.e. how many million years ago they were the same species.\ndistance: geodesic distance between species geographic range centroids (in kilometers)\nBMdiff: difference in body mass between the two species (in grams)\nprecdiff: difference in mean annual precipitation across the two species geographic ranges (mm)\nparsim: a measure of parasite similarity (proportion of parasites shared between species, ranges from 0 to 1.)\n\nThe data are available in parasites.csv in the data folder."
-  },
-  {
-    "objectID": "labs/lab-5.html#packages",
-    "href": "labs/lab-5.html#packages",
-    "title": "Lab 5 - Predicting a numerical outcome",
-    "section": "Packages",
-    "text": "Packages\nWe’ll use the tidyverse package for much of the data wrangling and visualization.\n\nlibrary(tidyverse)\nlibrary(tidymodels)"
-  },
-  {
-    "objectID": "labs/lab-5.html#exercises",
-    "href": "labs/lab-5.html#exercises",
-    "title": "Lab 5 - Predicting a numerical outcome",
-    "section": "Exercises",
-    "text": "Exercises\n\n\n\n\n\n\nImportant\n\n\n\nIt may be helpful to designate one team member to work on each of the problems and only edit your designated portion of the quarto document. However, after last week you should have experience resolving merge conflicts. Consider referring back to that lab or asking lab instructors for help if you run into merge conflicts.\n\n\nTo get started, load the data and save the data frame as parasites.\n\nLet’s start by examining the relationship between divergence_time and parsim.\n\nBased on the goals of the analysis, what is the response variable?\nVisualize the relationship between the two variables.\nUse the visualization to describe the relationship between the two variables.\n\nNext, we’ll model this relationship.\n\nFit the model and write the estimated (“fitted”) regression equation.\nInterpret the slope and the intercept in the context of the data.\nRecreate the visualization from Exercise 1, this time adding a regression line to the visualization.\nWhat do you notice about the prediction (regression) line that may be strange, particularly for very large divergence times?\n\nSince parsim takes values between 0 and 1, we want to transform this variable so that it can range between (−∞,+∞). This will be better suited for fitting a regression model (and interpreting predicted values!)\n\nUsing mutate, create a new variable transformed_parsim that is calculated as log(parsim/(1-parsim)). Add this variable to your data frame. Note: log() in R represents taking the natural log.\nThen, visualize the relationship between divergence_time and transformed_parsim. Add a regression line to your visualization.\nWrite a 1-2 sentence description of what you observe in the visualization.\n\nWhich variable is the strongest individual predictor of parasite similarity between species? To answer this question, begin by fitting separate linear regression models predicting transformed_parsim with each of the following predictor variables:\n\ndivergence_time\ndistance\nBMdiff\nprecdiff Do not report the model outputs in a tidy format but save each one as dt_model, dist_model, BM_model, and prec_model, respectively. Then,\n\n\nReport the slopes for each of these models. Use proper notation.\nWould it be useful to compare the slopes in each model to choose the variable that is the strongest predictor of parasite similarity? Why or why not?\n\nRegardless of your answer to exercise 4b, we will also calculate the \\(R^2\\) of each model to help us identify the strongest individual linear predictor of transformed_parsim. \\(R^2\\) measures the percent of the variability in the response that is explained by the model. As you may have guessed from the name, \\(R^2\\) can be calculated by squaring the correlation when we have a simple linear regression model. The correlation, \\(r\\), takes values between -1 and 1, so \\(R^2\\) takes a value between 0 and 1. Intuitively, if r=1 or −1, then \\(R^2\\)=1, indicating the model perfectly fits the data. If r≈0 then \\(R^2\\)≈0, indicating the model is a very bad fit for the data. You can calculate \\(R^2\\) using the glance function. For example, you can calculate \\(R^2\\) for dt_model using the code glance(dt_model)$r.squared.\n\nCalculate and report \\(R^2\\) for each model fit in the previous exercise.\nWould it be useful to compare the \\(R^2\\) in each model to choose the variable that is the strongest predictor of parasite similarity? Why or why not?"
-  },
-  {
-    "objectID": "teaching-resources/GitHubClassroomManagement.html",
-    "href": "teaching-resources/GitHubClassroomManagement.html",
-    "title": "GitHub Classroom Management",
-    "section": "",
-    "text": "# $ git clone ghclass\n# $ git checkout artifacts\n\n#devtools::install(\"/path/to/ghclass\")\nEach code chunk below is designed to be self-contained (no dependency between chunks)."
-  },
-  {
-    "objectID": "teaching-resources/GitHubClassroomManagement.html#to-make-new-repos",
-    "href": "teaching-resources/GitHubClassroomManagement.html#to-make-new-repos",
-    "title": "GitHub Classroom Management",
-    "section": "To make new repos",
-    "text": "To make new repos\n\n\n\n\nCreate a new repo in the organization called “lab1” with a README.md\nPush to “lab1”: lab1.qmd, data/any_relevant_data.csv and optionally lab1.Rproj.\nSelect the repository, click “Settings” and check “Template repository”.\nFollow the code below.\n\n\n# initial assignment creation\norg = \"sta199-sp23-1\"\nusernames = ghclass::org_members(org)\n\n## edit this:\nassignment_template_repo = \"lab0_template\"\n\nghclass::org_create_assignment(\n  org = org,\n  repo = paste0(assignment_template_repo, \"-\", usernames),\n  user = usernames,\n  source_repo = paste0(org, \"/\", assignment_template_repo)\n)\n\n\n\n\nFeel free to test lab creation on my dummy account “fishswish” or on your own account with the code below\n\norg = \"sta199-sp23-1\"\nusernames = \"fishswish\"\nassignment_template_repo = \"lab0_template\"\nghclass::org_create_assignment(\n  org = org,\n  repo = paste0(assignment_template_repo, \"-\", usernames),\n  user = usernames,\n  source_repo = paste0(org, \"/\", assignment_template_repo)\n)\n\nIt’s possible some people are not in the organization and will need to be have additional repos created manually following the steps below:\n\ngo to template repo and click the green “Use this template” -> “Create a new repository” -> name it “lab-x-their_github_username” -> leave “Private” selected and click “Create repository from template”\nnext in the new repo go to “Settings” -> “Collaborators and Teams” -> click the green “Add people” button and type in their GitHub username.\nnext make sure to go to the “People” section of the organization and select “Invite member” so they join the organization too. Owning a repo in the org just makes them an outside collaborator. They still have to actually join the org"
-  },
-  {
-    "objectID": "teaching-resources/GitHubClassroomManagement.html#oops.-file-management-after-you-create-repos",
-    "href": "teaching-resources/GitHubClassroomManagement.html#oops.-file-management-after-you-create-repos",
-    "title": "GitHub Classroom Management",
-    "section": "Oops. File management after you create repos",
-    "text": "Oops. File management after you create repos\nThe magic happens in repo_add_file(). Be sure to edit/check each item below, specifically:\n\norg as appropriate\nrepos_to_modify object\narguments to repo_add_file()\n\n\norg = \"sta199-sp23-1\"\nusernames = ghclass::org_members(org)\n\n# get all existing labX repos\nrepos_to_modify = org_repos(org, filter = \"practice1-\") # edit this \"filter\"\n\nghclass::repo_add_file(repo = repos_to_modify,\n                       branch = \"main\",\n                       repo_folder = \"\", # edit this to be path to folder in repo\n                       message = \"update README\", # update to be a meaningful commit message\n                       file = \"~/Desktop/README.md\", # update local path to the file you want to add\n                       overwrite = TRUE) # if you want to overwrite or not"
-  },
-  {
-    "objectID": "teaching-resources/GitHubClassroomManagement.html#creating-team-assignments",
-    "href": "teaching-resources/GitHubClassroomManagement.html#creating-team-assignments",
-    "title": "GitHub Classroom Management",
-    "section": "Creating team assignments",
-    "text": "Creating team assignments\n\n# example data frame for demo purposes\n# you will need to format your data frame to look like this\nroster = data.frame(\n  github = c(\"fishswish\", \"athos00\"),\n  lab1 = rep(\"lab1-team1\", 2)\n)\n\n# edit each item below\norg_create_assignment(\n  org = \"sta199-sp23-1\",\n  user = roster$github,\n  repo = roster$lab1,\n  team = roster$lab1,\n  source_repo = \"sta199-sp23-1/lab1_template\",\n  private = TRUE\n)\n\n\nroster = data.frame(\n  github = c(\"devinjohnson7\", \"athos00\"),\n  lab1 = rep(\"lab1-team-awesome\", 2)\n)\n\n# edit each item below\norg_create_assignment(\n  org = \"sta323-sp23\",\n  user = roster$github,\n  repo = roster$lab1,\n  team = roster$lab1,\n  source_repo = \"sta323-sp23/lab-1\", # template file\n  private = TRUE\n)\n\n\norg = \"sta323-sp23\"\nrepos = ghclass::org_repos(org, filter = \"lab-2\")\n\n\n# repos = \"sta323-sp23/lab-1\"\nghclass::action_artifact_delete(repos, ids=action_artifacts(repos, which=\"all\"))"
-  },
-  {
-    "objectID": "project-description.html#presentation-30pts",
-    "href": "project-description.html#presentation-30pts",
-    "title": "Project description",
-    "section": "Presentation 30pts",
-    "text": "Presentation 30pts\nPresentations will take place in class during the last lab of the semester.\nThe presentation must be no longer than 5 minutes. This will be strictly enforced."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "STA 199: Introduction to Data Science",
-    "section": "",
-    "text": "week\n      dow\n      date\n      what\n      topic\n      prepare\n      slides\n      ae\n      hw\n      lab\n      exam\n      project\n      notes\n    \n  \n  \n    0\nW\nJan 11\nLab 0\nHello R!\n\n\n\n\n\n\n\n\n    \nF\nJan 13\nLec 1\nWelcome to STA 199\n\n\n\n\n\n\n\n\n    1\nM\nJan 16\n\nNo class -- Martin Luther King Jr. Day\n\n\n\n\n\n\n\n\n    \nW\nJan 18\nLec 2\nIntro to statistics and plotting\n\n\n\n\n\n\n\n\n    \nF\nJan 20\nLec 3\nVisualizing various types of data\n\n\n\n\n\n\n\n\n    2\nM\nJan 23\nLab 1\nData visualization\n\n\n\n\n\n\n\n\n    \nW\nJan 25\nLec 4\nGrammar of data wrangling\n\n\n\n\n\n\n\nHomework 1 released\n    \nF\nJan 27\nLec 5\nWorking with multiple data frames\n\n\n\n\n\n\n\n\n    3\nM\nJan 30\nLab 2\nData wrangling\n\n\n\n\n\n\n\n\n    \nW\nFeb 1\nLec 6\nTidy data\n\n\n\n\n\n\n\n\n    \nF\nFeb 3\nLec 7\nData types and classes\n\n\n\n\n\n\n\nHomework 1 due\n    4\nM\nFeb 6\nLab 3\nData tidying\n\n\n\n\n\n\n\n\n    \nW\nFeb 8\nLec 8\nSpatial data\n\n\n\n\n\n\n\n\n    \nF\nFeb 10\nLec 9\nTroubleshooting / Review\n\n\n\n\n\n\n\nExam 1 released! Due Feb 14 5:00pm\n    5\nM\nFeb 13\nLab\nNo lab: exam 1\n\n\n\n\n\n\n\n\n    \nW\nFeb 15\nLec 10\nIntro to probability\n\n\n\n\n\n\n\n\n    \nF\nFeb 17\nLec 11\nConditional probability\n\n\n\n\n\n\n\nHomework 2 released\n    6\nM\nFeb 20\nLab 4\nMerge conflicts\n\n\n\n\n\n\n\n\n    \nW\nFeb 22\nLec 12\nSimple regression\n\n\n\n\n\n\n\n\n    \nF\nFeb 24\nLec 13\nMultiple regression I\n\n\n\n\n\n\n\nHomework 2 due\n    7\nM\nFeb 27\nLab 5\nPredicting a numerical outcome\n\n\n\n\n\n\n\n\n    \nW\nMar 1\nLec 14\nMultiple regression II\n\n\n\n\n\n\n\nHomework 3 released; project announced\n    \nF\nMar 3\nLec 15\nModel selection\n\n\n\n\n\n\n\n\n    8\nM\nMar 6\nLab\nWork on project proposal\n\n\n\n\n\n\n\n\n    \nW\nMar 8\nLec 16\nLogistic Regression\n\n\n\n\n\n\n\nHomework 3 due\n    \nF\nMar 10\nLec 17\nPrediction\n\n\n\n\n\n\n\n\n    9\nM\nMar 13\n\nNo class -- Spring Break\n\n\n\n\n\n\n\n\n    \nW\nMar 15\n\nNo class -- Spring Break\n\n\n\n\n\n\n\n\n    \nF\nMar 17\n\nNo class -- Spring Break\n\n\n\n\n\n\n\n\n    10\nM\nMar 20\nLab\n\n\n\n\n\n\n\n\n\n    \nW\nMar 22\nLec 18\nBootstrap\n\n\n\n\n\n\n\n\n    \nF\nMar 24\nLec 19\nCentral limit theorem I\n\n\n\n\n\n\n\n\n    11\nM\nMar 27\nLab\n\n\n\n\n\n\n\n\n\n    \nW\nMar 29\nLec 20\nCentral limit theorem II\n\n\n\n\n\n\n\n\n    \nF\nMar 31\nLec 21\nHypothesis testing I\n\n\n\n\n\n\n\n\n    12\nM\nApr 3\nLab\nProject work day\n\n\n\n\n\n\n\n\n    \nW\nApr 5\nLec 22\nHypothesis testing II\n\n\n\n\n\n\n\n\n    \nF\nApr 7\nLec 23\nHypothesis testing III\n\n\n\n\n\n\n\n\n    13\nM\nApr 10\nLab\nProject peer review\n\n\n\n\n\n\n\n\n    \nW\nApr 12\nLec 24\nProject tips\n\n\n\n\n\n\n\n\n    \nF\nApr 14\nLec 25\nEthics\n\n\n\n\n\n\n\nExam 2 released! Due Tue April 18 5:00pm\n    14\nM\nApr 17\nLab\nNo lab: exam 2\n\n\n\n\n\n\n\n\n    \nW\nApr 19\nLec 26\nSpecial topic\n\n\n\n\n\n\n\n\n    \nF\nApr 21\nLec 27\nSpecial topic\n\n\n\n\n\n\n\n\n    15\nM\nApr 24\nLab\nProject presentations\n\n\n\n\n\n\n\n\n    \nW\nApr 26\nLec 28\nSpecial topic"
-  },
-  {
-    "objectID": "hw/hw-3.html",
-    "href": "hw/hw-3.html",
-    "title": "HW 3 - Do you even lift?",
-    "section": "",
-    "text": "Important\n\n\n\nThis homework is due Wednesday, March 8 at 5:00pm."
-  },
-  {
-    "objectID": "hw/hw-3.html#getting-started",
-    "href": "hw/hw-3.html#getting-started",
-    "title": "HW 3 - Do you even lift?",
-    "section": "Getting Started",
-    "text": "Getting Started\n\nGo to the Github Organization page and open your hw3-username repo\nClone the repository, open a new project in RStudio. It contains the starter documents you need to complete the homework assignment."
-  },
-  {
-    "objectID": "hw/hw-3.html#exercises",
-    "href": "hw/hw-3.html#exercises",
-    "title": "HW 3 - Do you even lift?",
-    "section": "Exercises",
-    "text": "Exercises\nFor all of the following exercises, you should include units on axes labels, e.g. “Bench press (lbs)” or “Bench press (kg)”. “Age (years)” etc. This is good practice.\n\nLet’s begin by taking a look at the squat powerlifting records. To begin, remove any observations that are negative for squat. Next, create a new column called best3_squat_lbs that converts the record from kg to lbs (you may have to google the conversion). Save your data frame as ipf_squat.\n\n\nUsing ipf_squat, create a scatter plot to investigate the relationship between squat (in lbs) and age. Age should be on the x-axis. Add a linear trend-line. Remove the standard error. Be sure to label all axes and give the plot a title. Comment on what you observe.\n\n\nWrite down the full linear model to predict lift squat lbs from age in \\(x\\), \\(y\\), \\(\\beta\\) notation. What is \\(x\\)? What is \\(y\\)? Next, fit the linear model. Use the ipf_squat data frame. Re-write your previous equation replacing \\(\\beta\\) with the numeric estimates. This is called the “fitted” linear model. Interpret each estimate of \\(\\beta\\). Are the interpretations reasonable?\nBuilding on your ipf_squat data frame, create a new column called age2 that takes the age of each lifter and squares it. Save your data frame with an appropriate name. Next, plot squat in lbs vs age2 and add a linear best fit line. Does this model look like it fits the data better? Is this still a linear model?\nOne metric to assess the fit of a model is the correlation squared, also known as \\(R^2\\). Fit the age\\(^2\\) model and save the object as age2Fit. Subsequently report the \\(R^2\\). Compare \\(R^2\\) of the age\\(^2\\) model to the model from exercise 2. Which model do you prefer?\n\n\nIf you were to add body weight as a second predictor to the age\\(^2\\) model, would \\(R^2\\) increase or decrease? Explain.\n\n\nStarting with the original ipf dataframe, filter and mutate the data as we did in exercise 1, but this time filtering for best3bench_kg > 0 and creating a best3_bench_lbs variable, a bodyweight_lbs variable, and a sex variable that is a factor rather than a character. Fit an interaction effects model with bodywieght (in lbs) and sex as predictors of best bench press (in lbs). Write down the fitted model equation only, replacing \\(\\hat{\\beta}\\) with the fitted estimates. Interpret the \\(\\hat{\\beta}\\).\nVisualize the interaction effects model we built in exercise 5. Hint: there should be two lines with different slopes. Bodyweight should be on the x-axis. Add a linear trend-line. Be sure to label all axes and give the plot a title. Comment on what you observe.\nDo lifters who fail a drug test perform better or worse at bench press than other lifters? Does this vary across sexes? We’ll answer this question in two parts. First, remove all observations from the data frame that have NA listed under bench press. Next, create a new column called doping_status that takes value doping if the lifter failed a drug test and not doping otherwise. Save this data frame as ipf_dope.\n\n\n\n\n\n\n\nHint\n\n\n\nCheck the data dictionary at the top to figure out what variables will help you build the doping_status column.\n\n\n\nUsing ipf_dope from the previous exercise, compute the 5%, 50%, 95% quantiles for bench press across both sex and doping_status. You can use either bench press in kg or lbs here. With this information, answer the question “Do lifters who fail a drug test perform better or worse at bench press than other lifters? Is this consistent across sex and quantiles?”"
-  },
-  {
-    "objectID": "hw/hw-3.html#reminder",
-    "href": "hw/hw-3.html#reminder",
-    "title": "HW 3 - Do you even lift?",
-    "section": "Reminder:",
-    "text": "Reminder:\n\nAll plots should follow the best visualization practices: include an informed title, label axes, and carefully consider aesthetic choices.\nAll code should follow the tidyverse style guidelines, including not exceeding the 80 character limit."
-  },
-  {
-    "objectID": "hw/hw-3.html#submission",
-    "href": "hw/hw-3.html#submission",
-    "title": "HW 3 - Do you even lift?",
-    "section": "Submission",
-    "text": "Submission\n\nGo to http://www.gradescope.com and click Log in in the top right corner.\nClick School Credentials Duke Net ID and log in using your Net ID credentials.\nClick on your STA 199 course.\nClick on the assignment, and you’ll be prompted to submit it.\nMark all the pages associated with exercise. All the pages of your homework should be associated with at least one question (i.e., should be “checked”). If you do not do this, you will be subject to lose points on the assignment.\nSelect all pages of your PDF submission to be associated with the “Workflow & formatting” question."
-  },
-  {
-    "objectID": "hw/hw-3.html#rubric",
-    "href": "hw/hw-3.html#rubric",
-    "title": "HW 3 - Do you even lift?",
-    "section": "Rubric",
-    "text": "Rubric\n\nEx 1: 6 pts.\nEx 2: 6 pts.\nEx 3: 5 pts.\nEx 4: 5 pts.\nEx 5: 10 pts.\nEx 6: 5 pts.\nEx 7: 3 pts\nEx 8: 5 pts\nWorkflow and formatting - 5 pts\n\n\n\n\n\n\n\nNote\n\n\n\nThe “Workflow & formatting” grade is to assess the reproducible workflow. This includes:\n\nlinking all pages appropriately on Gradescope\nputting your name in the YAML at the top of the document\ncommitting the submitted version of your .qmd to GitHub\nAre you under the 80 character code limit? (You shouldn’t have to scroll to see all your code).\nPipes %>%, |> and ggplot layers + should be followed by a new line\nYou should be consistent with stylistic choices, e.g. only use 1 of = vs <- and %>% vs |>\nAll binary operators should be surrounded by space. For example x + y is appropriate. x+y is not."
-  },
-  {
-    "objectID": "hw/hw-2.html",
-    "href": "hw/hw-2.html",
-    "title": "HW 2 - The Joy of Probability",
-    "section": "",
-    "text": "Important\n\n\n\nThis homework is due Friday, Feb 24 at 5:00pm."
-  },
-  {
-    "objectID": "hw/hw-2.html#getting-started",
-    "href": "hw/hw-2.html#getting-started",
-    "title": "HW 2 - The Joy of Probability",
-    "section": "Getting Started",
-    "text": "Getting Started\n\nGo to the Github Organization page and open your hw2-username repo\nClone the repository, open a new project in RStudio. It contains the starter documents you need to complete the homework assignment."
-  },
-  {
-    "objectID": "hw/hw-2.html#exercise-1",
-    "href": "hw/hw-2.html#exercise-1",
-    "title": "HW 2 - The Joy of Probability",
-    "section": "Exercise 1",
-    "text": "Exercise 1\n\nHow many episodes are there of the show: Joy of Painting?\n\n\n“There’s nothing wrong with having a tree as a friend.”\n\n\nIn how many episodes was a at least one tree painted?\nWhat is the probability a randomly selected episode featured at least one tree?\nWhat is the probability a randomly selected episode featured a conifer tree?"
-  },
-  {
-    "objectID": "hw/hw-2.html#exercise-2",
-    "href": "hw/hw-2.html#exercise-2",
-    "title": "HW 2 - The Joy of Probability",
-    "section": "Exercise 2",
-    "text": "Exercise 2\nThe Joy of Painting occasionally featured a guest painter other than Bob Ross. One guest painter was Bob’s son Steve Ross.\n\nWhat’s the probability the show featured Steve Ross given there was a guest painter?\nDid Steve Ross like to paint mountains more or less than the other guest painters? Create a stacked bar plot of guest painters. Have whether or not Steve was the guest painter on the x-axis and fill the bars according to whether or not a mountain exists in the painting. Note: rename observations so that they are more informative than 0 and 1."
-  },
-  {
-    "objectID": "hw/hw-2.html#exercise-3",
-    "href": "hw/hw-2.html#exercise-3",
-    "title": "HW 2 - The Joy of Probability",
-    "section": "Exercise 3",
-    "text": "Exercise 3\nThe next few questions will focus only on paintings created by Bob Ross. Make a new data frame called ross_paintings that only includes episodes (and thus paintings) made by Bob Ross. Save this data frame and use it for exercises 4 - 6."
-  },
-  {
-    "objectID": "hw/hw-2.html#exercise-4",
-    "href": "hw/hw-2.html#exercise-4",
-    "title": "HW 2 - The Joy of Probability",
-    "section": "Exercise 4",
-    "text": "Exercise 4\n\n“Let’s build us a happy, little cloud that floats around the sky.”\n\nAre the following two events disjoint? Why or why not?\n\nA: Bob Ross paints a cirrus cloud\nB: Bob Ross paints a cumulus cloud\n\nAre the following two events disjoint? Why or why not?\n\nA: Bob Ross paints waves\nB: Bob Ross paints a windmill"
-  },
-  {
-    "objectID": "hw/hw-2.html#exercise-5",
-    "href": "hw/hw-2.html#exercise-5",
-    "title": "HW 2 - The Joy of Probability",
-    "section": "Exercise 5",
-    "text": "Exercise 5\nSuppose you randomly select a Bob Ross painting and see that it features a mountain. Use Bayes Theorem to calculate the probability this painting also features a river. Show your work by using a code chunk as a calculator.\nHint: p(mountain | river) = 0.39\n\nFollow up question: Does Bob Ross paint mountains independent of whether or not he paints rivers? Why? In other words, is event A independent of B? Here we define events:\nA: Bob Ross paints a mountain\nB: Bob Ross paints a river"
-  },
-  {
-    "objectID": "hw/hw-2.html#exercise-6",
-    "href": "hw/hw-2.html#exercise-6",
-    "title": "HW 2 - The Joy of Probability",
-    "section": "Exercise 6",
-    "text": "Exercise 6\n\n“However you think it should be, that’s exactly how it should be.”\n\nYour turn! Use this data to explore a question of your choice about paintings created in the TV show The Joy of Painting. Your question should explore the relationship between 3 variables in the data set; at least one of the variables must be one that hasn’t been used in exercises 1 - 6. You may use the entire data set or focus the analysis on paintings made by Bob Ross.\n\nClearly state the question you’re exploring.\nCreate 1 - 2 visualizations that can be used to explore the question. Customize the colors of your visualization using some of the colors commonly used in Bob Ross paintings. Click here for a list of common Bob Ross hex codes.\n\nHint: Click here for functions to manually create color palettes in ggplot2.\n\nCalculate the relevant probabilities needed to answer your question.\nWrite a short narrative, about 2 - 4 sentences, answering the research question based on the visualization and probabilities. Note: The narrative should not exceed 4 sentences."
-  },
-  {
-    "objectID": "hw/hw-2.html#reminder",
-    "href": "hw/hw-2.html#reminder",
-    "title": "HW 2 - The Joy of Probability",
-    "section": "Reminder:",
-    "text": "Reminder:\n\nAll plots should follow the best visualization practices: include an informed title, label axes, and carefully consider aesthetic choices.\nAll code should follow the tidyverse style guidelines, including not exceeding the 80 character limit."
-  },
-  {
-    "objectID": "hw/hw-2.html#submission",
-    "href": "hw/hw-2.html#submission",
-    "title": "HW 2 - The Joy of Probability",
-    "section": "Submission",
-    "text": "Submission\n\nGo to http://www.gradescope.com and click Log in in the top right corner.\nClick School Credentials Duke Net ID and log in using your Net ID credentials.\nClick on your STA 199 course.\nClick on the assignment, and you’ll be prompted to submit it.\nMark all the pages associated with exercise. All the pages of your homework should be associated with at least one question (i.e., should be “checked”). If you do not do this, you will be subject to lose points on the assignment.\nSelect all pages of your PDF submission to be associated with the “Workflow & formatting” question."
-  },
-  {
-    "objectID": "hw/hw-2.html#rubric",
-    "href": "hw/hw-2.html#rubric",
-    "title": "HW 2 - The Joy of Probability",
-    "section": "Rubric",
-    "text": "Rubric\n\nEx 1: 5 pts.\nEx 2: 8 pts.\nEx 3: 3 pts.\nEx 4: 10 pts.\nEx 5: 10 pts.\nEx 6: 9 pts.\nWorkflow and formatting - 5 pts\n\n\n\n\n\n\n\nNote\n\n\n\nThe “Workflow & formatting” grade is to assess the reproducible workflow. This includes:\n\nlinking all pages appropriately on Gradescope\nputting your name in the YAML at the top of the document\ncommitting the submitted version of your .qmd to GitHub\nAre you under the 80 character code limit? (You shouldn’t have to scroll to see all your code).\nPipes %>%, |> and ggplot layers + should be followed by a new line\nYou should be consistent with stylistic choices, e.g. only use 1 of = vs <- and %>% vs |>\nAll binary operators should be surrounded by space. For example x + y is appropriate. x+y is not."
-  },
-  {
-<<<<<<< HEAD
     "objectID": "ae/ae-15.html",
     "href": "ae/ae-15.html",
     "title": "Model selection",
@@ -278,48 +46,48 @@
     "href": "ae/ae-15.html#example",
     "title": "Model selection",
     "section": "Example",
-    "text": "Example\n\nExercise\n\nWill forward selection and backward elimination always yield the same model? Type your answer below before running any code.\nNext, see if you are right in using the data set below.\n\nSolution below\n\ntest_df = read_csv(\"https://sta101-fa22.netlify.app/static/appex/data/test_df.csv\")\n\nIn the following two examples, we will use stepwise selection to build a main effects model.\nPerform 1 step of forward selection. What variable will be in the final forward selection model?\n\nlinear_reg() %>%\n  set_engine(\"lm\") %>%\n  fit(y ~ x1, data = test_df) %>%\n  glance() %>%\n  pull(AIC)\n\n[1] 93.08637\n\nlinear_reg() %>%\n  set_engine(\"lm\") %>%\n  fit(y ~ x2, data = test_df) %>%\n  glance() %>%\n  pull(AIC)\n\n[1] 131.8917\n\nlinear_reg() %>%\n  set_engine(\"lm\") %>%\n  fit(y ~ x3, data = test_df) %>%\n  glance() %>%\n  pull(AIC)\n\n[1] 152.9043\n\n\nNext, perform 1 step of backward elimination. Which variable will not be in the final backward elimination model?\n\nlinear_reg() %>%\n  set_engine(\"lm\") %>%\n  fit(y ~ x2 + x3, data = test_df) %>%\n  glance() %>%\n  pull(AIC)\n\n[1] 35.25949\n\nlinear_reg() %>%\n  set_engine(\"lm\") %>%\n  fit(y ~ x1 + x3, data = test_df) %>%\n  glance() %>%\n  pull(AIC)\n\n[1] 94.2536\n\nlinear_reg() %>%\n  set_engine(\"lm\") %>%\n  fit(y ~ x1 + x2, data = test_df) %>%\n  glance() %>%\n  pull(AIC)\n\n[1] 87.1686"
-=======
-    "objectID": "slides/lab-project-proposal.html",
-    "href": "slides/lab-project-proposal.html",
-    "title": "Project proposal",
+    "text": "Example\n\nExercise\n\nWill forward selection and backward elimination always yield the same model? Type your answer below before running any code.\nNext, see if you are right using the data set below.\n\nSolution below\n\ntest_df = read_csv(\"https://sta101-fa22.netlify.app/static/appex/data/test_df.csv\")\n\nIn the following two examples, we will use stepwise selection to build a main effects model.\nPerform 1 step of forward selection. What variable will be in the final forward selection model?\n\nlinear_reg() %>%\n  set_engine(\"lm\") %>%\n  fit(y ~ x1, data = test_df) %>%\n  glance() %>%\n  pull(AIC)\n\n[1] 93.08637\n\nlinear_reg() %>%\n  set_engine(\"lm\") %>%\n  fit(y ~ x2, data = test_df) %>%\n  glance() %>%\n  pull(AIC)\n\n[1] 131.8917\n\nlinear_reg() %>%\n  set_engine(\"lm\") %>%\n  fit(y ~ x3, data = test_df) %>%\n  glance() %>%\n  pull(AIC)\n\n[1] 152.9043\n\n\nNext, perform 1 step of backward elimination. Which variable will not be in the final backward elimination model?\n\nlinear_reg() %>%\n  set_engine(\"lm\") %>%\n  fit(y ~ x2 + x3, data = test_df) %>%\n  glance() %>%\n  pull(AIC)\n\n[1] 35.25949\n\nlinear_reg() %>%\n  set_engine(\"lm\") %>%\n  fit(y ~ x1 + x3, data = test_df) %>%\n  glance() %>%\n  pull(AIC)\n\n[1] 94.2536\n\nlinear_reg() %>%\n  set_engine(\"lm\") %>%\n  fit(y ~ x1 + x2, data = test_df) %>%\n  glance() %>%\n  pull(AIC)\n\n[1] 87.1686"
+  },
+  {
+    "objectID": "hw/hw-3.html",
+    "href": "hw/hw-3.html",
+    "title": "HW 3 - Do you even lift?",
     "section": "",
-    "text": "Find a data set that satisfies the guidelines.\nWrite about:\n\nthe source of data\nwhen and how it was originally collected (by the curator, not necessarily how you found the data)\na brief description of the observations\n\nChoose 1-2 research questions and write a hypothesis for each.\nput your data in the data folder and push. glimpse the data"
+    "text": "Important\n\n\n\nThis homework is due Wednesday, March 8 at 5:00pm."
   },
   {
-    "objectID": "slides/lab-project-proposal.html#demo-data-in-data-folder",
-    "href": "slides/lab-project-proposal.html#demo-data-in-data-folder",
-    "title": "Project proposal",
-    "section": "Demo: data in data folder",
-    "text": "Demo: data in data folder\n\nload data from your computer\n\nupload button in R files pane\n\nread and write a csv to file from a URL\n\ndinosaur_dataset = read_csv(\"website-url-here\")\nwrite_csv(dataset, \"data/dinosaur_dataset.csv\")\nNote read_csv and write_csv are from the readr package and loaded automatically with library(tidyverse)\n\nread in an excel spreadsheet\n\nreadxl::read_xlsx()\nreadxl::read_xls()"
+    "objectID": "hw/hw-3.html#getting-started",
+    "href": "hw/hw-3.html#getting-started",
+    "title": "HW 3 - Do you even lift?",
+    "section": "Getting Started",
+    "text": "Getting Started\n\nGo to the Github Organization page and open your hw3-username repo\nClone the repository, open a new project in RStudio. It contains the starter documents you need to complete the homework assignment."
   },
   {
-    "objectID": "slides/lab-project-proposal.html#ex-introduction-and-data",
-    "href": "slides/lab-project-proposal.html#ex-introduction-and-data",
-    "title": "Project proposal",
-    "section": "Ex: Introduction and Data",
-    "text": "Ex: Introduction and Data\n\nData set #1: NC Courage Homefield Advantage Our first data set comes from the National Women’s Soccer League (NSWL) Github and was sourced from nwslsoccer.com.\nThe dataset contains 78 observations (soccer games) played by the NC courage spanning three seasons: 2017, 2018, 2019. There are 10 variables in this dataset. Some of the variables we care about are home_team, away_team, and result (of the game)."
+    "objectID": "hw/hw-3.html#exercises",
+    "href": "hw/hw-3.html#exercises",
+    "title": "HW 3 - Do you even lift?",
+    "section": "Exercises",
+    "text": "Exercises\nFor all of the following exercises, you should include units on axes labels, e.g. “Bench press (lbs)” or “Bench press (kg)”. “Age (years)” etc. This is good practice.\n\nLet’s begin by taking a look at the squat powerlifting records. To begin, remove any observations that are negative for squat. Next, create a new column called best3_squat_lbs that converts the record from kg to lbs (you may have to google the conversion). Save your data frame as ipf_squat.\n\n\nUsing ipf_squat, create a scatter plot to investigate the relationship between squat (in lbs) and age. Age should be on the x-axis. Add a linear trend-line. Remove the standard error. Be sure to label all axes and give the plot a title. Comment on what you observe.\n\n\nWrite down the full linear model to predict lift squat lbs from age in \\(x\\), \\(y\\), \\(\\beta\\) notation. What is \\(x\\)? What is \\(y\\)? Next, fit the linear model. Use the ipf_squat data frame. Re-write your previous equation replacing \\(\\beta\\) with the numeric estimates. This is called the “fitted” linear model. Interpret each estimate of \\(\\beta\\). Are the interpretations reasonable?\nBuilding on your ipf_squat data frame, create a new column called age2 that takes the age of each lifter and squares it. Save your data frame with an appropriate name. Next, plot squat in lbs vs age2 and add a linear best fit line. Does this model look like it fits the data better? Is this still a linear model?\nOne metric to assess the fit of a model is the correlation squared, also known as \\(R^2\\). Fit the age\\(^2\\) model and save the object as age2Fit. Subsequently report the \\(R^2\\). Compare \\(R^2\\) of the age\\(^2\\) model to the model from exercise 2. Which model do you prefer?\n\n\nIf you were to add body weight as a second predictor to the age\\(^2\\) model, would \\(R^2\\) increase or decrease? Explain.\n\n\nStarting with the original ipf dataframe, filter and mutate the data as we did in exercise 1, but this time filtering for best3bench_kg \\(>0\\) and creating a best3_bench_lbs variable, a bodyweight_lbs variable, and a sex variable that is a factor rather than a character. Fit an interaction effects model with bodywieght (in lbs) and sex as predictors of best bench press (in lbs). Write down the fitted model equation only, replacing \\(\\hat{\\beta}\\) with the fitted estimates. Interpret the \\(\\hat{\\beta}\\).\nVisualize the interaction effects model we built in exercise 5. Hint: there should be two lines with different slopes. Bodyweight should be on the x-axis. Add a linear trend-line. Be sure to label all axes and give the plot a title. Comment on what you observe.\nDo lifters who fail a drug test perform better or worse at bench press than other lifters? Does this vary across sexes? We’ll answer this question in two parts. First, remove all observations from the data frame that have NA listed under bench press. Next, create a new column called doping_status that takes value doping if the lifter failed a drug test and not doping otherwise. Save this data frame as ipf_dope.\n\n\n\n\n\n\n\nHint\n\n\n\nCheck the data dictionary at the top to figure out what variables will help you build the doping_status column.\n\n\n\nUsing ipf_dope from the previous exercise, compute the 5%, 50%, 95% quantiles for bench press across both sex and doping_status. You can use either bench press in kg or lbs here. With this information, answer the question “Do lifters who fail a drug test perform better or worse at bench press than other lifters? Is this consistent across sex and quantiles?”"
   },
   {
-    "objectID": "slides/lab-project-proposal.html#ex-research-questions",
-    "href": "slides/lab-project-proposal.html#ex-research-questions",
-    "title": "Project proposal",
-    "section": "Ex: Research question(s):",
-    "text": "Ex: Research question(s):\n\nDoes NC Courage have a home-field advantage? We hypothesize that NC Courage is more likely to win on their home field than another team’s field.\n\nTo answer this question we will use information about the home_team, and the result of the game.\n\nDoes winning propagate winning? When NC Courage win a game, does it increase the probability of winning the very next game?\n\nTo answer this question we will use information about the result of the game and the game_number."
+    "objectID": "hw/hw-3.html#reminder",
+    "href": "hw/hw-3.html#reminder",
+    "title": "HW 3 - Do you even lift?",
+    "section": "Reminder:",
+    "text": "Reminder:\n\nAll plots should follow the best visualization practices: include an informed title, label axes, and carefully consider aesthetic choices.\nAll code should follow the tidyverse style guidelines, including not exceeding the 80 character limit."
   },
   {
-    "objectID": "slides/lab-project-proposal.html#ex-glimpse",
-    "href": "slides/lab-project-proposal.html#ex-glimpse",
-    "title": "Project proposal",
-    "section": "Ex: Glimpse",
-    "text": "Ex: Glimpse\n\nglimpse(courage)\n\nRows: 78\nColumns: 10\n$ game_id     <chr> \"washington-spirit-vs-north-carolina-courage-2017-04-15\", …\n$ game_date   <chr> \"4/15/2017\", \"4/22/2017\", \"4/29/2017\", \"5/7/2017\", \"5/14/2…\n$ game_number <dbl> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17,…\n$ home_team   <chr> \"WAS\", \"NC\", \"NC\", \"BOS\", \"ORL\", \"NC\", \"NC\", \"CHI\", \"NC\", …\n$ away_team   <chr> \"NC\", \"POR\", \"ORL\", \"NC\", \"NC\", \"CHI\", \"NJ\", \"NC\", \"KC\", \"…\n$ opponent    <chr> \"WAS\", \"POR\", \"ORL\", \"BOS\", \"ORL\", \"CHI\", \"NJ\", \"CHI\", \"KC…\n$ home_pts    <dbl> 0, 1, 3, 0, 3, 1, 2, 3, 2, 3, 0, 0, 2, 1, 1, 0, 1, 2, 2, 2…\n$ away_pts    <dbl> 1, 0, 1, 1, 1, 3, 0, 2, 0, 1, 1, 1, 0, 0, 0, 1, 2, 0, 3, 1…\n$ result      <chr> \"win\", \"win\", \"win\", \"win\", \"loss\", \"loss\", \"win\", \"loss\",…\n$ season      <dbl> 2017, 2017, 2017, 2017, 2017, 2017, 2017, 2017, 2017, 2017…"
+    "objectID": "hw/hw-3.html#submission",
+    "href": "hw/hw-3.html#submission",
+    "title": "HW 3 - Do you even lift?",
+    "section": "Submission",
+    "text": "Submission\n\nGo to http://www.gradescope.com and click Log in in the top right corner.\nClick School Credentials Duke Net ID and log in using your Net ID credentials.\nClick on your STA 199 course.\nClick on the assignment, and you’ll be prompted to submit it.\nMark all the pages associated with exercise. All the pages of your homework should be associated with at least one question (i.e., should be “checked”). If you do not do this, you will be subject to lose points on the assignment.\nSelect all pages of your PDF submission to be associated with the “Workflow & formatting” question."
   },
   {
-    "objectID": "slides/lab-project-proposal.html#remember",
-    "href": "slides/lab-project-proposal.html#remember",
-    "title": "Project proposal",
-    "section": "Remember",
-    "text": "Remember\n\n\nlist data sets in your proposal in your order of preference\nall work for the proposal should go into proposal.qmd within your project repo.\nrender to pdf and submit to Gradescope, selecting all for the exercise “proposal”\nlink your teammates in Gradescope when you submit"
->>>>>>> 4cb0823a0a3207b4f6d1e9d840114c20acce8936
+    "objectID": "hw/hw-3.html#rubric",
+    "href": "hw/hw-3.html#rubric",
+    "title": "HW 3 - Do you even lift?",
+    "section": "Rubric",
+    "text": "Rubric\n\nEx 1: 6 pts.\nEx 2: 7 pts.\nEx 3: 6 pts.\nEx 4: 5 pts.\nEx 5: 8 pts.\nEx 6: 4 pts.\nEx 7: 4 pts\nEx 8: 5 pts\nWorkflow and formatting - 5 pts\n\n\n\n\n\n\n\nNote\n\n\n\nThe “Workflow & formatting” grade is to assess the reproducible workflow. This includes:\n\nlinking all pages appropriately on Gradescope\nputting your name in the YAML at the top of the document\ncommitting the submitted version of your .qmd to GitHub\nAre you under the 80 character code limit? (You shouldn’t have to scroll to see all your code).\nPipes %>%, |> and ggplot layers + should be followed by a new line\nYou should be consistent with stylistic choices, e.g. only use 1 of = vs <- and %>% vs |>\nAll binary operators should be surrounded by space. For example x + y is appropriate. x+y is not."
   }
 ]

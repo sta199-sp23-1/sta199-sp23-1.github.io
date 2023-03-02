@@ -87,7 +87,7 @@ This is good practice.
 
 -   If you were to add body weight as a second predictor to the age$^2$ model, would $R^2$ increase or decrease? Explain.
 
-5.  Starting with the original `ipf` dataframe, filter and mutate the data as we did in exercise 1, but this time filtering for `best3bench_kg` \> 0 and creating a `best3_bench_lbs` variable, a `bodyweight_lbs` variable, and a `sex` variable that is a factor rather than a character.
+5.  Starting with the original `ipf` dataframe, filter and mutate the data as we did in exercise 1, but this time filtering for `best3bench_kg` $>0$ and creating a `best3_bench_lbs` variable, a `bodyweight_lbs` variable, and a `sex` variable that is a factor rather than a character.
     Fit an interaction effects model with bodywieght (in lbs) and sex as predictors of best bench press (in lbs).
     Write down the **fitted model equation** only, replacing $\hat{\beta}$ with the fitted estimates.
     Interpret the $\hat{\beta}$.
@@ -132,17 +132,17 @@ Check the data dictionary at the top to figure out what variables will help you 
 
 -   Ex 1: 6 pts.
 
--   Ex 2: 6 pts.
+-   Ex 2: 7 pts.
 
--   Ex 3: 5 pts.
+-   Ex 3: 6 pts.
 
 -   Ex 4: 5 pts.
 
--   Ex 5: 10 pts.
+-   Ex 5: 8 pts.
 
--   Ex 6: 5 pts.
+-   Ex 6: 4 pts.
 
--   Ex 7: 3 pts
+-   Ex 7: 4 pts
 
 -   Ex 8: 5 pts
 

@@ -420,7 +420,7 @@ Important
 <li>If you were to add body weight as a second predictor to the age<span class="math inline">\(^2\)</span> model, would <span class="math inline">\(R^2\)</span> increase or decrease? Explain.</li>
 </ul>
 <ol start="5" type="1">
-<li><p>Starting with the original <code>ipf</code> dataframe, filter and mutate the data as we did in exercise 1, but this time filtering for <code>best3bench_kg</code> &gt; 0 and creating a <code>best3_bench_lbs</code> variable, a <code>bodyweight_lbs</code> variable, and a <code>sex</code> variable that is a factor rather than a character. Fit an interaction effects model with bodywieght (in lbs) and sex as predictors of best bench press (in lbs). Write down the <strong>fitted model equation</strong> only, replacing <span class="math inline">\(\hat{\beta}\)</span> with the fitted estimates. Interpret the <span class="math inline">\(\hat{\beta}\)</span>.</p></li>
+<li><p>Starting with the original <code>ipf</code> dataframe, filter and mutate the data as we did in exercise 1, but this time filtering for <code>best3bench_kg</code> <span class="math inline">\(&gt;0\)</span> and creating a <code>best3_bench_lbs</code> variable, a <code>bodyweight_lbs</code> variable, and a <code>sex</code> variable that is a factor rather than a character. Fit an interaction effects model with bodywieght (in lbs) and sex as predictors of best bench press (in lbs). Write down the <strong>fitted model equation</strong> only, replacing <span class="math inline">\(\hat{\beta}\)</span> with the fitted estimates. Interpret the <span class="math inline">\(\hat{\beta}\)</span>.</p></li>
 <li><p>Visualize the interaction effects model we built in exercise 5. Hint: there should be two lines with different slopes. Bodyweight should be on the x-axis. Add a linear trend-line. Be sure to label all axes and give the plot a title. Comment on what you observe.</p></li>
 <li><p>Do lifters who fail a drug test perform better or worse at bench press than other lifters? Does this vary across sexes? We’ll answer this question in two parts. First, remove all observations from the data frame that have <code>NA</code> listed under bench press. Next, create a new column called <code>doping_status</code> that takes value <code>doping</code> if the lifter failed a drug test and <code>not doping</code> otherwise. Save this data frame as <code>ipf_dope</code>.</p></li>
 </ol>
@@ -466,12 +466,12 @@ Hint
 <h2 class="anchored" data-anchor-id="rubric">Rubric</h2>
 <ul>
 <li><p>Ex 1: 6 pts.</p></li>
-<li><p>Ex 2: 6 pts.</p></li>
-<li><p>Ex 3: 5 pts.</p></li>
+<li><p>Ex 2: 7 pts.</p></li>
+<li><p>Ex 3: 6 pts.</p></li>
 <li><p>Ex 4: 5 pts.</p></li>
-<li><p>Ex 5: 10 pts.</p></li>
-<li><p>Ex 6: 5 pts.</p></li>
-<li><p>Ex 7: 3 pts</p></li>
+<li><p>Ex 5: 8 pts.</p></li>
+<li><p>Ex 6: 4 pts.</p></li>
+<li><p>Ex 7: 4 pts</p></li>
 <li><p>Ex 8: 5 pts</p></li>
 <li><p>Workflow and formatting - 5 pts</p></li>
 </ul>

@@ -94,7 +94,7 @@ Procedure:
 
 - Will forward selection and backward elimination always yield the same model? Type your answer below before running any code.
 
-- Next, see if you are right in using the data set below.
+- Next, see if you are right using the data set below.
 
 **Solution below**
 
