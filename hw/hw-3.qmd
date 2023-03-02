@@ -82,7 +82,7 @@ This is good practice.
 4.  One metric to assess the fit of a model is the correlation squared, also known as $R^2$.
     Fit the age$^2$ model and save the object as `age2Fit`.
     Subsequently report the $R^2$.
-    Compare $R^2$ of the age$^2$ model to the model from exercise 3.
+    Compare $R^2$ of the age$^2$ model to the model from exercise 2.
     Which model do you prefer?
 
 -   If you were to add body weight as a second predictor to the age$^2$ model, would $R^2$ increase or decrease? Explain.

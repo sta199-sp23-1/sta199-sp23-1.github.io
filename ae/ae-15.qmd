@@ -1,0 +1,153 @@
+---
+title: "Model selection"
+subtitle: "STA 199"
+editor: source
+format: html
+execute:
+  error: true
+---
+
+## Bulletin
+
+-   this `ae` is **due for grade**. Push your completed ae to GitHub within 48 hours to receive credit
+-   homework 03 due next Wednesday
+-   final project instructions
+
+## Getting started
+
+Clone *your* `ae15-username` repo from the [GitHub organization](https://github.com/sta199-sp23-1/).
+
+## Today
+
+By the end of today you will...
+
+- select between linear models with different numbers of predictors
+
+## Load packages and data
+
+```{r load-libraroies, warning = F, message = F}
+library(tidyverse)
+library(tidymodels)
+```
+
+## Notes
+
+### The problem with $R^2$
+
+$R^2$ tell us the proportion of variability in the data our model explains. If we add predictors to our model, we will *always* improve $R^2$ (regardless of whether the predictor is good or not). 
+
+To see this...
+
+- offline example
+
+- take away: a line can go through any two points, a plane can go through any three points, etc. In general an $n$ dimensional object can go through $n$ points.
+
+For this reason, $R^2$ is not a good way to select between two models that have a different number of predictors. Instead, we prefer to use Akaike Information Criterion (AIC). 
+
+### AIC 
+
+$$
+\text{AIC} = 2k - 2 \log (\text{likelihood})
+$$
+
+where $k$ is the number of estimated parameters ($\beta$s) in the model. Notice this will be 1 + the number of predictors. and $\hat{L}$ is "likelihood" of the data given the fitted model. 
+
+The likelihood is a measure of how well a given model fits the data. Specifically, higher likelihoods imply better fits. Since the AIC score has a negative in front of the log likelihood, lower scores are better fits. However, $k$ penalizes adding new predictors to the model.
+
+Take-away: lower AIC is better fit.
+
+You can find AIC using `glance(fitted-model)`. (Assuming you named your fitted model `fitted-model`)
+
+## Building a model
+
+Scenario: you have an outcome $y$ you want to predict. You have several variables you've measured that you *could* use as predictors in your linear model. Each predictor is expensive to collect future measurements of. You want your model to only include the most useful predictors. 
+
+### Backward elimination 
+
+Backward elimination starts with the full model (the model that includes all potential predictor variables). Variables are eliminated one-at-a-time from the model until we cannot improve the model any further.[^1]
+
+Procedure:
+
+1. Start with a model that has all predictors under study and compute the AIC.
+2. Next fit every possible model with 1 less predictor.
+3. Compare AIC scores to select the best model with 1 less predictor.
+4. Repeat steps 2 and 3 until you can no longer improve the model.
+
+
+### Forward selection
+
+Forward selection is the reverse of the backward elimination technique. Instead, of eliminating variables one-at-a-time, we add variables one-at-a-time until we cannot find any variables that improve the model any further.
+
+[^1]: see [Introduction to Modern Statistics](https://openintro-ims.netlify.app/model-mlr.html?q=selection#stepwise-selection) for further reference.
+
+Procedure:
+
+1. Start with a model that has no predictors.
+2. Next fit every possible model with 1 additional predictor and score each model.
+3. Compare AIC scores to select the best model with 1 additional predictor.
+4. Repeat steps 2 and 3 until you can no longer improve the model.
+
+
+## Example
+
+### Exercise 
+
+- Will forward selection and backward elimination always yield the same model? Type your answer below before running any code.
+
+- Next, see if you are right in using the data set below.
+
+**Solution below**
+
+```{r load-data}
+#| warning: false
+test_df = read_csv("https://sta101-fa22.netlify.app/static/appex/data/test_df.csv")
+```
+
+In the following two examples, we will use stepwise selection to build a **main effects** model.
+
+Perform 1 step of forward selection. What variable will be **in** the final *forward selection* model?
+
+```{r}
+linear_reg() %>%
+  set_engine("lm") %>%
+  fit(y ~ x1, data = test_df) %>%
+  glance() %>%
+  pull(AIC)
+
+linear_reg() %>%
+  set_engine("lm") %>%
+  fit(y ~ x2, data = test_df) %>%
+  glance() %>%
+  pull(AIC)
+
+linear_reg() %>%
+  set_engine("lm") %>%
+  fit(y ~ x3, data = test_df) %>%
+  glance() %>%
+  pull(AIC)
+```
+
+Next, perform 1 step of backward elimination. Which variable will **not** be in the final *backward elimination* model?
+
+```{r}
+linear_reg() %>%
+  set_engine("lm") %>%
+  fit(y ~ x2 + x3, data = test_df) %>%
+  glance() %>%
+  pull(AIC)
+
+linear_reg() %>%
+  set_engine("lm") %>%
+  fit(y ~ x1 + x3, data = test_df) %>%
+  glance() %>%
+  pull(AIC)
+
+linear_reg() %>%
+  set_engine("lm") %>%
+  fit(y ~ x1 + x2, data = test_df) %>%
+  glance() %>%
+  pull(AIC)
+```
+
+
+
