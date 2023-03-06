@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>STA 199 - Logistic regression</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<meta property="og:title" content="STA 199 - Logistic regression">
+<meta property="og:description" content="STA 199">
+<meta property="og:site-name" content="STA 199">
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Logistic regression</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="../" class="sidebar-logo-link">
+      <img src="../images/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/sta199-sp23-1" title="GitHub organization" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+    <a href="https://cmgr.oit.duke.edu/containers" title="RStudio Containers" class="sidebar-tool px-1"><i class="bi bi-code-square"></i></a>
+    <a href="https://docs.google.com/spreadsheets/d/16gf9dQ_41V628vKvFdS95JBOUKYSjuxJBo7OzPye-SI/edit?usp=sharing" title="Office Hours" class="sidebar-tool px-1"><i class="bi bi-people-fill"></i></a>
+</div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">Course information</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-syllabus.html" class="sidebar-item-text sidebar-link">Syllabus</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">Schedule</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-links.html" class="sidebar-item-text sidebar-link">Useful links</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-faq.html" class="sidebar-item-text sidebar-link">FAQ</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">Computing</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computing-access.html" class="sidebar-item-text sidebar-link">Access</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computing-troubleshooting.html" class="sidebar-item-text sidebar-link">Troubleshooting</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computing-cheatsheets.html" class="sidebar-item-text sidebar-link">Cheatsheets</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">Project</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../project-description.html" class="sidebar-item-text sidebar-link">Description</a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#bulletin" id="toc-bulletin" class="nav-link active" data-scroll-target="#bulletin">Bulletin</a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting started</a></li>
+  <li><a href="#today" id="toc-today" class="nav-link" data-scroll-target="#today">Today</a>
+  <ul class="collapse">
+  <li><a href="#load-packages-and-data" id="toc-load-packages-and-data" class="nav-link" data-scroll-target="#load-packages-and-data">Load packages and data</a></li>
+  </ul></li>
+  <li><a href="#logistic-regression" id="toc-logistic-regression" class="nav-link" data-scroll-target="#logistic-regression">Logistic regression</a>
+  <ul class="collapse">
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
+  <li><a href="#visualize-logistic-regression" id="toc-visualize-logistic-regression" class="nav-link" data-scroll-target="#visualize-logistic-regression">Visualize logistic regression</a></li>
+  <li><a href="#classify-a-new-email" id="toc-classify-a-new-email" class="nav-link" data-scroll-target="#classify-a-new-email">Classify a new email</a></li>
+  <li><a href="#assessing-predictive-ability" id="toc-assessing-predictive-ability" class="nav-link" data-scroll-target="#assessing-predictive-ability">Assessing predictive ability</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/sta199-f22-1/sta199-f22-1.github.io/edit/main/ae/ae-16.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/sta199-f22-1/sta199-f22-1.github.io/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Logistic regression</h1>
+<p class="subtitle lead">STA 199</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="bulletin" class="level2">
+<h2 class="anchored" data-anchor-id="bulletin">Bulletin</h2>
+<ul>
+<li>this <code>ae</code> is <strong>due for grade</strong>. Push your completed ae to GitHub within 48 hours to receive credit</li>
+<li>homework 03 due today</li>
+<li>final project proposal due Friday</li>
+<li>statistics experience homework
+<ul>
+<li>Friday is last day to register for <a href="https://dukestatsci.github.io/datafest/">datafest</a>.</li>
+</ul></li>
+</ul>
+</section>
+<section id="getting-started" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
+<p>Clone <em>your</em> <code>ae16-username</code> repo from the <a href="https://github.com/sta199-sp23-1/">GitHub organization</a>.</p>
+</section>
+<section id="today" class="level1">
+<h1>Today</h1>
+<p>By the end of today you will…</p>
+<ul>
+<li>understand logistic regression as a linear model of binary outcomes</li>
+<li>be able to fit logistic regression in R</li>
+</ul>
+<section id="load-packages-and-data" class="level2">
+<h2 class="anchored" data-anchor-id="load-packages-and-data">Load packages and data</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(boot) <span class="co"># contains inv.logit() function</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To illustrate logistic regression, we will build a spam filter from email data. Today’s data consists of 4601 emails that are classified as <code>spam</code> or <code>non-spam</code>. The data was collected at Hewlett-Packard labs and contains 58 variables. The first 48 variables are specific keywords and each observation is the percentage of appearance <strong>(frequency)</strong> of that word in the message. Click <a href="https://rdrr.io/cran/kernlab/man/spam.html">here</a> to read more.</p>
+<ul>
+<li><code>type</code> <span class="math inline">\(= 1\)</span> is spam</li>
+<li><code>type</code> <span class="math inline">\(= 0\)</span> is non-spam</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>spam <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"https://sta101.github.io/static/appex/data/spam.csv"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(spam)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 4,601
+Columns: 58
+$ make              &lt;dbl&gt; 0.00, 0.21, 0.06, 0.00, 0.00, 0.00, 0.00, 0.00, 0.15…
+$ address           &lt;dbl&gt; 0.64, 0.28, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00…
+$ all               &lt;dbl&gt; 0.64, 0.50, 0.71, 0.00, 0.00, 0.00, 0.00, 0.00, 0.46…
+$ num3d             &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+$ our               &lt;dbl&gt; 0.32, 0.14, 1.23, 0.63, 0.63, 1.85, 1.92, 1.88, 0.61…
+$ over              &lt;dbl&gt; 0.00, 0.28, 0.19, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00…
+$ remove            &lt;dbl&gt; 0.00, 0.21, 0.19, 0.31, 0.31, 0.00, 0.00, 0.00, 0.30…
+$ internet          &lt;dbl&gt; 0.00, 0.07, 0.12, 0.63, 0.63, 1.85, 0.00, 1.88, 0.00…
+$ order             &lt;dbl&gt; 0.00, 0.00, 0.64, 0.31, 0.31, 0.00, 0.00, 0.00, 0.92…
+$ mail              &lt;dbl&gt; 0.00, 0.94, 0.25, 0.63, 0.63, 0.00, 0.64, 0.00, 0.76…
+$ receive           &lt;dbl&gt; 0.00, 0.21, 0.38, 0.31, 0.31, 0.00, 0.96, 0.00, 0.76…
+$ will              &lt;dbl&gt; 0.64, 0.79, 0.45, 0.31, 0.31, 0.00, 1.28, 0.00, 0.92…
+$ people            &lt;dbl&gt; 0.00, 0.65, 0.12, 0.31, 0.31, 0.00, 0.00, 0.00, 0.00…
+$ report            &lt;dbl&gt; 0.00, 0.21, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00…
+$ addresses         &lt;dbl&gt; 0.00, 0.14, 1.75, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00…
+$ free              &lt;dbl&gt; 0.32, 0.14, 0.06, 0.31, 0.31, 0.00, 0.96, 0.00, 0.00…
+$ business          &lt;dbl&gt; 0.00, 0.07, 0.06, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00…
+$ email             &lt;dbl&gt; 1.29, 0.28, 1.03, 0.00, 0.00, 0.00, 0.32, 0.00, 0.15…
+$ you               &lt;dbl&gt; 1.93, 3.47, 1.36, 3.18, 3.18, 0.00, 3.85, 0.00, 1.23…
+$ credit            &lt;dbl&gt; 0.00, 0.00, 0.32, 0.00, 0.00, 0.00, 0.00, 0.00, 3.53…
+$ your              &lt;dbl&gt; 0.96, 1.59, 0.51, 0.31, 0.31, 0.00, 0.64, 0.00, 2.00…
+$ font              &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+$ num000            &lt;dbl&gt; 0.00, 0.43, 1.16, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00…
+$ money             &lt;dbl&gt; 0.00, 0.43, 0.06, 0.00, 0.00, 0.00, 0.00, 0.00, 0.15…
+$ hp                &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+$ hpl               &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+$ george            &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+$ num650            &lt;dbl&gt; 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00…
+$ lab               &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+$ labs              &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+$ telnet            &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+$ num857            &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+$ data              &lt;dbl&gt; 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.15…
+$ num415            &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+$ num85             &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+$ technology        &lt;dbl&gt; 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00…
+$ num1999           &lt;dbl&gt; 0.00, 0.07, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00…
+$ parts             &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+$ pm                &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+$ direct            &lt;dbl&gt; 0.00, 0.00, 0.06, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00…
+$ cs                &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+$ meeting           &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+$ original          &lt;dbl&gt; 0.00, 0.00, 0.12, 0.00, 0.00, 0.00, 0.00, 0.00, 0.30…
+$ project           &lt;dbl&gt; 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00…
+$ re                &lt;dbl&gt; 0.00, 0.00, 0.06, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00…
+$ edu               &lt;dbl&gt; 0.00, 0.00, 0.06, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00…
+$ table             &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+$ conference        &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+$ charSemicolon     &lt;dbl&gt; 0.000, 0.000, 0.010, 0.000, 0.000, 0.000, 0.000, 0.0…
+$ charRoundbracket  &lt;dbl&gt; 0.000, 0.132, 0.143, 0.137, 0.135, 0.223, 0.054, 0.2…
+$ charSquarebracket &lt;dbl&gt; 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.0…
+$ charExclamation   &lt;dbl&gt; 0.778, 0.372, 0.276, 0.137, 0.135, 0.000, 0.164, 0.0…
+$ charDollar        &lt;dbl&gt; 0.000, 0.180, 0.184, 0.000, 0.000, 0.000, 0.054, 0.0…
+$ charHash          &lt;dbl&gt; 0.000, 0.048, 0.010, 0.000, 0.000, 0.000, 0.000, 0.0…
+$ capitalAve        &lt;dbl&gt; 3.756, 5.114, 9.821, 3.537, 3.537, 3.000, 1.671, 2.4…
+$ capitalLong       &lt;dbl&gt; 61, 101, 485, 40, 40, 15, 4, 11, 445, 43, 6, 11, 61,…
+$ capitalTotal      &lt;dbl&gt; 278, 1028, 2259, 191, 191, 54, 112, 49, 1257, 749, 2…
+$ type              &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1…</code></pre>
+</div>
+</div>
+<p>The basic logic of our model is that the frequency of certain words can help us determine whether or not an email is spam.</p>
+<p>For example, these emails came from George’s inbox. If the word “george” is not present in the message and the dollar symbol (<code>charDollar</code>) is, you might expect the email to be spam.</p>
+<p>Using this data, we want to build a model that <strong>predicts</strong> whether a new email is spam or not. How do we build a model that can do this?</p>
+<section id="exercise-1" class="level4">
+<h4 class="anchored" data-anchor-id="exercise-1">Exercise 1</h4>
+<p>Start by examining 1 predictor.</p>
+<ul>
+<li><p>Visualize a <strong>linear model</strong> where the outcome is <code>type</code> (spam or not) and <code>george</code> is the predictor.</p></li>
+<li><p>Discuss your visualization with your neighbor. Is this a good model? Why or why not?</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="logistic-regression" class="level1">
+<h1>Logistic regression</h1>
+<p><em>How do you build a model to fit a binary outcome?</em></p>
+<p>Linear logistic regression (also simply called “logistic regression”) takes in a number of predictors and outputs the probability of a “success” (an outcome of 1) in a binary outcome variable. The probability is related to the predictors via a <strong>sigmoid link function</strong>,</p>
+<p><span class="math display">\[
+p(y_i = 1) = \frac{1}{1+\text{exp}({- \sum \beta_i x_i })},
+\]</span></p>
+<p>whose output is in <span class="math inline">\((0,1)\)</span> (a probability). In this modeling scheme, one typically finds <span class="math inline">\(\hat{\beta}\)</span> by maximizing the <strong>likelihood function</strong>, (another objective function, different than our previous “least squares” objective).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>sigmoid <span class="ot">=</span> <span class="cf">function</span>(x) <span class="dv">1</span> <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> <span class="fu">exp</span>(<span class="sc">-</span>x <span class="sc">+</span> <span class="dv">10</span>))</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot.function</span>(sigmoid, <span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">20</span>, <span class="at">n =</span> <span class="dv">101</span>, <span class="at">ylab=</span><span class="st">"p(yi = 1)"</span>, <span class="at">xlab=</span><span class="st">"input"</span>, <span class="at">main=</span><span class="st">"Sigmoid link function"</span>, <span class="at">lwd =</span> <span class="dv">3</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">box</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="ae-16_files/figure-html/sigmoid-function-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>To proceed with building our email classifier, we will, as usual, use our data (outcome <span class="math inline">\(y_i\)</span> and predictor <span class="math inline">\(x_i\)</span> pairs), to estimate <span class="math inline">\(\beta\)</span> (find <span class="math inline">\(\hat{\beta}\)</span>) and obtain the model:</p>
+<p><span class="math display">\[
+p(y_i = 1) = \frac{1}{1+\text{exp}({- \sum  \hat{\beta}_i x_i})},
+\]</span></p>
+<section id="example" class="level2">
+<h2 class="anchored" data-anchor-id="example">Example</h2>
+<p>Let’s build a model centered around just two predictor variables.</p>
+<p>The first will be the word <code>you</code> and the second will be <code>capitalTotal</code> (the total number of capital letters in the message).</p>
+<section id="exercise-2" class="level4">
+<h4 class="anchored" data-anchor-id="exercise-2">Exercise 2</h4>
+<p>Create a visualization with <code>you</code> on the x-axis and <code>capitalTotal</code> on the y-axis. Color data points by whether or not they are spam.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Let’s fit the model!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>fit_1 <span class="ot">=</span> <span class="fu">logistic_reg</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_engine</span>(<span class="st">"glm"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fit</span>(<span class="fu">as.factor</span>(type) <span class="sc">~</span> you <span class="sc">+</span> capitalTotal, <span class="at">data =</span> spam, <span class="at">family =</span> <span class="st">"binomial"</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>fit_1 <span class="sc">%&gt;%</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tidy</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 5
+  term         estimate std.error statistic   p.value
+  &lt;chr&gt;           &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+1 (Intercept)  -1.50     0.0554       -27.1 2.97e-162
+2 you           0.361    0.0198        18.3 1.84e- 74
+3 capitalTotal  0.00173  0.000104      16.6 5.66e- 62</code></pre>
+</div>
+</div>
+</section>
+<section id="exercise-3" class="level4">
+<h4 class="anchored" data-anchor-id="exercise-3">Exercise 3</h4>
+<ul>
+<li>What is different in the code above from previous linear models we fit?</li>
+</ul>
+</section>
+<section id="exercise-4" class="level4">
+<h4 class="anchored" data-anchor-id="exercise-4">Exercise 4</h4>
+<ul>
+<li><p>What is the probability the email is spam if the frequency of <code>you</code> is 5% in the email and there are 2500 capital letters. Use the model equation above.</p></li>
+<li><p>What is the log-odds? (Recall from the prep that log-odds <span class="math inline">\(= \log \frac{p}{1-p}\)</span>). Use the code below to check your work.</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>newdata <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">you =</span> <span class="dv">5</span>, <span class="at">capitalTotal =</span> <span class="dv">2500</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># code here</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># check work</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>checkLogOdds <span class="ot">=</span> <span class="fu">predict</span>(fit_1<span class="sc">$</span>fit, newdata)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>checkLogOdds</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       1 
+4.633134 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>checkP <span class="ot">=</span> <span class="fu">inv.logit</span>(checkLogOdds)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>checkP</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        1 
+0.9903694 </code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="visualize-logistic-regression" class="level2">
+<h2 class="anchored" data-anchor-id="visualize-logistic-regression">Visualize logistic regression</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>beta <span class="ot">=</span> fit_1<span class="sc">$</span>fit<span class="sc">$</span>coefficients</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>hyperplane <span class="ot">=</span> <span class="cf">function</span>(x){</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    decisionBoundary <span class="ot">=</span> <span class="fl">0.5</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    c <span class="ot">=</span> <span class="fu">logit</span>(decisionBoundary)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    const <span class="ot">=</span> c <span class="sc">-</span> beta[<span class="dv">1</span>]</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>((<span class="sc">-</span>beta[<span class="dv">2</span>]<span class="sc">*</span>x <span class="sc">+</span> const) <span class="sc">/</span> beta[<span class="dv">3</span>])</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>spam <span class="sc">%&gt;%</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> you, <span class="at">y =</span> capitalTotal, <span class="at">color =</span> <span class="fu">as.factor</span>(type))) <span class="sc">+</span> </span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_function</span>(<span class="at">fun =</span> hyperplane) <span class="sc">+</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"orange"</span>, <span class="st">"steelblue"</span>)) <span class="sc">+</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Multiple drawing groups in `geom_function()`. Did you use the correct
+`group`, `colour`, or `fill` aesthetics?</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="ae-16_files/figure-html/find-hyperplane-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<ul>
+<li>Just because there’s greater than 50% probability an email is spam doesn’t mean we have to label it as such. We can adjust our <strong>threshold</strong> or <strong>critical probability</strong>, a.k.a. <strong>decision boundary</strong> to be more or less sensitive to spam emails.</li>
+</ul>
+<p>In other words we get to select a number <span class="math inline">\(p^*\)</span> such that</p>
+<p>if <span class="math inline">\(p &gt; p^*\)</span>, then label the email as spam.</p>
+<section id="exercise-5" class="level4">
+<h4 class="anchored" data-anchor-id="exercise-5">Exercise 5</h4>
+<ul>
+<li><p>What would you set your decision boundary to and why?</p></li>
+<li><p>Change <code>decisionBoundary</code> in the code above to 0.01 and 0.999999. Do the results surprise you? Why or why not?</p></li>
+<li><p>lower boundary means that we label more emails as spam, high boundary means fewer emails as spam. We can adjust the boundary depending on how much we value receiving important emails vs how much we dislike spam.</p></li>
+<li><p>0 means all emails are spam, 1 means no emails are spam. Note you cannot set decision boundary to 0 or 1 because of logit function (would evaluate to inf or negative inf)</p></li>
+</ul>
+</section>
+</section>
+<section id="classify-a-new-email" class="level2">
+<h2 class="anchored" data-anchor-id="classify-a-new-email">Classify a new email</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>email <span class="ot">=</span> <span class="fu">readLines</span>(<span class="st">"https://sta101.github.io/static/appex/data/test-email.txt"</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>email</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "You Have Been Selected To Win A Free Trip To Disney World! "
+[2] ""                                                           
+[3] "YOU HAVE 30 SECONDS TO CLICK HERE TO CLAIM YOUR REWARD!"    
+[4] ""                                                           
+[5] "WHAT ARE YOU WAITING FOR? ACT NOW!"                         
+[6] ""                                                           
+[7] "SINCERELY,"                                                 
+[8] ""                                                           
+[9] "WALT DISNEY"                                                </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>totalWord <span class="ot">=</span> <span class="fu">sum</span>(<span class="fu">str_count</span>(email, <span class="st">" "</span>))</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>totalYou <span class="ot">=</span> <span class="fu">sum</span>(<span class="fu">str_count</span>(<span class="fu">tolower</span>(email), <span class="st">"you"</span>))</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>capitalTotal <span class="ot">=</span> <span class="fu">sum</span>(<span class="fu">str_count</span>(email, <span class="st">"[A-Z]"</span>))</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>youFreq <span class="ot">=</span> <span class="dv">100</span> <span class="sc">*</span> totalYou <span class="sc">/</span> totalWord</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>newemail <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">you =</span> youFreq, <span class="at">capitalTotal =</span> capitalTotal)</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>logOdds <span class="ot">=</span> <span class="fu">predict</span>(fit_1<span class="sc">$</span>fit, newemail)</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>logOdds</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       1 
+3.648776 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">inv.logit</span>(logOdds)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        1 
+0.9746371 </code></pre>
+</div>
+</div>
+<section id="exercise-6" class="level4">
+<h4 class="anchored" data-anchor-id="exercise-6">Exercise 6</h4>
+<ul>
+<li><p>Does the code above count the correct number of “you”? Why or why not?</p></li>
+<li><p>Do you believe the predicted odds of the email being spam? Why or why not?</p></li>
+<li><p>What is the <strong>probability</strong> the test email is spam?</p></li>
+</ul>
+</section>
+</section>
+<section id="assessing-predictive-ability" class="level2">
+<h2 class="anchored" data-anchor-id="assessing-predictive-ability">Assessing predictive ability</h2>
+<p>We will divide the data into a training set and testing set.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">6</span>)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>sampleIndices <span class="ot">=</span> <span class="fu">sample.int</span>(<span class="at">n =</span> <span class="fu">nrow</span>(spam), <span class="at">size =</span> <span class="dv">2000</span>, <span class="at">replace =</span> F)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>train <span class="ot">=</span> spam[sampleIndices, ]</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>test  <span class="ot">=</span> spam[<span class="sc">-</span>sampleIndices, ] <span class="sc">%&gt;%</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">2000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="exercise-7" class="level4">
+<h4 class="anchored" data-anchor-id="exercise-7">Exercise 7</h4>
+<p>Next, let’s train your model on the training set. Build a predictive model using any combination of predictors from <code>spam</code>. Save your fitted model as <code>myModel</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># code here</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co">#example (delete this):</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>myModel <span class="ot">=</span> <span class="fu">logistic_reg</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_engine</span>(<span class="st">"glm"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fit</span>(<span class="fu">as.factor</span>(type) <span class="sc">~</span> you <span class="sc">+</span> address, <span class="at">data =</span> train, <span class="at">family =</span> <span class="st">"binomial"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>and test it on the testing set,</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>prediction <span class="ot">=</span> test <span class="sc">%&gt;%</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">myModelPrediction =</span> <span class="fu">predict</span>(myModel, test)<span class="sc">$</span>.pred_class) </span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>prediction</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2,000 × 59
+    make address   all num3d   our  over remove internet order  mail receive
+   &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;
+ 1  0       0     0.7      0  0     0.14   0        0     0.28  0       0   
+ 2  0       0     0        0  0     0      0        0     0     0       0   
+ 3  0       0     2.5      0  0     0      0        0     0     0       0   
+ 4  0       2.08  0        0  3.12  0      1.04     0     0     0       0   
+ 5  0       0     1.04     0  1.04  0      0        1.39  0.34  0       0   
+ 6  0       0.35  0.7      0  0.35  0      0        0     0     0       0   
+ 7  0.39    0     0        0  1.17  0      0        0     0     0.39    0   
+ 8  0       0.25  0.75     0  1     0.25   0        0     0     0       0.25
+ 9  0       0     0        0  0.87  0      0        0     0     0       1.31
+10  0       0     0        0  1.11  0      0        0.55  0     3.91    0   
+# … with 1,990 more rows, and 48 more variables: will &lt;dbl&gt;, people &lt;dbl&gt;,
+#   report &lt;dbl&gt;, addresses &lt;dbl&gt;, free &lt;dbl&gt;, business &lt;dbl&gt;, email &lt;dbl&gt;,
+#   you &lt;dbl&gt;, credit &lt;dbl&gt;, your &lt;dbl&gt;, font &lt;dbl&gt;, num000 &lt;dbl&gt;, money &lt;dbl&gt;,
+#   hp &lt;dbl&gt;, hpl &lt;dbl&gt;, george &lt;dbl&gt;, num650 &lt;dbl&gt;, lab &lt;dbl&gt;, labs &lt;dbl&gt;,
+#   telnet &lt;dbl&gt;, num857 &lt;dbl&gt;, data &lt;dbl&gt;, num415 &lt;dbl&gt;, num85 &lt;dbl&gt;,
+#   technology &lt;dbl&gt;, num1999 &lt;dbl&gt;, parts &lt;dbl&gt;, pm &lt;dbl&gt;, direct &lt;dbl&gt;,
+#   cs &lt;dbl&gt;, meeting &lt;dbl&gt;, original &lt;dbl&gt;, project &lt;dbl&gt;, re &lt;dbl&gt;, …</code></pre>
+</div>
+</div>
+</section>
+<section id="exercise-8" class="level4">
+<h4 class="anchored" data-anchor-id="exercise-8">Exercise 8</h4>
+<p>What is the proportion of false positives (i.e.&nbsp;classified as spam but was not)? False negatives?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">© Copyright 2023, Alexander Fisher</div>   
+    <div class="nav-footer-right">This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a>.</div>
+  </div>
+</footer>
+
+
+
+</body></html>
