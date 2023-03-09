@@ -278,5 +278,89 @@
     "title": "Statistics Experience Homework",
     "section": "Submission",
     "text": "Submission\nSubmit the reflection as a PDF under the Statistics Experience assignment on Gradescope by Wednesday, April 26 at 5:00pm. It must be submitted by the deadline on Gradescope to be considered for grading."
+  },
+  {
+    "objectID": "ae/ae17.html",
+    "href": "ae/ae17.html",
+    "title": "Prediction",
+    "section": "",
+    "text": "this ae is due for grade. Push your completed ae to GitHub within 48 hours to receive credit\nfinal project proposal due today at 5:00pm\nstatistics experience homework released\n\ntoday is last day to register for datafest."
+  },
+  {
+    "objectID": "ae/ae17.html#getting-started",
+    "href": "ae/ae17.html#getting-started",
+    "title": "Prediction",
+    "section": "Getting started",
+    "text": "Getting started\nClone your ae17-username repo from the GitHub organization."
+  },
+  {
+    "objectID": "ae/ae17.html#today",
+    "href": "ae/ae17.html#today",
+    "title": "Prediction",
+    "section": "Today",
+    "text": "Today\nBy the end of today you will…\n\nbe able to make new predictions from your fitted linear models\nvisualize the fit of your model"
+  },
+  {
+    "objectID": "ae/ae17.html#load-packages-and-data",
+    "href": "ae/ae17.html#load-packages-and-data",
+    "title": "Prediction",
+    "section": "Load packages and data",
+    "text": "Load packages and data\n\nlibrary(tidyverse)\nlibrary(tidymodels)"
+  },
+  {
+    "objectID": "ae/ae17.html#notes",
+    "href": "ae/ae17.html#notes",
+    "title": "Prediction",
+    "section": "Notes",
+    "text": "Notes\n\nPrediction\npredict() is a powerful function that takes two arguments:\n\nyour model fit\nnew data you want to make predictions from\n\nThere are several ways you can use the predict() function.\nFor standard linear regression,\npredict(model_fit, test_data) # returns predicted outcome\nFor logistic regression you can use the code above to obtain the predicted outcome (0 or 1) or alternatively use one of the formulations below to quickly grab the log-odds or the probability of the outcome “1”.\npredict(model_fit$fit, test_data) # returns log-odds\npredict(model_fit, test_data, type = \"prob\") # returns probability of a 1."
+  },
+  {
+    "objectID": "ae/ae17.html#practice",
+    "href": "ae/ae17.html#practice",
+    "title": "Prediction",
+    "section": "Practice",
+    "text": "Practice\nLoad data:\n\nparkinsons_train = read_csv(\"https://sta101-fa22.netlify.app/static/appex/data/parkinsons_train.csv\")\nparkinsons_test = read_csv(\"https://sta101-fa22.netlify.app/static/appex/data/parkinsons_test.csv\")\n\nThis dataset comes from Little et al. (2008). The data includes various measurements of dysphonia (disorders of the voice) from 32 people, 24 with Parkinson’s disease (PD). Multiple measurements were taken per individual. The measurements we examine in this subset of the data include:\n\nname: patient ID\njitter: a measure of relative variation in fundamental frequency\nshimmer: a measure of variation in amplitude (dB)\nPPE: pitch period entropy\nHNR: a ratio of total components vs. noise in the voice recording\nstatus: health status (1 for PD, 0 for healthy)\n\n\nExercise 1\nWrite down a main effects model to predict Parkinson’s status from HNR, shimmer, jitter and PPE.\n\n\nExercise 2\nFit your model from the previous exercise using the parkinsons_train data set.\n\n# code here\n\n\n\nExercise 3\nUse your model to predict PD status in the parkinsons_test data set with a decision boundary of p = 0.5. How many false positives do you observe? How many false negatives?\nNext change the decision boundary to 0.25. How many false positives and false negatives do you observe?\nWhich decision boundary do you prefer?\n\n# code here\n\n\n\nVisualizing model fits\nThere are many ways you can visualize a fitted model. Plotting the hyperplane is limited to simple two-variable (predictor, outcome) and three-variable (predictor, predictor, outcome) plots. Here we explore some useful visualizations for high-dimensional multivariate models.\n\nExample: logistic regression\n\nCreate a stacked bar plot with status on the x-axis and fill by whether or not the predicted status is correct or incorrect.\n\n\n# code here\n\n\n\nExample: ordinary least squares regression:\nScenario: we are trying to predict vocal amplitude variation (shimmer) from jitter and pitch period entropy (PPE).\n\\[\ny = \\beta_0 + \\beta_1 x_1 + \\beta_2 x_2 + \\epsilon\n\\]\nwhere\n\\(y\\): shimmer \\(x_1\\): jitter \\(x_2\\): PPE\n\nmyPredictiveModel = linear_reg() %>%\n  set_engine(\"lm\") %>%\n  fit(shimmer ~ jitter + PPE, data = parkinsons_train)\n\nEven if we don’t have a test data set, we could still create a new column of predictions like before:\n\n# predict based on new data\npredict_train = parkinsons_train %>%\n  mutate(myPrediction = predict(myPredictiveModel, parkinsons_train)$.pred)\n\nFrom here we can plot \\(\\hat{y}\\) vs \\(y\\):\n\npredict_train %>%\n  ggplot(aes(x = shimmer, y = myPrediction)) +\n  geom_point() +\n  labs(x = \"True Shimmer (dB)\", y = \"Predicted shimmer (dB)\", title = \"Predicted vs true shimmer values\") +\n  geom_abline(slope = 1, intercept = 0, color = \"steelblue\")\n\n\n\n\nAlternatively, we could create a residual plot. Residual plots can be used to assess whether a linear model is appropriate.\nA common assumption of linear regression models is that the error term, \\(\\epsilon\\), has constant variance everywhere.\n\nIf the linear model is appropriate, a residual plot should show this.\nPatterned or nonconstant residual spread may sometimes be indicative a model is missing predictors or missing interactions.\n\n\n\nExercise 4\nCreate a new column residuals in predict_train and save your data frame as predict_train_2\n\n# code here\n\n\npredict_train_2 %>%\n  ggplot(aes(x = myPrediction, y = residuals)) + \n  geom_point() +\n  geom_hline(yintercept = 0) +\n  labs(x = \"Predicted shimmer (dB)\", y = \"Residual\")"
+  },
+  {
+    "objectID": "ae/ae-17.html",
+    "href": "ae/ae-17.html",
+    "title": "Prediction",
+    "section": "",
+    "text": "this ae is due for grade. Push your completed ae to GitHub within 48 hours to receive credit\nfinal project proposal due today at 5:00pm\nstatistics experience homework released\n\ntoday is last day to register for datafest."
+  },
+  {
+    "objectID": "ae/ae-17.html#getting-started",
+    "href": "ae/ae-17.html#getting-started",
+    "title": "Prediction",
+    "section": "Getting started",
+    "text": "Getting started\nClone your ae17-username repo from the GitHub organization."
+  },
+  {
+    "objectID": "ae/ae-17.html#today",
+    "href": "ae/ae-17.html#today",
+    "title": "Prediction",
+    "section": "Today",
+    "text": "Today\nBy the end of today you will…\n\nbe able to make new predictions from your fitted linear models\nvisualize the fit of your model"
+  },
+  {
+    "objectID": "ae/ae-17.html#load-packages-and-data",
+    "href": "ae/ae-17.html#load-packages-and-data",
+    "title": "Prediction",
+    "section": "Load packages and data",
+    "text": "Load packages and data\n\nlibrary(tidyverse)\nlibrary(tidymodels)"
+  },
+  {
+    "objectID": "ae/ae-17.html#notes",
+    "href": "ae/ae-17.html#notes",
+    "title": "Prediction",
+    "section": "Notes",
+    "text": "Notes\n\nPrediction\npredict() is a powerful function that takes two arguments:\n\nyour model fit\nnew data you want to make predictions from\n\nThere are several ways you can use the predict() function.\nFor standard linear regression,\npredict(model_fit, test_data) # returns predicted outcome\nFor logistic regression you can use the code above to obtain the predicted outcome (0 or 1) or alternatively use one of the formulations below to quickly grab the log-odds or the probability of the outcome “1”.\npredict(model_fit$fit, test_data) # returns log-odds\npredict(model_fit, test_data, type = \"prob\") # returns probability of a 1."
+  },
+  {
+    "objectID": "ae/ae-17.html#practice",
+    "href": "ae/ae-17.html#practice",
+    "title": "Prediction",
+    "section": "Practice",
+    "text": "Practice\nLoad data:\n\nparkinsons_train = read_csv(\"https://sta101-fa22.netlify.app/static/appex/data/parkinsons_train.csv\")\nparkinsons_test = read_csv(\"https://sta101-fa22.netlify.app/static/appex/data/parkinsons_test.csv\")\n\nThis dataset comes from Little et al. (2008). The data includes various measurements of dysphonia (disorders of the voice) from 32 people, 24 with Parkinson’s disease (PD). Multiple measurements were taken per individual. The measurements we examine in this subset of the data include:\n\nname: patient ID\njitter: a measure of relative variation in fundamental frequency\nshimmer: a measure of variation in amplitude (dB)\nPPE: pitch period entropy\nHNR: a ratio of total components vs. noise in the voice recording\nstatus: health status (1 for PD, 0 for healthy)\n\n\nExercise 1\nWrite down a main effects model to predict Parkinson’s status from HNR, shimmer, jitter and PPE.\n\n\nExercise 2\nFit your model from the previous exercise using the parkinsons_train data set.\n\n# code here\n\n\n\nExercise 3\nUse your model to predict PD status in the parkinsons_test data set with a decision boundary of p = 0.5. How many false positives do you observe? How many false negatives?\nNext change the decision boundary to 0.25. How many false positives and false negatives do you observe?\nWhich decision boundary do you prefer?\n\n# code here\n\n\n\nVisualizing model fits\nThere are many ways you can visualize a fitted model. Plotting the hyperplane is limited to simple two-variable (predictor, outcome) and three-variable (predictor, predictor, outcome) plots. Here we explore some useful visualizations for high-dimensional multivariate models.\n\nExample: logistic regression\n\nCreate a stacked bar plot with status on the x-axis and fill by whether or not the predicted status is correct or incorrect.\n\n\n# code here\n\n\n\nExample: ordinary least squares regression:\nScenario: we are trying to predict vocal amplitude variation (shimmer) from jitter and pitch period entropy (PPE).\n\\[\ny = \\beta_0 + \\beta_1 x_1 + \\beta_2 x_2 + \\epsilon\n\\]\nwhere\n\\(y\\): shimmer \\(x_1\\): jitter \\(x_2\\): PPE\n\nmyPredictiveModel = linear_reg() %>%\n  set_engine(\"lm\") %>%\n  fit(shimmer ~ jitter + PPE, data = parkinsons_train)\n\nEven if we don’t have a test data set, we could still create a new column of predictions like before:\n\n# predict based on new data\npredict_train = parkinsons_train %>%\n  mutate(myPrediction = predict(myPredictiveModel, parkinsons_train)$.pred)\n\nFrom here we can plot \\(\\hat{y}\\) vs \\(y\\):\n\npredict_train %>%\n  ggplot(aes(x = shimmer, y = myPrediction)) +\n  geom_point() +\n  labs(x = \"True Shimmer (dB)\", y = \"Predicted shimmer (dB)\", title = \"Predicted vs true shimmer values\") +\n  geom_abline(slope = 1, intercept = 0, color = \"steelblue\")\n\n\n\n\nAlternatively, we could create a residual plot. Residual plots can be used to assess whether a linear model is appropriate.\nA common assumption of linear regression models is that the error term, \\(\\epsilon\\), has constant variance everywhere.\n\nIf the linear model is appropriate, a residual plot should show this.\nPatterned or nonconstant residual spread may sometimes be indicative a model is missing predictors or missing interactions.\n\n\n\nExercise 4\nCreate a new column residuals in predict_train and save your data frame as predict_train_2\n\n# code here\n\n\npredict_train_2 %>%\n  ggplot(aes(x = myPrediction, y = residuals)) + \n  geom_point() +\n  geom_hline(yintercept = 0) +\n  labs(x = \"Predicted shimmer (dB)\", y = \"Residual\")"
   }
 ]
