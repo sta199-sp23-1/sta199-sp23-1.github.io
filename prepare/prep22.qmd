@@ -1,0 +1,9 @@
+---
+title: "Prepare"
+subtitle: "Due: Wednesday March 29, 2023"
+categories: "prepare"
+---
+
+-   Read [13.6 Case Study (interval): Stents](https://openintro-ims.netlify.app/index.html)
+
+-   Read [19.2 Mathematical model for a mean](https://openintro-ims.netlify.app/index.html)
