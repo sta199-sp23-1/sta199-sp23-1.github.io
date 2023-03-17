@@ -130,7 +130,7 @@
     "href": "slides/lab-project-proposal.html#remember",
     "title": "Project proposal",
     "section": "Remember",
-    "text": "Remember\n\n\nlist data sets in your proposal in your order of preference\nall work for the proposal should go into proposal.qmd within your project repo.\nrender to pdf and submit to Gradescope, selecting all for the exercise “proposal”\nlink your teammates in Gradescope when you submit\n\n\n\n\n🔗 sta199-sp23-1.github.io"
+    "text": "Remember\n\n\nlist data sets in your proposal in your order of preference\nall work for the proposal should go into proposal.qmd within your project repo.\nrender to pdf and submit to Gradescope, selecting all for the exercise “proposal”\nlink your teammates in Gradescope when you submit"
   },
   {
     "objectID": "ae/ae-16.html",
@@ -362,5 +362,75 @@
     "title": "Prediction",
     "section": "Practice",
     "text": "Practice\nLoad data:\n\nparkinsons_train = read_csv(\"https://sta101-fa22.netlify.app/static/appex/data/parkinsons_train.csv\")\nparkinsons_test = read_csv(\"https://sta101-fa22.netlify.app/static/appex/data/parkinsons_test.csv\")\n\nThis dataset comes from Little et al. (2008). The data includes various measurements of dysphonia (disorders of the voice) from 32 people, 24 with Parkinson’s disease (PD). Multiple measurements were taken per individual. The measurements we examine in this subset of the data include:\n\nname: patient ID\njitter: a measure of relative variation in fundamental frequency\nshimmer: a measure of variation in amplitude (dB)\nPPE: pitch period entropy\nHNR: a ratio of total components vs. noise in the voice recording\nstatus: health status (1 for PD, 0 for healthy)\n\n\nExercise 1\nWrite down a main effects model to predict Parkinson’s status from HNR, shimmer, jitter and PPE.\n\n\nExercise 2\nFit your model from the previous exercise using the parkinsons_train data set.\n\n# code here\n\n\n\nExercise 3\nUse your model to predict PD status in the parkinsons_test data set with a decision boundary of p = 0.5. How many false positives do you observe? How many false negatives?\nNext change the decision boundary to 0.25. How many false positives and false negatives do you observe?\nWhich decision boundary do you prefer?\n\n# code here\n\n\n\nVisualizing model fits\nThere are many ways you can visualize a fitted model. Plotting the hyperplane is limited to simple two-variable (predictor, outcome) and three-variable (predictor, predictor, outcome) plots. Here we explore some useful visualizations for high-dimensional multivariate models.\n\nExample: logistic regression\n\nCreate a stacked bar plot with status on the x-axis and fill by whether or not the predicted status is correct or incorrect.\n\n\n# code here\n\n\n\nExample: ordinary least squares regression:\nScenario: we are trying to predict vocal amplitude variation (shimmer) from jitter and pitch period entropy (PPE).\n\\[\ny = \\beta_0 + \\beta_1 x_1 + \\beta_2 x_2 + \\epsilon\n\\]\nwhere\n\\(y\\): shimmer \\(x_1\\): jitter \\(x_2\\): PPE\n\nmyPredictiveModel = linear_reg() %>%\n  set_engine(\"lm\") %>%\n  fit(shimmer ~ jitter + PPE, data = parkinsons_train)\n\nEven if we don’t have a test data set, we could still create a new column of predictions like before:\n\n# predict based on new data\npredict_train = parkinsons_train %>%\n  mutate(myPrediction = predict(myPredictiveModel, parkinsons_train)$.pred)\n\nFrom here we can plot \\(\\hat{y}\\) vs \\(y\\):\n\npredict_train %>%\n  ggplot(aes(x = shimmer, y = myPrediction)) +\n  geom_point() +\n  labs(x = \"True Shimmer (dB)\", y = \"Predicted shimmer (dB)\", title = \"Predicted vs true shimmer values\") +\n  geom_abline(slope = 1, intercept = 0, color = \"steelblue\")\n\n\n\n\nAlternatively, we could create a residual plot. Residual plots can be used to assess whether a linear model is appropriate.\nA common assumption of linear regression models is that the error term, \\(\\epsilon\\), has constant variance everywhere.\n\nIf the linear model is appropriate, a residual plot should show this.\nPatterned or nonconstant residual spread may sometimes be indicative a model is missing predictors or missing interactions.\n\n\n\nExercise 4\nCreate a new column residuals in predict_train and save your data frame as predict_train_2\n\n# code here\n\n\npredict_train_2 %>%\n  ggplot(aes(x = myPrediction, y = residuals)) + \n  geom_point() +\n  geom_hline(yintercept = 0) +\n  labs(x = \"Predicted shimmer (dB)\", y = \"Residual\")"
+  },
+  {
+    "objectID": "labs/lab-7.html",
+    "href": "labs/lab-7.html",
+    "title": "Lab 7 - Logistic regression",
+    "section": "",
+    "text": "Important\n\n\n\nThis lab is due Monday, March 27 at 5:00pm."
+  },
+  {
+    "objectID": "labs/lab-7.html#packages",
+    "href": "labs/lab-7.html#packages",
+    "title": "Lab 7 - Logistic regression",
+    "section": "Packages",
+    "text": "Packages\nYou’ll need the following packages for today’s lab.\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(dsbox)"
+  },
+  {
+    "objectID": "labs/lab-7.html#data",
+    "href": "labs/lab-7.html#data",
+    "title": "Lab 7 - Logistic regression",
+    "section": "Data",
+    "text": "Data\nThe data can be found in the dsbox package, and it’s called gss16. Since the dataset is distributed with the package, we don’t need to load it separately; it becomes available to us when we load the package.\nIf you would like to explicitly load the data into your environment so you can view it, you can do so by running this code.\n\ngss16 <- gss16\n\nYou can find out more about the dataset by inspecting its documentation, which you can access by running ?gss16 in the Console or using the Help menu in RStudio to search for gss16. You can also find this information here."
+  },
+  {
+    "objectID": "labs/lab-7.html#exercise-1---data-wrangling",
+    "href": "labs/lab-7.html#exercise-1---data-wrangling",
+    "title": "Lab 7 - Logistic regression",
+    "section": "Exercise 1 - Data wrangling",
+    "text": "Exercise 1 - Data wrangling\n\n\n\n\n\n\nImportant\n\n\n\nRemember: For each exercise, you should choose one person to type. All others should contribute to the discussion, but only one person should type up the answer, render the document, commit, and push to GitHub. All others should not touch the document.\n\n\n\nCreate a new data frame called gss16_advfront that includes the variables advfront, educ, polviews, and wrkstat. Then, use the drop_na() function to remove rows that contain NAs from this new data frame.\nTransform the advfront variable such that it has two levels: \"Strongly agree\" and \"Agree\" should both be mapped to \"Agree\" and the remaining levels should all be relabeled \"Not agree\". Make sure the resulting levels are in the following order: \"Agree\" and \"Not agree\".\n\nHint: use the factor() function inside a mutate() statement to relabel the original levels. Be sure to list the levels in order so that they are correctly ordered after relabeling.\n\nSimilarly to part b, combine the levels of the polviews variable such that levels that have the word “liberal” in them are lumped into a level called \"Liberal\" and those that have the word “conservative” in them are lumped into a level called \"Conservative\". Make sure the levels are in the following order: \"Conservative\" , \"Moderate\", and \"Liberal\". Finally, count() how many times each new level appears in the polviews variable.\n\nHint: be careful if you manually type out the levels in the original polviews variable to note that there are typos in two of the original levels “slightly conservative” and “extremely conservative” are both misspelled, and so you will need to match those misspellings in your call to factor().\n\n\n\n\n\n\nImportant\n\n\n\nAfter the team member working on Exercise 1 renders, commits, and pushes, all other team members should pull. Then, choose a new team member to write the answer to Exercise 2. (And so on for the remaining exercises.)"
+  },
+  {
+    "objectID": "labs/lab-7.html#exercise-2---train-and-test-sets",
+    "href": "labs/lab-7.html#exercise-2---train-and-test-sets",
+    "title": "Lab 7 - Logistic regression",
+    "section": "Exercise 2 - Train and test sets",
+    "text": "Exercise 2 - Train and test sets\nNow, let’s split the data into training and test sets so that we can evaluate the models we’re going to fit by how well they predict outcomes on data that wasn’t used to fit the models.\nSpecify a random seed of 1234 (i.e., include set.seed(1234) at the beginning of your code chunk), and then split gss16_advfront randomly into a training set train_data and a test set test_data. Do this so that the training set contains 80% of the rows of the original data."
+  },
+  {
+    "objectID": "labs/lab-7.html#exercise-3---logistic-regression",
+    "href": "labs/lab-7.html#exercise-3---logistic-regression",
+    "title": "Lab 7 - Logistic regression",
+    "section": "Exercise 3 - Logistic Regression",
+    "text": "Exercise 3 - Logistic Regression\n\nUsing the training data, fit a logistic regression model that predicts advfront using educ. In particular, the model should predict the probability that advfront has value \"Not agree\". Name this model model1. Report the tidy model output.\nWrite out the fitted model equation in proper notation. State the meaning of any variables in the context of the data.\nUsing your fitted model, report the estimated probability of agreeing with the following statement: Even if it brings no immediate benefits, scientific research that advances the frontiers of knowledge is necessary and should be supported by the federal government (Agree in advfront) if you have an education of 7 years."
+  },
+  {
+    "objectID": "labs/lab-7.html#exercise-4---another-model",
+    "href": "labs/lab-7.html#exercise-4---another-model",
+    "title": "Lab 7 - Logistic regression",
+    "section": "Exercise 4 - Another model",
+    "text": "Exercise 4 - Another model\n\nAgain using the training data, fit a new logistic regression model that adds the additional explanatory variable of polviews. Name this model model2. Report the tidy output.\nNow, report the estimated probability of agreeing with the following statement: Even if it brings no immediate benefits, scientific research that advances the frontiers of knowledge is necessary and should be supported by the federal government (Agree in advfront) if you have an education of 7 years and are Conservative."
+  },
+  {
+    "objectID": "labs/lab-7.html#exercise-5---evaluating-models-with-aic",
+    "href": "labs/lab-7.html#exercise-5---evaluating-models-with-aic",
+    "title": "Lab 7 - Logistic regression",
+    "section": "Exercise 5 - Evaluating models with AIC",
+    "text": "Exercise 5 - Evaluating models with AIC\n\nReport the AIC values for each of model1 and model2.\nBased on your results in part a, does it appear that including political views in addition to years of education is useful for modeling whether employees agree with the statement “Even if it brings no immediate benefits, scientific research that advances the frontiers of knowledge is necessary and should be supported by the federal government”? Explain."
+  },
+  {
+    "objectID": "labs/lab-7.html#exercise-6---evaluating-models-using-test-data",
+    "href": "labs/lab-7.html#exercise-6---evaluating-models-using-test-data",
+    "title": "Lab 7 - Logistic regression",
+    "section": "Exercise 6 - Evaluating models using test data",
+    "text": "Exercise 6 - Evaluating models using test data\n\nFor each of model1 and model2, report the number of false positive and false negatives when making predictions on the test_data with a decision boundary of 0.5.\nDo these results provide much information about which model you would prefer for a prediction task? If so, which model would you choose?\nDo you think a decision boundary of 0.5 makes sense here or would you adjust it?\n\nThe ROC curve provides a way to compare predictive performance of binary classifiers across the full range of decision boundaries. Notes about the ROC curve can be found here https://sta199-s23-2.github.io/ae-sa/ae-16-A.html."
+  },
+  {
+    "objectID": "slides/lab-project-proposal.html",
+    "href": "slides/lab-project-proposal.html",
+    "title": "Project proposal",
+    "section": "",
+    "text": "Find a data set that satisfies the guidelines.\nWrite about:\n\nthe source of data\nwhen and how it was originally collected (by the curator, not necessarily how you found the data)\na brief description of the observations\n\nChoose 1-2 research questions and write a hypothesis for each.\nput your data in the data folder and push. glimpse the data"
   }
 ]
