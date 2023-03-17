@@ -1,0 +1,121 @@
+[
+  {
+    "objectID": "labs/lab-7.html",
+    "href": "labs/lab-7.html",
+    "title": "Lab 7 - Logistic regression",
+    "section": "",
+    "text": "Important\n\n\n\nThis lab is due Monday, March 27 at 5:00pm."
+  },
+  {
+    "objectID": "labs/lab-7.html#packages",
+    "href": "labs/lab-7.html#packages",
+    "title": "Lab 7 - Logistic regression",
+    "section": "Packages",
+    "text": "Packages\nYou’ll need the following packages for today’s lab.\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(dsbox)"
+  },
+  {
+    "objectID": "labs/lab-7.html#data",
+    "href": "labs/lab-7.html#data",
+    "title": "Lab 7 - Logistic regression",
+    "section": "Data",
+    "text": "Data\nThe data can be found in the dsbox package, and it’s called gss16. Since the dataset is distributed with the package, we don’t need to load it separately; it becomes available to us when we load the package.\nIf you would like to explicitly load the data into your environment so you can view it, you can do so by running this code.\n\ngss16 <- gss16\n\nYou can find out more about the dataset by inspecting its documentation, which you can access by running ?gss16 in the Console or using the Help menu in RStudio to search for gss16. You can also find this information here."
+  },
+  {
+    "objectID": "labs/lab-7.html#exercise-1---data-wrangling",
+    "href": "labs/lab-7.html#exercise-1---data-wrangling",
+    "title": "Lab 7 - Logistic regression",
+    "section": "Exercise 1 - Data wrangling",
+    "text": "Exercise 1 - Data wrangling\n\n\n\n\n\n\nImportant\n\n\n\nRemember: For each exercise, you should choose one person to type. All others should contribute to the discussion, but only one person should type up the answer, render the document, commit, and push to GitHub. All others should not touch the document.\n\n\n\nCreate a new data frame called gss16_advfront that includes the variables advfront, educ, polviews, and wrkstat. Then, use the drop_na() function to remove rows that contain NAs from this new data frame.\nTransform the advfront variable such that it has two levels: \"Strongly agree\" and \"Agree\" should both be mapped to \"Agree\" and the remaining levels should all be relabeled \"Not agree\". Make sure the resulting levels are in the following order: \"Agree\" and \"Not agree\".\n\nHint: use the factor() function inside a mutate() statement to relabel the original levels. Be sure to list the levels in order so that they are correctly ordered after relabeling.\n\nSimilarly to part b, combine the levels of the polviews variable such that levels that have the word “liberal” in them are lumped into a level called \"Liberal\" and those that have the word “conservative” in them are lumped into a level called \"Conservative\". Make sure the levels are in the following order: \"Conservative\" , \"Moderate\", and \"Liberal\". Finally, count() how many times each new level appears in the polviews variable.\n\nHint: be careful if you manually type out the levels in the original polviews variable to note that there are typos in two of the original levels “slightly conservative” and “extremely conservative” are both misspelled, and so you will need to match those misspellings in your call to factor().\n\n\n\n\n\n\nImportant\n\n\n\nAfter the team member working on Exercise 1 renders, commits, and pushes, all other team members should pull. Then, choose a new team member to write the answer to Exercise 2. (And so on for the remaining exercises.)"
+  },
+  {
+    "objectID": "labs/lab-7.html#exercise-2---train-and-test-sets",
+    "href": "labs/lab-7.html#exercise-2---train-and-test-sets",
+    "title": "Lab 7 - Logistic regression",
+    "section": "Exercise 2 - Train and test sets",
+    "text": "Exercise 2 - Train and test sets\nNow, let’s split the data into training and test sets so that we can evaluate the models we’re going to fit by how well they predict outcomes on data that wasn’t used to fit the models.\nSpecify a random seed of 1234 (i.e., include set.seed(1234) at the beginning of your code chunk), and then split gss16_advfront randomly into a training set train_data and a test set test_data. Do this so that the training set contains 80% of the rows of the original data."
+  },
+  {
+    "objectID": "labs/lab-7.html#exercise-3---logistic-regression",
+    "href": "labs/lab-7.html#exercise-3---logistic-regression",
+    "title": "Lab 7 - Logistic regression",
+    "section": "Exercise 3 - Logistic Regression",
+    "text": "Exercise 3 - Logistic Regression\n\nUsing the training data, fit a logistic regression model that predicts advfront using educ. In particular, the model should predict the probability that advfront has value \"Not agree\". Name this model model1. Report the tidy model output.\nWrite out the fitted model equation in proper notation. State the meaning of any variables in the context of the data.\nUsing your fitted model, report the estimated probability of agreeing with the following statement: Even if it brings no immediate benefits, scientific research that advances the frontiers of knowledge is necessary and should be supported by the federal government (Agree in advfront) if you have an education of 7 years."
+  },
+  {
+    "objectID": "labs/lab-7.html#exercise-4---another-model",
+    "href": "labs/lab-7.html#exercise-4---another-model",
+    "title": "Lab 7 - Logistic regression",
+    "section": "Exercise 4 - Another model",
+    "text": "Exercise 4 - Another model\n\nAgain using the training data, fit a new logistic regression model that adds the additional explanatory variable of polviews. Name this model model2. Report the tidy output.\nNow, report the estimated probability of agreeing with the following statement: Even if it brings no immediate benefits, scientific research that advances the frontiers of knowledge is necessary and should be supported by the federal government (Agree in advfront) if you have an education of 7 years and are Conservative."
+  },
+  {
+    "objectID": "labs/lab-7.html#exercise-5---evaluating-models-with-aic",
+    "href": "labs/lab-7.html#exercise-5---evaluating-models-with-aic",
+    "title": "Lab 7 - Logistic regression",
+    "section": "Exercise 5 - Evaluating models with AIC",
+    "text": "Exercise 5 - Evaluating models with AIC\n\nReport the AIC values for each of model1 and model2.\nBased on your results in part a, does it appear that including political views in addition to years of education is useful for modeling whether employees agree with the statement “Even if it brings no immediate benefits, scientific research that advances the frontiers of knowledge is necessary and should be supported by the federal government”? Explain."
+  },
+  {
+    "objectID": "labs/lab-7.html#exercise-6---evaluating-models-using-test-data",
+    "href": "labs/lab-7.html#exercise-6---evaluating-models-using-test-data",
+    "title": "Lab 7 - Logistic regression",
+    "section": "Exercise 6 - Evaluating models using test data",
+    "text": "Exercise 6 - Evaluating models using test data\n\nFor each of model1 and model2, report the number of false positive and false negatives when making predictions on the test_data with a decision boundary of 0.5.\nDo these results provide much information about which model you would prefer for a prediction task? If so, which model would you choose?\nDo you think a decision boundary of 0.5 makes sense here or would you adjust it?\n\nThe ROC curve provides a way to compare predictive performance of binary classifiers across the full range of decision boundaries. Notes about the ROC curve can be found here https://sta199-s23-2.github.io/ae-sa/ae-16-A.html."
+  },
+  {
+    "objectID": "prepare/prep21.html",
+    "href": "prepare/prep21.html",
+    "title": "Prepare",
+    "section": "",
+    "text": "Watch Central limit theorem\nRead (optional): 13.1, 13.2, 13.3: inference with mathematical models"
+  },
+  {
+    "objectID": "prepare/prep20.html",
+    "href": "prepare/prep20.html",
+    "title": "Prepare",
+    "section": "",
+    "text": "Watch Bootstrapping\nRead (optional): section 12"
+  },
+  {
+    "objectID": "prepare/prep22.html",
+    "href": "prepare/prep22.html",
+    "title": "Prepare",
+    "section": "",
+    "text": "Read 13.6 Case Study (interval): Stents\nRead 19.2 Mathematical model for a mean"
+  },
+  {
+    "objectID": "prepare/prep23.html",
+    "href": "prepare/prep23.html",
+    "title": "Prepare",
+    "section": "",
+    "text": "Watch Hypothesis testing\nRead (optional): chapter 11: hypothesis testing with randomization"
+  },
+  {
+    "objectID": "teaching-resources/GitHubClassroomManagement.html",
+    "href": "teaching-resources/GitHubClassroomManagement.html",
+    "title": "GitHub Classroom Management",
+    "section": "",
+    "text": "# $ git clone ghclass\n# $ git checkout artifacts\n\n#devtools::install(\"/path/to/ghclass\")\nEach code chunk below is designed to be self-contained (no dependency between chunks)."
+  },
+  {
+    "objectID": "teaching-resources/GitHubClassroomManagement.html#to-make-new-repos",
+    "href": "teaching-resources/GitHubClassroomManagement.html#to-make-new-repos",
+    "title": "GitHub Classroom Management",
+    "section": "To make new repos",
+    "text": "To make new repos\n\n\n\n\nCreate a new repo in the organization called “lab1” with a README.md\nPush to “lab1”: lab1.qmd, data/any_relevant_data.csv and optionally lab1.Rproj.\nSelect the repository, click “Settings” and check “Template repository”.\nFollow the code below.\n\n\n# initial assignment creation\norg = \"sta199-sp23-1\"\nusernames = ghclass::org_members(org)\n\n## edit this:\nassignment_template_repo = \"lab0_template\"\n\nghclass::org_create_assignment(\n  org = org,\n  repo = paste0(assignment_template_repo, \"-\", usernames),\n  user = usernames,\n  source_repo = paste0(org, \"/\", assignment_template_repo)\n)\n\n\n\n\nFeel free to test lab creation on my dummy account “fishswish” or on your own account with the code below\n\norg = \"sta199-sp23-1\"\nusernames = \"fishswish\"\nassignment_template_repo = \"lab0_template\"\nghclass::org_create_assignment(\n  org = org,\n  repo = paste0(assignment_template_repo, \"-\", usernames),\n  user = usernames,\n  source_repo = paste0(org, \"/\", assignment_template_repo)\n)\n\nIt’s possible some people are not in the organization and will need to be have additional repos created manually following the steps below:\n\ngo to template repo and click the green “Use this template” -> “Create a new repository” -> name it “lab-x-their_github_username” -> leave “Private” selected and click “Create repository from template”\nnext in the new repo go to “Settings” -> “Collaborators and Teams” -> click the green “Add people” button and type in their GitHub username.\nnext make sure to go to the “People” section of the organization and select “Invite member” so they join the organization too. Owning a repo in the org just makes them an outside collaborator. They still have to actually join the org"
+  },
+  {
+    "objectID": "teaching-resources/GitHubClassroomManagement.html#oops.-file-management-after-you-create-repos",
+    "href": "teaching-resources/GitHubClassroomManagement.html#oops.-file-management-after-you-create-repos",
+    "title": "GitHub Classroom Management",
+    "section": "Oops. File management after you create repos",
+    "text": "Oops. File management after you create repos\nThe magic happens in repo_add_file(). Be sure to edit/check each item below, specifically:\n\norg as appropriate\nrepos_to_modify object\narguments to repo_add_file()\n\n\norg = \"sta199-sp23-1\"\nusernames = ghclass::org_members(org)\n\n# get all existing labX repos\nrepos_to_modify = org_repos(org, filter = \"practice1-\") # edit this \"filter\"\n\nghclass::repo_add_file(repo = repos_to_modify,\n                       branch = \"main\",\n                       repo_folder = \"\", # edit this to be path to folder in repo\n                       message = \"update README\", # update to be a meaningful commit message\n                       file = \"~/Desktop/README.md\", # update local path to the file you want to add\n                       overwrite = TRUE) # if you want to overwrite or not"
+  },
+  {
+    "objectID": "teaching-resources/GitHubClassroomManagement.html#creating-team-assignments",
+    "href": "teaching-resources/GitHubClassroomManagement.html#creating-team-assignments",
+    "title": "GitHub Classroom Management",
+    "section": "Creating team assignments",
+    "text": "Creating team assignments\n\n# example data frame for demo purposes\n# you will need to format your data frame to look like this\nroster = data.frame(\n  github = c(\"fishswish\", \"athos00\"),\n  lab1 = rep(\"lab1-team1\", 2)\n)\n\n# edit each item below\norg_create_assignment(\n  org = \"sta199-sp23-1\",\n  user = roster$github,\n  repo = roster$lab1,\n  team = roster$lab1,\n  source_repo = \"sta199-sp23-1/lab1_template\",\n  private = TRUE\n)\n\n\nroster = data.frame(\n  github = c(\"devinjohnson7\", \"athos00\"),\n  lab1 = rep(\"lab1-team-awesome\", 2)\n)\n\n# edit each item below\norg_create_assignment(\n  org = \"sta323-sp23\",\n  user = roster$github,\n  repo = roster$lab1,\n  team = roster$lab1,\n  source_repo = \"sta323-sp23/lab-1\", # template file\n  private = TRUE\n)\n\n\norg = \"sta323-sp23\"\nrepos = ghclass::org_repos(org, filter = \"lab-2\")\n\n\n# repos = \"sta323-sp23/lab-1\"\nghclass::action_artifact_delete(repos, ids=action_artifacts(repos, which=\"all\"))"
+  }
+]
