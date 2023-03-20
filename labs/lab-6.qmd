@@ -1,5 +1,5 @@
 ---
-title: "Lab 7 - Logistic regression"
+title: "Lab 6 - Logistic regression"
 categories: "Lab"
 execute:
   eval: true
@@ -27,7 +27,7 @@ library(dsbox)
 ## Data
 
 The data can be found in the **dsbox** package, and it's called `gss16`. Since
-the dataset is distributed with the package, we don't need to load it
+the data set is distributed with the package, we don't need to load it
 separately; it becomes available to us when we load the package.
 
 If you would like to explicitly load the data into your environment so you can
@@ -39,7 +39,7 @@ view it, you can do so by running this code.
 gss16 <- gss16
 ```
 
-You can find out more about the dataset by inspecting its documentation, which
+You can find out more about the data set by inspecting its documentation, which
 you can access by running `?gss16` in the Console or using the Help menu in
 RStudio to search for `gss16`. You can also find this information
 [here](https://rstudio-education.github.io/dsbox/reference/gss16.html).
@@ -146,10 +146,6 @@ b)  Do these results provide much information about which model you would prefer
 
 c)  Do you think a decision boundary of 0.5 makes sense here or would you adjust
     it?
-
-The ROC curve provides a way to compare predictive performance of binary
-classifiers across the full range of decision boundaries. Notes about the ROC
-curve can be found here <https://sta199-s23-2.github.io/ae-sa/ae-16-A.html>.
 
 # Submission
 

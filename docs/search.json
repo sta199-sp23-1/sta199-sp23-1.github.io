@@ -117,5 +117,75 @@
     "title": "GitHub Classroom Management",
     "section": "Creating team assignments",
     "text": "Creating team assignments\n\n# example data frame for demo purposes\n# you will need to format your data frame to look like this\nroster = data.frame(\n  github = c(\"fishswish\", \"athos00\"),\n  lab1 = rep(\"lab1-team1\", 2)\n)\n\n# edit each item below\norg_create_assignment(\n  org = \"sta199-sp23-1\",\n  user = roster$github,\n  repo = roster$lab1,\n  team = roster$lab1,\n  source_repo = \"sta199-sp23-1/lab1_template\",\n  private = TRUE\n)\n\n\nroster = data.frame(\n  github = c(\"devinjohnson7\", \"athos00\"),\n  lab1 = rep(\"lab1-team-awesome\", 2)\n)\n\n# edit each item below\norg_create_assignment(\n  org = \"sta323-sp23\",\n  user = roster$github,\n  repo = roster$lab1,\n  team = roster$lab1,\n  source_repo = \"sta323-sp23/lab-1\", # template file\n  private = TRUE\n)\n\n\norg = \"sta323-sp23\"\nrepos = ghclass::org_repos(org, filter = \"lab-2\")\n\n\n# repos = \"sta323-sp23/lab-1\"\nghclass::action_artifact_delete(repos, ids=action_artifacts(repos, which=\"all\"))"
+  },
+  {
+    "objectID": "labs/lab-6.html",
+    "href": "labs/lab-6.html",
+    "title": "Lab 6 - Logistic regression",
+    "section": "",
+    "text": "Important\n\n\n\nThis lab is due Monday, March 27 at 5:00pm."
+  },
+  {
+    "objectID": "labs/lab-6.html#packages",
+    "href": "labs/lab-6.html#packages",
+    "title": "Lab 6 - Logistic regression",
+    "section": "Packages",
+    "text": "Packages\nYou’ll need the following packages for today’s lab.\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(dsbox)"
+  },
+  {
+    "objectID": "labs/lab-6.html#data",
+    "href": "labs/lab-6.html#data",
+    "title": "Lab 6 - Logistic regression",
+    "section": "Data",
+    "text": "Data\nThe data can be found in the dsbox package, and it’s called gss16. Since the data set is distributed with the package, we don’t need to load it separately; it becomes available to us when we load the package.\nIf you would like to explicitly load the data into your environment so you can view it, you can do so by running this code.\n\ngss16 <- gss16\n\nYou can find out more about the data set by inspecting its documentation, which you can access by running ?gss16 in the Console or using the Help menu in RStudio to search for gss16. You can also find this information here."
+  },
+  {
+    "objectID": "labs/lab-6.html#exercise-1---data-wrangling",
+    "href": "labs/lab-6.html#exercise-1---data-wrangling",
+    "title": "Lab 6 - Logistic regression",
+    "section": "Exercise 1 - Data wrangling",
+    "text": "Exercise 1 - Data wrangling\n\n\n\n\n\n\nImportant\n\n\n\nRemember: For each exercise, you should choose one person to type. All others should contribute to the discussion, but only one person should type up the answer, render the document, commit, and push to GitHub. All others should not touch the document.\n\n\n\nCreate a new data frame called gss16_advfront that includes the variables advfront, educ, polviews, and wrkstat. Then, use the drop_na() function to remove rows that contain NAs from this new data frame.\nTransform the advfront variable such that it has two levels: \"Strongly agree\" and \"Agree\" should both be mapped to \"Agree\" and the remaining levels should all be relabeled \"Not agree\". Make sure the resulting levels are in the following order: \"Agree\" and \"Not agree\".\n\nHint: use the factor() function inside a mutate() statement to relabel the original levels. Be sure to list the levels in order so that they are correctly ordered after relabeling.\n\nSimilarly to part b, combine the levels of the polviews variable such that levels that have the word “liberal” in them are lumped into a level called \"Liberal\" and those that have the word “conservative” in them are lumped into a level called \"Conservative\". Make sure the levels are in the following order: \"Conservative\" , \"Moderate\", and \"Liberal\". Finally, count() how many times each new level appears in the polviews variable.\n\nHint: be careful if you manually type out the levels in the original polviews variable to note that there are typos in two of the original levels “slightly conservative” and “extremely conservative” are both misspelled, and so you will need to match those misspellings in your call to factor().\n\n\n\n\n\n\nImportant\n\n\n\nAfter the team member working on Exercise 1 renders, commits, and pushes, all other team members should pull. Then, choose a new team member to write the answer to Exercise 2. (And so on for the remaining exercises.)"
+  },
+  {
+    "objectID": "labs/lab-6.html#exercise-2---train-and-test-sets",
+    "href": "labs/lab-6.html#exercise-2---train-and-test-sets",
+    "title": "Lab 6 - Logistic regression",
+    "section": "Exercise 2 - Train and test sets",
+    "text": "Exercise 2 - Train and test sets\nNow, let’s split the data into training and test sets so that we can evaluate the models we’re going to fit by how well they predict outcomes on data that wasn’t used to fit the models.\nSpecify a random seed of 1234 (i.e., include set.seed(1234) at the beginning of your code chunk), and then split gss16_advfront randomly into a training set train_data and a test set test_data. Do this so that the training set contains 80% of the rows of the original data."
+  },
+  {
+    "objectID": "labs/lab-6.html#exercise-3---logistic-regression",
+    "href": "labs/lab-6.html#exercise-3---logistic-regression",
+    "title": "Lab 6 - Logistic regression",
+    "section": "Exercise 3 - Logistic Regression",
+    "text": "Exercise 3 - Logistic Regression\n\nUsing the training data, fit a logistic regression model that predicts advfront using educ. In particular, the model should predict the probability that advfront has value \"Not agree\". Name this model model1. Report the tidy model output.\nWrite out the fitted model equation in proper notation. State the meaning of any variables in the context of the data.\nUsing your fitted model, report the estimated probability of agreeing with the following statement: Even if it brings no immediate benefits, scientific research that advances the frontiers of knowledge is necessary and should be supported by the federal government (Agree in advfront) if you have an education of 7 years."
+  },
+  {
+    "objectID": "labs/lab-6.html#exercise-4---another-model",
+    "href": "labs/lab-6.html#exercise-4---another-model",
+    "title": "Lab 6 - Logistic regression",
+    "section": "Exercise 4 - Another model",
+    "text": "Exercise 4 - Another model\n\nAgain using the training data, fit a new logistic regression model that adds the additional explanatory variable of polviews. Name this model model2. Report the tidy output.\nNow, report the estimated probability of agreeing with the following statement: Even if it brings no immediate benefits, scientific research that advances the frontiers of knowledge is necessary and should be supported by the federal government (Agree in advfront) if you have an education of 7 years and are Conservative."
+  },
+  {
+    "objectID": "labs/lab-6.html#exercise-5---evaluating-models-with-aic",
+    "href": "labs/lab-6.html#exercise-5---evaluating-models-with-aic",
+    "title": "Lab 6 - Logistic regression",
+    "section": "Exercise 5 - Evaluating models with AIC",
+    "text": "Exercise 5 - Evaluating models with AIC\n\nReport the AIC values for each of model1 and model2.\nBased on your results in part a, does it appear that including political views in addition to years of education is useful for modeling whether employees agree with the statement “Even if it brings no immediate benefits, scientific research that advances the frontiers of knowledge is necessary and should be supported by the federal government”? Explain."
+  },
+  {
+    "objectID": "labs/lab-6.html#exercise-6---evaluating-models-using-test-data",
+    "href": "labs/lab-6.html#exercise-6---evaluating-models-using-test-data",
+    "title": "Lab 6 - Logistic regression",
+    "section": "Exercise 6 - Evaluating models using test data",
+    "text": "Exercise 6 - Evaluating models using test data\n\nFor each of model1 and model2, report the number of false positive and false negatives when making predictions on the test_data with a decision boundary of 0.5.\nDo these results provide much information about which model you would prefer for a prediction task? If so, which model would you choose?\nDo you think a decision boundary of 0.5 makes sense here or would you adjust it?"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "STA 199: Introduction to Data Science",
+    "section": "",
+    "text": "week\n      dow\n      date\n      what\n      topic\n      prepare\n      slides\n      ae\n      hw\n      lab\n      exam\n      project\n      notes\n    \n  \n  \n    0\nW\nJan 11\nLab 0\nHello R!\n\n\n\n\n\n\n\n\n    \nF\nJan 13\nLec 1\nWelcome to STA 199\n\n\n\n\n\n\n\n\n    1\nM\nJan 16\n\nNo class -- Martin Luther King Jr. Day\n\n\n\n\n\n\n\n\n    \nW\nJan 18\nLec 2\nIntro to statistics and plotting\n\n\n\n\n\n\n\n\n    \nF\nJan 20\nLec 3\nVisualizing various types of data\n\n\n\n\n\n\n\n\n    2\nM\nJan 23\nLab 1\nData visualization\n\n\n\n\n\n\n\n\n    \nW\nJan 25\nLec 4\nGrammar of data wrangling\n\n\n\n\n\n\n\nHomework 1 released\n    \nF\nJan 27\nLec 5\nWorking with multiple data frames\n\n\n\n\n\n\n\n\n    3\nM\nJan 30\nLab 2\nData wrangling\n\n\n\n\n\n\n\n\n    \nW\nFeb 1\nLec 6\nTidy data\n\n\n\n\n\n\n\n\n    \nF\nFeb 3\nLec 7\nData types and classes\n\n\n\n\n\n\n\nHomework 1 due\n    4\nM\nFeb 6\nLab 3\nData tidying\n\n\n\n\n\n\n\n\n    \nW\nFeb 8\nLec 8\nSpatial data\n\n\n\n\n\n\n\n\n    \nF\nFeb 10\nLec 9\nTroubleshooting / Review\n\n\n\n\n\n\n\nExam 1 released! Due Feb 14 5:00pm\n    5\nM\nFeb 13\nLab\nNo lab: exam 1\n\n\n\n\n\n\n\n\n    \nW\nFeb 15\nLec 10\nIntro to probability\n\n\n\n\n\n\n\n\n    \nF\nFeb 17\nLec 11\nConditional probability\n\n\n\n\n\n\n\nHomework 2 released\n    6\nM\nFeb 20\nLab 4\nMerge conflicts\n\n\n\n\n\n\n\n\n    \nW\nFeb 22\nLec 12\nSimple regression\n\n\n\n\n\n\n\n\n    \nF\nFeb 24\nLec 13\nMultiple regression I\n\n\n\n\n\n\n\nHomework 2 due\n    7\nM\nFeb 27\nLab 5\nPredicting a numerical outcome\n\n\n\n\n\n\n\n\n    \nW\nMar 1\nLec 14\nMultiple regression II\n\n\n\n\n\n\n\nHomework 3 released; project announced\n    \nF\nMar 3\nLec 15\nModel selection\n\n\n\n\n\n\n\n\n    8\nM\nMar 6\nLab\nWork on project proposal\n\n\n\n\n\n\n\n\n    \nW\nMar 8\nLec 16\nLogistic regression\n\n\n\n\n\n\n\nHomework 3 due; statistics experience released\n    \nF\nMar 10\nLec 17\nPrediction\n\n\n\n\n\n\n\nProject proposal due\n    9\nM\nMar 13\n\nNo class -- Spring Break\n\n\n\n\n\n\n\n\n    \nW\nMar 15\n\nNo class -- Spring Break\n\n\n\n\n\n\n\n\n    \nF\nMar 17\n\nNo class -- Spring Break\n\n\n\n\n\n\n\n\n    10\nM\nMar 20\nLab\nLogistic regression (lab)\n\n\n\n\n\n\n\n\n    \nW\nMar 22\nLec 18\nBootstrap\n\n\n\n\n\n\n\n\n    \nF\nMar 24\nLec 19\nCentral limit theorem I\n\n\n\n\n\n\n\n\n    11\nM\nMar 27\nLab\n\n\n\n\n\n\n\n\n\n    \nW\nMar 29\nLec 20\nCentral limit theorem II\n\n\n\n\n\n\n\n\n    \nF\nMar 31\nLec 21\nHypothesis testing I\n\n\n\n\n\n\n\n\n    12\nM\nApr 3\nLab\nProject work day\n\n\n\n\n\n\n\n\n    \nW\nApr 5\nLec 22\nHypothesis testing II\n\n\n\n\n\n\n\n\n    \nF\nApr 7\nLec 23\nHypothesis testing III\n\n\n\n\n\n\n\n\n    13\nM\nApr 10\nLab\nProject peer review\n\n\n\n\n\n\n\n\n    \nW\nApr 12\nLec 24\nProject tips\n\n\n\n\n\n\n\n\n    \nF\nApr 14\nLec 25\nEthics\n\n\n\n\n\n\n\nExam 2 released! Due Tue April 18 5:00pm\n    14\nM\nApr 17\nLab\nNo lab: exam 2\n\n\n\n\n\n\n\n\n    \nW\nApr 19\nLec 26\nSpecial topic\n\n\n\n\n\n\n\n\n    \nF\nApr 21\nLec 27\nSpecial topic\n\n\n\n\n\n\n\n\n    15\nM\nApr 24\nLab\nProject presentations\n\n\n\n\n\n\n\n\n    \nW\nApr 26\nLec 28\nSpecial topic"
   }
 ]
