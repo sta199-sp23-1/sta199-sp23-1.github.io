@@ -4,7 +4,7 @@ categories: "Homework"
 ---
 
 ::: callout-important
-This homework is due Wednesday, March 29th at 5:00pm.
+This homework is due Friday, March 31st at 5:00pm.
 :::
 
 ## Getting Started
