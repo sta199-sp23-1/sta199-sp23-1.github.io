@@ -1,5 +1,5 @@
 ---
-title: "Bootstrap"
+title: "Central limit theorem"
 subtitle: "STA 199"
 editor: source
 format: html
@@ -11,21 +11,21 @@ execute:
 
 -   this `ae` is **due for grade**. Push your completed ae to GitHub within 48 hours to receive credit
 - project proposal feedback
-- [homework 4](/hw/hw-4.html) released
+- [homework 4](/hw/hw-4.html) due date updated
 
 ## Getting started
 
-Clone *your* `ae18-username` repo from the [GitHub organization](https://github.com/sta199-sp23-1/).
+Clone *your* `ae19-username` repo from the [GitHub organization](https://github.com/sta199-sp23-1/).
 
 
 ## Today
 
 By the end of today you will...
 
-- be able to draw a bootstrap sample and calculate a bootstrap statistic 
-- use `infer` to obtain a bootstrap distribution 
-- calculate a confidence interval from the bootstrap distribution
-- interpret a confidence interval in context of the data 
+- Use Central Limit Theorem to define distribution of sample means
+- Calculate probabilities from the normal distribution
+- Use Central Limit Theorem (CLT) to conduct inference on a population mean 
+
 
 ## Load packages
 
@@ -42,135 +42,175 @@ manhattan = read_csv(
   )
 ```
 
-## Notes (for reference)
 
-**Bootstrapping** is a re-sampling technique. The key idea is you have already collected a **sample** of size $N$ from the **population**. To create a **bootstrap** sample, you sample *with replacement* from your original sample $N$ times.
+## Notes
 
-Let's say you measure the height of five Duke students in meters:
+How do we know when to expect a normal distribution to show up?
+
+Looking at the data from last time, we can see an example where the distribution of **sample means** looked approximately normal but the distribution of **sample medians** does not.
+
+Example:
 
 ```{r}
-heights = c(1.51, 1.62, 1.89, 2.01, 1.78)
+set.seed(1)
+boot_dist = manhattan %>%
+  specify(response = rent) %>% 
+  generate(reps = 1000, type = "bootstrap")
 
-students = data.frame(heights)
+boot_dist %>%
+  calculate(stat = "mean") %>%
+  visualize() +
+  labs(x = "Sample mean", 
+       title = "Simulated distribution of the sample mean")
+
+boot_dist %>%
+  calculate(stat = "median") %>%
+  visualize() + 
+  labs(x = "Sample median",
+       title = "Simulated distribution of the sample median")
 ```
 
-There are many ways to create a bootstrap sample in R. We will focus on the `tidy` way below. which uses the `infer` package that loads with `tidymodels`.
+Are there times when the sample mean will not look normal?
 
-#### Example
+#### Demo
 
-```{r method-2}
-set.seed(2)
-students %>%
-  specify(response = heights) %>%
-  generate(reps = 1, type = "bootstrap")
+The proportion of observed successes for a binary variable is a sample mean. 
+
+**Scenario**: You flip a biased coin `numFlips` times and compute the sample mean (the proportion of flips that land heads). You repeat this experiment 1000 times and obtain a distribution of sample means. 
+
+- How does the shape of the distribution change as you increase the number of coin flips per sample?
+
+```{r}
+set.seed(714)
+numFlips = 1
+numHeads = rbinom(n = 1000, size = numFlips, prob = 0.9)
+df = data.frame(numHeads) # new data frame called df
+df %>%
+mutate(propHeads = numHeads / numFlips) %>%
+ggplot(aes(x = propHeads)) +
+geom_histogram(binwidth = .01)
 ```
 
-::: {.callout-note appearance="simple"}
-## Note
+## What is the central limit theorem?
 
-Sampling is **random**. Notice the *seed* above ensures we get the same bootstrap sample.
+The central limit theorem is a statement about the distribution of the sample mean, $\bar{x}$.
+
+The central limit theorem guarantees that, when certain criteria are satisfied, the sample mean ($\bar{x}$) is normally distributed.
+
+Specifically, if
+
+1. Observations in the sample are independent. Two rules of thumb to check this:
+
+	- completely random sampling
+	- if sampling without replacement, sample should be less than 10% of the population size
+
+and
+
+2. The sample is large enough. The required size varies in different contexts, but some good rules of thumb are: 
+
+	- if the population itself is normal, sample size does not matter.
+	- if numerical require, >30 observations
+	- if binary outcome, at least 10 successes and 10 failures.
+
+then 
+
+$$
+\bar{x} \sim N(\mu, \sigma / \sqrt{n})
+$$
+
+i.e. $\bar{x}$ is normally distributed (unimodal and symmetric with bell shape) with mean $\mu$ and standard deviation $\sigma / \sqrt{n}$. The standard deviation of the sampling distribution is called the **standard error**.
+
+:::{.callout-note}
+The standard deviation of the sample mean depends on the number of samples, $n$.
 :::
 
-From here, we can compute a bootstrap statistic. E.g.
+## Practice using CLT & Normal distribution
 
-```{r statistic-computation}
-set.seed(2)
-students %>%
-  specify(response = heights) %>%
-  generate(reps = 1, type = "bootstrap") %>%
-  calculate(stat = "median")
+Suppose the bone density for 65-year-old women is normally 
+distributed with mean $809 mg/cm^3$ and standard deviation of $140 mg/cm^3$.
 
+Let $x$ be the bone density of 65-year-old women. We can write this distribution of $x$ in mathematical notation as 
+
+$$x \sim N(809, 140)$$
+
+## Visualize the population distribution
+
+```{r visualize-normal}
+ggplot(data = data.frame(x = c(809 - 140*3, 809 + 140*3)), aes(x = x)) +
+  stat_function(fun = dnorm, args = list(mean = 809, sd = 140),
+                color = "black") +
+  stat_function(fun = dnorm, args = list(mean = 809, sd = 140/sqrt(10)),
+                color = "red",lty = 2) + theme_bw() +
+  labs(title = "Black solid line = population dist., Red dotted line = sampling dist.")
 ```
 
-
-## Example: rent in Manhattan
-
-On a given day in 2018, twenty one-bedroom apartments were randomly selected on Craigslist Manhattan from apartments listed as "by owner". The data are in the `manhattan` data frame.  We will use this sample to conduct inference on the typical rent of 1 bedroom apartments in Manhattan. 
-
-### Part 1: Drawing a bootstrap sample
-
-Let's start by using bootstrapping to estimate the **mean** rent of one-bedroom apartments in Manhattan. 
 
 #### Exercise 1
 
-What is a **point estimate** (i.e. single number summary) of the typical rent? 
+Before typing any code, based on what you know about the normal distribution, what do you expect the median bone density to be?
+
+What bone densities correspond to $Q_1$ (25th percentile), $Q_2$ (50th percentile), and $Q_3$ (the 75th percentile) of this distribution? Use the `qnorm()` function to calculate these values. 
 
 #### Exercise 2
 
-Let's bootstrap! 
+The densities of three woods are below:
 
-- To bootstrap we will sample with replacement by drawing a value from the box. 
-- How many draws do we need for our bootstrap sample? 
+- Plywood: 540 mg/cubic centimeter
+- Pine: 600 mg/cubic centimeter
+- Mahogany: 710 mg/cubic centimeter
 
-Fill in  the values from the bootstrap sample conducted in class. Once the values are filled in, un-comment the code. 
+- What is the probability that a randomly selected 65-year-old woman has bones less dense than Pine?
 
-```{r boot-sample}
-# class_bootstrap = c()
-
-```
+- Would you be surprised if a randomly selected 65-year-old  woman had bone density less than Mahogany? What if she had bone density less than Plywood? Use the respective probabilities to support your response. 
 
 #### Exercise 3
 
-- About what value do you expect the bootstrap statistic to take? 
-- Calculate the statistic from the bootstrap sample. 
+Suppose you want to analyze the mean bone density for a group of 10 randomly selected 65-year-old women. 
 
-```{r calc-boot-stat}
-# add code
+- Are the conditions for the Central Limit Theorem met?
 
+  - Independence? 
+  - Sample size/distribution? 
+  
+- What is the shape, center, and spread of the distribution of $\bar{x}$, the mean bone density for a group of 10 randomly selected 65-year-old women?
+
+- Write the distribution of $\bar{x}$ using mathematical notation. 
+
+#### Exercise 4
+
+- What is the probability that the mean bone density for the group of 10 randomly-selected 65-year-old women is less dense than Pine?
+
+- Would you be surprised if a group of 10 randomly-selected 65-year old women had a mean bone density less than Mahogany? What the group had a mean bone density less than Plywood? Use the respective probabilities to support your response. 
+
+#### Exercise 5
+
+Explain how your answers differ in Exercises 3 and 5.
+
+## Extra practice (on your own)
+
+Suppose the distribution of the number of minutes users engage with apps on an iPad has a mean of 8.2 minutes and standard deviation of 1 minute. Let $x$ be the number of minutes users engage with apps on an iPad, $\mu$ be the population mean and $\sigma$ the population standard deviation. Then,
+
+$$x \sim N(8.2, 1)$$
+
+Suppose you take a sample of 60 randomly selected app users and calculate the mean number of minutes they engage with apps on an iPad, $\bar{x}$. The conditions (independence & sample size/distribution) to apply the Central Limit Theorem are met. Then by the Central Limit Theorem
+
+$$\bar{x} \sim N(8.2, 1/\sqrt{60})$$
+
+-   What is the probability a randomly selected user engages with iPad apps for more than 8.3 minutes? Use `pnorm` for calculations.
+
+    ```{r review-1}
+    #add code
+    ```
+
+-   What is the probability the mean minutes of app engagement for a group of 60 randomly selected iPad users is more than 8.3 minutes? Use `pnorm` for calculations.
+
+    ```{r review-2}
+    #add code
+    ```
+
+-   What is the probability the mean minutes of app engagement for a group of 60 randomly selected iPad users is between 8.3 and 8.4 minutes? Use `pnorm` for calculations. 
+
+```{r review-3}
+    #add code
 ```
 
-### Part 2: Bootstrap confidence interval
-
-**We will calculate a 95% confidence interval for the mean rent of one-bedroom apartments in Manhattan.**
-
-We start by setting a seed to ensure our analysis is reproducible. 
-
-#### Generating the bootstrap distribution
-
-We can use R to take many bootstrap samples, compute a statistic and then view the bootstrap distribution of that statistic.
-
-Un-comment the lines and fill in the blanks to create the bootstrap distribution of sample means and save the results in the data frame `boot_dist`.    
-
-Use **1000 reps** for the in-class activity. (You will use about 10,000 reps for assignments outside of class.)
-
-```{r create-bootstrap-dist}
-set.seed(7182022)
-
-boot_dist = manhattan #%>%
-  #specify(______) %>%
-  #generate(______) %>%
-  #calculate(______)
-```
-
-- How many rows are in `boot_dist`? 
-- What does each row represent? 
-- What are the variables in `boot_dist`? What do they mean?
-
-#### Visualize the bootstrap distribution 
-
-A **sample statistic is a random variable**, we can look at its distribution.
-
-Visualize the bootstrap distribution using a histogram. Describe the shape and center of the distribution.
-
-```{r viz-bootstrap}
-# add code
-
-```
-
-#### Calculate the confidence interval
-
-Uncomment the lines and fill in the blanks to construct the 95% bootstrap confidence interval for the mean rent of one-bedroom apartments in Manhattan. 
-
-```{r confidence-interval-95}
-#___ %>%
-#  summarize(lower = quantile(______),
-  #          upper = quantile(______))
-```
-
-#### Interpret the interval
-
-Write the interpretation for the interval calculated above. 
-
-- Question: Does a confidence interval have to be symmetric?
-
-- What is one advantage to using a 90% confidence interval instead of a 95% confidence interval to estimate a parameter? - What is one advantage to using a 99% confidence interval instead of a 95% confidence interval to estimate a parameter? 

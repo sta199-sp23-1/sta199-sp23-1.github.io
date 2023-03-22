@@ -186,7 +186,7 @@
     "href": "index.html",
     "title": "STA 199: Introduction to Data Science",
     "section": "",
-    "text": "week\n      dow\n      date\n      what\n      topic\n      prepare\n      slides\n      ae\n      hw\n      lab\n      exam\n      project\n      notes\n    \n  \n  \n    0\nW\nJan 11\nLab 0\nHello R!\n\n\n\n\n\n\n\n\n    \nF\nJan 13\nLec 1\nWelcome to STA 199\n\n\n\n\n\n\n\n\n    1\nM\nJan 16\n\nNo class -- Martin Luther King Jr. Day\n\n\n\n\n\n\n\n\n    \nW\nJan 18\nLec 2\nIntro to statistics and plotting\n\n\n\n\n\n\n\n\n    \nF\nJan 20\nLec 3\nVisualizing various types of data\n\n\n\n\n\n\n\n\n    2\nM\nJan 23\nLab 1\nData visualization\n\n\n\n\n\n\n\n\n    \nW\nJan 25\nLec 4\nGrammar of data wrangling\n\n\n\n\n\n\n\nHomework 1 released\n    \nF\nJan 27\nLec 5\nWorking with multiple data frames\n\n\n\n\n\n\n\n\n    3\nM\nJan 30\nLab 2\nData wrangling\n\n\n\n\n\n\n\n\n    \nW\nFeb 1\nLec 6\nTidy data\n\n\n\n\n\n\n\n\n    \nF\nFeb 3\nLec 7\nData types and classes\n\n\n\n\n\n\n\nHomework 1 due\n    4\nM\nFeb 6\nLab 3\nData tidying\n\n\n\n\n\n\n\n\n    \nW\nFeb 8\nLec 8\nSpatial data\n\n\n\n\n\n\n\n\n    \nF\nFeb 10\nLec 9\nTroubleshooting / Review\n\n\n\n\n\n\n\nExam 1 released! Due Feb 14 5:00pm\n    5\nM\nFeb 13\nLab\nNo lab: exam 1\n\n\n\n\n\n\n\n\n    \nW\nFeb 15\nLec 10\nIntro to probability\n\n\n\n\n\n\n\n\n    \nF\nFeb 17\nLec 11\nConditional probability\n\n\n\n\n\n\n\nHomework 2 released\n    6\nM\nFeb 20\nLab 4\nMerge conflicts\n\n\n\n\n\n\n\n\n    \nW\nFeb 22\nLec 12\nSimple regression\n\n\n\n\n\n\n\n\n    \nF\nFeb 24\nLec 13\nMultiple regression I\n\n\n\n\n\n\n\nHomework 2 due\n    7\nM\nFeb 27\nLab 5\nPredicting a numerical outcome\n\n\n\n\n\n\n\n\n    \nW\nMar 1\nLec 14\nMultiple regression II\n\n\n\n\n\n\n\nHomework 3 released; project announced\n    \nF\nMar 3\nLec 15\nModel selection\n\n\n\n\n\n\n\n\n    8\nM\nMar 6\nLab\nWork on project proposal\n\n\n\n\n\n\n\n\n    \nW\nMar 8\nLec 16\nLogistic regression\n\n\n\n\n\n\n\nHomework 3 due; statistics experience released\n    \nF\nMar 10\nLec 17\nPrediction\n\n\n\n\n\n\n\nProject proposal due\n    9\nM\nMar 13\n\nNo class -- Spring Break\n\n\n\n\n\n\n\n\n    \nW\nMar 15\n\nNo class -- Spring Break\n\n\n\n\n\n\n\n\n    \nF\nMar 17\n\nNo class -- Spring Break\n\n\n\n\n\n\n\n\n    10\nM\nMar 20\nLab\nLogistic regression (lab)\n\n\n\n\n\n\n\n\n    \nW\nMar 22\nLec 18\nBootstrap\n\n\n\n\n\n\n\nHomework 4 released\n    \nF\nMar 24\nLec 19\nCentral limit theorem I\n\n\n\n\n\n\n\n\n    11\nM\nMar 27\nLab\n\n\n\n\n\n\n\n\n\n    \nW\nMar 29\nLec 20\nCentral limit theorem II\n\n\n\n\n\n\n\nHomework 4 due\n    \nF\nMar 31\nLec 21\nHypothesis testing I\n\n\n\n\n\n\n\n\n    12\nM\nApr 3\nLab\nProject work day\n\n\n\n\n\n\n\n\n    \nW\nApr 5\nLec 22\nHypothesis testing II\n\n\n\n\n\n\n\n\n    \nF\nApr 7\nLec 23\nHypothesis testing III\n\n\n\n\n\n\n\n\n    13\nM\nApr 10\nLab\nProject peer review\n\n\n\n\n\n\n\n\n    \nW\nApr 12\nLec 24\nProject tips\n\n\n\n\n\n\n\n\n    \nF\nApr 14\nLec 25\nEthics\n\n\n\n\n\n\n\nExam 2 released! Due Tue April 18 5:00pm\n    14\nM\nApr 17\nLab\nNo lab: exam 2\n\n\n\n\n\n\n\n\n    \nW\nApr 19\nLec 26\nSpecial topic\n\n\n\n\n\n\n\n\n    \nF\nApr 21\nLec 27\nSpecial topic\n\n\n\n\n\n\n\n\n    15\nM\nApr 24\nLab\nProject presentations\n\n\n\n\n\n\n\n\n    \nW\nApr 26\nLec 28\nSpecial topic"
+    "text": "week\n      dow\n      date\n      what\n      topic\n      prepare\n      slides\n      ae\n      hw\n      lab\n      exam\n      project\n      notes\n    \n  \n  \n    0\nW\nJan 11\nLab 0\nHello R!\n\n\n\n\n\n\n\n\n    \nF\nJan 13\nLec 1\nWelcome to STA 199\n\n\n\n\n\n\n\n\n    1\nM\nJan 16\n\nNo class -- Martin Luther King Jr. Day\n\n\n\n\n\n\n\n\n    \nW\nJan 18\nLec 2\nIntro to statistics and plotting\n\n\n\n\n\n\n\n\n    \nF\nJan 20\nLec 3\nVisualizing various types of data\n\n\n\n\n\n\n\n\n    2\nM\nJan 23\nLab 1\nData visualization\n\n\n\n\n\n\n\n\n    \nW\nJan 25\nLec 4\nGrammar of data wrangling\n\n\n\n\n\n\n\nHomework 1 released\n    \nF\nJan 27\nLec 5\nWorking with multiple data frames\n\n\n\n\n\n\n\n\n    3\nM\nJan 30\nLab 2\nData wrangling\n\n\n\n\n\n\n\n\n    \nW\nFeb 1\nLec 6\nTidy data\n\n\n\n\n\n\n\n\n    \nF\nFeb 3\nLec 7\nData types and classes\n\n\n\n\n\n\n\nHomework 1 due\n    4\nM\nFeb 6\nLab 3\nData tidying\n\n\n\n\n\n\n\n\n    \nW\nFeb 8\nLec 8\nSpatial data\n\n\n\n\n\n\n\n\n    \nF\nFeb 10\nLec 9\nTroubleshooting / Review\n\n\n\n\n\n\n\nExam 1 released! Due Feb 14 5:00pm\n    5\nM\nFeb 13\nLab\nNo lab: exam 1\n\n\n\n\n\n\n\n\n    \nW\nFeb 15\nLec 10\nIntro to probability\n\n\n\n\n\n\n\n\n    \nF\nFeb 17\nLec 11\nConditional probability\n\n\n\n\n\n\n\nHomework 2 released\n    6\nM\nFeb 20\nLab 4\nMerge conflicts\n\n\n\n\n\n\n\n\n    \nW\nFeb 22\nLec 12\nSimple regression\n\n\n\n\n\n\n\n\n    \nF\nFeb 24\nLec 13\nMultiple regression I\n\n\n\n\n\n\n\nHomework 2 due\n    7\nM\nFeb 27\nLab 5\nPredicting a numerical outcome\n\n\n\n\n\n\n\n\n    \nW\nMar 1\nLec 14\nMultiple regression II\n\n\n\n\n\n\n\nHomework 3 released; project announced\n    \nF\nMar 3\nLec 15\nModel selection\n\n\n\n\n\n\n\n\n    8\nM\nMar 6\nLab\nWork on project proposal\n\n\n\n\n\n\n\n\n    \nW\nMar 8\nLec 16\nLogistic regression\n\n\n\n\n\n\n\nHomework 3 due; statistics experience released\n    \nF\nMar 10\nLec 17\nPrediction\n\n\n\n\n\n\n\nProject proposal due\n    9\nM\nMar 13\n\nNo class -- Spring Break\n\n\n\n\n\n\n\n\n    \nW\nMar 15\n\nNo class -- Spring Break\n\n\n\n\n\n\n\n\n    \nF\nMar 17\n\nNo class -- Spring Break\n\n\n\n\n\n\n\n\n    10\nM\nMar 20\nLab\nLogistic regression (lab)\n\n\n\n\n\n\n\n\n    \nW\nMar 22\nLec 18\nBootstrap\n\n\n\n\n\n\n\nHomework 4 released\n    \nF\nMar 24\nLec 19\nCentral limit theorem I\n\n\n\n\n\n\n\n\n    11\nM\nMar 27\nLab\n\n\n\n\n\n\n\n\n\n    \nW\nMar 29\nLec 20\nCentral limit theorem II\n\n\n\n\n\n\n\n\n    \nF\nMar 31\nLec 21\nHypothesis testing I\n\n\n\n\n\n\n\nHomework 4 due\n    12\nM\nApr 3\nLab\nProject work day\n\n\n\n\n\n\n\n\n    \nW\nApr 5\nLec 22\nHypothesis testing II\n\n\n\n\n\n\n\n\n    \nF\nApr 7\nLec 23\nHypothesis testing III\n\n\n\n\n\n\n\n\n    13\nM\nApr 10\nLab\nProject peer review\n\n\n\n\n\n\n\n\n    \nW\nApr 12\nLec 24\nProject tips\n\n\n\n\n\n\n\n\n    \nF\nApr 14\nLec 25\nEthics\n\n\n\n\n\n\n\nExam 2 released! Due Tue April 18 5:00pm\n    14\nM\nApr 17\nLab\nNo lab: exam 2\n\n\n\n\n\n\n\n\n    \nW\nApr 19\nLec 26\nSpecial topic\n\n\n\n\n\n\n\n\n    \nF\nApr 21\nLec 27\nSpecial topic\n\n\n\n\n\n\n\n\n    15\nM\nApr 24\nLab\nProject presentations\n\n\n\n\n\n\n\n\n    \nW\nApr 26\nLec 28\nSpecial topic"
   },
   {
     "objectID": "ae/ae-18.html",
@@ -275,35 +275,35 @@
   {
     "objectID": "ae/ae-19.html",
     "href": "ae/ae-19.html",
-    "title": "Bootstrap",
+    "title": "Central limit theorem",
     "section": "",
-    "text": "this ae is due for grade. Push your completed ae to GitHub within 48 hours to receive credit\nproject proposal feedback\nhomework 4 released"
+    "text": "this ae is due for grade. Push your completed ae to GitHub within 48 hours to receive credit\nproject proposal feedback\nhomework 4 due date updated"
   },
   {
     "objectID": "ae/ae-19.html#getting-started",
     "href": "ae/ae-19.html#getting-started",
-    "title": "Bootstrap",
+    "title": "Central limit theorem",
     "section": "Getting started",
-    "text": "Getting started\nClone your ae18-username repo from the GitHub organization."
+    "text": "Getting started\nClone your ae19-username repo from the GitHub organization."
   },
   {
     "objectID": "ae/ae-19.html#today",
     "href": "ae/ae-19.html#today",
-    "title": "Bootstrap",
+    "title": "Central limit theorem",
     "section": "Today",
-    "text": "Today\nBy the end of today you will…\n\nbe able to draw a bootstrap sample and calculate a bootstrap statistic\nuse infer to obtain a bootstrap distribution\ncalculate a confidence interval from the bootstrap distribution\ninterpret a confidence interval in context of the data"
+    "text": "Today\nBy the end of today you will…\n\nUse Central Limit Theorem to define distribution of sample means\nCalculate probabilities from the normal distribution\nUse Central Limit Theorem (CLT) to conduct inference on a population mean"
   },
   {
     "objectID": "ae/ae-19.html#load-packages",
     "href": "ae/ae-19.html#load-packages",
-    "title": "Bootstrap",
+    "title": "Central limit theorem",
     "section": "Load packages",
     "text": "Load packages\n\nlibrary(tidyverse)\nlibrary(tidymodels)"
   },
   {
     "objectID": "ae/ae-19.html#load-data",
     "href": "ae/ae-19.html#load-data",
-    "title": "Bootstrap",
+    "title": "Central limit theorem",
     "section": "Load data",
     "text": "Load data\n\nmanhattan = read_csv(\n  \"https://sta101-fa22.netlify.app/static/appex/data/manhattan.csv\"\n  )"
   },
@@ -383,5 +383,40 @@
     "title": "Syllabus",
     "section": "Additional resources",
     "text": "Additional resources\nStudent mental health and wellness are of primary importance at Duke, and the university offers resources to support students in managing daily stress and self-care. Duke offers several resources for students to seek assistance on coursework and to nurture daily habits that support overall well-being, some of which are listed below\n\nThe Academic Resource Center: (919) 684-5917, theARC@duke.edu, or arc.duke.edu. The Academic Resource Center (the ARC) offers services to support students academically during their undergraduate careers at Duke. The ARC can provide support with time management, academic skills and strategies, course-specific tutoring, and more. ARC services are available free to any Duke undergraduate student, studying any discipline.\nDuWell: (919) 681-8421, provides Moments of Mindfulness (stress management and resilience building) and meditation programming (Koru workshop) to assist students in developing a daily emotional well-being practice. To see schedules for programs please see https://studentaffairs.duke.edu/duwell. All are welcome and no experience necessary.\n\nIf your mental health concerns and/or stressful events negatively affect your daily emotional state, academic performance, or ability to participate in your daily activities, many resources are available to help you through difficult times. Duke encourages all students to access these resources.\n\nDukeReach. Provides comprehensive outreach services to identify and support students in managing all aspects of well-being. If you have concerns about a student’s behavior or health visit the website for resources and assistance: https://students.duke.edu/wellness/dukereach/\nCounseling and Psychological Services (CAPS). CAPS services include individual and group counseling services, psychiatric services, and workshops. To initiate services, walk-in/call-in 9-4 M,W,Th,F and 9-6 Tuesdays. CAPS also provides referral to off- campus resources for specialized care.\n\n660-1000 or https://students.duke.edu/wellness/caps/\n\nTimelyCare (formerly known as Blue Devils Care). An online platform that is a convenient, confidential, and free way for Duke students to receive 24/7 mental health support through TalkNow and scheduled counseling. bluedevilscare.duke.edu"
+  },
+  {
+    "objectID": "ae/ae-19.html#notes",
+    "href": "ae/ae-19.html#notes",
+    "title": "Central limit theorem",
+    "section": "Notes",
+    "text": "Notes\nHow do we know when to expect a normal distribution to show up?\nLooking at the data from last time, we can see an example where the distribution of sample means looked approximately normal but the distribution of sample medians does not.\nExample:\n\nset.seed(1)\nboot_dist = manhattan %>%\n  specify(response = rent) %>% \n  generate(reps = 1000, type = \"bootstrap\")\n\nboot_dist %>%\n  calculate(stat = \"mean\") %>%\n  visualize() +\n  labs(x = \"Sample mean\", \n       title = \"Simulated distribution of the sample mean\")\n\n\n\nboot_dist %>%\n  calculate(stat = \"median\") %>%\n  visualize() + \n  labs(x = \"Sample median\",\n       title = \"Simulated distribution of the sample median\")\n\n\n\n\nAre there times when the sample mean will not look normal?\n\nDemo\nThe proportion of observed successes for a binary variable is a sample mean.\nScenario: You flip a biased coin numFlips times and compute the sample mean (the proportion of flips that land heads). You repeat this experiment 1000 times and obtain a distribution of sample means.\n\nHow does the shape of the distribution change as you increase the number of coin flips per sample?\n\n\nset.seed(714)\nnumFlips = 1\nnumHeads = rbinom(n = 1000, size = numFlips, prob = 0.9)\ndf = data.frame(numHeads) # new data frame called df\ndf %>%\nmutate(propHeads = numHeads / numFlips) %>%\nggplot(aes(x = propHeads)) +\ngeom_histogram(binwidth = .01)"
+  },
+  {
+    "objectID": "ae/ae-19.html#what-is-the-central-limit-theorem",
+    "href": "ae/ae-19.html#what-is-the-central-limit-theorem",
+    "title": "Central limit theorem",
+    "section": "What is the central limit theorem?",
+    "text": "What is the central limit theorem?\nThe central limit theorem is a statement about the distribution of the sample mean, \\(\\bar{x}\\).\nThe central limit theorem guarantees that, when certain criteria are satisfied, the sample mean (\\(\\bar{x}\\)) is normally distributed.\nSpecifically, if\n\nObservations in the sample are independent. Two rules of thumb to check this:\n\ncompletely random sampling\nif sampling without replacement, sample should be less than 10% of the population size\n\n\nand\n\nThe sample is large enough. The required size varies in different contexts, but some good rules of thumb are:\n\nif the population itself is normal, sample size does not matter.\nif numerical require, >30 observations\nif binary outcome, at least 10 successes and 10 failures.\n\n\nthen\n\\[\n\\bar{x} \\sim N(\\mu, \\sigma / \\sqrt{n})\n\\]\ni.e. \\(\\bar{x}\\) is normally distributed (unimodal and symmetric with bell shape) with mean \\(\\mu\\) and standard deviation \\(\\sigma / \\sqrt{n}\\). The standard deviation of the sampling distribution is called the standard error.\n\n\n\n\n\n\nNote\n\n\n\nThe standard deviation of the sample mean depends on the number of samples, \\(n\\)."
+  },
+  {
+    "objectID": "ae/ae-19.html#practice-using-clt-normal-distribution",
+    "href": "ae/ae-19.html#practice-using-clt-normal-distribution",
+    "title": "Central limit theorem",
+    "section": "Practice using CLT & Normal distribution",
+    "text": "Practice using CLT & Normal distribution\nSuppose the bone density for 65-year-old women is normally distributed with mean \\(809 mg/cm^3\\) and standard deviation of \\(140 mg/cm^3\\).\nLet \\(x\\) be the bone density of 65-year-old women. We can write this distribution of \\(x\\) in mathematical notation as\n\\[x \\sim N(809, 140)\\]"
+  },
+  {
+    "objectID": "ae/ae-19.html#visualize-the-population-distribution",
+    "href": "ae/ae-19.html#visualize-the-population-distribution",
+    "title": "Central limit theorem",
+    "section": "Visualize the population distribution",
+    "text": "Visualize the population distribution\n\nggplot(data = data.frame(x = c(809 - 140*3, 809 + 140*3)), aes(x = x)) +\n  stat_function(fun = dnorm, args = list(mean = 809, sd = 140),\n                color = \"black\") +\n  stat_function(fun = dnorm, args = list(mean = 809, sd = 140/sqrt(10)),\n                color = \"red\",lty = 2) + theme_bw() +\n  labs(title = \"Black solid line = population dist., Red dotted line = sampling dist.\")\n\n\n\n\n\nExercise 1\nBefore typing any code, based on what you know about the normal distribution, what do you expect the median bone density to be?\nWhat bone densities correspond to \\(Q_1\\) (25th percentile), \\(Q_2\\) (50th percentile), and \\(Q_3\\) (the 75th percentile) of this distribution? Use the qnorm() function to calculate these values.\n\n\nExercise 2\nThe densities of three woods are below:\n\nPlywood: 540 mg/cubic centimeter\nPine: 600 mg/cubic centimeter\nMahogany: 710 mg/cubic centimeter\nWhat is the probability that a randomly selected 65-year-old woman has bones less dense than Pine?\nWould you be surprised if a randomly selected 65-year-old woman had bone density less than Mahogany? What if she had bone density less than Plywood? Use the respective probabilities to support your response.\n\n\n\nExercise 3\nSuppose you want to analyze the mean bone density for a group of 10 randomly selected 65-year-old women.\n\nAre the conditions for the Central Limit Theorem met?\n\nIndependence?\nSample size/distribution?\n\nWhat is the shape, center, and spread of the distribution of \\(\\bar{x}\\), the mean bone density for a group of 10 randomly selected 65-year-old women?\nWrite the distribution of \\(\\bar{x}\\) using mathematical notation.\n\n\n\nExercise 4\n\nWhat is the probability that the mean bone density for the group of 10 randomly-selected 65-year-old women is less dense than Pine?\nWould you be surprised if a group of 10 randomly-selected 65-year old women had a mean bone density less than Mahogany? What the group had a mean bone density less than Plywood? Use the respective probabilities to support your response.\n\n\n\nExercise 5\nExplain how your answers differ in Exercises 3 and 5."
+  },
+  {
+    "objectID": "ae/ae-19.html#extra-practice-on-your-own",
+    "href": "ae/ae-19.html#extra-practice-on-your-own",
+    "title": "Central limit theorem",
+    "section": "Extra practice (on your own)",
+    "text": "Extra practice (on your own)\nSuppose the distribution of the number of minutes users engage with apps on an iPad has a mean of 8.2 minutes and standard deviation of 1 minute. Let \\(x\\) be the number of minutes users engage with apps on an iPad, \\(\\mu\\) be the population mean and \\(\\sigma\\) the population standard deviation. Then,\n\\[x \\sim N(8.2, 1)\\]\nSuppose you take a sample of 60 randomly selected app users and calculate the mean number of minutes they engage with apps on an iPad, \\(\\bar{x}\\). The conditions (independence & sample size/distribution) to apply the Central Limit Theorem are met. Then by the Central Limit Theorem\n\\[\\bar{x} \\sim N(8.2, 1/\\sqrt{60})\\]\n\nWhat is the probability a randomly selected user engages with iPad apps for more than 8.3 minutes? Use pnorm for calculations.\n\n#add code\n\nWhat is the probability the mean minutes of app engagement for a group of 60 randomly selected iPad users is more than 8.3 minutes? Use pnorm for calculations.\n\n#add code\n\nWhat is the probability the mean minutes of app engagement for a group of 60 randomly selected iPad users is between 8.3 and 8.4 minutes? Use pnorm for calculations.\n\n\n    #add code"
   }
 ]

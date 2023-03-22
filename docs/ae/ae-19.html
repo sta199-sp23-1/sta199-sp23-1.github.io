@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STA 199 - Bootstrap</title>
+<title>STA 199 - Central limit theorem</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -118,7 +118,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta property="og:title" content="STA 199 - Bootstrap">
+<meta property="og:title" content="STA 199 - Central limit theorem">
 <meta property="og:description" content="STA 199">
 <meta property="og:site-name" content="STA 199">
 </head>
@@ -129,7 +129,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Bootstrap</h1>
+      <h1 class="quarto-secondary-nav-title">Central limit theorem</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -241,12 +241,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#today" id="toc-today" class="nav-link" data-scroll-target="#today">Today</a></li>
   <li><a href="#load-packages" id="toc-load-packages" class="nav-link" data-scroll-target="#load-packages">Load packages</a></li>
   <li><a href="#load-data" id="toc-load-data" class="nav-link" data-scroll-target="#load-data">Load data</a></li>
-  <li><a href="#notes-for-reference" id="toc-notes-for-reference" class="nav-link" data-scroll-target="#notes-for-reference">Notes (for reference)</a></li>
-  <li><a href="#example-rent-in-manhattan" id="toc-example-rent-in-manhattan" class="nav-link" data-scroll-target="#example-rent-in-manhattan">Example: rent in Manhattan</a>
-  <ul class="collapse">
-  <li><a href="#part-1-drawing-a-bootstrap-sample" id="toc-part-1-drawing-a-bootstrap-sample" class="nav-link" data-scroll-target="#part-1-drawing-a-bootstrap-sample">Part 1: Drawing a bootstrap sample</a></li>
-  <li><a href="#part-2-bootstrap-confidence-interval" id="toc-part-2-bootstrap-confidence-interval" class="nav-link" data-scroll-target="#part-2-bootstrap-confidence-interval">Part 2: Bootstrap confidence interval</a></li>
-  </ul></li>
+  <li><a href="#notes" id="toc-notes" class="nav-link" data-scroll-target="#notes">Notes</a></li>
+  <li><a href="#what-is-the-central-limit-theorem" id="toc-what-is-the-central-limit-theorem" class="nav-link" data-scroll-target="#what-is-the-central-limit-theorem">What is the central limit theorem?</a></li>
+  <li><a href="#practice-using-clt-normal-distribution" id="toc-practice-using-clt-normal-distribution" class="nav-link" data-scroll-target="#practice-using-clt-normal-distribution">Practice using CLT &amp; Normal distribution</a></li>
+  <li><a href="#visualize-the-population-distribution" id="toc-visualize-the-population-distribution" class="nav-link" data-scroll-target="#visualize-the-population-distribution">Visualize the population distribution</a></li>
+  <li><a href="#extra-practice-on-your-own" id="toc-extra-practice-on-your-own" class="nav-link" data-scroll-target="#extra-practice-on-your-own">Extra practice (on your own)</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/sta199-f22-1/sta199-f22-1.github.io/edit/main/ae/ae-19.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/sta199-f22-1/sta199-f22-1.github.io/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -255,7 +254,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Bootstrap</h1>
+<h1 class="title d-none d-lg-block">Central limit theorem</h1>
 <p class="subtitle lead">STA 199</p>
 </div>
 
@@ -275,21 +274,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>this <code>ae</code> is <strong>due for grade</strong>. Push your completed ae to GitHub within 48 hours to receive credit</li>
 <li>project proposal feedback</li>
-<li><a href="../hw/hw-4.html">homework 4</a> released</li>
+<li><a href="../hw/hw-4.html">homework 4</a> due date updated</li>
 </ul>
 </section>
 <section id="getting-started" class="level2">
 <h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
-<p>Clone <em>your</em> <code>ae18-username</code> repo from the <a href="https://github.com/sta199-sp23-1/">GitHub organization</a>.</p>
+<p>Clone <em>your</em> <code>ae19-username</code> repo from the <a href="https://github.com/sta199-sp23-1/">GitHub organization</a>.</p>
 </section>
 <section id="today" class="level2">
 <h2 class="anchored" data-anchor-id="today">Today</h2>
 <p>By the end of today you will…</p>
 <ul>
-<li>be able to draw a bootstrap sample and calculate a bootstrap statistic</li>
-<li>use <code>infer</code> to obtain a bootstrap distribution</li>
-<li>calculate a confidence interval from the bootstrap distribution</li>
-<li>interpret a confidence interval in context of the data</li>
+<li>Use Central Limit Theorem to define distribution of sample means</li>
+<li>Calculate probabilities from the normal distribution</li>
+<li>Use Central Limit Theorem (CLT) to conduct inference on a population mean</li>
 </ul>
 </section>
 <section id="load-packages" class="level2">
@@ -307,37 +305,84 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="notes-for-reference" class="level2">
-<h2 class="anchored" data-anchor-id="notes-for-reference">Notes (for reference)</h2>
-<p><strong>Bootstrapping</strong> is a re-sampling technique. The key idea is you have already collected a <strong>sample</strong> of size <span class="math inline">\(N\)</span> from the <strong>population</strong>. To create a <strong>bootstrap</strong> sample, you sample <em>with replacement</em> from your original sample <span class="math inline">\(N\)</span> times.</p>
-<p>Let’s say you measure the height of five Duke students in meters:</p>
+<section id="notes" class="level2">
+<h2 class="anchored" data-anchor-id="notes">Notes</h2>
+<p>How do we know when to expect a normal distribution to show up?</p>
+<p>Looking at the data from last time, we can see an example where the distribution of <strong>sample means</strong> looked approximately normal but the distribution of <strong>sample medians</strong> does not.</p>
+<p>Example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>heights <span class="ot">=</span> <span class="fu">c</span>(<span class="fl">1.51</span>, <span class="fl">1.62</span>, <span class="fl">1.89</span>, <span class="fl">2.01</span>, <span class="fl">1.78</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>students <span class="ot">=</span> <span class="fu">data.frame</span>(heights)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>boot_dist <span class="ot">=</span> manhattan <span class="sc">%&gt;%</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(<span class="at">response =</span> rent) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">1000</span>, <span class="at">type =</span> <span class="st">"bootstrap"</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>boot_dist <span class="sc">%&gt;%</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"mean"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">visualize</span>() <span class="sc">+</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Sample mean"</span>, </span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Simulated distribution of the sample mean"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="ae-19_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
 </div>
-<p>There are many ways to create a bootstrap sample in R. We will focus on the <code>tidy</code> way below. which uses the <code>infer</code> package that loads with <code>tidymodels</code>.</p>
-<section id="example" class="level4">
-<h4 class="anchored" data-anchor-id="example">Example</h4>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>boot_dist <span class="sc">%&gt;%</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"median"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">visualize</span>() <span class="sc">+</span> </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Sample median"</span>,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Simulated distribution of the sample median"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="ae-19_files/figure-html/unnamed-chunk-2-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Are there times when the sample mean will not look normal?</p>
+<section id="demo" class="level4">
+<h4 class="anchored" data-anchor-id="demo">Demo</h4>
+<p>The proportion of observed successes for a binary variable is a sample mean.</p>
+<p><strong>Scenario</strong>: You flip a biased coin <code>numFlips</code> times and compute the sample mean (the proportion of flips that land heads). You repeat this experiment 1000 times and obtain a distribution of sample means.</p>
+<ul>
+<li>How does the shape of the distribution change as you increase the number of coin flips per sample?</li>
+</ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>students <span class="sc">%&gt;%</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(<span class="at">response =</span> heights) <span class="sc">%&gt;%</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">1</span>, <span class="at">type =</span> <span class="st">"bootstrap"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Response: heights (numeric)
-# A tibble: 5 × 2
-# Groups:   replicate [1]
-  replicate heights
-      &lt;int&gt;   &lt;dbl&gt;
-1         1    1.78
-2         1    1.51
-3         1    1.78
-4         1    1.51
-5         1    2.01</code></pre>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">714</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>numFlips <span class="ot">=</span> <span class="dv">1</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>numHeads <span class="ot">=</span> <span class="fu">rbinom</span>(<span class="at">n =</span> <span class="dv">1000</span>, <span class="at">size =</span> numFlips, <span class="at">prob =</span> <span class="fl">0.9</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">=</span> <span class="fu">data.frame</span>(numHeads) <span class="co"># new data frame called df</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(<span class="at">propHeads =</span> numHeads <span class="sc">/</span> numFlips) <span class="sc">%&gt;%</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> propHeads)) <span class="sc">+</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> .<span class="dv">01</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="ae-19_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<div class="callout-note callout callout-style-simple callout-captioned">
+</section>
+</section>
+<section id="what-is-the-central-limit-theorem" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-the-central-limit-theorem">What is the central limit theorem?</h2>
+<p>The central limit theorem is a statement about the distribution of the sample mean, <span class="math inline">\(\bar{x}\)</span>.</p>
+<p>The central limit theorem guarantees that, when certain criteria are satisfied, the sample mean (<span class="math inline">\(\bar{x}\)</span>) is normally distributed.</p>
+<p>Specifically, if</p>
+<ol type="1">
+<li><p>Observations in the sample are independent. Two rules of thumb to check this:</p>
+<ul>
+<li>completely random sampling</li>
+<li>if sampling without replacement, sample should be less than 10% of the population size</li>
+</ul></li>
+</ol>
+<p>and</p>
+<ol start="2" type="1">
+<li><p>The sample is large enough. The required size varies in different contexts, but some good rules of thumb are:</p>
+<ul>
+<li>if the population itself is normal, sample size does not matter.</li>
+<li>if numerical require, &gt;30 observations</li>
+<li>if binary outcome, at least 10 successes and 10 failures.</li>
+</ul></li>
+</ol>
+<p>then</p>
+<p><span class="math display">\[
+\bar{x} \sim N(\mu, \sigma / \sqrt{n})
+\]</span></p>
+<p>i.e.&nbsp;<span class="math inline">\(\bar{x}\)</span> is normally distributed (unimodal and symmetric with bell shape) with mean <span class="math inline">\(\mu\)</span> and standard deviation <span class="math inline">\(\sigma / \sqrt{n}\)</span>. The standard deviation of the sampling distribution is called the <strong>standard error</strong>.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -347,110 +392,92 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Sampling is <strong>random</strong>. Notice the <em>seed</em> above ensures we get the same bootstrap sample.</p>
+<p>The standard deviation of the sample mean depends on the number of samples, <span class="math inline">\(n\)</span>.</p>
 </div>
 </div>
-<p>From here, we can compute a bootstrap statistic. E.g.</p>
+</section>
+<section id="practice-using-clt-normal-distribution" class="level2">
+<h2 class="anchored" data-anchor-id="practice-using-clt-normal-distribution">Practice using CLT &amp; Normal distribution</h2>
+<p>Suppose the bone density for 65-year-old women is normally distributed with mean <span class="math inline">\(809 mg/cm^3\)</span> and standard deviation of <span class="math inline">\(140 mg/cm^3\)</span>.</p>
+<p>Let <span class="math inline">\(x\)</span> be the bone density of 65-year-old women. We can write this distribution of <span class="math inline">\(x\)</span> in mathematical notation as</p>
+<p><span class="math display">\[x \sim N(809, 140)\]</span></p>
+</section>
+<section id="visualize-the-population-distribution" class="level2">
+<h2 class="anchored" data-anchor-id="visualize-the-population-distribution">Visualize the population distribution</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>students <span class="sc">%&gt;%</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(<span class="at">response =</span> heights) <span class="sc">%&gt;%</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">1</span>, <span class="at">type =</span> <span class="st">"bootstrap"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"median"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Response: heights (numeric)
-# A tibble: 1 × 1
-   stat
-  &lt;dbl&gt;
-1  1.78</code></pre>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">809</span> <span class="sc">-</span> <span class="dv">140</span><span class="sc">*</span><span class="dv">3</span>, <span class="dv">809</span> <span class="sc">+</span> <span class="dv">140</span><span class="sc">*</span><span class="dv">3</span>)), <span class="fu">aes</span>(<span class="at">x =</span> x)) <span class="sc">+</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> dnorm, <span class="at">args =</span> <span class="fu">list</span>(<span class="at">mean =</span> <span class="dv">809</span>, <span class="at">sd =</span> <span class="dv">140</span>),</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> dnorm, <span class="at">args =</span> <span class="fu">list</span>(<span class="at">mean =</span> <span class="dv">809</span>, <span class="at">sd =</span> <span class="dv">140</span><span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">10</span>)),</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">color =</span> <span class="st">"red"</span>,<span class="at">lty =</span> <span class="dv">2</span>) <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Black solid line = population dist., Red dotted line = sampling dist."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="ae-19_files/figure-html/visualize-normal-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-</section>
-</section>
-<section id="example-rent-in-manhattan" class="level2">
-<h2 class="anchored" data-anchor-id="example-rent-in-manhattan">Example: rent in Manhattan</h2>
-<p>On a given day in 2018, twenty one-bedroom apartments were randomly selected on Craigslist Manhattan from apartments listed as “by owner”. The data are in the <code>manhattan</code> data frame. We will use this sample to conduct inference on the typical rent of 1 bedroom apartments in Manhattan.</p>
-<section id="part-1-drawing-a-bootstrap-sample" class="level3">
-<h3 class="anchored" data-anchor-id="part-1-drawing-a-bootstrap-sample">Part 1: Drawing a bootstrap sample</h3>
-<p>Let’s start by using bootstrapping to estimate the <strong>mean</strong> rent of one-bedroom apartments in Manhattan.</p>
 <section id="exercise-1" class="level4">
 <h4 class="anchored" data-anchor-id="exercise-1">Exercise 1</h4>
-<p>What is a <strong>point estimate</strong> (i.e.&nbsp;single number summary) of the typical rent?</p>
+<p>Before typing any code, based on what you know about the normal distribution, what do you expect the median bone density to be?</p>
+<p>What bone densities correspond to <span class="math inline">\(Q_1\)</span> (25th percentile), <span class="math inline">\(Q_2\)</span> (50th percentile), and <span class="math inline">\(Q_3\)</span> (the 75th percentile) of this distribution? Use the <code>qnorm()</code> function to calculate these values.</p>
 </section>
 <section id="exercise-2" class="level4">
 <h4 class="anchored" data-anchor-id="exercise-2">Exercise 2</h4>
-<p>Let’s bootstrap!</p>
+<p>The densities of three woods are below:</p>
 <ul>
-<li>To bootstrap we will sample with replacement by drawing a value from the box.</li>
-<li>How many draws do we need for our bootstrap sample?</li>
+<li><p>Plywood: 540 mg/cubic centimeter</p></li>
+<li><p>Pine: 600 mg/cubic centimeter</p></li>
+<li><p>Mahogany: 710 mg/cubic centimeter</p></li>
+<li><p>What is the probability that a randomly selected 65-year-old woman has bones less dense than Pine?</p></li>
+<li><p>Would you be surprised if a randomly selected 65-year-old woman had bone density less than Mahogany? What if she had bone density less than Plywood? Use the respective probabilities to support your response.</p></li>
 </ul>
-<p>Fill in the values from the bootstrap sample conducted in class. Once the values are filled in, un-comment the code.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># class_bootstrap = c()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </section>
 <section id="exercise-3" class="level4">
 <h4 class="anchored" data-anchor-id="exercise-3">Exercise 3</h4>
+<p>Suppose you want to analyze the mean bone density for a group of 10 randomly selected 65-year-old women.</p>
 <ul>
-<li>About what value do you expect the bootstrap statistic to take?</li>
-<li>Calculate the statistic from the bootstrap sample.</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add code</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-</section>
-<section id="part-2-bootstrap-confidence-interval" class="level3">
-<h3 class="anchored" data-anchor-id="part-2-bootstrap-confidence-interval">Part 2: Bootstrap confidence interval</h3>
-<p><strong>We will calculate a 95% confidence interval for the mean rent of one-bedroom apartments in Manhattan.</strong></p>
-<p>We start by setting a seed to ensure our analysis is reproducible.</p>
-<section id="generating-the-bootstrap-distribution" class="level4">
-<h4 class="anchored" data-anchor-id="generating-the-bootstrap-distribution">Generating the bootstrap distribution</h4>
-<p>We can use R to take many bootstrap samples, compute a statistic and then view the bootstrap distribution of that statistic.</p>
-<p>Un-comment the lines and fill in the blanks to create the bootstrap distribution of sample means and save the results in the data frame <code>boot_dist</code>.</p>
-<p>Use <strong>1000 reps</strong> for the in-class activity. (You will use about 10,000 reps for assignments outside of class.)</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">7182022</span>)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>boot_dist <span class="ot">=</span> manhattan <span class="co">#%&gt;%</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="co">#specify(______) %&gt;%</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="co">#generate(______) %&gt;%</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="co">#calculate(______)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<li><p>Are the conditions for the Central Limit Theorem met?</p>
 <ul>
-<li>How many rows are in <code>boot_dist</code>?</li>
-<li>What does each row represent?</li>
-<li>What are the variables in <code>boot_dist</code>? What do they mean?</li>
+<li>Independence?</li>
+<li>Sample size/distribution?</li>
+</ul></li>
+<li><p>What is the shape, center, and spread of the distribution of <span class="math inline">\(\bar{x}\)</span>, the mean bone density for a group of 10 randomly selected 65-year-old women?</p></li>
+<li><p>Write the distribution of <span class="math inline">\(\bar{x}\)</span> using mathematical notation.</p></li>
 </ul>
 </section>
-<section id="visualize-the-bootstrap-distribution" class="level4">
-<h4 class="anchored" data-anchor-id="visualize-the-bootstrap-distribution">Visualize the bootstrap distribution</h4>
-<p>A <strong>sample statistic is a random variable</strong>, we can look at its distribution.</p>
-<p>Visualize the bootstrap distribution using a histogram. Describe the shape and center of the distribution.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add code</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="calculate-the-confidence-interval" class="level4">
-<h4 class="anchored" data-anchor-id="calculate-the-confidence-interval">Calculate the confidence interval</h4>
-<p>Uncomment the lines and fill in the blanks to construct the 95% bootstrap confidence interval for the mean rent of one-bedroom apartments in Manhattan.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#___ %&gt;%</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">#  summarize(lower = quantile(______),</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">#          upper = quantile(______))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="interpret-the-interval" class="level4">
-<h4 class="anchored" data-anchor-id="interpret-the-interval">Interpret the interval</h4>
-<p>Write the interpretation for the interval calculated above.</p>
+<section id="exercise-4" class="level4">
+<h4 class="anchored" data-anchor-id="exercise-4">Exercise 4</h4>
 <ul>
-<li><p>Question: Does a confidence interval have to be symmetric?</p></li>
-<li><p>What is one advantage to using a 90% confidence interval instead of a 95% confidence interval to estimate a parameter? - What is one advantage to using a 99% confidence interval instead of a 95% confidence interval to estimate a parameter?</p></li>
+<li><p>What is the probability that the mean bone density for the group of 10 randomly-selected 65-year-old women is less dense than Pine?</p></li>
+<li><p>Would you be surprised if a group of 10 randomly-selected 65-year old women had a mean bone density less than Mahogany? What the group had a mean bone density less than Plywood? Use the respective probabilities to support your response.</p></li>
 </ul>
+</section>
+<section id="exercise-5" class="level4">
+<h4 class="anchored" data-anchor-id="exercise-5">Exercise 5</h4>
+<p>Explain how your answers differ in Exercises 3 and 5.</p>
+</section>
+</section>
+<section id="extra-practice-on-your-own" class="level2">
+<h2 class="anchored" data-anchor-id="extra-practice-on-your-own">Extra practice (on your own)</h2>
+<p>Suppose the distribution of the number of minutes users engage with apps on an iPad has a mean of 8.2 minutes and standard deviation of 1 minute. Let <span class="math inline">\(x\)</span> be the number of minutes users engage with apps on an iPad, <span class="math inline">\(\mu\)</span> be the population mean and <span class="math inline">\(\sigma\)</span> the population standard deviation. Then,</p>
+<p><span class="math display">\[x \sim N(8.2, 1)\]</span></p>
+<p>Suppose you take a sample of 60 randomly selected app users and calculate the mean number of minutes they engage with apps on an iPad, <span class="math inline">\(\bar{x}\)</span>. The conditions (independence &amp; sample size/distribution) to apply the Central Limit Theorem are met. Then by the Central Limit Theorem</p>
+<p><span class="math display">\[\bar{x} \sim N(8.2, 1/\sqrt{60})\]</span></p>
+<ul>
+<li><p>What is the probability a randomly selected user engages with iPad apps for more than 8.3 minutes? Use <code>pnorm</code> for calculations.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#add code</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></li>
+<li><p>What is the probability the mean minutes of app engagement for a group of 60 randomly selected iPad users is more than 8.3 minutes? Use <code>pnorm</code> for calculations.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#add code</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></li>
+<li><p>What is the probability the mean minutes of app engagement for a group of 60 randomly selected iPad users is between 8.3 and 8.4 minutes? Use <code>pnorm</code> for calculations.</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    <span class="co">#add code</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
-</section>
-</section>
 </section>
 
 </main> <!-- /main -->
