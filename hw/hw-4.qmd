@@ -1,0 +1,130 @@
+---
+title: "HW 4 - Ultra Trail Running"
+categories: "Homework"
+---
+
+::: callout-important
+This homework is due Wednesday, March 29th at 5:00pm.
+:::
+
+## Getting Started
+
+-   Go to the [Github Organization page](https://github.com/sta199-sp23-2) and open your `hw4-username` repo
+
+-   Clone the repository, open a new project in RStudio.
+    It contains the starter documents you need to complete the homework assignment.
+
+# Packages
+
+```{r}
+#| label: load-packages
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(tidymodels)
+```
+
+# Data
+
+```{r}
+#| eval: false
+#| label: load-data
+#| message: false
+#| warning: false
+
+ultra_rankings <-  read_csv("https://sta101-fa22.netlify.app/static/labs/data/ultra_rankings.csv")
+
+race <- read_csv("https://sta101-fa22.netlify.app/static/labs/data/race.csv")
+
+```
+
+The data for this lab is from the Ultra Trail Running data set featured in Tidy Tuesday.
+You can find the codebook with variable definitions in the Tidy Tuesday repo [here](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-10-26/readme.md).
+In this homework, we are going to try and estimate the true mean race time for certain characteristics of races / runners.
+
+## Exercises
+
+1.  To begin, join the data frames.
+    Save your result as `ultra`.
+    Next, drop all rows without an observed race `time_in_seconds`.
+    Your final data frame should have 60924 rows and 20 columns.
+    Print the number of rows of `ultra` to the screen.
+
+2.  Your friend computes the mean time in seconds it takes participants of 170+ km races to finish.
+    Your friend also constructs a 90% confidence interval and states, "There is a .9 probability that the sample mean race time for races over 170 km is between 130000 and 160000 seconds." Without running any code, what is wrong with your friend's statement? Correct the statement as well (without running any code).
+
+3.  Report the mean race time for races 170 km or longer and construct a 99% bootstrap confidence interval for the mean race time using `set.seed(6)` and 5000 reps. 
+
+Next, check that central limit theorem holds, do you need to make any assumptions? Use CLT to construct a 99% confidence interval. Compare your result to your bootstrap interval. Interpret the interval.
+
+4.  Now, using the same `set.seed`, calculate a 95% bootstrap confidence interval for mean race time for races 170 km or longer using 5000 reps. What following characteristics changed compared to the interval created in question 3.
+    (Please answer "yes" or "no" to each of the following. If you answer "yes", explain the change observed.)
+
+-   The center of the confidence interval
+
+-   The width of the confidence interval
+
+b.  Does the standard error of the bootstrap distribution change when you change confidence levels? Use appropriate code to justify your answer.
+
+5.  In your own words, describe the process of how to create a bootstrap confidence interval. Be specific.
+
+6.  Identify at least two anomalies in the data set. For example, if the same runner ran a race in two different countries on the same day, that would be an anomaly. While this example is false, there are indeed real anomalies in the data. For full credit, display your anomaly either via code (printing to screen) or via a visualization. Discuss your findings.
+
+7.  Given the race was in Argentina, what is the median age of runners? Can you use Central Limit Theorem (CLT) to construct a confidence interval about this estimate? Explain. If not, construct a 90% bootstrap confidence interval that bounds the median from below. Use `set.seed(8)` and 10000 reps. Interpret your interval in context.
+
+-- Note, this is not a symmetric confidence interval!
+
+8.  A fellow colleague wants your next investigation to be about mean race times in France. They are adamant that we must use 80% confidence intervals when reporting results. In 1-2 sentences, discuss both any potential benefits and concerns you may have with creating a confidence interval with this low of level.
+
+## Rubric
+
+-   Ex 1: 3 pts.
+
+-   Ex 2: 4 pts.
+
+-   Ex 3: 6 pts.
+
+-   Ex 4: 6 pts.
+
+-   Ex 5: 6 pts.
+
+-   Ex 6: 8 pts.
+
+-   Ex 7: 7 pts
+
+-   Ex 8: 5 pts
+
+-   Workflow and formatting - 5 pts
+
+## Submission
+
+-   Go to <http://www.gradescope.com> and click Log in in the top right corner.
+-   Click School Credentials Duke Net ID and log in using your Net ID credentials.
+-   Click on your STA 199 course.
+-   Click on the assignment, and you'll be prompted to submit it.
+-   Mark all the pages associated with exercise. All the pages of your homework should be associated with at least one question (i.e., should be "checked"). If you do not do this, you will be subject to lose points on the assignment.
+-   Select **all pages** of your PDF submission to be associated with the "Workflow & formatting" question.
+
+::: callout-note
+The "Workflow & formatting" grade is to assess the reproducible workflow.
+This includes:
+
+-   linking all pages appropriately on Gradescope
+
+-   putting your name in the YAML at the top of the document
+
+-   committing the submitted version of your `.qmd` to GitHub
+
+-   Are you under the 80 character code limit?
+    (You shouldn't have to scroll to see all your code).
+
+-   Pipes `%>%`, `|>` and ggplot layers `+` should be followed by a new line
+
+-   You should be consistent with stylistic choices, e.g. only use 1 of `=` vs `<-` and `%>%` vs `|>`
+
+-   All binary operators should be surrounded by space.
+    For example `x + y` is appropriate.
+    `x+y` is not.
+:::
+
