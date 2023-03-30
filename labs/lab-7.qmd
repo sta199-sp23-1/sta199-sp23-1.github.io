@@ -16,105 +16,98 @@ library(tidyverse)
 library(tidymodels)
 ```
 
-Today we will continue learning about hypothesis testing using the `chickwts` dataset that comes built in with `R`.
-From the dataset help file: "An experiment was conducted to measure and compare the effectiveness of various feed supplements on the growth rate of chickens... Newly hatched chicks were randomly allocated into six groups, and each group was given a different feed supplement. Their weights in grams after six weeks are given along with feed types." We will evaluate the weight of statistical evidence that the various feed groups had significantly different expected weights.
+Today we will continue learning about hypothesis testing using the `chickwts`  that comes built in with `R`.
+From the  help file: "An experiment was conducted to measure and compare the effectiveness of various feed supplements on the growth rate of chickens... Newly hatched chicks were randomly allocated into six groups, and each group was given a different feed supplement. Their weights in grams after six weeks are given along with feed types." We will evaluate the weight of statistical evidence that the various feed groups had significantly different expected weights.
 
-## Exercise 1 - Load and visualize the datasest
+## Exercise 1
 
-a.  Load the dataset into an environment variable so that tab-autocomplete functions will work more smoothly inside RStudio (i.e., run `chickwts <- chickwts`).
-    Then, use `ggplot` to make a boxplot for the `chickwts` data, with `weight` plotted on the x axis and the `feed` categorical variable on the y axis.
+Which of the following affect the p-value and why?
+
+- Null hypothesis
+- Alternative hypothesis
+- Observed statistic
+- Significance level ($\alpha$)
+
+## Exercise 2 
+
+You are interested in testing whether or not average chick weight, regardless of the feed the chick eats, is different from 200 grams. What is wrong with the following null hypothesis?
+
+$$
+H_0: \bar{x} = 200
+$$
+
+## Exercise 3 - Load and visualize the datasest
+
+a.  Load the data set into an environment variable so that tab-autocomplete functions will work more smoothly inside RStudio (i.e., run `chickwts <- chickwts`).
+    Then, use `ggplot` to make an appropriate visualization for the distribution of chick weights by feed.
     Make sure to give the plot an informative title and label the axes.
 
-b.  Based on the distributions visualized in the boxplot, does feed supplementation seem to have an effect on chick weight?
+b.  Based on the distributions visualized in the plot above, does feed supplementation seem to have an effect on chick weight?
 
-c.  Another type of plot that is helpful for visualizing distributions of continuous variables (like `weight`) across levels of a categorical treatment (like `feed`) is called a *violin plot*.
-    Where the boxplot represents a distribution by stretching a box to match distribution quantiles, a violin plot represents each distribution with a smooth density estimate.
-    Recreate your plot from part (a) of this question, but replace `geom_boxplot` with `geom_violin` to see how this works.
+c.  Another type of plot that is helpful for visualizing distributions of continuous variables (like `weight`) across levels of a categorical treatment (like `feed`) is called a *violin plot*. A violin plot represents each distribution with a smooth density estimate.
+    Create a new plot to answer part (a) using `geom_violin` to see how this works.
 
-## Exercise 2 - Data wrangling
+## Exercise 4 - Single comparison
 
-a.  Compute and report the number of chicks in each feed group.
-    We should find this matches our output from part b, below.
+Is the average weight of chicks that eat `sunflower` feed different from the average weight of chicks that eat `meatmeal` feed? To answer this, you will setup a hypothesis test.
 
-b.  We plan to compare the weight of the chicks from each feed group.
-    This will be more convenient if, rather than a two column dataframe, we have a list of vectors, each of which contains the weight of chicks in a specific feed group.
-    A convenient way to do this is by using the `split` function, available in base `R`.
-    Run the following code to create a list of vectors, each of which contains observations from a specific feed group `weight_vecs <- split(chickwts$weight, chickwts$feed)`.
-    Then, run `sapply(weight_vecs, length)` to print the length of each vector to the console.
+a.  State the null and alternative hypothesis in formal mathematical notation, letting $\mu_s$ be the true mean weight of sunflower fed chicks and $\mu_m$ the true mean weight of meatmeal fed chicks.
 
-::: callout-important
-Note for later exercises: Now, you should be able to access the vector of weights for chicks in a specific feed group by running, for example, `weight_vecs[["linseed"]]` or, equivalently, `weight_vecs$linseed`.
-:::
-
-## Exercise 3 - Single comparison
-
-Now, we will perform our first hypothesis test.
-We would like to evaluate the evidence that the sunflower feed group has an expected weight that is significantly different from that of the meatmeal group.
-Thus, our null hypothesis must be that the sunflower group's expected weight is no different than that of the meatmeal group.
-
-a.  Denoting the expected weights of the sunflower group and the meatmeal group as $\mu_{s}$ and $\mu_m$, respectively, state our null and alternative hypothesis in formal mathematical notation.
-
-b.  Compute the sample means for the sunflower feed group and the meatmeal feed group and report them, along with their difference (sunflower group mean minus the meatmeal group mean).
+b.  Compute and report the observed statistic.
 
 c.  To quantify the evidence *against* the null hypothesis, we estimate the probability that, if the null hypothesis were true, we would have observed a difference in means as large or larger than what we observed in part b.
     This "tail probability" is called the *p-value* associated with the difference in means we computed.
-    We will draw on the ideas for simulation based inference you have been learning in class to estimate this p-value.
+    
+- Simulate under the null distribution using `reps = 5000` and `set.seed(3)`. Save your simulation as `null_dist`. Next, compute the p-value and state your conclusion.
 
-First, we make our null hypothesis slightly more specific - under the null hypothesis, we suppose that all observations were drawn independently from a common distribution with a fixed mean.
-If this were true, then the exact sequence of the observations would be irrelevant.
-By repeatedly permuting the sequence of weight observations (specifically, which weights are associated with which feed), and recomputing the difference in means each time, we are able to (approximately) create draws from the sampling distribution of the difference statistic under the null hypothesis.
+## Exercise 5 - Evaluating evidence and multiple testing
 
-Template code to generate samples from the null distribution using the permutation approach is provided below, making use of the `tidymodels` package.
-Using this, compute the proportion of samples under the null for which the absolute value of the difference exceeds that of the observed difference from part b.
-That number is the estimated p-value for the difference we observed.
-
-**Make sure you also use the seed and the same value for `reps` so that our numerical answers agree moving forward.**
-
-```{r}
-#| eval: FALSE
-null_dist <- chickwts %>% 
-  filter(feed %in% c("sunflower", "meatmeal")) %>%
-  mutate(feed = droplevels(feed)) %>%
-  specify(response = weight, explanatory = feed) %>%
-  hypothesize(null = "independence") %>%
-  generate(reps = 5000, type = "permute") %>%
-  calculate(stat = "diff in means", order = c("sunflower", "meatmeal"))
-```
-
-## Exercise 4 - Evaluating evidence and multiple testing
-
-From a scientific (and often practical perspective), we rarely want to "reject" the null hypothesis when it is in fact true - that is called a Type 1 error.
+We rarely want to "reject" the null hypothesis when it is in fact true - that is called a "false positive" or **type 1 error**.
 In this case, we don't want to claim sunflower feed leads to higher expected chick weight if in fact it does not.
 So we want to set a bar high enough that we should rarely incur type 1 error.
 
-Scientists will often decide in advance what is an acceptable false positive rate.
+An experimenter will often decide in advance what is an acceptable false positive rate.
 In many situations, by convention, the threshold of requiring p-values below 0.05 is adopted.
 
-a.  Suppose a scientist performs 100 experiments in a row. In each experiment, they collect several measurements which are noisy observations of some true effect size. Then, they compute the sample mean for the observations within each experiment. If all of the effect sizes were, in reality, 0, in roughly how many of the experiments would the scientist expect to find a p-value of less than 0.05?
+a.  Suppose a scientist repeats the experiment 100 times in a row. If the true difference in weight between group is in fact 0, in roughly how many of the experiments would the scientist expect to find a p-value of less than 0.05?
 
-The phenomenon described in part a is called p-hacking.
+The phenomenon described in part (a) is called p-hacking.
 The idea is that, by design, a "significance threshold" of level $\alpha$ will mean that, even if we only conduct experiments for which the null hypothesis is always true, we will expect to reject the null with probability $\alpha$.
 Thus, if you simply conduct enough experiments then eventually you will have "significant" findings even if the true effect is nonexistent.
 
 b.  Suppose we would like to compare all pairs of feed groups to test for differences in expected weight.
-    There are 6 types of feed, so there are $6*5/2 = 15$ pairs we could compare.
+    There are 6 types of feed, so there are ${6 \choose{2}} = 6*5/2 = 15$ pairs we could compare.
     If we reject the null hypothesis for any p-value less than or equal to 0.05, and we assume the p-values are independent for each pair, and we also assume the null is true for every comparison, what is the probability that we don't reject the null for any of the pairs?
-    *Hint: probabilities for independent events multiply.*
+    
+::: callout-tip 
+## Hint
+P(A, B) = P(A)P(B) when events A and B are independent.
+:::
 
 c.  Based on your answer in part b, if we compared all 15 pairs of feeds for differences in expected weight, assuming the p-values are independent for each pair, what is the probability that we will make a type 1 error (i.e., the probability that we *do* reject the null for at least one pair)?
-    *Hint: probabilities of complementary events add to 1.*
 
-## Exercise 5 - Bonferroni Correction
+::: callout-tip 
+## Hint
+P($A$) + P($A^C$) = 1 where $A^C$ denotes "not $A$". In other words, probabilities of complementary events add to 1.
+:::
 
-If the probability of event $A$ is $p_1$ and the probability of event $B$ is $p_2$, the *largest possible probability for the event of either* $A$ or $B$ happening is $p_1 + p_2$.
+## Exercise 6 - Bonferroni Correction
+
+If the probability of event $A$ is $p_1$ and the probability of event $B$ is $p_2$, the *largest possible probability for the either* the event $A$ or $B$ occuring is $p_1 + p_2$.
 Hence, in the worst possible case, if we perform a series of tests $T_1, \dots, T_k$ calibrated to have type 1 error probabilities $p_1, \dots, p_k$, the largest possible probability that at least one of the tests results in a type 1 error is $p_1 + \dots + p_k$.
-If all of the tests have a common type 1 error probability $p'$, then this value will equal $kp'$.
 
-a.  If we were to perform all pairwise tests for the `chickwts` dataset, what p-value threshold must we use if we want to ensure the probability that any of the tests leads to a type 1 error is less than 0.05?
+If all of the tests have a common type 1 error probability $p^*$, then this value will equal $kp^*$.
 
-This "higher bar" for p-values in multiple testing situations is called the Bonferroni correction.
+a.  If we were to perform all pairwise tests for the `chickwts` data set, what p-value threshold must we use if we want to guarantee that the probability of one or more type 1 errors is less than 0.05?
 
-b.  I will spare you from performing all possible pairwise comparisons. However, you can see from the plots in exercise 1 that the difference in sample means between the sunflower and horsebean groups will likely be the greatest of any pair in the dataset. If we began our experiment with no particular hypothesis and choose to formally compare these two groups based on a visualization, we are *implicitly performing multiple testing* by pre-screening out all pairs which do not have an obvious visual difference, thus we should impose a higher bar on the evidence for rejecting our null if we wish to maintain a low type 1 error rate overall. Is that pair significantly different if we use the Bonferroni-corrected threshold from part (a) above? *Hint: feel free to re-use the example code from exercise 3(c), with the necessary modifications.*
+This "higher bar" for p-values in multiple testing situations is called the **Bonferroni correction**.
+
+b.  I will spare you from performing all possible pairwise comparisons. However, you can see from the plots in exercise 3 that the difference in sample means between the sunflower and horsebean groups will likely be the greatest of any pair in the data set. If we began our experiment with no particular hypothesis and choose to formally compare these two groups based on a visualization, we are *implicitly performing multiple testing* by pre-screening out all pairs which do not have an obvious visual difference, thus we should impose a higher bar on the evidence for rejecting our null if we wish to maintain a low type 1 error rate overall. Is that pair significantly different if we use the Bonferroni-corrected threshold from part (a) above? 
+
+::: callout-tip
+## Hint
+Re-use your code from exercise 4(c) with the necessary modifications.
+:::
 
 ## Submission
 

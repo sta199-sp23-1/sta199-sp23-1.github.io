@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.313">
+<meta name="generator" content="quarto-1.0.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,15 +11,10 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
-ul.task-list li input[type="checkbox"] {
-  width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
-  vertical-align: middle;
-}
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -58,7 +53,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
+code span.bu { } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -71,7 +66,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.im { } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -124,7 +119,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <meta property="og:title" content="STA 199 - Lab 7 - Confidence Intervals and Hypothesis Testing">
-<meta property="og:description" content="Today we will continue learning about hypothesis testing using the chickwts dataset that comes built in with R.">
+<meta property="og:description" content="Today we will continue learning about hypothesis testing using the chickwts that comes built in with R.">
 <meta property="og:site-name" content="STA 199">
 </head>
 
@@ -146,7 +141,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
-      <a href="../index.html" class="sidebar-logo-link">
+      <a href="../" class="sidebar-logo-link">
       <img src="../images/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
@@ -237,15 +232,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
+        <nav id="TOC" role="doc-toc">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#exercise-1---load-and-visualize-the-datasest" id="toc-exercise-1---load-and-visualize-the-datasest" class="nav-link active" data-scroll-target="#exercise-1---load-and-visualize-the-datasest">Exercise 1 - Load and visualize the datasest</a></li>
-  <li><a href="#exercise-2---data-wrangling" id="toc-exercise-2---data-wrangling" class="nav-link" data-scroll-target="#exercise-2---data-wrangling">Exercise 2 - Data wrangling</a></li>
-  <li><a href="#exercise-3---single-comparison" id="toc-exercise-3---single-comparison" class="nav-link" data-scroll-target="#exercise-3---single-comparison">Exercise 3 - Single comparison</a></li>
-  <li><a href="#exercise-4---evaluating-evidence-and-multiple-testing" id="toc-exercise-4---evaluating-evidence-and-multiple-testing" class="nav-link" data-scroll-target="#exercise-4---evaluating-evidence-and-multiple-testing">Exercise 4 - Evaluating evidence and multiple testing</a></li>
-  <li><a href="#exercise-5---bonferroni-correction" id="toc-exercise-5---bonferroni-correction" class="nav-link" data-scroll-target="#exercise-5---bonferroni-correction">Exercise 5 - Bonferroni Correction</a></li>
+  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link active" data-scroll-target="#exercise-1">Exercise 1</a></li>
+  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
+  <li><a href="#exercise-3---load-and-visualize-the-datasest" id="toc-exercise-3---load-and-visualize-the-datasest" class="nav-link" data-scroll-target="#exercise-3---load-and-visualize-the-datasest">Exercise 3 - Load and visualize the datasest</a></li>
+  <li><a href="#exercise-4---single-comparison" id="toc-exercise-4---single-comparison" class="nav-link" data-scroll-target="#exercise-4---single-comparison">Exercise 4 - Single comparison</a></li>
+  <li><a href="#exercise-5---evaluating-evidence-and-multiple-testing" id="toc-exercise-5---evaluating-evidence-and-multiple-testing" class="nav-link" data-scroll-target="#exercise-5---evaluating-evidence-and-multiple-testing">Exercise 5 - Evaluating evidence and multiple testing</a></li>
+  <li><a href="#exercise-6---bonferroni-correction" id="toc-exercise-6---bonferroni-correction" class="nav-link" data-scroll-target="#exercise-6---bonferroni-correction">Exercise 6 - Bonferroni Correction</a></li>
   <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
   <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
   </ul>
@@ -264,7 +260,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="quarto-title-meta">
 
     
-  
     
   </div>
   
@@ -288,79 +283,109 @@ Important
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Today we will continue learning about hypothesis testing using the <code>chickwts</code> dataset that comes built in with <code>R</code>. From the dataset help file: “An experiment was conducted to measure and compare the effectiveness of various feed supplements on the growth rate of chickens… Newly hatched chicks were randomly allocated into six groups, and each group was given a different feed supplement. Their weights in grams after six weeks are given along with feed types.” We will evaluate the weight of statistical evidence that the various feed groups had significantly different expected weights.</p>
-<section id="exercise-1---load-and-visualize-the-datasest" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-1---load-and-visualize-the-datasest">Exercise 1 - Load and visualize the datasest</h2>
+<p>Today we will continue learning about hypothesis testing using the <code>chickwts</code> that comes built in with <code>R</code>. From the help file: “An experiment was conducted to measure and compare the effectiveness of various feed supplements on the growth rate of chickens… Newly hatched chicks were randomly allocated into six groups, and each group was given a different feed supplement. Their weights in grams after six weeks are given along with feed types.” We will evaluate the weight of statistical evidence that the various feed groups had significantly different expected weights.</p>
+<section id="exercise-1" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-1">Exercise 1</h2>
+<p>Which of the following affect the p-value and why?</p>
+<ul>
+<li>Null hypothesis</li>
+<li>Alternative hypothesis</li>
+<li>Observed statistic</li>
+<li>Significance level (<span class="math inline">\(\alpha\)</span>)</li>
+</ul>
+</section>
+<section id="exercise-2" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
+<p>You are interested in testing whether or not average chick weight, regardless of the feed the chick eats, is different from 200 grams. What is wrong with the following null hypothesis?</p>
+<p><span class="math display">\[
+H_0: \bar{x} = 200
+\]</span></p>
+</section>
+<section id="exercise-3---load-and-visualize-the-datasest" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-3---load-and-visualize-the-datasest">Exercise 3 - Load and visualize the datasest</h2>
 <ol type="a">
-<li><p>Load the dataset into an environment variable so that tab-autocomplete functions will work more smoothly inside RStudio (i.e., run <code>chickwts &lt;- chickwts</code>). Then, use <code>ggplot</code> to make a boxplot for the <code>chickwts</code> data, with <code>weight</code> plotted on the x axis and the <code>feed</code> categorical variable on the y axis. Make sure to give the plot an informative title and label the axes.</p></li>
-<li><p>Based on the distributions visualized in the boxplot, does feed supplementation seem to have an effect on chick weight?</p></li>
-<li><p>Another type of plot that is helpful for visualizing distributions of continuous variables (like <code>weight</code>) across levels of a categorical treatment (like <code>feed</code>) is called a <em>violin plot</em>. Where the boxplot represents a distribution by stretching a box to match distribution quantiles, a violin plot represents each distribution with a smooth density estimate. Recreate your plot from part (a) of this question, but replace <code>geom_boxplot</code> with <code>geom_violin</code> to see how this works.</p></li>
+<li><p>Load the data set into an environment variable so that tab-autocomplete functions will work more smoothly inside RStudio (i.e., run <code>chickwts &lt;- chickwts</code>). Then, use <code>ggplot</code> to make an appropriate visualization for the distribution of chick weights by feed. Make sure to give the plot an informative title and label the axes.</p></li>
+<li><p>Based on the distributions visualized in the plot above, does feed supplementation seem to have an effect on chick weight?</p></li>
+<li><p>Another type of plot that is helpful for visualizing distributions of continuous variables (like <code>weight</code>) across levels of a categorical treatment (like <code>feed</code>) is called a <em>violin plot</em>. A violin plot represents each distribution with a smooth density estimate. Create a new plot to answer part (a) using <code>geom_violin</code> to see how this works.</p></li>
 </ol>
 </section>
-<section id="exercise-2---data-wrangling" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-2---data-wrangling">Exercise 2 - Data wrangling</h2>
+<section id="exercise-4---single-comparison" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-4---single-comparison">Exercise 4 - Single comparison</h2>
+<p>Is the average weight of chicks that eat <code>sunflower</code> feed different from the average weight of chicks that eat <code>meatmeal</code> feed? To answer this, you will setup a hypothesis test.</p>
 <ol type="a">
-<li><p>Compute and report the number of chicks in each feed group. We should find this matches our output from part b, below.</p></li>
-<li><p>We plan to compare the weight of the chicks from each feed group. This will be more convenient if, rather than a two column dataframe, we have a list of vectors, each of which contains the weight of chicks in a specific feed group. A convenient way to do this is by using the <code>split</code> function, available in base <code>R</code>. Run the following code to create a list of vectors, each of which contains observations from a specific feed group <code>weight_vecs &lt;- split(chickwts$weight, chickwts$feed)</code>. Then, run <code>sapply(weight_vecs, length)</code> to print the length of each vector to the console.</p></li>
+<li><p>State the null and alternative hypothesis in formal mathematical notation, letting <span class="math inline">\(\mu_s\)</span> be the true mean weight of sunflower fed chicks and <span class="math inline">\(\mu_m\)</span> the true mean weight of meatmeal fed chicks.</p></li>
+<li><p>Compute and report the observed statistic.</p></li>
+<li><p>To quantify the evidence <em>against</em> the null hypothesis, we estimate the probability that, if the null hypothesis were true, we would have observed a difference in means as large or larger than what we observed in part b. This “tail probability” is called the <em>p-value</em> associated with the difference in means we computed.</p></li>
 </ol>
-<div class="callout-important callout callout-style-default callout-captioned">
+<ul>
+<li>Simulate under the null distribution using <code>reps = 5000</code> and <code>set.seed(3)</code>. Save your simulation as <code>null_dist</code>. Next, compute the p-value and state your conclusion.</li>
+</ul>
+</section>
+<section id="exercise-5---evaluating-evidence-and-multiple-testing" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-5---evaluating-evidence-and-multiple-testing">Exercise 5 - Evaluating evidence and multiple testing</h2>
+<p>We rarely want to “reject” the null hypothesis when it is in fact true - that is called a “false positive” or <strong>type 1 error</strong>. In this case, we don’t want to claim sunflower feed leads to higher expected chick weight if in fact it does not. So we want to set a bar high enough that we should rarely incur type 1 error.</p>
+<p>An experimenter will often decide in advance what is an acceptable false positive rate. In many situations, by convention, the threshold of requiring p-values below 0.05 is adopted.</p>
+<ol type="a">
+<li>Suppose a scientist repeats the experiment 100 times in a row. If the true difference in weight between group is in fact 0, in roughly how many of the experiments would the scientist expect to find a p-value of less than 0.05?</li>
+</ol>
+<p>The phenomenon described in part (a) is called p-hacking. The idea is that, by design, a “significance threshold” of level <span class="math inline">\(\alpha\)</span> will mean that, even if we only conduct experiments for which the null hypothesis is always true, we will expect to reject the null with probability <span class="math inline">\(\alpha\)</span>. Thus, if you simply conduct enough experiments then eventually you will have “significant” findings even if the true effect is nonexistent.</p>
+<ol start="2" type="a">
+<li>Suppose we would like to compare all pairs of feed groups to test for differences in expected weight. There are 6 types of feed, so there are <span class="math inline">\({6 \choose{2}} = 6*5/2 = 15\)</span> pairs we could compare. If we reject the null hypothesis for any p-value less than or equal to 0.05, and we assume the p-values are independent for each pair, and we also assume the null is true for every comparison, what is the probability that we don’t reject the null for any of the pairs?</li>
+</ol>
+<div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Important
+Hint
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Note for later exercises: Now, you should be able to access the vector of weights for chicks in a specific feed group by running, for example, <code>weight_vecs[["linseed"]]</code> or, equivalently, <code>weight_vecs$linseed</code>.</p>
+<p>P(A, B) = P(A)P(B) when events A and B are independent.</p>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Based on your answer in part b, if we compared all 15 pairs of feeds for differences in expected weight, assuming the p-values are independent for each pair, what is the probability that we will make a type 1 error (i.e., the probability that we <em>do</em> reject the null for at least one pair)?</li>
+</ol>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Hint
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>P(<span class="math inline">\(A\)</span>) + P(<span class="math inline">\(A^C\)</span>) = 1 where <span class="math inline">\(A^C\)</span> denotes “not <span class="math inline">\(A\)</span>”. In other words, probabilities of complementary events add to 1.</p>
 </div>
 </div>
 </section>
-<section id="exercise-3---single-comparison" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-3---single-comparison">Exercise 3 - Single comparison</h2>
-<p>Now, we will perform our first hypothesis test. We would like to evaluate the evidence that the sunflower feed group has an expected weight that is significantly different from that of the meatmeal group. Thus, our null hypothesis must be that the sunflower group’s expected weight is no different than that of the meatmeal group.</p>
+<section id="exercise-6---bonferroni-correction" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-6---bonferroni-correction">Exercise 6 - Bonferroni Correction</h2>
+<p>If the probability of event <span class="math inline">\(A\)</span> is <span class="math inline">\(p_1\)</span> and the probability of event <span class="math inline">\(B\)</span> is <span class="math inline">\(p_2\)</span>, the <em>largest possible probability for the either</em> the event <span class="math inline">\(A\)</span> or <span class="math inline">\(B\)</span> occuring is <span class="math inline">\(p_1 + p_2\)</span>. Hence, in the worst possible case, if we perform a series of tests <span class="math inline">\(T_1, \dots, T_k\)</span> calibrated to have type 1 error probabilities <span class="math inline">\(p_1, \dots, p_k\)</span>, the largest possible probability that at least one of the tests results in a type 1 error is <span class="math inline">\(p_1 + \dots + p_k\)</span>.</p>
+<p>If all of the tests have a common type 1 error probability <span class="math inline">\(p^*\)</span>, then this value will equal <span class="math inline">\(kp^*\)</span>.</p>
 <ol type="a">
-<li><p>Denoting the expected weights of the sunflower group and the meatmeal group as <span class="math inline">\(\mu_{s}\)</span> and <span class="math inline">\(\mu_m\)</span>, respectively, state our null and alternative hypothesis in formal mathematical notation.</p></li>
-<li><p>Compute the sample means for the sunflower feed group and the meatmeal feed group and report them, along with their difference (sunflower group mean minus the meatmeal group mean).</p></li>
-<li><p>To quantify the evidence <em>against</em> the null hypothesis, we estimate the probability that, if the null hypothesis were true, we would have observed a difference in means as large or larger than what we observed in part b. This “tail probability” is called the <em>p-value</em> associated with the difference in means we computed. We will draw on the ideas for simulation based inference you have been learning in class to estimate this p-value.</p></li>
+<li>If we were to perform all pairwise tests for the <code>chickwts</code> data set, what p-value threshold must we use if we want to guarantee that the probability of one or more type 1 errors is less than 0.05?</li>
 </ol>
-<p>First, we make our null hypothesis slightly more specific - under the null hypothesis, we suppose that all observations were drawn independently from a common distribution with a fixed mean. If this were true, then the exact sequence of the observations would be irrelevant. By repeatedly permuting the sequence of weight observations (specifically, which weights are associated with which feed), and recomputing the difference in means each time, we are able to (approximately) create draws from the sampling distribution of the difference statistic under the null hypothesis.</p>
-<p>Template code to generate samples from the null distribution using the permutation approach is provided below, making use of the <code>tidymodels</code> package. Using this, compute the proportion of samples under the null for which the absolute value of the difference exceeds that of the observed difference from part b. That number is the estimated p-value for the difference we observed.</p>
-<p><strong>Make sure you also use the seed and the same value for <code>reps</code> so that our numerical answers agree moving forward.</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>null_dist <span class="ot">&lt;-</span> chickwts <span class="sc">%&gt;%</span> </span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(feed <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"sunflower"</span>, <span class="st">"meatmeal"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">feed =</span> <span class="fu">droplevels</span>(feed)) <span class="sc">%&gt;%</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(<span class="at">response =</span> weight, <span class="at">explanatory =</span> feed) <span class="sc">%&gt;%</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hypothesize</span>(<span class="at">null =</span> <span class="st">"independence"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">5000</span>, <span class="at">type =</span> <span class="st">"permute"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"diff in means"</span>, <span class="at">order =</span> <span class="fu">c</span>(<span class="st">"sunflower"</span>, <span class="st">"meatmeal"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="exercise-4---evaluating-evidence-and-multiple-testing" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-4---evaluating-evidence-and-multiple-testing">Exercise 4 - Evaluating evidence and multiple testing</h2>
-<p>From a scientific (and often practical perspective), we rarely want to “reject” the null hypothesis when it is in fact true - that is called a Type 1 error. In this case, we don’t want to claim sunflower feed leads to higher expected chick weight if in fact it does not. So we want to set a bar high enough that we should rarely incur type 1 error.</p>
-<p>Scientists will often decide in advance what is an acceptable false positive rate. In many situations, by convention, the threshold of requiring p-values below 0.05 is adopted.</p>
-<ol type="a">
-<li>Suppose a scientist performs 100 experiments in a row. In each experiment, they collect several measurements which are noisy observations of some true effect size. Then, they compute the sample mean for the observations within each experiment. If all of the effect sizes were, in reality, 0, in roughly how many of the experiments would the scientist expect to find a p-value of less than 0.05?</li>
-</ol>
-<p>The phenomenon described in part a is called p-hacking. The idea is that, by design, a “significance threshold” of level <span class="math inline">\(\alpha\)</span> will mean that, even if we only conduct experiments for which the null hypothesis is always true, we will expect to reject the null with probability <span class="math inline">\(\alpha\)</span>. Thus, if you simply conduct enough experiments then eventually you will have “significant” findings even if the true effect is nonexistent.</p>
+<p>This “higher bar” for p-values in multiple testing situations is called the <strong>Bonferroni correction</strong>.</p>
 <ol start="2" type="a">
-<li><p>Suppose we would like to compare all pairs of feed groups to test for differences in expected weight. There are 6 types of feed, so there are <span class="math inline">\(6*5/2 = 15\)</span> pairs we could compare. If we reject the null hypothesis for any p-value less than or equal to 0.05, and we assume the p-values are independent for each pair, and we also assume the null is true for every comparison, what is the probability that we don’t reject the null for any of the pairs? <em>Hint: probabilities for independent events multiply.</em></p></li>
-<li><p>Based on your answer in part b, if we compared all 15 pairs of feeds for differences in expected weight, assuming the p-values are independent for each pair, what is the probability that we will make a type 1 error (i.e., the probability that we <em>do</em> reject the null for at least one pair)? <em>Hint: probabilities of complementary events add to 1.</em></p></li>
+<li>I will spare you from performing all possible pairwise comparisons. However, you can see from the plots in exercise 3 that the difference in sample means between the sunflower and horsebean groups will likely be the greatest of any pair in the data set. If we began our experiment with no particular hypothesis and choose to formally compare these two groups based on a visualization, we are <em>implicitly performing multiple testing</em> by pre-screening out all pairs which do not have an obvious visual difference, thus we should impose a higher bar on the evidence for rejecting our null if we wish to maintain a low type 1 error rate overall. Is that pair significantly different if we use the Bonferroni-corrected threshold from part (a) above?</li>
 </ol>
-</section>
-<section id="exercise-5---bonferroni-correction" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-5---bonferroni-correction">Exercise 5 - Bonferroni Correction</h2>
-<p>If the probability of event <span class="math inline">\(A\)</span> is <span class="math inline">\(p_1\)</span> and the probability of event <span class="math inline">\(B\)</span> is <span class="math inline">\(p_2\)</span>, the <em>largest possible probability for the event of either</em> <span class="math inline">\(A\)</span> or <span class="math inline">\(B\)</span> happening is <span class="math inline">\(p_1 + p_2\)</span>. Hence, in the worst possible case, if we perform a series of tests <span class="math inline">\(T_1, \dots, T_k\)</span> calibrated to have type 1 error probabilities <span class="math inline">\(p_1, \dots, p_k\)</span>, the largest possible probability that at least one of the tests results in a type 1 error is <span class="math inline">\(p_1 + \dots + p_k\)</span>. If all of the tests have a common type 1 error probability <span class="math inline">\(p'\)</span>, then this value will equal <span class="math inline">\(kp'\)</span>.</p>
-<ol type="a">
-<li>If we were to perform all pairwise tests for the <code>chickwts</code> dataset, what p-value threshold must we use if we want to ensure the probability that any of the tests leads to a type 1 error is less than 0.05?</li>
-</ol>
-<p>This “higher bar” for p-values in multiple testing situations is called the Bonferroni correction.</p>
-<ol start="2" type="a">
-<li>I will spare you from performing all possible pairwise comparisons. However, you can see from the plots in exercise 1 that the difference in sample means between the sunflower and horsebean groups will likely be the greatest of any pair in the dataset. If we began our experiment with no particular hypothesis and choose to formally compare these two groups based on a visualization, we are <em>implicitly performing multiple testing</em> by pre-screening out all pairs which do not have an obvious visual difference, thus we should impose a higher bar on the evidence for rejecting our null if we wish to maintain a low type 1 error rate overall. Is that pair significantly different if we use the Bonferroni-corrected threshold from part (a) above? <em>Hint: feel free to re-use the example code from exercise 3(c), with the necessary modifications.</em></li>
-</ol>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Hint
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Re-use your code from exercise 4(c) with the necessary modifications.</p>
+</div>
+</div>
 </section>
 <section id="submission" class="level2">
 <h2 class="anchored" data-anchor-id="submission">Submission</h2>
@@ -495,24 +520,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
     setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -540,50 +548,31 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      let href = ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
     });
   }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
       });
-    }
+      return popup.innerHTML;
+    });
   }
 });
 </script>
