@@ -4,7 +4,7 @@
     "href": "labs/lab-7.html",
     "title": "Lab 7 - Confidence Intervals and Hypothesis Testing",
     "section": "",
-    "text": "Important\n\n\n\nThis lab is due Monday, April 10th at 5:00pm.\nToday we will continue learning about hypothesis testing using the chickwts that comes built in with R. From the help file: “An experiment was conducted to measure and compare the effectiveness of various feed supplements on the growth rate of chickens… Newly hatched chicks were randomly allocated into six groups, and each group was given a different feed supplement. Their weights in grams after six weeks are given along with feed types.” We will evaluate the weight of statistical evidence that the various feed groups had significantly different expected weights."
+    "text": "Important\n\n\n\nThis lab is due Monday, April 10th at 5:00pm.\nToday we will continue learning about hypothesis testing using the chickwts that comes built in with R. From the help file: “An experiment was conducted to measure and compare the effectiveness of various feed supplements on the growth rate of chickens… Newly hatched chicks were randomly allocated into six groups, and each group was given a different feed supplement. Their weights in grams after six weeks are given along with feed types.” We will evaluate the strength of statistical evidence that the various feed groups had significantly different expected weights."
   },
   {
     "objectID": "labs/lab-7.html#packages",
