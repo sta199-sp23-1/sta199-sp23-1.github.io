@@ -593,5 +593,33 @@
     "title": "Intro to hypothesis tests",
     "section": "p-values",
     "text": "p-values\nYou might not realize it, but you just computed a p-value… again!\nA p-value is a probability. It’s the tail probability associated with your alternative hypothesis.\nThe alternative hypothesis must always relate to the null. Here we had three options:\n\n\\(H_A: p < 0.5\\), the coin is biased to land tails\n\\(H_A: p > 0.5\\), the coin is biased to land heads\n\\(H_A: p \\neq 0.5\\), the coin is biased\n\nLet’s look offline at what each one would like here.\n\nExercise 4\nCompute the p-value associated with each of the alternative hypotheses above.\n\n# code here\n\nMake a conclusion based on a significance level of 0.05. In other words,\n\nif p < 0.05, reject the null.\nif p > 0.05, we fail to reject the null.\n\nAs you can see our conclusion depends on our alternative hypothesis. For this reason, it is important to set up an alternative hypothesis before looking at the data.\n\n\nRecap\nWe were interested in whether or not a coin was fair. We let \\(p\\) be the probability of landing heads. Fundamentally, we were interested in whether or not \\(p = 0.5\\). This was our null hypothesis:\n\\[\nH_0: p = .5\n\\]\nand our alternative, was that the coin was biased heads:\n\\[\nH_A: p > 0.5\n\\]\nIn one example our data consisted of 30 coin flips and 23 heads. The proportion of heads that we observed, \\(\\hat{p} = 23/30 = .77\\).\nDo these 30 coin flips give us enough evidence to reject the null in favor of the alternative?\nTo answer this question, we computed the p-value: \\(Pr(\\hat{p} \\geq .77 | H_0 \\text{ true})\\). In words, the probability that our statistic of interest, (\\(\\hat{p}\\)), is greater than or equal to what we saw given that the null is true.\nNotice that the p-value is defined by three things:\n\nour observed statistic (0.77)\nthe null hypothesis (\\(H_0\\))\nthe alternative hypothesis (\\(H_A\\)), this tells us the direction (\\(>=\\)) to shade.\n\nWe compared the p-value to some pre-defined cutoff, \\(\\alpha\\). In our example we set our cutoff at \\(\\alpha = 0.05\\). If p-value \\(< \\alpha\\), we reject the null. If p-value \\(> \\alpha\\), we fail to reject the null.\n\n\nThe tidy way\n\ncoin_flips = data.frame(one_flip = sample(c(rep(\"H\",23), rep(\"T\", 7)), size = 30))\n\nglimpse(coin_flips)\n\nRows: 30\nColumns: 1\n$ one_flip <chr> \"H\", \"H\", \"H\", \"H\", \"T\", \"H\", \"T\", \"H\", \"H\", \"H\", \"T\", \"H\", \"…\n\n\n\nset.seed(2022)\nnull_dist = \n  coin_flips %>% \n  specify(response = one_flip, success = \"H\") %>%\n  hypothesize(null = \"point\", p = 0.5) %>%\n  generate(reps = 10000, type = \"draw\") %>%\n  calculate(stat = \"prop\")\n\nobs_stat = 23/30\n\nvisualize(null_dist) +\n  shade_p_value(obs_stat, direction = \"right\")\n\n\n\nnull_dist %>%\nget_p_value(obs_stat, direction = \"right\")\n\n# A tibble: 1 × 1\n  p_value\n    <dbl>\n1  0.0027\n\n\np-value of \\(0.0027 < 0.05\\). We reject the null hypothesis that the coin is fair."
+  },
+  {
+    "objectID": "prepare/prep24.html",
+    "href": "prepare/prep24.html",
+    "title": "Prepare",
+    "section": "",
+    "text": "Read: chapter 16.1, 17.1"
+  },
+  {
+    "objectID": "prepare/prep27.html",
+    "href": "prepare/prep27.html",
+    "title": "Prepare",
+    "section": "",
+    "text": "Data privacy\nMisrepresentation\nAlgorithmic bias"
+  },
+  {
+    "objectID": "prepare/prep26.html",
+    "href": "prepare/prep26.html",
+    "title": "Prepare",
+    "section": "",
+    "text": "No prepare."
+  },
+  {
+    "objectID": "prepare/prep25.html",
+    "href": "prepare/prep25.html",
+    "title": "Prepare",
+    "section": "",
+    "text": "Read: chapter 20"
   }
 ]

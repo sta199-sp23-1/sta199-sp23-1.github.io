@@ -1,0 +1,11 @@
+---
+title: "Prepare"
+subtitle: "Due: Friday April 14, 2023"
+categories: "prepare"
+---
+
+-   [Data privacy](https://www.youtube.com/watch?v=c4fvdoNbcSw)
+
+-   [Misrepresentation](https://www.youtube.com/watch?v=C_-rTKfswUI)
+
+-   [Algorithmic bias](https://www.youtube.com/watch?v=E2eD72pwtps)

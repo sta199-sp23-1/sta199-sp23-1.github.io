@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://sta199-f22-1.github.io/labs/lab-7.html</loc>
-    <lastmod>2023-03-31T00:34:34.557Z</lastmod>
+    <lastmod>2023-03-31T20:07:59.931Z</lastmod>
   </url>
   <url>
     <loc>https://sta199-f22-1.github.io/prepare/prep21.html</loc>
@@ -30,7 +30,7 @@
   </url>
   <url>
     <loc>https://sta199-f22-1.github.io/index.html</loc>
-    <lastmod>2023-03-31T05:02:42.576Z</lastmod>
+    <lastmod>2023-03-31T20:11:51.258Z</lastmod>
   </url>
   <url>
     <loc>https://sta199-f22-1.github.io/ae/ae-18.html</loc>
@@ -55,5 +55,21 @@
   <url>
     <loc>https://sta199-f22-1.github.io/ae/ae-21.html</loc>
     <lastmod>2023-03-31T04:53:55.872Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f22-1.github.io/prepare/prep24.html</loc>
+    <lastmod>2023-03-31T20:12:01.232Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f22-1.github.io/prepare/prep27.html</loc>
+    <lastmod>2023-03-31T20:12:13.775Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f22-1.github.io/prepare/prep26.html</loc>
+    <lastmod>2023-03-31T20:12:08.297Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f22-1.github.io/prepare/prep25.html</loc>
+    <lastmod>2023-03-31T20:12:04.673Z</lastmod>
   </url>
 </urlset>
