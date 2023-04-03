@@ -140,11 +140,12 @@ To submit your assignment:
 
 | Component             | Points |
 |:----------------------|:-------|
-| Ex 1                  | 11     |
-| Ex 2                  | 11     |
+| Ex 1                  | 8      |
+| Ex 2                  | 3      |
 | Ex 3                  | 6      |
-| Ex 4                  | 11     |
-| Ex 5                  | 6      |
+| Ex 4                  | 10     |
+| Ex 5                  | 5      |
+| Ex 6                  | 14      |
 | Workflow & formatting | 5      |
 | **Total**             | 50     |
 
