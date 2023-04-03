@@ -9,7 +9,7 @@ This homework is due Friday, March 31st at 5:00pm.
 
 ## Getting Started
 
--   Go to the [Github Organization page](https://github.com/sta199-sp23-2) and open your `hw4-username` repo
+-   Go to the [Github Organization page](https://github.com/sta199-sp23-1) and open your `hw4-username` repo
 
 -   Clone the repository, open a new project in RStudio.
     It contains the starter documents you need to complete the homework assignment.
@@ -39,7 +39,7 @@ race <- read_csv("https://sta101-fa22.netlify.app/static/labs/data/race.csv")
 
 ```
 
-The data for this lab is from the Ultra Trail Running data set featured in Tidy Tuesday.
+The data for this homework is from the Ultra Trail Running data set featured in Tidy Tuesday.
 You can find the codebook with variable definitions in the Tidy Tuesday repo [here](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-10-26/readme.md).
 In this homework, we are going to try and estimate the true mean race time for certain characteristics of races / runners.
 
@@ -70,9 +70,8 @@ Interpret the interval.
 
 b.  Does the standard error of the bootstrap distribution change when you change confidence levels? Use appropriate code to justify your answer.
 
-```{=html}
 <!-- -->
-```
+
 5.  In your own words, describe the process of how to create a bootstrap confidence interval.
     Be specific.
 

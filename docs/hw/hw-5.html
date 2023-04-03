@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STA 199 - HW 4 - Ultra Trail Running</title>
+<title>STA 199 - HW 5</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -117,8 +117,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 }</script>
 
 
-<meta property="og:title" content="STA 199 - HW 4 - Ultra Trail Running">
-<meta property="og:description" content="The data for this homework is from the Ultra Trail Running data set featured in Tidy Tuesday. You can find the codebook with variable definitions in the Tidy Tuesday repo here.">
+<meta property="og:title" content="STA 199 - HW 5">
+<meta property="og:description" content="Load the data:">
 <meta property="og:site-name" content="STA 199">
 </head>
 
@@ -128,7 +128,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">HW 4 - Ultra Trail Running</h1>
+      <h1 class="quarto-secondary-nav-title">HW 5</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -239,19 +239,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
   <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a>
   <ul class="collapse">
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a>
+  <ul class="collapse">
+  <li><a href="#investigating-sleep" id="toc-investigating-sleep" class="nav-link" data-scroll-target="#investigating-sleep">Investigating sleep</a></li>
+  <li><a href="#beyond-this-class-pick-a-package" id="toc-beyond-this-class-pick-a-package" class="nav-link" data-scroll-target="#beyond-this-class-pick-a-package">Beyond this class: pick a package</a></li>
+  </ul></li>
   <li><a href="#rubric" id="toc-rubric" class="nav-link" data-scroll-target="#rubric">Rubric</a></li>
   <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/sta199-f22-1/sta199-f22-1.github.io/edit/main/hw/hw-4.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/sta199-f22-1/sta199-f22-1.github.io/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/sta199-f22-1/sta199-f22-1.github.io/edit/main/hw/hw-5.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/sta199-f22-1/sta199-f22-1.github.io/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">HW 4 - Ultra Trail Running</h1>
+<h1 class="title d-none d-lg-block">HW 5</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Homework</div>
   </div>
@@ -278,13 +282,13 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This homework is due Friday, March 31st at 5:00pm.</p>
+<p>This homework is due Wedmesday, April 12 at 5:00pm.</p>
 </div>
 </div>
 <section id="getting-started" class="level2">
 <h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
 <ul>
-<li><p>Go to the <a href="https://github.com/sta199-sp23-1">Github Organization page</a> and open your <code>hw4-username</code> repo</p></li>
+<li><p>Go to the <a href="https://github.com/sta199-sp23-1">Github Organization page</a> and open your <code>hw5-username</code> repo</p></li>
 <li><p>Clone the repository, open a new project in RStudio. It contains the starter documents you need to complete the homework assignment.</p></li>
 </ul>
 </section>
@@ -297,40 +301,186 @@ Important
 </section>
 <section id="data" class="level1">
 <h1>Data</h1>
+<p>Load the data:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>ultra_rankings <span class="ot">&lt;-</span>  <span class="fu">read_csv</span>(<span class="st">"https://sta101-fa22.netlify.app/static/labs/data/ultra_rankings.csv"</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>race <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://sta101-fa22.netlify.app/static/labs/data/race.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>sleep <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"https://sta101-fa22.netlify.app/static/labs/data/sleep.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The data for this homework is from the Ultra Trail Running data set featured in Tidy Tuesday. You can find the codebook with variable definitions in the Tidy Tuesday repo <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-10-26/readme.md">here</a>. In this homework, we are going to try and estimate the true mean race time for certain characteristics of races / runners.</p>
+<p>The data we are working with today comes from Herbie Lee. Please read information about the data set <a href="https://stat.duke.edu/datasets/sleep">here</a>, where you will also find a codebook.</p>
 <section id="exercises" class="level2">
 <h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
+<section id="investigating-sleep" class="level3">
+<h3 class="anchored" data-anchor-id="investigating-sleep">Investigating sleep</h3>
 <ol type="1">
-<li><p>To begin, join the data frames. Save your result as <code>ultra</code>. Next, drop all rows without an observed race <code>time_in_seconds</code>. Your final data frame should have 60924 rows and 20 columns. Print the number of rows of <code>ultra</code> to the screen.</p></li>
-<li><p>Your friend computes the mean time in seconds it takes participants of 170+ km races to finish. Your friend also constructs a 90% confidence interval and states, “There is a .9 probability that the sample mean race time for races over 170 km is between 130000 and 160000 seconds.” Without running any code, what is wrong with your friend’s statement? Correct the statement as well (without running any code).</p></li>
-<li><p>Report the mean race time for races 170 km or longer and construct a 99% bootstrap confidence interval for the mean race time using <code>set.seed(6)</code> and 5000 reps.</p></li>
+<li><p>Find the mean time it takes the participant to fall asleep. Check whether or not you can use central limit theorem to construct a 95% confidence interval to report with your estimate. For purposes of this exercise, you may consider samples of time to sleep as random. If you can use CLT, please do so to construct and report the confidence interval. Otherwise, construct a bootstrap confidence interval with <code>set.seed(5)</code> and <code>10000</code> reps. Interpret your interval in context.</p></li>
+<li><p>Does the participant take more than 35 minutes on average to fall asleep? Perform a hypothesis test to investigate. What is the null? What is the alternative? Use <code>set.seed(2)</code> and <code>reps=5000</code> to simulate under the null.</p></li>
 </ol>
-<p>Next, check that central limit theorem holds, do you need to make any assumptions? Use CLT to construct a 99% confidence interval. Compare your result to your bootstrap interval. Interpret the interval.</p>
+<p>Visualize the null distribution and shade the p-value. Be sure to label the x-axis. Make a conclusion based on significance level. Given your response from the previous exercise, does this result surprise you? Why or why not? What is the probability of rejecting the null if it’s actually true? What type of error is this (type 1 or type 2)?</p>
+<ol start="3" type="1">
+<li><em>Do calcium-magnesium supplements reduce median time to fall asleep?</em> Construct a hypothesis test to investigate. To begin, state the null and alternative hypothesis in words and in statistical notation. Use simulation-based inference to generate <code>5000</code> samples from the null distribution with <code>set.seed(5)</code>. Compute and state your observed statistic. Finally, compute the p-value and report it as well as significance at the alpha = 0.05 level and state your conclusion in context.</li>
+</ol>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Hint
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You will need to mutate to ensure that one of the variables is non-numeric.</p>
+</div>
+</div>
 <ol start="4" type="1">
-<li>Now, calculate a 95% bootstrap confidence interval for mean race time for races 170 km or longer (same bootstrap distribution as the previous exercise). Which of the following characteristics change compared to the interval created in question 3? (Please answer “yes” or “no” to each of the following. If you answer “yes”, explain the change observed.)</li>
+<li>The more time the individual spent lying in bed, awake, and trying to sleep, the worse their overall quality of sleep. To begin investigating quality of sleep, create a new column <code>timeAwake</code> that shows the total number of minutes the individual spent in bed but not asleep. When <code>timeAwake</code> is large, sleep is awful and interrupted. Save your data frame with the new column as <code>sleep2</code>.</li>
 </ol>
+<p>Example: <code>TTS</code> is the time to fall asleep, <code>TBT</code> is total bed time, i.e.&nbsp;total time spent, lying in bed and trying to sleep.</p>
+<p>So if the participant gets into bed at 9:00pm and then falls asleep at 9:30pm and wakes up at 1:00am and lies awake for an hour only to finally sleep until 6:00am and gets out of bed then</p>
 <ul>
-<li><p>The center of the confidence interval</p></li>
-<li><p>The width of the confidence interval</p></li>
+<li><code>TTS</code> is 30 minutes,</li>
+<li><code>TBT</code> is 9 hours,</li>
+<li>Total Sleep Time (<code>TST</code>) is 3.5h + 4h = 7.5 hours and the total time awake is 1.5 hours.</li>
 </ul>
-<ol start="2" type="a">
-<li>Does the standard error of the bootstrap distribution change when you change confidence levels? Use appropriate code to justify your answer.</li>
-</ol>
-<!-- -->
 <ol start="5" type="1">
-<li><p>In your own words, describe the process of how to create a bootstrap confidence interval. Be specific.</p></li>
-<li><p>Identify at least two anomalies in the data set. For example, if the same runner ran a race in two different countries on the same day, that would be an anomaly. While this example is false, there are indeed real anomalies in the data. For full credit, display your anomaly either via code (printing to screen) or via a visualization. Discuss your findings.</p></li>
-<li><p>Given the race was in Argentina, what is the median age of runners? Can you use Central Limit Theorem (CLT) to construct a confidence interval about this estimate? Explain. If not, construct a 90% bootstrap confidence interval that bounds the median from below. Use <code>set.seed(8)</code> and 10000 reps. Interpret your interval in context.</p></li>
+<li><em>Hypothesis: Most nights, the participant spends over fifty minutes lying in bed awake.</em> Construct a hypothesis test to investigate. To begin, state the null and alternative hypothesis in words and in statistical notation. Use simulation-based inference to generate <code>5000</code> samples from the null distribution with <code>set.seed(8)</code>. Compute and state your observed statistic. Finally, compute the p-value and report it as well as significance at the alpha = 0.01 level and state your conclusion in context.</li>
 </ol>
-<p>– Note, this is not a symmetric confidence interval!</p>
-<ol start="8" type="1">
-<li>A fellow colleague wants your next investigation to be about mean race times in France. They are adamant that we must use 80% confidence intervals when reporting results. In 1-2 sentences, discuss both any potential benefits and concerns you may have with creating a confidence interval with this low of level.</li>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Hint
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Start with <code>sleep2</code> from the previous exercise.</p>
+</div>
+</div>
+</section>
+<section id="beyond-this-class-pick-a-package" class="level3">
+<h3 class="anchored" data-anchor-id="beyond-this-class-pick-a-package">Beyond this class: pick a package</h3>
+<ol start="6" type="1">
+<li>In this exercise, you will find a new package that you haven’t used in class and learn how to use it. Being able to find new packages, install them, read the documentation and finally use the package is an essential skill beyond the classroom.</li>
 </ol>
+<p>To begin,</p>
+<ul>
+<li><p>Pick a package. You can choose one from the list below, or venture into the great unknown and find another online. If you have trouble getting a package to work, ask for help on slack or come to office hours.</p></li>
+<li><p>Install the package. Be sure to do this in the Console, not in your R Markdown document because you do not want to keep re-installing every time you knit the document.</p></li>
+</ul>
+<p>Depending on where the package comes from, how you install the package differs:</p>
+<ul>
+<li><p>If the package is on CRAN (Comprehensive R Archive Network), you can install it with <code>install.packages</code>.</p></li>
+<li><p>If the package is only on Github (most likely because it is still under development), you need to use the <code>install_github</code> function, click here for more details.</p></li>
+<li><p>Load the package. Regardless of how you installed the package you can load it with the <code>library</code> function.</p></li>
+<li><p>Do something with the package. Typically, simpler is better. The goal is for you to read and understand the package documentation to carry out a simple task.</p></li>
+<li><p>Finally, write a short 3-4 sentence statement (at the beginning of your solution to this exercise) and include:</p></li>
+</ul>
+<ol type="1">
+<li><p>The name of the package you use and whether it is from CRAN or GitHub</p></li>
+<li><p>A short description of what the package does (in your own words)</p></li>
+<li><p>A short description of what you do with the package.</p></li>
+</ol>
+<p>Sample list of packages on CRAN:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>package name</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://cran.r-project.org/web/packages/ape/index.html">ape</a></td>
+<td>Manipulate, plot and interact with phylogenetic trees and models. Comes with sample data</td>
+</tr>
+<tr class="even">
+<td><a href="https://cran.r-project.org/web/packages/astrodatR/index.html">astrodatR</a></td>
+<td>Astronomy datasets</td>
+</tr>
+<tr class="odd">
+<td><a href="https://cran.r-project.org/web/packages/cowsay/vignettes/cowsay_tutorial.html">cowsay</a></td>
+<td>Allows printing of character strings as messages/warnings/etc. with ASCII animals, including cats, cows, frogs, chickens, ghosts, and more</td>
+</tr>
+<tr class="even">
+<td><a href="http://hadley.github.io/babynames/">babynames</a></td>
+<td>US Baby Names 1880-2015</td>
+</tr>
+<tr class="odd">
+<td><a href="https://cran.r-project.org/web/packages/dragracer/vignettes/dragracer-intro.html">dragracer</a></td>
+<td>These are data sets for the hit TV show, RuPaul’s Drag Race. Data right now include episode-level data, contestant-level data, and episode-contestant-level data</td>
+</tr>
+<tr class="even">
+<td><a href="https://milesmcbain.github.io/datapasta/">datapasta</a></td>
+<td>RStudio addins and R functions that make copy-pasting vectors and tables to text painless</td>
+</tr>
+<tr class="odd">
+<td><a href="https://rich-iannone.github.io/DiagrammeR/">DiagrammeR</a></td>
+<td>Graph/Network Visualization</td>
+</tr>
+<tr class="even">
+<td><a href="https://github.com/juliasilge/janeaustenr">janeaustenr</a></td>
+<td>Full texts for Jane Austen’s 6 completed novels, ready for text analysis. These novels are “Sense and Sensibility”, “Pride and Prejudice”, “Mansfield Park”, “Emma”, “Northanger Abbey”, and “Persuasion”</td>
+</tr>
+<tr class="odd">
+<td><a href="https://cran.r-project.org/web/packages/ggimage/vignettes/ggimage.html">ggimage</a></td>
+<td>Supports image files and graphic objects to be visualized in ‘ggplot2’ graphic system</td>
+</tr>
+<tr class="even">
+<td><a href="https://github.com/dgrtwo/gganimate">gganimate</a></td>
+<td>Create easy animations with ggplot2</td>
+</tr>
+<tr class="odd">
+<td><a href="https://gt.rstudio.com/">gt</a></td>
+<td>Easily Create Presentation-Ready Display Tables</td>
+</tr>
+<tr class="even">
+<td><a href="https://rstudio.github.io/leaflet/">leaflet</a></td>
+<td>Create Interactive Web Maps with the JavaScript ‘Leaflet’ Library</td>
+</tr>
+<tr class="odd">
+<td><a href="https://cran.r-project.org/web/packages/praise/praise.pdf">praise</a></td>
+<td>Build friendly R packages that praise their users if they have done something good, or they just need it to feel better</td>
+</tr>
+<tr class="even">
+<td><a href="https://plotly-r.com/">plotly</a></td>
+<td>Create interactive web graphics from ggplot2 graphs and/or a custom interface to the JavaScript library plotly.js inspired by the grammar of graphics</td>
+</tr>
+<tr class="odd">
+<td><a href="https://cran.r-project.org/web/packages/suncalc/suncalc.pdf">suncalc</a></td>
+<td>R interface to <code>suncalc.js</code> library, part of the <a href="http://suncalc.net">SunCalc.net project</a>, for calculating sun position, sunlight phases (times for sunrise, sunset, dusk, etc.), moon position and lunar phase for the given location and time</td>
+</tr>
+<tr class="even">
+<td><a href="https://bradlindblad.github.io/schrute/">schrute</a></td>
+<td>The complete scripts from the American version of the Office television show in tibble format</td>
+</tr>
+<tr class="odd">
+<td><a href="https://cran.r-project.org/web/packages/statebins/statebins.pdf">statebins</a></td>
+<td>The cartogram heatmaps generated by the included methods are an alternative to choropleth maps for the United States and are based on work by the Washington Post graphics department in their report on <a href="http://www.washingtonpost.com/wp-srv/special/business/states-most-threatened-by-trade/">“The states most threatened by trade”</a></td>
+</tr>
+<tr class="even">
+<td><a href="https://cran.r-project.org/web/packages/ttbbeer/ttbbeer.pdf">ttbbeer</a></td>
+<td>An R data package of beer statistics from U.S. Department of the Treasury, Alcohol and Tobacco Tax and Trade Bureau (TTB)</td>
+</tr>
+<tr class="odd">
+<td><a href="https://cran.r-project.org/web/packages/ttbbeer/ttbbeer.pdf">ttbbeer</a></td>
+<td>An R data package of beer statistics from U.S. Department of the Treasury, Alcohol and Tobacco Tax and Trade Bureau (TTB)</td>
+</tr>
+<tr class="even">
+<td><a href="https://cran.r-project.org/web/packages/ukbabynames/ukbabynames.pdf">ukbabynames</a></td>
+<td>Full listing of UK baby names occurring more than three times per year between 1996 and 2015, and rankings of baby name popularity by decade from 1904 to 1994</td>
+</tr>
+<tr class="odd">
+<td><a href="https://cran.r-project.org/web/packages/wesanderson/wesanderson.pdf">wesanderson</a></td>
+<td>Color palettes from Wes Anderson films</td>
+</tr>
+<tr class="even">
+<td><a href="https://cran.r-project.org/web/packages/scatterplot3d/scatterplot3d.pdf">scatterplot3d</a></td>
+<td>Create 3D plots</td>
+</tr>
+</tbody>
+</table>
+</section>
 </section>
 <section id="rubric" class="level2">
 <h2 class="anchored" data-anchor-id="rubric">Rubric</h2>
