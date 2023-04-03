@@ -1,10 +1,10 @@
 ---
-title: "HW 5"
+title: "HW 5: Sleep case study and beyond"
 categories: "Homework"
 ---
 
 ::: callout-important
-This homework is due Wednesday, April 12 at 5:00pm.
+This homework is due Thursday, April 13 at 5:00pm.
 :::
 
 ## Getting Started
@@ -99,7 +99,7 @@ To begin,
     If you have trouble getting a package to work, ask for help on slack or come to office hours.
 
 -   Install the package.
-    Be sure to do this in the Console, not in your R Markdown document because you do not want to keep re-installing every time you knit the document.
+    Be sure to do this in the Console, not in your quarto document because you do not want to keep re-installing every time you render the document.
 
 Depending on where the package comes from, how you install the package differs:
 
@@ -125,7 +125,7 @@ Depending on where the package comes from, how you install the package differs:
 Sample list of packages on CRAN:
 
 | package name                                                                                  | description                                                                                                                                                                                                                                                                                                                              |
-|---------------------|------------------------------------------------------|
+|---------------------|---------------------------------------------------|
 | [ape](https://cran.r-project.org/web/packages/ape/index.html)                                 | Manipulate, plot and interact with phylogenetic trees and models. Comes with sample data                                                                                                                                                                                                                                                 |
 | [astrodatR](https://cran.r-project.org/web/packages/astrodatR/index.html)                     | Astronomy datasets                                                                                                                                                                                                                                                                                                                       |
 | [cowsay](https://cran.r-project.org/web/packages/cowsay/vignettes/cowsay_tutorial.html)       | Allows printing of character strings as messages/warnings/etc. with ASCII animals, including cats, cows, frogs, chickens, ghosts, and more                                                                                                                                                                                               |
@@ -151,21 +151,17 @@ Sample list of packages on CRAN:
 
 ## Rubric
 
--   Ex 1: 5 pts.
+-   Ex 1: TBD pts.
 
--   Ex 2: 4 pts.
+-   Ex 2: TBD pts.
 
--   Ex 3: 5 pts.
+-   Ex 3: TBD pts.
 
--   Ex 4: 10 pts.
+-   Ex 4: TBD pts.
 
--   Ex 5: 6 pts.
+-   Ex 5: TBD pts.
 
--   Ex 6: 6 pts.
-
--   Ex 7: 5 pts
-
--   Ex 8: 4 pts
+-   Ex 6: TBD pts.
 
 -   Workflow and formatting - 5 pts
 
