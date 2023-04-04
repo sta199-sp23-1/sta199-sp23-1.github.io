@@ -656,5 +656,61 @@
     "title": "HW 5: Sleep case study and beyond",
     "section": "Submission",
     "text": "Submission\n\nGo to http://www.gradescope.com and click Log in in the top right corner.\nClick School Credentials Duke Net ID and log in using your Net ID credentials.\nClick on your STA 199 course.\nClick on the assignment, and you’ll be prompted to submit it.\nMark all the pages associated with exercise. All the pages of your homework should be associated with at least one question (i.e., should be “checked”). If you do not do this, you will be subject to lose points on the assignment.\nSelect all pages of your PDF submission to be associated with the “Workflow & formatting” question.\n\n\n\n\n\n\n\nNote\n\n\n\nThe “Workflow & formatting” grade is to assess the reproducible workflow. This includes:\n\nlinking all pages appropriately on Gradescope\nputting your name in the YAML at the top of the document\ncommitting the submitted version of your .qmd to GitHub\nAre you under the 80 character code limit? (You shouldn’t have to scroll to see all your code).\nPipes %>%, |> and ggplot layers + should be followed by a new line\nYou should be consistent with stylistic choices, e.g. only use 1 of = vs <- and %>% vs |>\nAll binary operators should be surrounded by space. For example x + y is appropriate. x+y is not."
+  },
+  {
+    "objectID": "ae/ae-22.html",
+    "href": "ae/ae-22.html",
+    "title": "Tidy hypotheses",
+    "section": "",
+    "text": "this ae is due for grade. Push your completed ae to GitHub within 48 hours to receive credit\nhomework 5 released today\nproject draft report due April 7th to your GitHub repo."
+  },
+  {
+    "objectID": "ae/ae-22.html#getting-started",
+    "href": "ae/ae-22.html#getting-started",
+    "title": "Tidy hypotheses",
+    "section": "Getting started",
+    "text": "Getting started\nClone your ae22-username repo from the GitHub organization."
+  },
+  {
+    "objectID": "ae/ae-22.html#today",
+    "href": "ae/ae-22.html#today",
+    "title": "Tidy hypotheses",
+    "section": "Today",
+    "text": "Today\nBy the end of today you will…\n\nhypothesis test the tidy way\npractice more than testing proportions"
+  },
+  {
+    "objectID": "ae/ae-22.html#load-packages",
+    "href": "ae/ae-22.html#load-packages",
+    "title": "Tidy hypotheses",
+    "section": "Load packages",
+    "text": "Load packages\n\nlibrary(tidyverse)\nlibrary(tidymodels)"
+  },
+  {
+    "objectID": "ae/ae-22.html#notes",
+    "href": "ae/ae-22.html#notes",
+    "title": "Tidy hypotheses",
+    "section": "Notes",
+    "text": "Notes\n\nNot just a coin flip\n\nHere’s an example of testing a proportion outside the context of coins.\n\n\npush_pull = read_csv(\"https://sta101-fa22.netlify.app/static/appex/data/push_pull.csv\")\n\n\npush_pull %>%\n  slice(1:3, 24:26)\n\n# A tibble: 6 × 7\n  participant_id   age push1 push2 pull1 pull2 training\n           <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <chr>   \n1              1    41    41    45    16    17 density \n2              2    32    35    44     9    11 density \n3              3    44    33    38    10    11 density \n4             24    36    31    60     9    15 gtg     \n5             25    50    35    42     9    12 gtg     \n6             26    34    23    39     9    13 gtg     \n\n\nThe push_pull dataset comes from a “mini study” by mountain tactical institute.\n26 individuals completed 1 of 2 exercise regiments for 3.5 weeks to increase their pushups and pullups. Codebook below:\n\nparticipant_id: unique identifier for each participant\nage: age of participant\npush1/2: push-ups at beginning and end of program respectively\npull1/2: pull-ups at beginning and end of program respectively\ntraining: which training protocol the individual participated in\n\n\npush_pull = push_pull %>%\n  mutate(\n    pct_push_inc = (push2 / push1 ) - 1,\n    pct_pull_inc = (pull2 / pull1) - 1)\n\nHypothesis: “Most people who train consistently will see at least a 15% increase in push-ups over a 3.5 week training period.”\nBreaking it down:\n\n“Most” i.e. “greater than 50%” indicates we should examine a proportion.\n\n\nExercise 1\nWhat’s the null?\n\n“will see at least a 15% increase”. Each person either increases by 15% over 3.5 weeks or does not. This is our binary outcome.\ncreate a new column called over_15pct that tells you whether or not an individual achieved at least a 15% increase in push-ups\n\n\n# code here\n\n\nWhat would be a default theory (null hypothesis)?\n\n\n\nExercise 2\nWrite the null and alternative in mathematical notation.\n\n\nExercise 3\nWhat is the observed statistic? Compute and write it in mathematical notation.\n\n\nExercise 4\nNext, simulate under the null and compute the p-value. State your conclusion with \\(\\alpha = 0.05\\). As a bonus, visualize the null distribution and shade in the p-value.\n\n\n\nMore than a proportion\n\nWhat if we want to make a claim about a different population parameter than a proportion? Maybe a mean, or median? We can’t necessarily flip a coin. The answer, is once again, bootstrap sampling.\n\nHypothesis: “The mean age of push-up/pull-up training participants is greater than 30”.\nLet’s investigate this hypothesis with a significance level \\(\\alpha = 0.01\\).\n\nExercise 5\nWrite down the null and alternative hypotheses in words and mathematical notation\n\n\nExercise 6\nWhat is the observed statistic? Write it in mathematical notation.\nBootstrapping does the following…\n\n# find observed statistic\nobs_mean_age = push_pull %>%\n  drop_na(age) %>%\n  summarize(meanAge = mean(age)) %>%\n  pull()\n# subtract observed_mean - desired_mean from age\nage_and_null = push_pull %>%\n  select(age) %>%\n  drop_na(age) %>%\n  mutate(nullAge = age - (obs_mean_age - 30))\n# show data frame\nage_and_null\n\n# A tibble: 25 × 2\n     age nullAge\n   <dbl>   <dbl>\n 1    41    35.8\n 2    32    26.8\n 3    44    38.8\n 4    37    31.8\n 5    37    31.8\n 6    21    15.8\n 7    33    27.8\n 8    38    32.8\n 9    49    43.8\n10    33    27.8\n# … with 15 more rows\n\n# show the means of each column\nage_and_null %>%\n  summarize(meanAge = mean(age),\n  mean_nullAge = mean(nullAge))\n\n# A tibble: 1 × 2\n  meanAge mean_nullAge\n    <dbl>        <dbl>\n1    35.2           30\n\n\nIf we take bootstrap samples from this new nullAge column, we are sampling from data with the same variability as our original data, but a different mean. This is a nice way to explore the null!\n\nset.seed(3)\n\n# simulate null\nnull_dist = push_pull %>%\n  specify(response = age) %>%\n  hypothesize(null = \"point\", mu = 30) %>%\n  generate(reps = 10000, type = \"bootstrap\") %>%\n  calculate(stat = \"mean\")\n\n# get observed statistic\nobs_stat = obs_mean_age\n\np_value = null_dist %>%\n  get_p_value(obs_stat, direction = \"right\")\n\np_value\n\n# A tibble: 1 × 1\n  p_value\n    <dbl>\n1  0.0001\n\n\n\nThe p-value 1e-04 is less than \\(\\alpha = 0.01\\). I reject the null hypothesis. In context, there is evidence to suggest that average push/pull trainee age is older than 30 years old.\n\n\n\nExercise 7\nSay we are interested in the performance of trainees at this particular facility and the sample is representative of the population.\nHypothesis: The median number of pull-ups trainees can perform is less than 20 even after training for 3.5 weeks.\nWrite down the null and alternative hypothesis in mathematical notation.\n\n\nExercise 8\nWrite down the observed statistic. Simulate under the null and compute the p-value. Finally, visualize and interpret the p-value in context."
+  },
+  {
+    "objectID": "ae/ae-22.html#summary",
+    "href": "ae/ae-22.html#summary",
+    "title": "Tidy hypotheses",
+    "section": "Summary",
+    "text": "Summary\n\nHypothesis testing procedure\n\nSpecify the null and alternative hypothesis. Choose or know \\(\\alpha\\).\nCollect/examine the data. Compute the observed statistic.\nSimulate under the null and compute the p-value using the observed statistic and the alternative hypothesis.\nCompare the p-value to your significance level \\(\\alpha\\) and reject or fail to reject the null. Interpret your result in context."
+  },
+  {
+    "objectID": "ae/ae-22.html#which-training-method-is-better",
+    "href": "ae/ae-22.html#which-training-method-is-better",
+    "title": "Tidy hypotheses",
+    "section": "Which training method is better?",
+    "text": "Which training method is better?\nTwo exercise regimes:\n\n“density” training\n“grease-the-groove” (gtg)\n\nWe want to know, is the average pull-up percent increase of a gtg trainee significantly different than a density trainee?\nFundamentally, does the categorical variable training affect the average percentage increase in pull-ups?\nState the null hypothesis:\n\\[\n\\mu_d = \\mu_{gtg}\n\\]\n\\[\nH_0: \\mu_d - \\mu_{gtg} = 0\n\\]\nWhat we want to do to simulate data under this null:\n\nrandom_training = sample(push_pull$training, replace = FALSE)\n\npush_pull %>%\n  select(pct_pull_inc) %>%\n  mutate(random_training = random_training)\n\n\nExercise 9:\n\nComplete the hypothesis specification above by stating the alternative. Check the observed statistic reported below.\n\n\n# code here\n\nSimulating under the null and computing the p-value:\n\nsim_num = 10000\nset.seed(1)\n# simulate null\nnull_dist = push_pull %>%\n  specify(response = pct_pull_inc, explanatory = training) %>%\n  hypothesize(null = \"independence\") %>%\n  generate(reps = sim_num, type = \"permute\") %>%\n  calculate(stat = \"diff in means\", order = c(\"density\", \"gtg\"))\n# observed statistic\nobs_stat = .196 - .489\n# visualize / get p\nvisualize(null_dist) +\n  shade_p_value(obs_stat, direction = \"both\")\n\n\n\n\n\n\nExercise 10\nCompute the p-value and state your conclusion with \\(\\alpha = 0.05\\)"
+  },
+  {
+    "objectID": "ae/ae-22.html#summary-of-generate-options",
+    "href": "ae/ae-22.html#summary-of-generate-options",
+    "title": "Tidy hypotheses",
+    "section": "Summary of generate() options",
+    "text": "Summary of generate() options\n\n1. draw\n\ndescription: flip a coin with probability p, or roll a die with probabilities associated with each side. See here for reference to the multinomial setting.\ntypical case: test the proportion of a binary outcome\nnull: proportion \\(p\\) is some fixed number\nExample (hypothesis test for a single proportion)\n\n\n\n2. bootstrap\n\ndescription: re-sample your data with replacement\ntypical case (in hypothesis testing): does the mean equal a specific value? Does the median equal a specific value?\nnull: what would the data have looked like if nothing but the point estimate changed?\n\n\n\n3. permute\n\ndescription: permutes variables\ntypical case: is there a difference in the outcome between groups?\nassociated null: group membership does not matter i.e. group A and group B have the same outcome\nExample (test for independence)"
   }
 ]
