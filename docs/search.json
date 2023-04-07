@@ -712,5 +712,61 @@
     "title": "Tidy hypotheses",
     "section": "Summary of generate() options",
     "text": "Summary of generate() options\n\n1. draw\n\ndescription: flip a coin with probability p, or roll a die with probabilities associated with each side. See here for reference to the multinomial setting.\ntypical case: test the proportion of a binary outcome\nnull: proportion \\(p\\) is some fixed number\nExample (hypothesis test for a single proportion)\n\n\n\n2. bootstrap\n\ndescription: re-sample your data with replacement\ntypical case (in hypothesis testing): does the mean equal a specific value? Does the median equal a specific value?\nnull: what would the data have looked like if nothing but the point estimate changed?\n\n\n\n3. permute\n\ndescription: permutes variables\ntypical case: is there a difference in the outcome between groups?\nassociated null: group membership does not matter i.e. group A and group B have the same outcome\nExample (test for independence)"
+  },
+  {
+    "objectID": "ae/ae-23.html",
+    "href": "ae/ae-23.html",
+    "title": "Hypothesis tests and confidence intervals",
+    "section": "",
+    "text": "this ae is due for grade. Push your completed ae to GitHub within 48 hours to receive credit\nproject draft report due to GitHub today\nhomework 5 due next Thursday\nExam 2 next Friday"
+  },
+  {
+    "objectID": "ae/ae-23.html#getting-started",
+    "href": "ae/ae-23.html#getting-started",
+    "title": "Hypothesis tests and confidence intervals",
+    "section": "Getting started",
+    "text": "Getting started\nClone your ae23-username repo from the GitHub organization."
+  },
+  {
+    "objectID": "ae/ae-23.html#today",
+    "href": "ae/ae-23.html#today",
+    "title": "Hypothesis tests and confidence intervals",
+    "section": "Today",
+    "text": "Today\nBy the end of today you will…\n\ndefine type I and type II error\ncompare hypothesis tests with confidence intervals\npractice conducting hypothesis tests"
+  },
+  {
+    "objectID": "ae/ae-23.html#load-packages",
+    "href": "ae/ae-23.html#load-packages",
+    "title": "Hypothesis tests and confidence intervals",
+    "section": "Load packages",
+    "text": "Load packages\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(openintro)"
+  },
+  {
+    "objectID": "ae/ae-23.html#practice",
+    "href": "ae/ae-23.html#practice",
+    "title": "Hypothesis tests and confidence intervals",
+    "section": "Practice",
+    "text": "Practice\n\nLoad data\nThe stent30 data set comes from the openintro package and is from a study conducted in 2011 on the effects of arterial stents as a therapy for stroke patients. See the original publication:\nChimowitz MI, Lynn MJ, Derdeyn CP, et al. 2011. Stenting versus Aggressive Med- ical Therapy for Intracranial Arterial Stenosis. New England Journal of Medicine 365:993- 1003. doi: 10.1056/NEJMoa1105335.\nor check ?stent30 for more information.\n\ndata(stent30)\n\n\nglimpse(stent30)\n\nRows: 451\nColumns: 2\n$ group   <fct> treatment, treatment, treatment, treatment, treatment, treatme…\n$ outcome <fct> stroke, stroke, stroke, stroke, stroke, stroke, stroke, stroke…\n\n\n\nExercise 1\nDo stents affect stroke outcome in patients?\n\nWrite the null and alternative hypothesis. Report the observed statistic.\nSimulate under the null.\nCompute and report the p-value, compare to \\(\\alpha = 0.05\\) and make a conclusion with appropriate context"
+  },
+  {
+    "objectID": "ae/ae-23.html#confidence-intervals-and-hypothesis-tests",
+    "href": "ae/ae-23.html#confidence-intervals-and-hypothesis-tests",
+    "title": "Hypothesis tests and confidence intervals",
+    "section": "Confidence intervals and hypothesis tests",
+    "text": "Confidence intervals and hypothesis tests\nHere we revisit the data from the first three seasons of NC Courage games (2017-2019).\n\ncourage = read_csv(\"https://sta101-fa22.netlify.app/static/labs/data/courage.csv\")\n\n\nglimpse(courage)\n\nRows: 78\nColumns: 10\n$ game_id     <chr> \"washington-spirit-vs-north-carolina-courage-2017-04-15\", …\n$ game_date   <chr> \"4/15/2017\", \"4/22/2017\", \"4/29/2017\", \"5/7/2017\", \"5/14/2…\n$ game_number <dbl> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17,…\n$ home_team   <chr> \"WAS\", \"NC\", \"NC\", \"BOS\", \"ORL\", \"NC\", \"NC\", \"CHI\", \"NC\", …\n$ away_team   <chr> \"NC\", \"POR\", \"ORL\", \"NC\", \"NC\", \"CHI\", \"NJ\", \"NC\", \"KC\", \"…\n$ opponent    <chr> \"WAS\", \"POR\", \"ORL\", \"BOS\", \"ORL\", \"CHI\", \"NJ\", \"CHI\", \"KC…\n$ home_pts    <dbl> 0, 1, 3, 0, 3, 1, 2, 3, 2, 3, 0, 0, 2, 1, 1, 0, 1, 2, 2, 2…\n$ away_pts    <dbl> 1, 0, 1, 1, 1, 3, 0, 2, 0, 1, 1, 1, 0, 0, 0, 1, 2, 0, 3, 1…\n$ result      <chr> \"win\", \"win\", \"win\", \"win\", \"loss\", \"loss\", \"win\", \"loss\",…\n$ season      <dbl> 2017, 2017, 2017, 2017, 2017, 2017, 2017, 2017, 2017, 2017…\n\n\nDo National Women’s Soccer League (NWSL) teams have a home-field advantage? We’ll answer this question in a few separate ways.\nHypothesis testing framework: does NC Courage score a significantly different number of points (on average) away than at home?\n\nExercise 2\n\nCreate a new column location that tells you whether the courage are “home” or “away”\nCreate a new column pts that always reports the Courage points scored in a game.\nSave your result as a new data frame titled courage2.\n\n\n# code here\n\n\n\nExercise 3\nTo answer the question does NC Courage score a significantly different number of points (on average) away than at home?\n\nWrite the null and alternative hypothesis. Report the observed statistic.\nSimulate under the null.\nCompute and report the p-value, compare to \\(\\alpha = 0.05\\) and make a conclusion with appropriate context\n\n\n# code here\n\n\n\nExercise 4\n\nReport the mean difference between away and home games and report a 95% bootstrap confidence interval. Use set.seed(3) and reps=5000 Interpret your interval in context.\n\n\n# code here\n\n\n\nExercise 5\nIs there a better way we could investigate whether or not the Courage have a home-field advantage? Why?"
+  },
+  {
+    "objectID": "ae/ae-23.html#notes",
+    "href": "ae/ae-23.html#notes",
+    "title": "Hypothesis tests and confidence intervals",
+    "section": "Notes",
+    "text": "Notes\n\nType 1 and Type 2 Errors\n\n\n\nTruth\nReject the null\nFail to reject the null\n\n\n\n\n\\(H_0\\) is true\nType 1 error\n✔️\n\n\n\\(H_A\\) is true\n✔️\nType 2 error\n\n\n\nThe significance level, \\(\\alpha\\), is the probability of a type 1 error. In some contexts, a type 1 error may be referred to as a “false positive” and a type 2 error as a “false negative”.\nIntuitively, by considering extremes, one can see a trade-off exists between type 1 and type 2 error.\n\nIf \\(\\alpha = 0\\), then the p-value stands no chance of being smaller than \\(\\alpha\\) and we always fail to reject the null. This makes type 1 errors impossible.\n\nSimilarly, if \\(\\alpha = 1\\), then all p-values will be smaller than \\(\\alpha\\) and type 2 errors will become impossible, because we will always reject the null.\n\\(\\beta\\) is used to denote the probability of a type 2 error.\nThe power of a test is \\(1 - \\beta\\), which is the probability that your test rejects the null hypothesis when the null hypothesis is false."
+  },
+  {
+    "objectID": "ae/ae-23.html#why-its-important-to-be-careful-with-interpretation",
+    "href": "ae/ae-23.html#why-its-important-to-be-careful-with-interpretation",
+    "title": "Hypothesis tests and confidence intervals",
+    "section": "Why it’s important to be careful with interpretation",
+    "text": "Why it’s important to be careful with interpretation\n\n(And why hypothesis tests don’t tell the whole story)\nThe data for this example comes from Confounding and Simpson’s paradox1 by Julious and Mullee.\nThe data examines 901 individuals with diabetes and includes the following variables\n\ninsulin_dep: whether or not the patient has insulin dependent or non-insulin dependent diabetes\nage: whether or not the individual is less than 40 years old\nsurvival: whether or not the individual survived the length of the study\n\n\ndiabetes = read_csv(\"https://sta101.github.io/static/appex/data/diabetes.csv\")\n\nFlex Aisher thinks people with insulin dependent diabetes actually survive longer than those without insulin dependence. Flex wants to formally test his hypothesis.\nLet \\(p_{d}\\) be the probability of insulin dependent survival and \\(p_{i}\\) be the probability of insulin independent survival.\n\\[\nH_0: p_{d} - p_{i} = 0\n\\]\n\\[\nH_A: p_{d} - p_{i} > 0\n\\]\nAt first glance the data seem to back up his claim…\n\n\nExercise 6\nCompute the probability of survival and death for diabetic individuals with and without insulin dependence.\n\n#  code here\n\n\n\nExercise 7\nIs Flex’s claim significant at the \\(\\alpha = 0.05\\) level? Perform a hypothesis test and report your results.\n\n# code here\n\n\n\nExercise 8\nIs the aggregate data misleading? Use the code chunk below to investigate further.\n\n# code here"
   }
 ]

@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://sta199-f22-1.github.io/labs/lab-7.html</loc>
-    <lastmod>2023-04-03T19:14:07.890Z</lastmod>
+    <lastmod>2023-04-07T05:58:46.653Z</lastmod>
   </url>
   <url>
     <loc>https://sta199-f22-1.github.io/prepare/prep21.html</loc>
@@ -22,7 +22,7 @@
   </url>
   <url>
     <loc>https://sta199-f22-1.github.io/teaching-resources/GitHubClassroomManagement.html</loc>
-    <lastmod>2023-04-03T19:14:06.716Z</lastmod>
+    <lastmod>2023-04-07T05:58:48.122Z</lastmod>
   </url>
   <url>
     <loc>https://sta199-f22-1.github.io/labs/lab-6.html</loc>
@@ -30,7 +30,7 @@
   </url>
   <url>
     <loc>https://sta199-f22-1.github.io/index.html</loc>
-    <lastmod>2023-04-03T14:28:10.010Z</lastmod>
+    <lastmod>2023-04-07T05:59:26.107Z</lastmod>
   </url>
   <url>
     <loc>https://sta199-f22-1.github.io/ae/ae-18.html</loc>
@@ -75,5 +75,9 @@
   <url>
     <loc>https://sta199-f22-1.github.io/hw/hw-5.html</loc>
     <lastmod>2023-04-03T19:14:03.655Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta199-f22-1.github.io/ae/ae-23.html</loc>
+    <lastmod>2023-04-07T05:58:49.374Z</lastmod>
   </url>
 </urlset>
