@@ -149,6 +149,15 @@ Sample list of packages on CRAN:
 | [wesanderson](https://cran.r-project.org/web/packages/wesanderson/wesanderson.pdf)            | Color palettes from Wes Anderson films                                                                                                                                                                                                                                                                                                   |
 | [scatterplot3d](https://cran.r-project.org/web/packages/scatterplot3d/scatterplot3d.pdf)      | Create 3D plots                                                                                                                                                                                                                                                                                                                          |
 
+### Assessment
+
+A research team at Duke University is creating an intro data science assessment. They are hopeful to have students in an intro data science course take the assessment to better pin down how students think about and reason through data science assessment questions. If you are able and willing, please consider participating in this research.
+ 
+Participation is completely optional, and has no impact on your academic standing in STA199.
+
+[Click here to take the assessment](https://duke.qualtrics.com/jfe/form/SV_cMbAsWeIOe6ZFGK)
+
+
 ## Rubric
 
 -   Ex 1: TBD pts.
