@@ -1,0 +1,43 @@
+---
+title: "Exam 2"
+subtitle: "STA 199"
+editor: source
+format: html
+---
+
+[Click here](https://classroom.github.com/a/nam1-qX6) to create your exam 2 repo.
+
+::: callout-important
+Find your exam 2 instructions in the README of your `exam2-username` repository. 
+
+The exam is due Tuesday April 18th at 5:00pm!
+:::
+
+## Rules
+
+- This is an individual assignment.
+- You may not collaborate or communicate anything about this exam to anyone except the instructor or teaching team via a public channel in slack. For example, you may not communicate with other students or post/solicit help on the internet, email or via any other method of communication.
+- You may use R, as well as any notes, books, or existing internet resources to answer exam questions. If you use a resource outside of those we used for class, you should cite it by providing the URL in your rendered PDF.
+- You must cite any code you use as inspiration. A failure to cite is plagiarism. Cite any sources by providing a link to the original source in your exam write-up.
+- If you have questions email the instructor or message in slack. Questions should only be about understanding the data or the exam's instructions. You may not ask questions on any topics from past assignments or material related to the exam.
+- The instructor will provide code debugging if needed, but this **will result in a grade penalty**. Note: ask questions early. Questions asked the day the exam is due may not be answered.
+
+With the exception of major emergencies, late submissions will not be accepted. In the case of a major emergency, you should have your Dean send the instructor or course coordinator [sta199@duke.edu]() an excuse. Start and submit the exam early in order to avoid any last-minute technical issues.
+
+## Render frequently
+
+Render, commit and push your PDF to GitHub frequently. At least after every exercise.
+
+- If a PDF is not submitted on Gradescope (-10 points). If a PDF is not uploaded to Gradescope by the submission deadline, the PDF at your latest commit prior to the deadline will be used as your submission.
+
+- If there is no PDF in your repo, i.e., you've never rendered your `.qmd` file, your work will not be graded and you will receive a 0 on the exam.
+
+
+## Academic Integrity
+
+By taking this exam, you pledge to uphold the Duke Community Standard:
+
+- I will not lie, cheat, or steal in my academic endeavors;
+- I will conduct myself honorably in all my endeavors; and
+- I will act if the Standard is compromised.
+
