@@ -1,0 +1,9 @@
+---
+title: "Prepare"
+subtitle: "Due: Friday April 21, 2023"
+categories: "prepare"
+---
+
+-   Watch [the Caeser cipher](https://www.youtube.com/watch?v=sMOZf4GN3oc)
+
+-   Watch [the Enigma](https://www.youtube.com/watch?v=G2_Q9FoD-oQ)

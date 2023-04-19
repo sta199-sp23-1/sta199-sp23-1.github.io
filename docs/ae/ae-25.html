@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>STA 199 - Ethics in Statistics and Data Science</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<meta property="og:title" content="STA 199 - Ethics in Statistics and Data Science">
+<meta property="og:description" content="STA 199">
+<meta property="og:site-name" content="STA 199">
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Ethics in Statistics and Data Science</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="../" class="sidebar-logo-link">
+      <img src="../images/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/sta199-sp23-1" title="GitHub organization" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+    <a href="https://cmgr.oit.duke.edu/containers" title="RStudio Containers" class="sidebar-tool px-1"><i class="bi bi-code-square"></i></a>
+    <a href="https://docs.google.com/spreadsheets/d/16gf9dQ_41V628vKvFdS95JBOUKYSjuxJBo7OzPye-SI/edit?usp=sharing" title="Office Hours" class="sidebar-tool px-1"><i class="bi bi-people-fill"></i></a>
+</div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">Course information</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-syllabus.html" class="sidebar-item-text sidebar-link">Syllabus</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">Schedule</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-links.html" class="sidebar-item-text sidebar-link">Useful links</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-faq.html" class="sidebar-item-text sidebar-link">FAQ</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">Computing</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computing-access.html" class="sidebar-item-text sidebar-link">Access</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computing-troubleshooting.html" class="sidebar-item-text sidebar-link">Troubleshooting</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computing-cheatsheets.html" class="sidebar-item-text sidebar-link">Cheatsheets</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">Project</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../project-description.html" class="sidebar-item-text sidebar-link">Description</a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#bulletin" id="toc-bulletin" class="nav-link active" data-scroll-target="#bulletin">Bulletin</a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting started</a></li>
+  <li><a href="#today" id="toc-today" class="nav-link" data-scroll-target="#today">Today</a></li>
+  <li><a href="#load-packages" id="toc-load-packages" class="nav-link" data-scroll-target="#load-packages">Load packages</a>
+  <ul class="collapse">
+  <li><a href="#guidelines-for-discussion" id="toc-guidelines-for-discussion" class="nav-link" data-scroll-target="#guidelines-for-discussion">Guidelines for Discussion</a></li>
+  </ul></li>
+  <li><a href="#data-representation" id="toc-data-representation" class="nav-link" data-scroll-target="#data-representation">Data Representation</a>
+  <ul class="collapse">
+  <li><a href="#misleading-data-visualizations" id="toc-misleading-data-visualizations" class="nav-link" data-scroll-target="#misleading-data-visualizations">Misleading Data Visualizations</a></li>
+  </ul></li>
+  <li><a href="#statistical-modeling" id="toc-statistical-modeling" class="nav-link" data-scroll-target="#statistical-modeling">Statistical modeling</a></li>
+  <li><a href="#data-privacy" id="toc-data-privacy" class="nav-link" data-scroll-target="#data-privacy">Data privacy</a>
+  <ul class="collapse">
+  <li><a href="#web-scraping" id="toc-web-scraping" class="nav-link" data-scroll-target="#web-scraping">Web scraping</a></li>
+  <li><a href="#redundancy" id="toc-redundancy" class="nav-link" data-scroll-target="#redundancy">Redundancy</a></li>
+  <li><a href="#additional-readings" id="toc-additional-readings" class="nav-link" data-scroll-target="#additional-readings">Additional readings</a></li>
+  <li><a href="#discussion-questions" id="toc-discussion-questions" class="nav-link" data-scroll-target="#discussion-questions">Discussion questions</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/sta199-f22-1/sta199-f22-1.github.io/edit/main/ae/ae-25.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/sta199-f22-1/sta199-f22-1.github.io/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Ethics in Statistics and Data Science</h1>
+<p class="subtitle lead">STA 199</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="bulletin" class="level2">
+<h2 class="anchored" data-anchor-id="bulletin">Bulletin</h2>
+<ul>
+<li>this <code>ae</code> is <strong>not</strong> due for grade.</li>
+<li><a href="https://sta199-sp23-1.github.io/project-description.html">project draft report</a> due to GitHub today</li>
+<li>Project presentations and repo due Monday lab (by pushing to GitHub)</li>
+<li>Extended deadline: project reports now due Wednesday</li>
+<li>Don’t forget about the statistics experience</li>
+</ul>
+</section>
+<section id="getting-started" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
+<p>Create <em>your</em> copy of <code>ae25-username</code> by clicking <a href="../ae/ae-25.html">here</a></p>
+</section>
+<section id="today" class="level2">
+<h2 class="anchored" data-anchor-id="today">Today</h2>
+<p>By the end of today you will…</p>
+<ul>
+<li>critically examine graphics, models and results</li>
+<li>discuss data privacy and redundancy</li>
+<li>analyze a real data example of Simpson’s paradox</li>
+</ul>
+</section>
+<section id="load-packages" class="level2">
+<h2 class="anchored" data-anchor-id="load-packages">Load packages</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="guidelines-for-discussion" class="level3">
+<h3 class="anchored" data-anchor-id="guidelines-for-discussion">Guidelines for Discussion</h3>
+<ul>
+<li>Respect others. Be charitable towards each other. Speak calmly.</li>
+</ul>
+</section>
+</section>
+<section id="data-representation" class="level2">
+<h2 class="anchored" data-anchor-id="data-representation">Data Representation</h2>
+<section id="misleading-data-visualizations" class="level3">
+<h3 class="anchored" data-anchor-id="misleading-data-visualizations">Misleading Data Visualizations<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></h3>
+<p><strong>Brexit</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sta101.github.io/static/img/brexit.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<p></p><figcaption class="figure-caption">Brexit</figcaption><p></p>
+</figure>
+</div>
+<ul>
+<li><p>What is the graph trying to show?</p></li>
+<li><p>Why is this graph misleading?</p></li>
+<li><p>How can you improve this graph?</p></li>
+</ul>
+<p><strong>Spurious Correlations</strong><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sta101.github.io/static/img/spurious.png" class="img-fluid figure-img" style="width:75.0%"></p>
+<p></p><figcaption class="figure-caption">A Spurious Correlation</figcaption><p></p>
+</figure>
+</div>
+<ul>
+<li><p>What is the graph trying to show?</p></li>
+<li><p>Why is this graph misleading?</p></li>
+</ul>
+</section>
+</section>
+<section id="statistical-modeling" class="level2">
+<h2 class="anchored" data-anchor-id="statistical-modeling">Statistical modeling</h2>
+<p>Read, with a critical eye, page 2 and table 1 from <a href="https://www.pnas.org/doi/epdf/10.1073/pnas.1913405117">Physician–patient racial concordance and disparities in birthing mortality for newborns</a> and chat with your neighbor.</p>
+</section>
+<section id="data-privacy" class="level2">
+<h2 class="anchored" data-anchor-id="data-privacy">Data privacy</h2>
+<section id="web-scraping" class="level3">
+<h3 class="anchored" data-anchor-id="web-scraping">Web scraping<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></h3>
+<p>A data analyst received permission to post a data set that was scraped from a social media site. The full data set included name, screen name, email address, geographic location, IP (Internet protocol) address, demographic profiles, and preferences for relationships. The analyst removes name and email address from the data set in effort to deidentify it.</p>
+<ul>
+<li><p>Why might it be problematic to post this data set publicly?</p></li>
+<li><p>How can you store the full dataset in a safe and ethical way?</p></li>
+<li><p>You want to make the data available so your analysis is transparent and reproducible. How can you modify the full data set to make the data available in an ethical way?</p></li>
+</ul>
+</section>
+<section id="redundancy" class="level3">
+<h3 class="anchored" data-anchor-id="redundancy">Redundancy</h3>
+<ul>
+<li><a href="https://sta101-fa22.netlify.app/static/slides/ethics_Ezinne.pdf">slides</a></li>
+</ul>
+</section>
+<section id="additional-readings" class="level3">
+<h3 class="anchored" data-anchor-id="additional-readings">Additional readings</h3>
+<ul>
+<li><p><a href="https://www.sydney.edu.au/news-opinion/news/2020/06/18/why-pokemon-go-s-plan-to-3d-scan-the-world-is-dangerous.html">Why pokemon go’s plan to 3d scan the world is dangerous</a></p></li>
+<li><p><a href="https://www.nytimes.com/2012/02/19/magazine/shopping-habits.html">How companies learn your secrets</a></p></li>
+</ul>
+</section>
+<section id="discussion-questions" class="level3">
+<h3 class="anchored" data-anchor-id="discussion-questions">Discussion questions</h3>
+<ul>
+<li><p>“Simpson’s paradox”, where conclusions drawn from analyzing subgroups differ from conclusions drawn when the groups are combined. Can you demonstrate Simpson’s Paradox with the data below? <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p></li>
+<li><p>For further reading see <a href="https://www.science.org/doi/abs/10.1126/science.187.4175.398">Bickel, Peter J., Eugene A. Hammel, and J. William O’Connell. “Sex Bias in Graduate Admissions: Data from Berkeley: Measuring bias is harder than is usually assumed, and the evidence is sometimes contrary to expectation.” Science 187.4175 (1975): 398-404.</a></p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>berk <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"https://sta101.github.io/static/appex/data/BerkeleyAdmissionsData.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 7 Columns: 5
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): Dept
+dbl (4): MaleYes, MaleNo, FemaleYes, FemaleNo
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>berk</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 7 × 5
+  Dept  MaleYes MaleNo FemaleYes FemaleNo
+  &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+1 A         512    313        89       19
+2 B         313    207        17        8
+3 C         120    205       202      391
+4 D         138    279       131      244
+5 E          53    138        94      299
+6 F          22    351        24      317
+7 All      1158   1493       557     1278</code></pre>
+</div>
+</div>
+
+
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1" role="doc-endnote"><p>Source: https://humansofdata.atlan.com/2019/02/dos-donts-data-visualization<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>Source: https://www.tylervigen.com/spurious-correlations Content warning: some examples include death or suicide.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3" role="doc-endnote"><p>Modified from Modern Data Science with R, 2nd Edition<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4" role="doc-endnote"><p>Source: https://www.randomservices.org/random/data/Berkeley.html<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">© Copyright 2023, Alexander Fisher</div>   
+    <div class="nav-footer-right">This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a>.</div>
+  </div>
+</footer>
+
+
+
+</body></html>

@@ -10,7 +10,9 @@ title: "Project description"
 
 [Peer review](#peer-review) in lab Monday April 10th
 
-[Presentation + slides + report](#presentation-slides) and final GitHub repo due Monday April 24th
+[Presentation + slides](#presentation-slides) and final GitHub repo due Monday April 24th to GitHub
+
+[Project report](#project-report) due Wednesday April 26th to Gradescope
 
 In addition to the above, a component of the grade will be comprised of evaluating group members via survey by exam period.
 

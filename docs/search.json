@@ -186,7 +186,7 @@
     "href": "index.html",
     "title": "STA 199: Introduction to Data Science",
     "section": "",
-    "text": "week\n      dow\n      date\n      what\n      topic\n      prepare\n      slides\n      ae\n      hw\n      lab\n      exam\n      project\n      notes\n    \n  \n  \n    0\nW\nJan 11\nLab 0\nHello R!\n\n\n\n\n\n\n\n\n    \nF\nJan 13\nLec 1\nWelcome to STA 199\n\n\n\n\n\n\n\n\n    1\nM\nJan 16\n\nNo class -- Martin Luther King Jr. Day\n\n\n\n\n\n\n\n\n    \nW\nJan 18\nLec 2\nIntro to statistics and plotting\n\n\n\n\n\n\n\n\n    \nF\nJan 20\nLec 3\nVisualizing various types of data\n\n\n\n\n\n\n\n\n    2\nM\nJan 23\nLab 1\nData visualization\n\n\n\n\n\n\n\n\n    \nW\nJan 25\nLec 4\nGrammar of data wrangling\n\n\n\n\n\n\n\nHomework 1 released\n    \nF\nJan 27\nLec 5\nWorking with multiple data frames\n\n\n\n\n\n\n\n\n    3\nM\nJan 30\nLab 2\nData wrangling\n\n\n\n\n\n\n\n\n    \nW\nFeb 1\nLec 6\nTidy data\n\n\n\n\n\n\n\n\n    \nF\nFeb 3\nLec 7\nData types and classes\n\n\n\n\n\n\n\nHomework 1 due\n    4\nM\nFeb 6\nLab 3\nData tidying\n\n\n\n\n\n\n\n\n    \nW\nFeb 8\nLec 8\nSpatial data\n\n\n\n\n\n\n\n\n    \nF\nFeb 10\nLec 9\nTroubleshooting / Review\n\n\n\n\n\n\n\nExam 1 released! Due Feb 14 5:00pm\n    5\nM\nFeb 13\nLab\nNo lab: exam 1\n\n\n\n\n\n\n\n\n    \nW\nFeb 15\nLec 10\nIntro to probability\n\n\n\n\n\n\n\n\n    \nF\nFeb 17\nLec 11\nConditional probability\n\n\n\n\n\n\n\nHomework 2 released\n    6\nM\nFeb 20\nLab 4\nMerge conflicts\n\n\n\n\n\n\n\n\n    \nW\nFeb 22\nLec 12\nSimple regression\n\n\n\n\n\n\n\n\n    \nF\nFeb 24\nLec 13\nMultiple regression I\n\n\n\n\n\n\n\nHomework 2 due\n    7\nM\nFeb 27\nLab 5\nPredicting a numerical outcome\n\n\n\n\n\n\n\n\n    \nW\nMar 1\nLec 14\nMultiple regression II\n\n\n\n\n\n\n\nHomework 3 released; project announced\n    \nF\nMar 3\nLec 15\nModel selection\n\n\n\n\n\n\n\n\n    8\nM\nMar 6\nLab\nWork on project proposal\n\n\n\n\n\n\n\n\n    \nW\nMar 8\nLec 16\nLogistic regression\n\n\n\n\n\n\n\nHomework 3 due; statistics experience released\n    \nF\nMar 10\nLec 17\nPrediction\n\n\n\n\n\n\n\nProject proposal due\n    9\nM\nMar 13\n\nNo class -- Spring Break\n\n\n\n\n\n\n\n\n    \nW\nMar 15\n\nNo class -- Spring Break\n\n\n\n\n\n\n\n\n    \nF\nMar 17\n\nNo class -- Spring Break\n\n\n\n\n\n\n\n\n    10\nM\nMar 20\nLab\nLogistic regression (lab)\n\n\n\n\n\n\n\n\n    \nW\nMar 22\nLec 18\nBootstrap\n\n\n\n\n\n\n\nHomework 4 released\n    \nF\nMar 24\nLec 19\nCentral limit theorem I\n\n\n\n\n\n\n\n\n    11\nM\nMar 27\nLab\nProject work day\n\n\n\n\n\n\n\n\n    \nW\nMar 29\nLec 20\nCentral limit theorem II\n\n\n\n\n\n\n\n\n    \nF\nMar 31\nLec 21\nHypothesis testing I\n\n\n\n\n\n\n\nHomework 4 due\n    12\nM\nApr 3\nLab\nHypothesis testing lab\n\n\n\n\n\n\n\n\n    \nW\nApr 5\nLec 22\nHypothesis testing II\n\n\n\n\n\n\n\nHomework 5 released\n    \nF\nApr 7\nLec 23\nHypothesis testing III\n\n\n\n\n\n\n\n\n    13\nM\nApr 10\nLab\nProject peer review\n\n\n\n\n\n\n\n\n    \nW\nApr 12\nLec 24\n\n\n\n\n\n\n\n\nHomework 5 due\n    \nF\nApr 14\nLec 25\nProject tips\n\n\n\n\n\n\n\nExam 2 released! Due Tue April 18 5:00pm\n    14\nM\nApr 17\nLab\nNo lab: exam 2\n\n\n\n\n\n\n\n\n    \nW\nApr 19\nLec 26\nEthics\n\n\n\n\n\n\n\n\n    \nF\nApr 21\nLec 27\nSpecial topic: decrypting a secret message\n\n\n\n\n\n\n\n\n    15\nM\nApr 24\nLab\nProject presentations\n\n\n\n\n\n\n\n\n    \nW\nApr 26\nLec 28\nSpecial topic"
+    "text": "week\n      dow\n      date\n      what\n      topic\n      prepare\n      slides\n      ae\n      hw\n      lab\n      exam\n      project\n      notes\n    \n  \n  \n    0\nW\nJan 11\nLab 0\nHello R!\n\n\n\n\n\n\n\n\n    \nF\nJan 13\nLec 1\nWelcome to STA 199\n\n\n\n\n\n\n\n\n    1\nM\nJan 16\n\nNo class -- Martin Luther King Jr. Day\n\n\n\n\n\n\n\n\n    \nW\nJan 18\nLec 2\nIntro to statistics and plotting\n\n\n\n\n\n\n\n\n    \nF\nJan 20\nLec 3\nVisualizing various types of data\n\n\n\n\n\n\n\n\n    2\nM\nJan 23\nLab 1\nData visualization\n\n\n\n\n\n\n\n\n    \nW\nJan 25\nLec 4\nGrammar of data wrangling\n\n\n\n\n\n\n\nHomework 1 released\n    \nF\nJan 27\nLec 5\nWorking with multiple data frames\n\n\n\n\n\n\n\n\n    3\nM\nJan 30\nLab 2\nData wrangling\n\n\n\n\n\n\n\n\n    \nW\nFeb 1\nLec 6\nTidy data\n\n\n\n\n\n\n\n\n    \nF\nFeb 3\nLec 7\nData types and classes\n\n\n\n\n\n\n\nHomework 1 due\n    4\nM\nFeb 6\nLab 3\nData tidying\n\n\n\n\n\n\n\n\n    \nW\nFeb 8\nLec 8\nSpatial data\n\n\n\n\n\n\n\n\n    \nF\nFeb 10\nLec 9\nTroubleshooting / Review\n\n\n\n\n\n\n\nExam 1 released! Due Feb 14 5:00pm\n    5\nM\nFeb 13\nLab\nNo lab: exam 1\n\n\n\n\n\n\n\n\n    \nW\nFeb 15\nLec 10\nIntro to probability\n\n\n\n\n\n\n\n\n    \nF\nFeb 17\nLec 11\nConditional probability\n\n\n\n\n\n\n\nHomework 2 released\n    6\nM\nFeb 20\nLab 4\nMerge conflicts\n\n\n\n\n\n\n\n\n    \nW\nFeb 22\nLec 12\nSimple regression\n\n\n\n\n\n\n\n\n    \nF\nFeb 24\nLec 13\nMultiple regression I\n\n\n\n\n\n\n\nHomework 2 due\n    7\nM\nFeb 27\nLab 5\nPredicting a numerical outcome\n\n\n\n\n\n\n\n\n    \nW\nMar 1\nLec 14\nMultiple regression II\n\n\n\n\n\n\n\nHomework 3 released; project announced\n    \nF\nMar 3\nLec 15\nModel selection\n\n\n\n\n\n\n\n\n    8\nM\nMar 6\nLab\nWork on project proposal\n\n\n\n\n\n\n\n\n    \nW\nMar 8\nLec 16\nLogistic regression\n\n\n\n\n\n\n\nHomework 3 due; statistics experience released\n    \nF\nMar 10\nLec 17\nPrediction\n\n\n\n\n\n\n\nProject proposal due\n    9\nM\nMar 13\n\nNo class -- Spring Break\n\n\n\n\n\n\n\n\n    \nW\nMar 15\n\nNo class -- Spring Break\n\n\n\n\n\n\n\n\n    \nF\nMar 17\n\nNo class -- Spring Break\n\n\n\n\n\n\n\n\n    10\nM\nMar 20\nLab\nLogistic regression (lab)\n\n\n\n\n\n\n\n\n    \nW\nMar 22\nLec 18\nBootstrap\n\n\n\n\n\n\n\nHomework 4 released\n    \nF\nMar 24\nLec 19\nCentral limit theorem I\n\n\n\n\n\n\n\n\n    11\nM\nMar 27\nLab\nProject work day\n\n\n\n\n\n\n\n\n    \nW\nMar 29\nLec 20\nCentral limit theorem II\n\n\n\n\n\n\n\n\n    \nF\nMar 31\nLec 21\nHypothesis testing I\n\n\n\n\n\n\n\nHomework 4 due\n    12\nM\nApr 3\nLab\nHypothesis testing lab\n\n\n\n\n\n\n\n\n    \nW\nApr 5\nLec 22\nHypothesis testing II\n\n\n\n\n\n\n\nHomework 5 released\n    \nF\nApr 7\nLec 23\nHypothesis testing III\n\n\n\n\n\n\n\n\n    13\nM\nApr 10\nLab\nProject peer review\n\n\n\n\n\n\n\n\n    \nW\nApr 12\nLec 24\n\n\n\n\n\n\n\n\nHomework 5 due\n    \nF\nApr 14\nLec 25\nProject tips\n\n\n\n\n\n\n\nExam 2 released! Due Tue April 18 5:00pm\n    14\nM\nApr 17\nLab\nNo lab: exam 2\n\n\n\n\n\n\n\n\n    \nW\nApr 19\nLec 26\nEthics\n\n\n\n\n\n\n\n\n    \nF\nApr 21\nLec 27\nSpecial topic: cryptanalysis\n\n\n\n\n\n\n\n\n    15\nM\nApr 24\nLab\nProject presentations\n\n\n\n\n\n\n\n\n    \nW\nApr 26\nLec 28\nSpecial topic"
   },
   {
     "objectID": "ae/ae-18.html",
@@ -936,5 +936,124 @@
     "title": "Exam 2",
     "section": "Academic Integrity",
     "text": "Academic Integrity\nBy taking this exam, you pledge to uphold the Duke Community Standard:\n\nI will not lie, cheat, or steal in my academic endeavors;\nI will conduct myself honorably in all my endeavors; and\nI will act if the Standard is compromised."
+  },
+  {
+    "objectID": "project-description.html",
+    "href": "project-description.html",
+    "title": "Project description",
+    "section": "",
+    "text": "Proposal due Friday, March 10th\nDraft due Friday April 7th\nPeer review in lab Monday April 10th\nPresentation + slides and final GitHub repo due Monday April 24th to GitHub\nProject report due Wednesday April 26th to Gradescope\nIn addition to the above, a component of the grade will be comprised of evaluating group members via survey by exam period.\n\n\nFind a data set, develop a question you can answer with the data, and do it."
+  },
+  {
+    "objectID": "project-description.html#where-to-find-data",
+    "href": "project-description.html#where-to-find-data",
+    "title": "Project description",
+    "section": "Where to find data?",
+    "text": "Where to find data?\n\nAwesome public datasets\nBikeshare data portal\nCDC\nData.gov\nData is Plural\nDurham Open Data Portal\nEdinburgh Open Data\nElection Studies\nEuropean Statistics\nCORGIS: The Collection of Really Great, Interesting, Situated Datasets\nGeneral Social Survey\nGoogle Dataset Search\nHarvard Dataverse\nInternational Monetary Fund\nIPUMS survey data from around the world\nLos Angeles Open Data\nNHS Scotland Open Data\nNYC OpenData\nOpen access to Scotland’s official statistics\nPew Research\nPRISM Data Archive Project\nStatistics Canada\nThe National Bureau of Economic Research\nTidyTuesday\nUCI Machine Learning Repository\nUK Government Data\nUNICEF Data\nUnited Nations Data\nUnited Nations Statistics Division\nUS Census Data\nUS Government Data\nWorld Bank Data\nYouth Risk Behavior Surveillance System (YRBSS)"
+  },
+  {
+    "objectID": "project-description.html#presentation-30pts",
+    "href": "project-description.html#presentation-30pts",
+    "title": "Project description",
+    "section": "Presentation 30pts",
+    "text": "Presentation 30pts\nPresentations will take place in class during the last lab of the semester.\nThe presentation must be no longer than 5 minutes. This will be strictly enforced."
+  },
+  {
+    "objectID": "project-description.html#reproducibility-organization",
+    "href": "project-description.html#reproducibility-organization",
+    "title": "Project description",
+    "section": "Reproducibility + organization",
+    "text": "Reproducibility + organization\nAll written work (with exception of presentation slides) should be reproducible, and the GitHub repo should be neatly organized.\nPoints for reproducibility + organization will be based on the reproducibility of the written report and the organization of the project GitHub repo.\nThe repo should be neatly organized as described above, there should be no extraneous files, all text in the README should be easily readable."
+  },
+  {
+    "objectID": "project-description.html#teamwork",
+    "href": "project-description.html#teamwork",
+    "title": "Project description",
+    "section": "Teamwork",
+    "text": "Teamwork\nYou will be asked to fill out a survey where you rate the contribution and teamwork of each team member.\nFilling out the survey is a prerequisite for getting credit on the teamwork portion of the grade.\nThe teamwork survey together with GitHub commits will be used to measure individual contribution to the assignment. All group members are expected to participate equally. In the event of team concerns and low effort commits, individual grades may differ from the rest of the group.\nIf you have concerns with the teamwork and/or contribution from any team members, please reach out to me or the head TA as early as possible."
+  },
+  {
+    "objectID": "ae/ae-25.html",
+    "href": "ae/ae-25.html",
+    "title": "Ethics in Statistics and Data Science",
+    "section": "",
+    "text": "this ae is not due for grade.\nproject draft report due to GitHub today\nProject presentations and repo due Monday lab (by pushing to GitHub)\nExtended deadline: project reports now due Wednesday\nDon’t forget about the statistics experience"
+  },
+  {
+    "objectID": "ae/ae-25.html#getting-started",
+    "href": "ae/ae-25.html#getting-started",
+    "title": "Ethics in Statistics and Data Science",
+    "section": "Getting started",
+    "text": "Getting started\nCreate your copy of ae25-username by clicking here"
+  },
+  {
+    "objectID": "ae/ae-25.html#today",
+    "href": "ae/ae-25.html#today",
+    "title": "Ethics in Statistics and Data Science",
+    "section": "Today",
+    "text": "Today\nBy the end of today you will…\n\ncritically examine graphics, models and results\ndiscuss data privacy and redundancy\nanalyze a real data example of Simpson’s paradox"
+  },
+  {
+    "objectID": "ae/ae-25.html#load-packages",
+    "href": "ae/ae-25.html#load-packages",
+    "title": "Ethics in Statistics and Data Science",
+    "section": "Load packages",
+    "text": "Load packages\n\nlibrary(tidyverse)\nlibrary(tidymodels)\n\n\nGuidelines for Discussion\n\nRespect others. Be charitable towards each other. Speak calmly."
+  },
+  {
+    "objectID": "ae/ae-25.html#practice",
+    "href": "ae/ae-25.html#practice",
+    "title": "Ethics",
+    "section": "Practice",
+    "text": "Practice\n\nLoad data\nThe stent30 data set comes from the openintro package and is from a study conducted in 2011 on the effects of arterial stents as a therapy for stroke patients. See the original publication:\nChimowitz MI, Lynn MJ, Derdeyn CP, et al. 2011. Stenting versus Aggressive Med- ical Therapy for Intracranial Arterial Stenosis. New England Journal of Medicine 365:993- 1003. doi: 10.1056/NEJMoa1105335.\nor check ?stent30 for more information.\n\ndata(stent30)\n\n\nglimpse(stent30)\n\nRows: 451\nColumns: 2\n$ group   <fct> treatment, treatment, treatment, treatment, treatment, treatme…\n$ outcome <fct> stroke, stroke, stroke, stroke, stroke, stroke, stroke, stroke…\n\n\n\nExercise 1\nDo stents affect stroke outcome in patients?\n\nWrite the null and alternative hypothesis. Report the observed statistic.\nSimulate under the null.\nCompute and report the p-value, compare to \\(\\alpha = 0.05\\) and make a conclusion with appropriate context"
+  },
+  {
+    "objectID": "ae/ae-25.html#confidence-intervals-and-hypothesis-tests",
+    "href": "ae/ae-25.html#confidence-intervals-and-hypothesis-tests",
+    "title": "Ethics",
+    "section": "Confidence intervals and hypothesis tests",
+    "text": "Confidence intervals and hypothesis tests\nHere we revisit the data from the first three seasons of NC Courage games (2017-2019).\n\ncourage = read_csv(\"https://sta101-fa22.netlify.app/static/labs/data/courage.csv\")\n\n\nglimpse(courage)\n\nRows: 78\nColumns: 10\n$ game_id     <chr> \"washington-spirit-vs-north-carolina-courage-2017-04-15\", …\n$ game_date   <chr> \"4/15/2017\", \"4/22/2017\", \"4/29/2017\", \"5/7/2017\", \"5/14/2…\n$ game_number <dbl> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17,…\n$ home_team   <chr> \"WAS\", \"NC\", \"NC\", \"BOS\", \"ORL\", \"NC\", \"NC\", \"CHI\", \"NC\", …\n$ away_team   <chr> \"NC\", \"POR\", \"ORL\", \"NC\", \"NC\", \"CHI\", \"NJ\", \"NC\", \"KC\", \"…\n$ opponent    <chr> \"WAS\", \"POR\", \"ORL\", \"BOS\", \"ORL\", \"CHI\", \"NJ\", \"CHI\", \"KC…\n$ home_pts    <dbl> 0, 1, 3, 0, 3, 1, 2, 3, 2, 3, 0, 0, 2, 1, 1, 0, 1, 2, 2, 2…\n$ away_pts    <dbl> 1, 0, 1, 1, 1, 3, 0, 2, 0, 1, 1, 1, 0, 0, 0, 1, 2, 0, 3, 1…\n$ result      <chr> \"win\", \"win\", \"win\", \"win\", \"loss\", \"loss\", \"win\", \"loss\",…\n$ season      <dbl> 2017, 2017, 2017, 2017, 2017, 2017, 2017, 2017, 2017, 2017…\n\n\nDo National Women’s Soccer League (NWSL) teams have a home-field advantage? We’ll answer this question in a few separate ways.\nHypothesis testing framework: does NC Courage score a significantly different number of points (on average) away than at home?\n\nExercise 2\n\nCreate a new column location that tells you whether the courage are “home” or “away”\nCreate a new column pts that always reports the Courage points scored in a game.\nSave your result as a new data frame titled courage2.\n\n\n# code here\n\n\n\nExercise 3\nTo answer the question does NC Courage score a significantly different number of points (on average) away than at home?\n\nWrite the null and alternative hypothesis. Report the observed statistic.\nSimulate under the null.\nCompute and report the p-value, compare to \\(\\alpha = 0.05\\) and make a conclusion with appropriate context\n\n\n# code here\n\n\n\nExercise 4\n\nReport the mean difference between away and home games and report a 95% bootstrap confidence interval. Use set.seed(3) and reps=5000 Interpret your interval in context.\n\n\n# code here\n\n\n\nExercise 5\nIs there a better way we could investigate whether or not the Courage have a home-field advantage? Why?"
+  },
+  {
+    "objectID": "ae/ae-25.html#notes",
+    "href": "ae/ae-25.html#notes",
+    "title": "Ethics",
+    "section": "Notes",
+    "text": "Notes\n\nType 1 and Type 2 Errors\n\n\n\nTruth\nReject the null\nFail to reject the null\n\n\n\n\n\\(H_0\\) is true\nType 1 error\n✔️\n\n\n\\(H_A\\) is true\n✔️\nType 2 error\n\n\n\nThe significance level, \\(\\alpha\\), is the probability of a type 1 error. In some contexts, a type 1 error may be referred to as a “false positive” and a type 2 error as a “false negative”.\nIntuitively, by considering extremes, one can see a trade-off exists between type 1 and type 2 error.\n\nIf \\(\\alpha = 0\\), then the p-value stands no chance of being smaller than \\(\\alpha\\) and we always fail to reject the null. This makes type 1 errors impossible.\n\nSimilarly, if \\(\\alpha = 1\\), then all p-values will be smaller than \\(\\alpha\\) and type 2 errors will become impossible, because we will always reject the null.\n\\(\\beta\\) is used to denote the probability of a type 2 error.\nThe power of a test is \\(1 - \\beta\\), which is the probability that your test rejects the null hypothesis when the null hypothesis is false."
+  },
+  {
+    "objectID": "ae/ae-25.html#why-its-important-to-be-careful-with-interpretation",
+    "href": "ae/ae-25.html#why-its-important-to-be-careful-with-interpretation",
+    "title": "Ethics",
+    "section": "Why it’s important to be careful with interpretation",
+    "text": "Why it’s important to be careful with interpretation\n\n(And why hypothesis tests don’t tell the whole story)\nThe data for this example comes from Confounding and Simpson’s paradox1 by Julious and Mullee.\nThe data examines 901 individuals with diabetes and includes the following variables\n\ninsulin_dep: whether or not the patient has insulin dependent or non-insulin dependent diabetes\nage: whether or not the individual is less than 40 years old\nsurvival: whether or not the individual survived the length of the study\n\n\ndiabetes = read_csv(\"https://sta101.github.io/static/appex/data/diabetes.csv\")\n\nFlex Aisher thinks people with insulin dependent diabetes actually survive longer than those without insulin dependence. Flex wants to formally test his hypothesis.\nLet \\(p_{d}\\) be the probability of insulin dependent survival and \\(p_{i}\\) be the probability of insulin independent survival.\n\\[\nH_0: p_{d} - p_{i} = 0\n\\]\n\\[\nH_A: p_{d} - p_{i} > 0\n\\]\nAt first glance the data seem to back up his claim…\n\n\nExercise 6\nCompute the probability of survival and death for diabetic individuals with and without insulin dependence.\n\n#  code here\n\n\n\nExercise 7\nIs Flex’s claim significant at the \\(\\alpha = 0.05\\) level? Perform a hypothesis test and report your results.\n\n# code here\n\n\n\nExercise 8\nIs the aggregate data misleading? Use the code chunk below to investigate further.\n\n# code here"
+  },
+  {
+    "objectID": "ae/ae-25.html#data-representation",
+    "href": "ae/ae-25.html#data-representation",
+    "title": "Ethics in Statistics and Data Science",
+    "section": "Data Representation",
+    "text": "Data Representation\n\nMisleading Data Visualizations1\nBrexit\n\n\n\nBrexit\n\n\n\nWhat is the graph trying to show?\nWhy is this graph misleading?\nHow can you improve this graph?\n\nSpurious Correlations2\n\n\n\nA Spurious Correlation\n\n\n\nWhat is the graph trying to show?\nWhy is this graph misleading?"
+  },
+  {
+    "objectID": "ae/ae-25.html#statistical-modeling",
+    "href": "ae/ae-25.html#statistical-modeling",
+    "title": "Ethics in Statistics and Data Science",
+    "section": "Statistical modeling",
+    "text": "Statistical modeling\nRead, with a critical eye, page 2 and table 1 from Physician–patient racial concordance and disparities in birthing mortality for newborns and chat with your neighbor."
+  },
+  {
+    "objectID": "ae/ae-25.html#data-privacy",
+    "href": "ae/ae-25.html#data-privacy",
+    "title": "Ethics in Statistics and Data Science",
+    "section": "Data privacy",
+    "text": "Data privacy\n\nWeb scraping3\nA data analyst received permission to post a data set that was scraped from a social media site. The full data set included name, screen name, email address, geographic location, IP (Internet protocol) address, demographic profiles, and preferences for relationships. The analyst removes name and email address from the data set in effort to deidentify it.\n\nWhy might it be problematic to post this data set publicly?\nHow can you store the full dataset in a safe and ethical way?\nYou want to make the data available so your analysis is transparent and reproducible. How can you modify the full data set to make the data available in an ethical way?\n\n\n\nRedundancy\n\nslides\n\n\n\nAdditional readings\n\nWhy pokemon go’s plan to 3d scan the world is dangerous\nHow companies learn your secrets\n\n\n\nDiscussion questions\n\n“Simpson’s paradox”, where conclusions drawn from analyzing subgroups differ from conclusions drawn when the groups are combined. Can you demonstrate Simpson’s Paradox with the data below? 4\nFor further reading see Bickel, Peter J., Eugene A. Hammel, and J. William O’Connell. “Sex Bias in Graduate Admissions: Data from Berkeley: Measuring bias is harder than is usually assumed, and the evidence is sometimes contrary to expectation.” Science 187.4175 (1975): 398-404.\n\n\nberk = read_csv(\"https://sta101.github.io/static/appex/data/BerkeleyAdmissionsData.csv\")\n\nRows: 7 Columns: 5\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (1): Dept\ndbl (4): MaleYes, MaleNo, FemaleYes, FemaleNo\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\nberk\n\n# A tibble: 7 × 5\n  Dept  MaleYes MaleNo FemaleYes FemaleNo\n  <chr>   <dbl>  <dbl>     <dbl>    <dbl>\n1 A         512    313        89       19\n2 B         313    207        17        8\n3 C         120    205       202      391\n4 D         138    279       131      244\n5 E          53    138        94      299\n6 F          22    351        24      317\n7 All      1158   1493       557     1278"
+  },
+  {
+    "objectID": "prepare/prep28.html",
+    "href": "prepare/prep28.html",
+    "title": "Prepare",
+    "section": "",
+    "text": "Watch the Caeser cipher\nWatch the Enigma"
   }
 ]
