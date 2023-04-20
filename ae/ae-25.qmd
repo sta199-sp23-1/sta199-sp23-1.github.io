@@ -10,14 +10,13 @@ execute:
 ## Bulletin
 
 -   this `ae` is **not** due for grade.
-- [project draft report](https://sta199-sp23-1.github.io/project-description.html) due to GitHub today
 - Project presentations and repo due Monday lab (by pushing to GitHub)
 - Extended deadline: project reports now due Wednesday
 - Don't forget about the statistics experience
 
 ## Getting started
 
-Create *your* copy of `ae25-username` by clicking [here](ae-25.qmd)
+Clone *your* `ae25-username` repo from the [GitHub organization](https://github.com/orgs/sta199-sp23-1/repositories).
 
 
 ## Today

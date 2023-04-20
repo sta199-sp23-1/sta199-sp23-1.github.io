@@ -977,14 +977,14 @@
     "href": "ae/ae-25.html",
     "title": "Ethics in Statistics and Data Science",
     "section": "",
-    "text": "this ae is not due for grade.\nproject draft report due to GitHub today\nProject presentations and repo due Monday lab (by pushing to GitHub)\nExtended deadline: project reports now due Wednesday\nDon’t forget about the statistics experience"
+    "text": "this ae is not due for grade.\nProject presentations and repo due Monday lab (by pushing to GitHub)\nExtended deadline: project reports now due Wednesday\nDon’t forget about the statistics experience"
   },
   {
     "objectID": "ae/ae-25.html#getting-started",
     "href": "ae/ae-25.html#getting-started",
     "title": "Ethics in Statistics and Data Science",
     "section": "Getting started",
-    "text": "Getting started\nCreate your copy of ae25-username by clicking here"
+    "text": "Getting started\nClone your ae25-username repo from the GitHub organization."
   },
   {
     "objectID": "ae/ae-25.html#today",
@@ -1055,5 +1055,103 @@
     "title": "Prepare",
     "section": "",
     "text": "Watch the Caeser cipher\nWatch the Enigma"
+  },
+  {
+    "objectID": "ae/ae-26.html",
+    "href": "ae/ae-26.html",
+    "title": "Cryptanalysis",
+    "section": "",
+    "text": "this ae is due for grade. Push your completed ae to GitHub within 48 hours to receive credit\nProject presentations and repo due Monday lab (by pushing to GitHub)\nExtended deadline: project reports now due Wednesday\nDon’t forget about the statistics experience\ncourse evaluations open. \\(>80\\%\\) response \\(\\rightarrow\\) +1pt final project"
+  },
+  {
+    "objectID": "ae/ae-26.html#getting-started",
+    "href": "ae/ae-26.html#getting-started",
+    "title": "Cryptanalysis",
+    "section": "Getting started",
+    "text": "Getting started\nClone your ae26-username repo from the GitHub organization."
+  },
+  {
+    "objectID": "ae/ae-26.html#today",
+    "href": "ae/ae-26.html#today",
+    "title": "Ethics in Statistics and Data Science",
+    "section": "Today",
+    "text": "Today\nBy the end of today you will…\n\ncritically examine graphics, models and results\ndiscuss data privacy and redundancy\nanalyze a real data example of Simpson’s paradox"
+  },
+  {
+    "objectID": "ae/ae-26.html#load-packages",
+    "href": "ae/ae-26.html#load-packages",
+    "title": "Cryptanalysis",
+    "section": "Load packages",
+    "text": "Load packages\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(reshape2)\n\nOur data includes\n\nComplete text of “War and Peace” by Leo Tolstoy\nFreq. analysis data frame of “War and Peace”\nA secret message"
+  },
+  {
+    "objectID": "ae/ae-26.html#data-representation",
+    "href": "ae/ae-26.html#data-representation",
+    "title": "Ethics in Statistics and Data Science",
+    "section": "Data Representation",
+    "text": "Data Representation\n\nMisleading Data Visualizations1\nBrexit\n\n\n\nBrexit\n\n\n\nWhat is the graph trying to show?\nWhy is this graph misleading?\nHow can you improve this graph?\n\nSpurious Correlations2\n\n\n\nA Spurious Correlation\n\n\n\nWhat is the graph trying to show?\nWhy is this graph misleading?"
+  },
+  {
+    "objectID": "ae/ae-26.html#statistical-modeling",
+    "href": "ae/ae-26.html#statistical-modeling",
+    "title": "Ethics in Statistics and Data Science",
+    "section": "Statistical modeling",
+    "text": "Statistical modeling\nRead, with a critical eye, page 2 and table 1 from Physician–patient racial concordance and disparities in birthing mortality for newborns and chat with your neighbor."
+  },
+  {
+    "objectID": "ae/ae-26.html#data-privacy",
+    "href": "ae/ae-26.html#data-privacy",
+    "title": "Ethics in Statistics and Data Science",
+    "section": "Data privacy",
+    "text": "Data privacy\n\nWeb scraping3\nA data analyst received permission to post a data set that was scraped from a social media site. The full data set included name, screen name, email address, geographic location, IP (Internet protocol) address, demographic profiles, and preferences for relationships. The analyst removes name and email address from the data set in effort to deidentify it.\n\nWhy might it be problematic to post this data set publicly?\nHow can you store the full dataset in a safe and ethical way?\nYou want to make the data available so your analysis is transparent and reproducible. How can you modify the full data set to make the data available in an ethical way?\n\n\n\nRedundancy\n\nslides\n\n\n\nAdditional readings\n\nWhy pokemon go’s plan to 3d scan the world is dangerous\nHow companies learn your secrets\n\n\n\nDiscussion questions\n\n“Simpson’s paradox”, where conclusions drawn from analyzing subgroups differ from conclusions drawn when the groups are combined. Can you demonstrate Simpson’s Paradox with the data below? 4\nFor further reading see Bickel, Peter J., Eugene A. Hammel, and J. William O’Connell. “Sex Bias in Graduate Admissions: Data from Berkeley: Measuring bias is harder than is usually assumed, and the evidence is sometimes contrary to expectation.” Science 187.4175 (1975): 398-404.\n\n\nberk = read_csv(\"https://sta101.github.io/static/appex/data/BerkeleyAdmissionsData.csv\")\n\nRows: 7 Columns: 5\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (1): Dept\ndbl (4): MaleYes, MaleNo, FemaleYes, FemaleNo\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\nberk\n\n# A tibble: 7 × 5\n  Dept  MaleYes MaleNo FemaleYes FemaleNo\n  <chr>   <dbl>  <dbl>     <dbl>    <dbl>\n1 A         512    313        89       19\n2 B         313    207        17        8\n3 C         120    205       202      391\n4 D         138    279       131      244\n5 E          53    138        94      299\n6 F          22    351        24      317\n7 All      1158   1493       557     1278"
+  },
+  {
+    "objectID": "ae/ae-26.html#background",
+    "href": "ae/ae-26.html#background",
+    "title": "Cryptanalysis",
+    "section": "Background",
+    "text": "Background\nThis application exercise builds on the R code found here and The Markov Chain Monte Carlo Revolution by Persi Diaconis.\n\nLet’s load the data\n\nwarandpeace = readLines(\"https://sta101.github.io/static/appex/data/warandpeace.txt\")\nfrequency = read.table(\"https://sta101.github.io/static/appex/data/frequencies.txt\")\ncolnames(frequency) = c(toupper(letters), \"\") # edit column names\nsecret_message = readLines(\"https://sta101.github.io/static/appex/data/secret-message.txt\")"
+  },
+  {
+    "objectID": "ae/ae-26.html#exercise-1",
+    "href": "ae/ae-26.html#exercise-1",
+    "title": "Cryptanalysis",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nTake a look at secret-message. Each letter is a stand in for exactly one other letter. This sort of cipher is known as a “substitution cipher”.\n‘A’ could be encoded as one of 26 characters (A, B, C, …). Once the encoding for ‘A’ is chosen, ‘B’ has 25 possibilities and so on so there are, in total \\(26 \\times 25 \\times 24 \\times \\ldots \\times 3 \\times 2 \\times 1\\) possibilities.\n\nn = 26\ninput = n + 1\nkeys = gamma(input)\nkeys\n\n[1] 4.032915e+26\n\n\nThat’s over \\(4 \\times 10^{26}\\) possible keys! If you could check 10M keys per second, it would take approximately \\(1 \\times 10^{12}\\) (trillion) years to check every possible key. Trying every possible key is known as a “brute force” approach.\n\nChat with your neighbor and develop a strategy better than the brute force approach. Detail your strategy below."
+  },
+  {
+    "objectID": "ae/ae-26.html#exercise-2",
+    "href": "ae/ae-26.html#exercise-2",
+    "title": "Cryptanalysis",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nHere we determine how often one character follows another using the text from the very long book, War and Peace. We include a whitespace character as a 27th character in our alphabet.\nTo reduce computational demand, we will load the object created by this analysis but leave the code below for reference.\nThe result of the below analysis is in the object frequency.\nThe letter row denotes the first character in a 2 character sequence while columns determine the second character in the character sequence.\n\nWhat should be the sum of a row? Check this for the first row of the data frame.\n\n\n# code here\n\n\n\n\nCreate a heatmap of character frequency, where the y-axis is the first letter and the x-axis is the second letter in a two letter chain.\n\nUncomment and complete the code below.\n\nHint: We’ll use melt from the reshape2 package. Click here for an example.\n\nmelt_freq = melt(as.matrix(frequency))\n\n# melt_freq %>%\n#   ggplot(aes(x = __, y = __, fill = __))"
+  },
+  {
+    "objectID": "ae/ae-26.html#mcmc",
+    "href": "ae/ae-26.html#mcmc",
+    "title": "Cryptanalysis",
+    "section": "MCMC",
+    "text": "MCMC\nWe will use a famous statistical algorithm, Markov chain Monte Carlo (MCMC) to break the substitution cipher.\nMCMC is composed of three essential components:\n\nAbility. A way to propose any possible key.\nFeedback. A way to evaluate how good a given key is.\nCuriosity. A way to leave a good key for a worse key.\n\n\nThe analogy of the blind monkey.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThere’s a monkey on an island with many ponds. The monkey has been tasked with finding the largest body of water on the island. The only trouble is, he is blind. In order to find the largest body of water, he throws rocks randomly and listens for a splash. If he hears a splash, he knows there’s a body of water where he last threw. He continues to throw more rocks in that direction to find out how big the pool is. Occasionally he gets bored and wanders off to look for another pond. In this way, he uses the MCMC algorithm to find the largest body of water.\n\n\nMaking the connection.\n\nAbility (throw a rock). The Monkey can walk around and throw the rock anywhere on the island, ensuring that given enough time, he will cover every inch of the island.\nFeedback (test for waters). Every time the Monkey throws the rock, he receives feedback by listening for a splash. A large splash means a deep pond and encourages him to continue throwing in that direction to figure out the perimeter of the pond.\nCuriosity (boredom). If the monkey finds the second largest pond on the island, he might get stuck throwing rocks in it for a long time. By occasionally walking away from a large pond, he will reach the largest pond quicker."
+  },
+  {
+    "objectID": "ae/ae-26.html#exercise-3",
+    "href": "ae/ae-26.html#exercise-3",
+    "title": "Cryptanalysis",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nLet’s write out together what MCMC looks like when decrpyting a secret message.\n\nAbility\nFeedback\nCuriosity"
+  },
+  {
+    "objectID": "ae/ae-26.html#exercise-4",
+    "href": "ae/ae-26.html#exercise-4",
+    "title": "Cryptanalysis",
+    "section": "Exercise 4",
+    "text": "Exercise 4\nHere we load some functions that will help us decode the message.\n\n\n\nRun the code below to break the secret message. If the message is unintelligible after several iterations, you may try re-starting with a new seed. What is this equivalent to in the monkey analogy above?"
+  },
+  {
+    "objectID": "ae/ae-26.html#exercise-5",
+    "href": "ae/ae-26.html#exercise-5",
+    "title": "Cryptanalysis",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nTry your own message!\nCreate your own message in the code below and call mcmcAttack(coded) on your message to decode it!\n\n\n\n\nYou might think about what makes the message easy or difficult to attack, e.g. does length of the message affect its susceptibility to attack? What else might?"
   }
 ]
