@@ -5,7 +5,7 @@ editor: source
 format: html
 ---
 
-[Click here](https://classroom.github.com/a/nam1-qX6) to create your exam 2 repo.
+<!-- [Click here](https://classroom.github.com/a/nam1-qX6) to create your exam 2 repo. -->
 
 ::: callout-important
 Find your exam 2 instructions in the README of your `exam2-username` repository. 
